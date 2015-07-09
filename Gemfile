@@ -6,31 +6,39 @@ gem 'rails', '4.2.3'
 
 gem 'pg'
 
+# Main gems
 gem 'devise'
+gem 'fast_blank'
+gem 'hiredis'
+gem 'jbuilder', '~> 2.0'
+gem 'pundit'
+gem 'seed_migration'
+gem 'simple_form'
+gem 'redis', require:  ['redis', 'redis/connection/hiredis']
+gem 'unicorn'
 
 # Front-end gems
+gem 'bourbon'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'neat'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-gem 'jbuilder', '~> 2.0'
-
-gem 'unicorn'
-
 group :development do
+  gem 'annotate', '~> 2.6.6'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'capistrano-rails'
 end
 
 group :development, :test do
   gem 'byebug'
-
-  gem 'web-console', '~> 2.0'
-
+  gem 'rspec'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda'
   gem 'spring'
+  gem 'web-console', '~> 2.0'
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.
