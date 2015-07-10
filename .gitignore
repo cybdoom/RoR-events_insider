@@ -1,13 +1,20 @@
 /.bundle
+/vendor/bundle
+
+/db/*.sqlite3
+/db/*.sqlite3-journal
 
 .env
 .rvmrc
+.powenv
+
 .rspec
+/spec/tmp
 
 /log/*
 !/log/.keep
 /tmp
 
-config/database.yml
-config/secrets.yml
-public/assets/*
+/config/database.yml
+/public/assets/*
+/public/system
