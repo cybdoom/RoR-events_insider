@@ -1,0 +1,44 @@
+<header>
+  <div class="wrapper">
+    <%= image_tag 'logo', alt: 'logo-header', class: 'logo' %>
+    <div class="tools mobile-only">
+      <div class="header-mobile-icons search-mobile-icon search-toggle"></div>
+      <div class="header-icons-divider"></div>
+      <div class="header-mobile-icons nav-mobile-icon menu-toggle"></div>
+    </div>
+    <nav>
+      <a href="" class="icons home desktop-only"></a>
+      <a href="" class="mobile-only"><%= t(:home) %></a>
+      <a href=""><%= t(:about) %></a>
+      <a href=""><%= t(:articles) %></a>
+      <a href=""><%= t(:login) %></a>
+      <a href=""><%= t(:contact) %></a>
+      <a href=""><%= t(:help) %></a>
+      <a href="" class="icons social fb desktop-only"></a>
+      <a href="" class="icons social twitter desktop-only"></a>
+    </nav>
+    <div class="clear"></div>
+  </div>
+</header>
+<nav id="header-menu" class="mobile-only">
+  <a href=""><%= t(:home) %></a>
+  <a href=""><%= t(:about) %></a>
+  <a href=""><%= t(:articles) %></a>
+  <a href=""><%= t(:login) %></a>
+  <a href=""><%= t(:contact) %></a>
+  <a href=""><%= t(:help) %></a>
+</nav>
+<div id="search-bar" class="search-bar mobile-only">
+  <form>
+    <input class="search-box-mobile" type="text" name="search"/>
+    <span><%= t(:search) %></span>
+  </form>
+</div>
+<div class="sub-header">
+  <div class="wrapper">
+    <h2><%= t(:annotation) %></h2>
+    <input class="search-box desktop-only" type="text" name="search" placeholder="Search"/>
+    <span class="icons search desktop-only"></span>
+    <div class="clear"></div>
+  </div>
+</div>

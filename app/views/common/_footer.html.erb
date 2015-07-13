@@ -1,0 +1,53 @@
+<div class="sub-footer">
+  <div class="footer-wrapper">
+    <div class="footer-container">
+      <section>
+        <%= image_tag 'logo', alt: 'logo-footer', class: 'logo' %>
+        <h4><%= t(:advertise) %></h4>
+      </section>
+      <section>
+        <h3><%= t(:stay_connected) %></h3>
+        <nav>
+           <a href="" class="icons social fb grey"></a>
+           <a href="" class="icons social twitter grey"></a>
+           <div class="clear"></div>
+        </nav>
+      </section>
+
+      <section>
+        <div class="footer-nav-container">
+          <nav>
+            <a href=""><%= t(:home) %></a>
+            <a href=""><%= t(:about) %></a>
+            <a href=""><%= t(:articles) %></a>
+            <a href=""><%= t(:login) %></a>
+            <div class="clear"></div>
+          </nav>
+          <nav>
+            <a href=""><%= t(:listing_add) %></a>
+            <a href=""><%= t(:subscribe) %></a>
+            <a href=""><%= t(:contact) %></a>
+            <a href=""><%= t(:help) %></a>
+            <div class="clear"></div>
+          </nav>
+          <nav class="mobile-only">
+            <a><%= t(:terms) %></a>
+            <a><%= t(:privacy_policy) %></a>
+            <div class="clear"></div>
+          </nav>
+          <div class="clear"></div>
+        </div>
+      </section>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="wrapper">
+    <nav class="desktop-only">
+      <a><%= t(:privacy_policy) %></a>
+      <a><%= t(:terms) %></a>
+    </nav>
+    <div class="copyright-text"><%= t(:copyright) %></div>
+  </div>
+</footer>

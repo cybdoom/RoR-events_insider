@@ -1,0 +1,136 @@
+@import 'globals';
+
+section.first h1 {
+	padding: 0 20px;
+	margin: 0px;
+	margin-bottom: 10px;
+	font-size: 35px;
+}
+
+section.first h3 {
+	padding: 0 20px;
+	font-size: 15px;
+	color: lighten($color-box-body-text, 15.25%);
+	margin-top: 0px;
+}
+
+.edit-mode .content-block section.first {
+	padding-top: 10px;
+}
+
+.event-img {
+	float: left;
+	width: 100%;
+}
+
+.event .text {
+	float: left;
+	width: 440px;
+	padding-right: 20px;
+}
+.event .info {
+	float: left;
+	width: 200px;
+	height: 200px;
+	background-color: darken($color-box-main-background, 3%);
+	padding: 10px;
+}
+
+.event .info h4 {
+	margin: 9px 0px 0px 0px;
+	font-family: $font-header;
+	font-size: 15px;
+	letter-spacing: 0.4px;
+}
+
+.name {
+	color: $color-box-important-text;
+}
+
+.event h4 {
+	color: darken($color-box-foreground, 11.5%);
+}
+
+.event span.col, .event span.col6 {
+	color: lighten($color-box-body-text, 24%);
+	font-family: $font-header;
+	font-size: 15px;
+}
+
+
+.share h4 {
+	float: left;
+	width: 40px;
+}
+
+.share .icons-row {
+  width: 125px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+ }
+
+
+.event address h3 {
+	padding: 0px;
+	margin: 0 0 10px 0px;
+	font-size: 17px;
+}
+
+
+.event address h3 a {
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.location .distance a {
+	text-decoration: none;
+}
+
+
+.venue {
+	@extend .event;
+}
+
+.venue .listing-section.location {
+	margin-top: 20px;
+}
+
+.venue .address-map {
+	margin-top: 5px;
+}
+
+.location address span {
+	font-size: 16px;
+}
+
+.location address span a {
+	text-decoration: none;
+}
+
+.location address h4 {
+	float: left;
+	color : $color-box-important-text;
+	margin: 15px 0px 0px 0px;
+	font-size: 15px;
+}
+
+@media screen and (max-width: 767px) {
+
+	.event .text {
+		width: 100%;
+	}
+
+	.event span.col6 {
+		width: 50%;
+	}
+
+	.event .col6:nth-child(2n) {
+		margin-bottom: 0;
+	}
+
+	.photo-container {
+		width: 100%;
+	}
+
+}

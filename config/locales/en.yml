@@ -20,4 +20,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home: 'Home'
+  about: 'About Us'
+  articles: 'Articles'
+  login: 'Log In'
+  listing_add: 'Add a Listing'
+  subscribe: 'Subscribe'
+  contact: 'Contact'
+  help: 'Help'
+  terms: 'Terms of Service'
+  privacy_policy: 'Privacy Policy'
+  copyright: 'Copyright 2015&copy; Hard Data Factory'
+  advertise: 'Advertise With Us'
+  stay_connected: 'Stay Connected'
+  search: 'Search'
+  annotation: New England's most popular events blog!

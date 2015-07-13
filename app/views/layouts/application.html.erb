@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Events Insider</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= content_for?(:title) ? yield(:title) : 'Events Insider' %></title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'libs' %>
     <%= csrf_meta_tags %>
   </head>
+
   <body>
-    <%= yield %>
+    <%= render 'common/header' %>
+    <div class="content-wrapper">
+      <%= yield %>
+    </div>
+    <%= render 'common/footer' %>
   </body>
+
 </html>

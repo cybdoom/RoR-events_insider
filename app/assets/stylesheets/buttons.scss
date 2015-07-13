@@ -1,0 +1,151 @@
+@import 'globals';
+
+$button-vertical-padding: 10px;
+$button-horizontal-padding: 40px;
+$button-with-arrow-horizontal-padding: 13px;
+$mobile-button-vertical-padding: 8px;
+$mobile-button-horizontal-padding: 28px;
+$mobile-button-with-arrow-horizontal-padding: 13px;
+$call-to-action-button-color: $official-green;
+$buy-tickets-button-color: $official-red;
+$default-button-color: $official-blue;
+$true-button-color: $official-green;
+$false-button-color: $official-red;
+
+.button {
+	@include rounded-button1;
+	color: $official-white;
+	font-family: $font-body-text;
+	font-size: 15px;
+	cursor: pointer;
+	border: none;
+	border-bottom: 2px solid darken($default-button-color, 10);
+}
+
+
+.default-btn {
+	@extend .button;
+	position:relative;
+	background: lighten($default-button-color, 10%);
+	padding: 6px 24px;
+}
+
+.default-btn.hover,
+.default-btn:hover {
+	color: $official-white;
+	background: darken($default-button-color, 5%);
+}
+
+.default-btn.click,
+.default-btn:focus {
+	color: $official-white;
+	outline: none;
+	background: darken($default-button-color, 15%);
+}
+
+.default-btn.text-left {
+	padding: 6px 15px;
+}
+
+.default-btn.text-left span {
+	margin-left: 20px;
+}
+
+.default-btn.text-right {
+	padding: 6px 15px;
+}
+
+.default-btn.text-right span {
+	margin-right: 20px;
+}
+
+
+.save-draft, .call-to-action-btn {
+	@extend .button;
+	font-size: 18px;
+	padding: 8px 20px;
+}
+
+.save-draft.hover,
+.save-draft:hover {
+	color: $official-white;
+	background: darken($default-button-color, 5%);
+}
+
+.call-to-action-btn {
+	padding: $button-vertical-padding $button-horizontal-padding;
+ 	background: $true-button-color;
+ 	border-bottom: 2px solid darken($true-button-color, 10);
+}
+
+.call-to-action-btn.arrow {
+	padding: $button-vertical-padding $button-with-arrow-horizontal-padding;
+	width: 150px;
+}
+
+.call-to-action-btn.arrow span {
+	margin-left: 30px;
+	color: $color-primary-foreground;
+	font-size: 20px;
+}
+// Double border
+.call-to-action-btn.arrow.hover:before,
+.call-to-action-btn.arrow:hover:before {
+	margin: (-$button-vertical-padding) (-$button-with-arrow-horizontal-padding);
+}
+
+
+.call-to-action-btn.hover,
+.call-to-action-btn:hover {
+	background: darken($true-button-color, 5%);
+}
+
+
+.choice-btn {
+	@extend .button;
+	padding: 4px 0;
+	border: none;
+	border-radius: 3px;
+	width: 48px;
+	text-align: center;
+}
+
+
+.true-btn {
+	@extend .choice-btn;
+
+	background: $true-button-color;
+	border-bottom: 2px solid darken($true-button-color, 10);
+}
+
+.true-btn.hover,
+.true-btn:hover {
+	background: darken($true-button-color, 5%);
+}
+
+.false-btn {
+	@extend .choice-btn;
+
+	background: adjust_hue(desaturate(lighten($false-button-color, 9.5), 9.5), 22);
+	border-bottom: 2px solid $false-button-color;
+}
+
+.false-btn.hover,
+.false-btn:hover {
+	background: darken($false-button-color, 5%);
+}
+
+@media screen and (max-width: 767px) {
+	.button {
+		font-size: 14px;
+	}
+
+	.save-draft, .call-to-action-btn {
+		padding: 8px 20px;
+	}
+
+	.call-to-action-btn {
+		padding: 8px 30px;
+	}
+
+}

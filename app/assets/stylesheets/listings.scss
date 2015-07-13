@@ -1,0 +1,593 @@
+@import 'globals';
+@import 'icons';
+
+$color-listing-header-border: lighten($color-box-foreground, 38%);
+
+.listing-section {
+  padding: 0px 20px;
+  margin-bottom: 20px;
+}
+
+.listing-section fieldset {
+  padding: 0px;
+}
+
+.listing-section fieldset.col4 {
+  padding: 0 5px;
+}
+
+.listing-section fieldset.with-help:after {
+  right: 5px;
+}
+
+.listing-section h2 {
+  position: relative;
+  font-size: 24px;
+  font-family: $font-header;
+  color: lighten($color-box-foreground, 8%);
+  border-bottom: solid 1px $color-listing-header-border;
+  padding-bottom: 4px;
+}
+
+
+
+.events.listing-section h2 {
+  border: 0px;
+  width: 685px;
+  margin-left: -20px;
+}
+
+
+
+.events.listing-section h5 {
+  border-bottom: solid 1px $color-listing-header-border;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  width: 643px;
+}
+
+
+.events.listing-section h2:after {
+  position: relative;
+  float: right;
+  margin-top: 6px;
+}
+
+.listing-section.inactive h2 {
+  color: lighten($color-box-foreground, 38%);
+}
+
+.listing-section button {
+  float: right;
+}
+
+.final-actions {
+  padding: 20px;
+}
+
+.final-actions button {
+  float: right;
+}
+
+.final-actions button:first-child {
+  margin-left: 20px;
+}
+
+fieldset.with-help:after, .listing-section h2:after {
+  @extend .icon-help:before;
+  font-size: 20px;
+  position: absolute;
+  top: 0px;
+  right: 25px;
+  width: 17px;
+  height: auto;
+}
+
+.listing-section.with-podcast h2:after {
+  @extend .icon-podcast:before;
+  font-size: 21px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 17px;
+  height: auto;
+}
+
+.event-section.listing-section h2 a, .see-all-events {
+  text-decoration: none;
+  font-size: 16px;
+  float: right;
+  margin-top: 8px;
+}
+
+.event-section.listing-section h2:after {
+  display: none;
+}
+
+.listing-section h2:after {
+  right: 0px;
+}
+
+.compulsory legend span {
+  color : $color-negative-alert-background;
+}
+
+/* Location */
+
+.address-map {
+  width: 280px;
+  height: auto;
+  float: right;
+}
+
+.location-option-icons, .location-social-icons {
+  float: right;
+}
+
+.location-option-icons span:before, .location-social-icons span:before {
+  font-size: 23px;
+}
+
+.location-social-icons {
+  margin-right: 40px;
+}
+
+address {
+  font-style: normal;
+}
+
+.location h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.location h3 a {
+  font-size: 20px;
+}
+
+.location address {
+  float: left;
+  width: 50%;
+}
+
+.location address span {
+  float: left;
+  width: 100%;
+}
+
+.location address p {
+  float: left;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.location .distance {
+  position: relative;
+  float: right;
+  text-align: right;
+  margin-top: 10px;
+  margin-right: 30px;
+  font-size: 12px;
+  clear: both;
+  color: #6e6e6e;
+  font-family: "Cabin";
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.location .distance:after {
+  @extend .icon-edit:before;
+  position: absolute;
+  top: -4px;
+  right: -30px;
+  font-size: 14px;
+}
+
+/* Breakpoint for mobile devices */
+
+@media screen and (max-width: 767px) {
+
+  .address-map {
+    float: left;
+  }
+
+  .location address {
+    width: 100%; }
+
+  .location .distance {
+    float: left;
+    text-align: left;
+  }
+
+  .location address span {
+    margin-bottom: 0;
+  }
+}
+
+
+.listing-section .content {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+
+.photo-container {
+  position: relative;
+  float: left;
+  width: 33.3%;
+  padding: 5px;
+}
+
+.photo-container:after {
+  position: absolute;
+  content: url('img/icons/listing/close-black.png');
+  right: 7px;
+  top: 7px;
+}
+
+img.photo {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+.listing-section.links .content {
+  border: solid 1px lighten($color-box-foreground, 57%);
+}
+
+.web-links {
+  float: left;
+  width: 100%;
+  height: 35px;
+  padding: 5px;
+  border-bottom: solid 1px lighten($color-box-foreground, 57%);
+}
+
+.web-links:nth-child(2n+1) {
+  background-color: darken($color-box-main-background, 4%);
+}
+
+.web-links:last-child {
+  border-bottom: none;
+}
+
+.web-links a {
+  position: relative;
+  float: left;
+  text-decoration: none;
+  padding-left: 45px;
+  margin-top: 4px;
+  font-size: 16px;
+}
+
+.listing-section .main-page:before {
+  @extend .icon-home:before;
+  position: absolute;
+  left: 0px;
+  top: -2px;
+}
+
+.listing-section .twitter:before {
+  @extend .icon-twitter:before;
+  position: absolute;
+  left: 0px;
+}
+
+.content .icon {
+  float: right;
+  font-size: 20px;
+}
+
+.content .icon.icon-edit {
+  margin-right: 5px;
+}
+
+.load-more {
+  float: left;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-top: solid 1px lighten($color-box-foreground, 57%);
+}
+
+.load-more a {
+  margin: 0 auto;
+  float: none;
+  font-family: $font-header;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+
+.close-div {
+  float: left;
+  text-align: right;
+  padding: 20px 20px 0 20px;
+}
+
+
+/* single-listing */
+
+.listings-outer-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  float: none;
+}
+
+.single-listing {
+  position: relative;
+  width: 100%;
+  float: left;
+  padding: 0px;
+  border-bottom: solid 1px lighten($color-box-foreground, 57%);
+}
+
+.listing-wrapper {
+  float: left;
+  padding: 12.5px 10px;
+}
+
+
+.single-listing.sponsored:after {
+  @extend .icon-ticket:before;
+  position: relative;
+  margin-top:0px;
+  margin-left: -40px;
+  display: inline-block;
+  font-size: 40px !important;
+  color: $official-red !important;
+  -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+
+.sponsored .listing-wrapper {
+  border: solid 1px $color-positive-alert-background;
+  background-color: lighten($color-primary-background, 40%);
+}
+
+
+.single-listing::after, p:s:after {
+  clear: both;
+}
+
+.single-listing .image-content {
+  float: left;
+  width: 28%;
+}
+
+.single-listing .image-content img {
+  width: 100%;
+}
+
+.single-listing .main-content {
+  float: left;
+  width: 45%;
+  padding-left: 10px;
+}
+
+.single-listing .side-content {
+  float: left;
+  width: 22%;
+  margin-left: 4%;
+  font-family: $font-header;
+}
+
+.single-listing .side-content:after {
+  float: left;
+  content: "";
+  clear: right;
+}
+
+.single-listing .side-content span {
+  color : lighten($color-box-body-text, 15.25%);
+  font-size: 12.5px;
+  font: bold;
+  padding: 1px 0;
+}
+
+.single-listing .main-content h3 {
+  font-family: $font-body-text;
+  font-size: 16px;
+  font-weight: 100;
+  color: darken($color-box-important-text, 1.4%);
+  margin-top: 0px;
+  padding: 0px;
+}
+
+.single-listing .main-content p {
+  font-family: $font-body-text;
+  font-size: 14px;
+  font-weight: 100;
+  color: lighten($color-box-body-text, 15.25%);
+}
+
+.single-listing .main-content a {
+  font-family: $font-body-text;
+  font-size: 14px;
+  color: darken($color-box-important-text, 1.4%);
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.side-content address .title {
+  margin: 0px;
+  color: darken($color-box-important-text, 1.4%);
+  font-size: 18px;
+  font-family: Cabin;
+  font-weight: 100;
+}
+
+.single-listing .side-content span.special-message {
+  float: left;
+  color: darken($color-positive-alert-background, 5%);
+  margin-bottom: 10px;
+}
+
+.side-content a {
+  color : $color-box-important-text;
+}
+
+.side-content address {
+  float: left;
+  font-style: normal;
+}
+
+.side-content address span {
+  float: left;
+  width: 100%;
+}
+
+section.events h2 {
+  color : $color-box-important-text;
+  font-size: 20px;
+  font-family: $font-header;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  padding: 0px 20px;
+}
+
+section.events h5 {
+  color : lighten($color-box-foreground, 22.5%);
+  font-size: 14px;
+  font-family:  $font-header;
+  font-weight: lighter;
+  margin: 0px 20px;
+  margin-top: 2px;
+  padding-bottom: 5px;
+  border-bottom: solid 1px darken($color-box-main-background, 10%);
+}
+
+.icons-row .icon {
+  margin-right : 3px;
+  float: left;
+  position: relative;
+  clear: none;
+}
+
+section.events .icon:last-child {
+  margin: 0px;
+}
+
+.icons-row {
+    float: left;
+  margin-top: 5px;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+
+  .listings-outer-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    float: none;
+  }
+
+  .single-listing .image-content {
+    width: 100%;
+  }
+
+  .single-listing .main-content {
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  .single-listing .main-content img {
+    width: 100%;
+  }
+
+  .single-listing .side-content {
+      margin-top: 15px;
+      width: 100%;
+      margin-left: 0px;
+  }
+
+  .side-content address {
+         width: 80%;
+  }
+
+  section.events .icons-row {
+     margin-top: 0px;
+     width: 20%;
+     text-align: right;
+   }
+
+  section.events .icon:last-child {
+    float: right;
+    text-align: right;
+    width: 32px;
+  }
+
+   .final-actions button:first-child {
+    margin-left: 10px;
+  }
+
+}
+
+
+@-moz-document url-prefix() {
+  fieldset.with-help:after, .listing-section h2:after {
+    top: -22px;
+  }
+}
+
+.contacts .contact {
+  float: left;
+  width: 100%;
+  border: solid 1px #d0d0d0;
+  padding: 15px;
+}
+
+.contacts .contact:nth-child(2n+1) {
+  background-color: darken($color-box-main-background, 4%);
+}
+
+.contacts .contact div {
+  font-size: 15px;
+  font-family: $font-body-text;
+  color : lighten($color-box-foreground, 22.5%);
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+}
+
+.contacts .contact div:first-child {
+  margin-top: 0px;
+}
+
+.contacts .contact h3 {
+  display: inline;
+  font-family: $font-body-text;
+  font-size: 20px;
+  color: $color-box-body-text;
+  padding: 0px;
+  font-weight: 100;
+}
+
+.contacts .contact h4 {
+  display: inline;
+  font-family: $font-body-text-bold;
+  font-size: 15px;
+  color: $color-box-body-text;
+  padding: 0px;
+  font-weight: bold;
+}
+
+.owner {
+  position: relative;
+  padding-left: 28px;
+  font-size: 13px;
+}
+
+.owner:before {
+  @extend .icon-keys:before;
+  position: absolute;
+  top:-2px;
+  left: 0px;
+  font-size: 24px;
+}

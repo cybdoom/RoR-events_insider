@@ -1,0 +1,249 @@
+@import 'globals';
+
+.sub-footer {
+  width: 100%;
+  float: left;
+  background-color: lighten($color-primary-background, 40%);
+  margin-top: 20px;
+}
+
+.footer-container {
+  margin: 0 40px;
+}
+
+.sub-footer h4 {
+  color: $color-box-foreground;
+  font-size: 18px;
+  font-family: $font-footer;
+  letter-spacing: 1px;
+  margin: 0px;
+  clear: both;
+  margin-top: 10px;
+  float: left;
+}
+
+.sub-footer section {
+  margin: 20px 0px;
+  border-right: solid 2px saturate(lighten($color-box-foreground, 29), 0.85);
+}
+
+.sub-footer section:first-child {
+  width: 28%;
+}
+
+.sub-footer section:nth-child(3) {
+  width: 44%;
+}
+
+.sub-footer section:nth-child(2) {
+  width: 28%;
+  border: none;
+  float: right;
+}
+
+.sub-footer nav, footer nav {
+  margin-top : 0px;
+  width: 50%;
+}
+
+.sub-footer section:nth-child(3) nav {
+    float: left;
+}
+
+.sub-footer section:nth-child(3) nav a,
+.sub-footer section h3 {
+   color: $color-box-foreground;
+   font-family: $font-footer;
+   line-height: 1.7;
+   letter-spacing: 1px;
+   font-size: 18px;
+   margin: 0;
+}
+
+.sub-footer section h3 {
+  margin: 5px 0px 25px 0px;
+  text-align: center;
+}
+
+.footer-nav-container {
+  margin: 0 20%;
+}
+
+.sub-footer .logo {
+  margin-top: 14px;
+}
+
+.sub-footer section:nth-child(2) nav {
+  width: 105px;
+  margin: 0 auto;
+  float: none;
+}
+
+.sub-footer nav a {
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+footer {
+  width: 100%;
+  float: left;
+  background-color: $color-primary-background;
+  padding: 20px 0px;
+  color: $color-box-foreground;
+  font-family: $font-footer;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.copyright-text {
+  float: left;
+}
+
+footer nav {
+  float: right;
+}
+
+footer nav a {
+  float: right;
+  color: $color-box-foreground;
+  font-family: $font-footer;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1013px) {
+  .footer-nav-container {
+    margin: 0 15%;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .footer-container {
+    margin: 0 25px;
+  }
+  .footer-nav-container {
+    margin: 0 10%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .footer-wrapper{
+    width: 100%
+  }
+
+  .footer-container {
+    margin: 0;
+  }
+
+  .sub-footer section {
+    margin: 15px 0;
+  }
+
+  .sub-footer section:first-child,
+  .sub-footer section:nth-child(2){
+    width: 50%;
+  }
+
+  .sub-footer section:first-child{
+    padding-left: 6%;
+  }
+
+  .sub-footer section:nth-child(3){
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding-bottom: 0;
+    @include linear-gradient(adjust_hue(desaturate(lighten($color-primary-background, 26), 47), -1.1), adjust_hue(desaturate(lighten($color-primary-background, 30), 31),-3));
+  }
+
+  .sub-footer .logo {
+    margin: 0;
+  }
+
+  .sub-footer section:nth-child(2) nav{
+    width: 90px;
+  }
+
+  nav a.icons.social.grey{
+    width: 35px;
+    height: 35px;
+    background-size: 100%;
+  }
+
+  .sub-footer section:nth-child(3) nav a,
+  .sub-footer section h3{
+    font-size: 12px;
+  }
+
+  .sub-footer section h3{
+    margin: 0 0 18px;
+  }
+
+  .sub-footer h4{
+    font-size: 13px;
+  }
+
+  .sub-footer nav,
+  footer nav {
+    width: 100%;
+  }
+
+  .sub-footer nav a {
+    width: auto;
+    padding: 0 6px;
+  }
+
+  .sub-footer section:nth-child(3) nav {
+    float: left;
+    margin: 5px auto;
+    float: none;
+    width: 230px;
+  }
+
+  .sub-footer section:nth-child(3) nav:nth-child(2) {
+    width: 275px;
+  }
+
+  .sub-footer section:nth-child(3) nav:nth-child(3) {
+    margin-top: 10px;
+    width: 245px;
+  }
+
+  .sub-footer section:nth-child(3) nav:nth-child(3) a {
+    color: saturate(lighten($color-box-foreground, 29), 0.85);
+    font-size: 12px;
+    text-align: left;
+    padding: 0 10px;
+    margin: 0;
+  }
+
+  .footer-nav-container {
+    margin: 0;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+
+  footer nav {
+    margin: 0 auto;
+    width: 85%;
+    float: none;
+    overflow: hidden;
+  }
+
+  footer nav a {
+    font-size: 14px;
+    text-align: left;
+    padding: 0 25px;
+    margin: 0;
+  }
+
+  .copyright-text {
+    width: 100%;
+    text-align: center;
+  }
+
+}

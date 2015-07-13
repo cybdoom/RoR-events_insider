@@ -1,0 +1,167 @@
+@import 'globals';
+
+.overlay {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+
+.popup {
+	@include box-corners;
+	@include box-shadow;
+	position: relative;
+	width: 450px;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 200px;
+	padding: 16px;
+	border: 5px solid $color-box-background;
+	background-color: white;
+	z-index:1002;
+
+}
+
+.popup:before {
+	position: absolute;
+	content: url('img/mascot-top.png');
+	top: -92px;
+	z-index:1;
+}
+
+.popup h3 {
+	  font-family: $font-mascot-speaks;
+	  color: $color-popup-title;
+	  margin: 4px 0px;
+	  letter-spacing: 1px;
+	  font-size: 24px;
+}
+
+.popup p {
+	font-family: $font-header;
+	color: lighten($color-box-foreground, 11.5%);
+	font-size: 13px;
+	margin: 0 4px 20px 0px;
+}
+
+.popup label {
+	float: left;
+	margin-top: 6px;
+	font-family: $font-header;
+	color: lighten($color-box-body-text, 8%);
+}
+
+.popup input[type='text'] {
+	float: left;
+	width: 350px;
+	height: 32px;
+	margin: 0px 0px 0px 15px;
+	font-size: 13px;
+}
+
+.popup fieldset {
+	padding: 0px;
+	margin-bottom: 25px;
+}
+
+.popup select {
+	width: 150px;
+	margin-left: 47px;
+	color : $color-box-important-text;
+	font-weight: 100;
+}
+
+select option {
+	position: relative;
+	background-image: url('../img/icons/listing/add.png');
+}
+
+/*
+select option.main-page:before{
+	position: absolute;
+	content: url('../img/icons/listing/add.png');
+}
+*/
+
+/* ddslick - slick dropdown */
+
+.dd-container {
+	float: left;
+	width: 170px;
+	margin-left: 47px;
+
+}
+
+.dd-select {
+	@include box-corners;
+	height: 32px;
+	padding: 7px;
+}
+
+.dd-option {
+	height: 32px;
+	padding: 7px;
+}
+
+.dd-option-image, .dd-selected-image {
+}
+
+label.dd-option-text,  label.dd-selected-text {
+	margin: 0px;
+	color : $color-box-important-text;
+	font-weight: 100;
+	font-size: 13px;
+	padding-left: 2px;
+}
+
+$color-cancel-border : lighten($color-box-foreground, 57%);
+
+
+a.cancel {
+	float: right;
+	margin-right: 15px;
+	margin-top: 8px;
+	padding-right: 15px;
+	color : $color-box-important-text;
+	border-right: solid 1px $color-cancel-border;
+	text-decoration: underline;
+	font-size: 14px;
+}
+
+
+
+.save {
+	float: right;
+	font-weight: 100;
+	font-size: 14px;
+	padding: 5px 10px;
+	width: 80px;
+	height: 30px;
+}
+
+.popup-control {
+	float: right;
+	width: 50%;
+	margin-top: 25px;
+}
+
+@media screen and (max-width: 767px) {
+
+	a.cancel {
+		float: right;
+		margin-right: 10px;
+		margin-top: 8px;
+		padding-right: 10px;
+		color : $color-box-important-text;
+		border-right: solid 1px $color-cancel-border;
+		text-decoration: underline;
+		font-size: 14px;
+	}
+}
