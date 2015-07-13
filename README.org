@@ -1,0 +1,3 @@
+== README
+
+[ ![Codeship Status for pineapplethief/events-insider](https://codeship.com/projects/f91542d0-0bb6-0133-13d1-265ef25499ca/status?branch=master)](https://codeship.com/projects/90909)
