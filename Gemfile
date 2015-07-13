@@ -20,7 +20,7 @@ gem 'redis', require:  ['redis', 'redis/connection/hiredis']
 gem 'bourbon'
 gem 'neat'
 gem 'sass-rails', '~> 5.0'
-gem 'compass-import-once', require: 'compass/import-once/activate'
+# gem 'compass-import-once', require: 'compass/import-once/activate'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'coffee-rails', '~> 4.1.0'

@@ -73,8 +73,6 @@ GEM
     coffee-script-source (1.9.1.1)
     colorize (0.7.7)
     columnize (0.9.0)
-    compass-import-once (1.0.5)
-      sass (>= 3.2, < 3.5)
     debug_inspector (0.0.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -243,7 +241,6 @@ DEPENDENCIES
   byebug
   capistrano-rails
   coffee-rails (~> 4.1.0)
-  compass-import-once
   devise
   fast_blank
   hiredis
