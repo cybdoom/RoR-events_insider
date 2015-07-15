@@ -22,5 +22,11 @@ module EventsInsider
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    redis_url = ENV['REDISCLOUD_URL'] || 'redis://localhost:6379/events-insider'
+
+    config.cache_store = :redis_store, redis_url,
+                         {namespace: 'evin_cache_store', expires_in: 1.day, compress: true}
+
   end
 end

@@ -1,3 +1,4 @@
-# Be sure to restart your server when you modify this file.
-
-Rails.application.config.session_store :cookie_store, key: '_events-insider_session'
+EventsInsider::Application.config.session_store ActionDispatch::Session::CacheStore,
+                                                namespace: 'sessions',
+                                                key: '_eventsinsider_session',
+                                                expire_after: 60.minutes

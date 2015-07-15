@@ -84,12 +84,20 @@ Rails.application.configure do
 
   ActionMailer::Base.smtp_settings = {
     address:        'smtp.sendgrid.net',
-    port:           '25',
+    port:           ENV['SENDGRID_PORT'],
     authentication: :plain,
     user_name:      ENV['SENDGRID_USERNAME'],
     password:       ENV['SENDGRID_PASSWORD'],
     domain:         'heroku.com'
   }
-
   ActionMailer::Base.delivery_method = :smtp
+
+  redis_url = ENV['REDISCLOUD_URL'] || 'redis://localhost:6379/0/events-insider'
+
+  config.action_dispatch.rack_cache = {
+    metastore:   redis_url,
+    entitystore: 'file:tmp/cache/rack/body'
+  }
+  config.static_cache_control = 'public, max-age=2592000'
+
 end
