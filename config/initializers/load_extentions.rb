@@ -1,0 +1,1 @@
+Dir["#{Rails.root}/lib/extentions/*.rb"].each { |file| require file }

@@ -36,7 +36,17 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name: '39761fffa146761af',
+    password: '33426bd44f45ef',
+    address: 'mailtrap.io',
+    domain: 'mailtrap.io',
+    port: '2525',
+    authentication: :cram_md5
+  }
+
+  config.action_mailer.default_url_options = { host: 'eventsinsider.local', port: 80 }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

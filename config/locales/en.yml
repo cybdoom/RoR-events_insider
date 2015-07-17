@@ -9,7 +9,7 @@ en:
   help: 'Help'
   terms: 'Terms of Service'
   privacy_policy: 'Privacy Policy'
-  copyright: 'Copyright 2015&copy; Hard Data Factory'
+  copyright_html: 'Copyright 2015&copy; Hard Data Factory'
   advertise: 'Advertise With Us'
   stay_connected: 'Stay Connected'
   search: 'Search'
