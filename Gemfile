@@ -9,6 +9,7 @@ gem 'pg'
 # Main gems
 gem 'devise'
 gem 'fast_blank'
+gem 'highline', require: false
 gem 'hiredis'
 gem 'jbuilder', '~> 2.0'
 gem 'kgio'
@@ -21,6 +22,7 @@ gem 'redis', require:  ['redis', 'redis/connection/hiredis']
 gem 'redis-store'
 gem 'redis-rails'
 gem 'redis-rack-cache'
+gem 'simple_enum'
 
 # Front-end gems
 gem 'coffee-rails', '~> 4.1.0'
