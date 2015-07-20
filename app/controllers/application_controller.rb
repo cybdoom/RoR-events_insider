@@ -5,11 +5,19 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  before_filter :set_user_location
+
   def guest_user?
     !current_user
   end
 
   protected
+
+  def set_user_location
+    Rails.logger.debug "request.location = #{request.location}"
+    current_user.location = Location.build_from_geocoder_result(request.location)
+    # request.location.country_code
+  end
 
   def user_not_authorized(exception)
     flash[:error] = 'You are not authorized to perform this action.'

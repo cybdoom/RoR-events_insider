@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
   as_enum :role, [:guest, :regular, :trusted, :moderator, :admin],
           source: :role, map: :string, accessor: :whiny
 
+  belongs_to :location
+
+  delegate :location, to: :location
+
   before_create do
     self.role = :regular
   end
