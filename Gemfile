@@ -5,11 +5,13 @@ ruby '2.1.6'
 gem 'rails', '4.2.3'
 
 gem 'pg'
+gem 'postgres_ext'
 
 # Main gems
 gem 'devise'
 gem 'fast_blank'
 gem 'fixme', github: 'henrik/fixme'
+gem 'geocoder'
 gem 'highline', require: false
 gem 'hiredis'
 gem 'jbuilder', '~> 2.0'
