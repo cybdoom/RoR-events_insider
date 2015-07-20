@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 20150716124711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+  enable_extension "ltree"
+  enable_extension "uuid-ossp"
 
   create_table "seed_migration_data_migrations", force: :cascade do |t|
     t.string   "version"
