@@ -91,6 +91,7 @@ GEM
     erubis (2.7.0)
     execjs (2.5.2)
     fast_blank (0.0.2)
+    geocoder (1.2.9)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     heroku-deflater (0.5.3)
@@ -126,6 +127,11 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.2)
+    pg_array_parser (0.0.9)
+    postgres_ext (2.4.1)
+      activerecord (>= 4.0.0)
+      arel (>= 4.0.1)
+      pg_array_parser (~> 0.0.9)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -285,6 +291,7 @@ DEPENDENCIES
   devise
   fast_blank
   fixme!
+  geocoder
   heroku-deflater
   highline
   hiredis
@@ -293,6 +300,7 @@ DEPENDENCIES
   kgio
   neat
   pg
+  postgres_ext
   pry-rails
   puma
   pundit
