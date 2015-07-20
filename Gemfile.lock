@@ -1,8 +1,25 @@
 GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 37cf31d34fa411db20e99cc654195020b06202c3
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/henrik/fixme.git
   revision: e64acd7ffc44812e503b2dbcf456272be73fe9ab
   specs:
     fixme (3.1.1)
+
+GIT
+  remote: git://github.com/pineapplethief/indirizzo.git
+  revision: 1b38aca17b0555c720ca27022eadd5254968fe10
+  branch: master
+  specs:
+    indirizzo (0.1.8)
 
 GEM
   remote: https://rubygems.org/
@@ -79,6 +96,10 @@ GEM
     coffee-script-source (1.9.1.1)
     colorize (0.7.7)
     columnize (0.9.0)
+    countries (0.11.5)
+      currencies (~> 0.4.2)
+      i18n_data (~> 0.7.0)
+    currencies (0.4.2)
     debug_inspector (0.0.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -99,6 +120,7 @@ GEM
     highline (1.7.2)
     hiredis (0.6.0)
     i18n (0.7.0)
+    i18n_data (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -287,7 +309,9 @@ DEPENDENCIES
   bourbon
   byebug
   capistrano-rails
+  carrierwave!
   coffee-rails (~> 4.1.0)
+  countries
   devise
   fast_blank
   fixme!
@@ -295,6 +319,7 @@ DEPENDENCIES
   heroku-deflater
   highline
   hiredis
+  indirizzo!
   jbuilder (~> 2.0)
   jquery-rails
   kgio

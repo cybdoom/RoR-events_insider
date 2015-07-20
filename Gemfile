@@ -8,12 +8,15 @@ gem 'pg'
 gem 'postgres_ext'
 
 # Main gems
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'countries'
 gem 'devise'
 gem 'fast_blank'
 gem 'fixme', github: 'henrik/fixme'
 gem 'geocoder'
 gem 'highline', require: false
 gem 'hiredis'
+gem 'indirizzo', github: 'pineapplethief/indirizzo', branch: 'master' # US address parsing
 gem 'jbuilder', '~> 2.0'
 gem 'kgio'
 gem 'pundit'
