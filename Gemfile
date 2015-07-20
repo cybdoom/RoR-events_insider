@@ -9,6 +9,7 @@ gem 'pg'
 # Main gems
 gem 'devise'
 gem 'fast_blank'
+gem 'fixme', github: 'henrik/fixme'
 gem 'highline', require: false
 gem 'hiredis'
 gem 'jbuilder', '~> 2.0'

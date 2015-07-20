@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/henrik/fixme.git
+  revision: e64acd7ffc44812e503b2dbcf456272be73fe9ab
+  specs:
+    fixme (3.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -278,6 +284,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   fast_blank
+  fixme!
   heroku-deflater
   highline
   hiredis
