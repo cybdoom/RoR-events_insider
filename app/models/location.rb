@@ -35,6 +35,4 @@ class Location < ActiveRecord::Base
     location.present? && location_changed?
   end
 
-
-
 end

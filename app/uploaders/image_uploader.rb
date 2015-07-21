@@ -6,6 +6,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::Uploader::MagicMimeWhitelist
 
   process :set_content_type
+  process :store_dimensions
 
   IMAGE_EXTENTIONS = %w(jpg jpeg gif png).freeze
 
@@ -43,6 +44,14 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def whitelist_mime_type_pattern
     /image\//
+  end
+
+  private
+
+  def store_dimensions
+    if file && model
+      model.width, model.height = ::MiniMagick::Image.open(file.file)[:dimensions]
+    end
   end
 
   # Override the filename of the uploaded files:

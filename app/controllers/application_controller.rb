@@ -15,8 +15,7 @@ class ApplicationController < ActionController::Base
 
   def set_user_location
     Rails.logger.debug "request.location = #{request.location}"
-    current_user.location = Location.build_from_geocoder_result(request.location)
-    # request.location.country_code
+    # current_user.location = Location.build_from_geocoder_result(request.location)
   end
 
   def user_not_authorized(exception)
