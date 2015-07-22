@@ -80,14 +80,11 @@ CREATE TABLE events (
     user_id integer,
     venue_id integer,
     name character varying NOT NULL,
-    image character varying,
-    image_content_type character varying,
-    image_file_size integer,
-    image_width integer,
-    image_height integer,
+    description text,
     recurring boolean NOT NULL,
     starts_at timestamp without time zone,
     ends_at timestamp without time zone,
+    price numeric,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -110,6 +107,43 @@ CREATE SEQUENCE events_id_seq
 --
 
 ALTER SEQUENCE events_id_seq OWNED BY events.id;
+
+
+--
+-- Name: images; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE images (
+    id integer NOT NULL,
+    imageable_id integer,
+    imageable_type character varying,
+    image character varying,
+    image_content_type character varying,
+    image_file_size integer,
+    image_width integer,
+    image_height integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: images_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE images_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: images_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE images_id_seq OWNED BY images.id;
 
 
 --
@@ -159,14 +193,10 @@ ALTER SEQUENCE locations_id_seq OWNED BY locations.id;
 
 CREATE TABLE organizations (
     id integer NOT NULL,
-    user_id integer NOT NULL,
     location_id integer NOT NULL,
+    user_id integer NOT NULL,
     name character varying NOT NULL,
-    image character varying,
-    image_content_type character varying,
-    image_file_size integer,
-    image_width integer,
-    image_height integer,
+    description text,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -285,13 +315,9 @@ CREATE TABLE venues (
     id integer NOT NULL,
     location_id integer NOT NULL,
     user_id integer NOT NULL,
-    organization_id integer NOT NULL,
+    organization_id integer,
     name character varying,
-    image character varying,
-    image_content_type character varying,
-    image_file_size integer,
-    image_width integer,
-    image_height integer,
+    description text,
     size integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
@@ -322,6 +348,13 @@ ALTER SEQUENCE venues_id_seq OWNED BY venues.id;
 --
 
 ALTER TABLE ONLY events ALTER COLUMN id SET DEFAULT nextval('events_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY images ALTER COLUMN id SET DEFAULT nextval('images_id_seq'::regclass);
 
 
 --
@@ -365,6 +398,14 @@ ALTER TABLE ONLY venues ALTER COLUMN id SET DEFAULT nextval('venues_id_seq'::reg
 
 ALTER TABLE ONLY events
     ADD CONSTRAINT events_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: images_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY images
+    ADD CONSTRAINT images_pkey PRIMARY KEY (id);
 
 
 --
@@ -426,6 +467,13 @@ CREATE INDEX index_events_on_user_id ON events USING btree (user_id);
 --
 
 CREATE INDEX index_events_on_venue_id ON events USING btree (venue_id);
+
+
+--
+-- Name: index_images_on_imageable_type_and_imageable_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_images_on_imageable_type_and_imageable_id ON images USING btree (imageable_type, imageable_id);
 
 
 --
@@ -592,4 +640,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150721032515');
 INSERT INTO schema_migrations (version) VALUES ('20150721032547');
 
 INSERT INTO schema_migrations (version) VALUES ('20150721045606');
+
+INSERT INTO schema_migrations (version) VALUES ('20150722060240');
 
