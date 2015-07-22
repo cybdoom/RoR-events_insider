@@ -21,6 +21,6 @@ class CreateLocations < ActiveRecord::Migration
     end
 
     # TODO: indices
-    add_index :locations, [:latitude, :longitude], using: :gin
+    add_index :locations, [:latitude, :longitude]
   end
 end

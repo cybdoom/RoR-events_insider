@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration
       t.belongs_to :venue, foreign_key: true, index: true
 
       t.string :name, null: false, index: true
-      t.string :image
+      t.image :image
       t.boolean :recurring, null: false
 
       t.datetime :starts_at

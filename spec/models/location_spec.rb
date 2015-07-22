@@ -17,6 +17,10 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
+# Indexes
+#
+#  index_locations_on_latitude_and_longitude  (latitude,longitude)
+#
 
 require 'rails_helper'
 

@@ -28,6 +28,7 @@ gem 'redis', require:  ['redis', 'redis/connection/hiredis']
 gem 'redis-store'
 gem 'redis-rails'
 gem 'redis-rack-cache'
+gem 'require_all'
 gem 'simple_enum'
 
 # Front-end gems
