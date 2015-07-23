@@ -39,7 +39,7 @@ aside section h3 {
 
 aside section:first-child:before {
 	position: absolute;
-	content: url('img/mascot-top.png');
+	content: image-url('mascot-top.png');
 	top: -88px;
 }
 

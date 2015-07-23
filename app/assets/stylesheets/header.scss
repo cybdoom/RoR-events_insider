@@ -2,8 +2,6 @@
 @import 'icons';
 
 /* header and sub-header */
-
-
 html, body{
 	min-height: 100%;
 }
@@ -75,7 +73,6 @@ nav a.icons.social{
 			@extend .icon-twitter:before;
 		}
 	}
-
 	&.search {
 		position: absolute;
 		width: 20px;
@@ -90,7 +87,6 @@ nav a.icons.social{
 		}
 	}
 }
-
 
 .logo {
 	float: left;
@@ -112,25 +108,21 @@ nav a.icons.social{
 	}
 }
 
-
-
-
-
 .tools {
 	float: right;
 	margin-top: 15px;
 }
 
 .sprite {
-	background: url('img/sprites.png') no-repeat;
+	background: image-url('sprites.png') no-repeat;
 }
 
 .header-mobile-icons {
 	position: relative;
+	float: left;
 	margin: 0px 10px;
 	width: 32px;
 	height: 32px;
-	float: left;
 }
 
 .header-mobile-icons:before {
@@ -148,7 +140,6 @@ nav a.icons.social{
 	&.toggle {
 		background-position: -50px 0;
 	}
-
 }
 
 .search-mobile-icon{
@@ -161,19 +152,16 @@ nav a.icons.social{
 }
 
 .header-icons-divider {
-	border-left: solid 1px $color-primary-foreground;
 	float: left;
 	height: 32px;
 	width: 2px;
+	border-left: solid 1px $color-primary-foreground;
 }
 
 .search.desktop-only {
 	display: block;
 }
 
-@media screen and (max-width: 1013px) {
-
-}
 
 @media screen and (max-width: 959px) {
 	nav a {
@@ -185,6 +173,7 @@ nav a.icons.social{
 		font-size: 19px;
 	}
 }
+
 
 @media screen and (max-width: 767px) {
 
@@ -212,51 +201,44 @@ nav a.icons.social{
 		}
 	}
 
-	
-
 	#header-menu {
 		display: none;
+		padding-bottom: 3px;
 		@include box-shadow;
 		background-color: $color-primary-foreground;
 		font-size: 12px;
 		overflow: hidden;
-		padding-bottom: 3px;
 		& a {
-			color: saturate(lighten($color-box-foreground, 29), 0.85);
-			padding: 3px 10px;
 			margin: 0;
 			width: 33%;
+			padding: 3px 10px;
 			font-size: 14px;
+			color: saturate(lighten($color-box-foreground, 29), 0.85);
 			&:nth-child(3n+1) {
 				text-align: center;
 			}
 		}
 	}
 	
-
-	
-
 	.search-bar {
-		display: none;
-		@include box-shadow;
 		position: relative;
+		display: none;
 		overflow: hidden;
 		border-radius: 10px;
+		@include box-shadow;
 		& span {
-			border-left: solid 1px saturate(lighten($color-box-foreground, 29), 0.85);
-			font-size: 12px;
-			color: saturate(lighten($color-box-foreground, 29), 0.85);
-			padding: 0 4px;
-			text-transform: uppercase;
-			font-family: "Cabin";
 			position: absolute;
 			top: 5px;
 			right: 0;
 			margin-right: 5%;
+			padding: 0 4px;
+			border-left: solid 1px saturate(lighten($color-box-foreground, 29), 0.85);
+			font-family: "Cabin";
+			font-size: 12px;
+			color: saturate(lighten($color-box-foreground, 29), 0.85);
+			text-transform: uppercase;	
 		}
 	}
-
-	
 
 	.search-box-mobile {
 		margin-top: 0;
@@ -271,5 +253,4 @@ nav a.icons.social{
 	.search.desktop-only {
 		display: none;
 	}
-
 }

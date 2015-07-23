@@ -145,7 +145,7 @@ select{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	background-color: $color-primary-foreground;
-	background-image: url("img/icons/select-dropdown.png");
+	background-image: image-url("icons/select-dropdown.png");
 	background-repeat: no-repeat;
 	background-position: right center;
 	@include box-corners;
@@ -211,7 +211,7 @@ input[type='radio'] {
 			&:before{
 				position: absolute;
 				left: 10px;
-				content: url('img/icons/listing/add.png');
+				content: image-url('icons/listing/add.png');
 			}
 		}
 	}

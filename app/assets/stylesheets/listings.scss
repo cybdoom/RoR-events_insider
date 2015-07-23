@@ -4,62 +4,84 @@
 $color-listing-header-border: lighten($color-box-foreground, 38%);
 
 .listing-section {
-  padding: 0px 20px;
-  margin-bottom: 20px;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    & fieldset {
+        padding: 0px;
+        &.col4 {
+            padding: 0 5px;
+        }
+        &.with-help:after {
+            right: 5px;
+        }
+    }
+    & h2 {
+        position: relative;
+        font-size: 24px;
+        font-family: $font-header;
+        color: lighten($color-box-foreground, 8%);
+        border-bottom: solid 1px $color-listing-header-border;
+        padding-bottom: 4px;
+    }
+    &.inactive h2 {
+      color: lighten($color-box-foreground, 38%);
+    }
+    & button {
+      float: right;
+    }
+    .listing-section.with-podcast h2:after {
+        @extend .icon-podcast:before;
+        font-size: 21px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 17px;
+        height: auto;
+    }
 }
 
-.listing-section fieldset {
-  padding: 0px;
-}
+.events.listing-section{
+    & h2 {
+        border: 0px;
+        width: 685px;
+        margin-left: -20px;
+        &:after {
+            position: relative;
+            float: right;
+            margin-top: 6px;
+        }
+    }
+    & h5 {
+        border-bottom: solid 1px $color-listing-header-border;
+        margin-bottom: 20px;
+        margin-left: 0px;
+        width: 643px;
+    }
 
-.listing-section fieldset.col4 {
-  padding: 0 5px;
-}
-
-.listing-section fieldset.with-help:after {
-  right: 5px;
-}
-
-.listing-section h2 {
-  position: relative;
-  font-size: 24px;
-  font-family: $font-header;
-  color: lighten($color-box-foreground, 8%);
-  border-bottom: solid 1px $color-listing-header-border;
-  padding-bottom: 4px;
-}
-
-
-
-.events.listing-section h2 {
-  border: 0px;
-  width: 685px;
-  margin-left: -20px;
 }
 
 
 
-.events.listing-section h5 {
-  border-bottom: solid 1px $color-listing-header-border;
-  margin-bottom: 20px;
-  margin-left: 0px;
-  width: 643px;
-}
-
-
-.events.listing-section h2:after {
-  position: relative;
+.event-section.listing-section h2 a, .see-all-events {
+  text-decoration: none;
+  font-size: 16px;
   float: right;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
-.listing-section.inactive h2 {
-  color: lighten($color-box-foreground, 38%);
+.event-section.listing-section h2:after {
+  display: none;
 }
 
-.listing-section button {
-  float: right;
+.listing-section h2:after {
+  right: 0px;
 }
+
+
+
+
+
+
 
 .final-actions {
   padding: 20px;
@@ -83,30 +105,7 @@ fieldset.with-help:after, .listing-section h2:after {
   height: auto;
 }
 
-.listing-section.with-podcast h2:after {
-  @extend .icon-podcast:before;
-  font-size: 21px;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 17px;
-  height: auto;
-}
 
-.event-section.listing-section h2 a, .see-all-events {
-  text-decoration: none;
-  font-size: 16px;
-  float: right;
-  margin-top: 8px;
-}
-
-.event-section.listing-section h2:after {
-  display: none;
-}
-
-.listing-section h2:after {
-  right: 0px;
-}
 
 .compulsory legend span {
   color : $color-negative-alert-background;
@@ -222,7 +221,7 @@ address {
 
 .photo-container:after {
   position: absolute;
-  content: url('img/icons/listing/close-black.png');
+  content: image-url('icons/listing/close-black.png');
   right: 7px;
   top: 7px;
 }
