@@ -3,36 +3,34 @@
 
 /* header and sub-header */
 
+
+html, body{
+	min-height: 100%;
+}
+
 header {
 	width: 100%;
 	height: 108px;
 	background-color : $color-primary-background;
+	& nav {
+		float: right;
+		margin-top: 62px;
+	}
 }
 
-header nav {
-	float: right;
-	margin-top: 62px;
-}
-
-nav a {
-	font-size: 18px;
-	text-decoration: none;
-	margin-left: 45px;
-	letter-spacing: 1px;
+nav a{
 	float: left;
-}
-
-nav a.icons:last-of-type{
-	margin-left : 10px;
+	margin-left: 45px;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	&.icons:last-of-type{
+		margin-left : 10px;
+	}
 }
 
 .sub-footer nav a.icons:last-of-type{
 	margin-left : 17px;
-}
-
-.icons.home{
-	/* @extend .home-sprite; */
-
 }
 
 .icons.home:before{
@@ -43,42 +41,56 @@ nav a.icons:last-of-type{
 	color: $color-primary-foreground;
 }
 
-
-
-nav a.icons.social.twitter:before, nav a.icons.social.fb:before{
-	float: left;
-	width: 40px;
-	height: 40px;
-	margin-top: -8px;
-	font-size: 40px;
-	color: $color-primary-foreground;
+nav a.icons.social{
+	&.twitter:before, 
+	&.fb:before{
+		float: left;
+		width: 40px;
+		height: 40px;
+		margin-top: -8px;
+		font-size: 40px;
+		color: $color-primary-foreground;
+	}
+	&.grey{
+		float: left;
+		width: 40px;
+		height: 40px;
+		&:before{
+			width: 40px;
+			height: 40px;
+			color: darken($color-primary-foreground, 25%);
+		}
+	}
 }
 
+.icons{
+	&.social{
+		&.fb:before {
+			@extend .icon-facebook:before;
+		}
+		&.fb.grey {
+			margin-left: 0;
+		}
+		&.twitter:before {
+			@extend .icon-twitter:before;
+		}
+	}
 
-nav a.icons.social.grey{
-	float: left;
-	width: 40px;
-	height: 40px;
-}
-nav a.icons.social.grey:before{
-	width: 40px;
-	height: 40px;
-	color: darken($color-primary-foreground, 25%);
-}
-
-.icons.social.fb:before {
-	@extend .icon-facebook:before;
-}
-
-.icons.social.twitter:before {
-	@extend .icon-twitter:before;
+	&.search {
+		position: absolute;
+		width: 20px;
+		height: auto;
+		right: 7px;
+		top: 12px;
+		@include opacity(1);
+		z-index: 1000;
+		&:before {
+			@extend .icon-search:before;
+			color : lighten($color-box-foreground, 18.5%);
+		}
+	}
 }
 
-.icons.social.fb.grey {
-	margin-left: 0;
-}
-
-.icons.social.twitter.grey {}
 
 .logo {
 	float: left;
@@ -89,27 +101,20 @@ nav a.icons.social.grey:before{
 	width: 100%;
 	height: 55px;
 	background-color: saturate(adjust_hue(lighten($color-primary-background, 27), -1), 1.4);
+	& h2 {
+		float: left;
+		margin-top: 12px;
+		font-family: "DroidSans";
+		font-size: 24px;
+		font-style: italic;
+		font-weight: 500;
+		letter-spacing: 1px;
+	}
 }
 
-.sub-header h2 {
-	float: left;
-	margin-top: 12px;
-	font-family: "DroidSans";
-	font-size: 24px;
-	font-style: italic;
-	font-weight: 500;
-	letter-spacing: 1px;
-}
 
-.icons.search {
-	position: absolute;
-	width: 20px;
-	height: auto;
-	right: 7px;
-	top: 12px;
-	@include opacity(1);
-	z-index: 1000;
-}
+
+
 
 .tools {
 	float: right;
@@ -134,23 +139,25 @@ nav a.icons.social.grey:before{
 	color: $color-primary-foreground;
 }
 
-.nav-mobile-icon:before {
-	top:1px;
-	font-size: 32px;
-	@extend .icon-tags:before;
+.nav-mobile-icon{
+	&:before {
+		top:1px;
+		font-size: 32px;
+		@extend .icon-tags:before;
+	}
+	&.toggle {
+		background-position: -50px 0;
+	}
+
 }
 
-.nav-mobile-icon.toggle {
-	background-position: -50px 0;
-}
-
-.search-mobile-icon:before {
-	@extend .icon-search:before;
-}
-
-
-.search-mobile-icon.toggle {
-	background-position: -50px -50px;
+.search-mobile-icon{
+	&:before {
+		@extend .icon-search:before;
+	}
+	&.toggle {
+		background-position: -50px -50px;
+	}
 }
 
 .header-icons-divider {
@@ -158,11 +165,6 @@ nav a.icons.social.grey:before{
 	float: left;
 	height: 32px;
 	width: 2px;
-}
-
-.icons.search:before {
-	@extend .icon-search:before;
-	color : lighten($color-box-foreground, 18.5%);
 }
 
 .search.desktop-only {
@@ -188,6 +190,9 @@ nav a.icons.social.grey:before{
 
 	header {
 		height: 60px;
+		& nav {
+			display: none;
+		}
 	}
 
 	.logo {
@@ -196,21 +201,18 @@ nav a.icons.social.grey:before{
 		margin-top: 8px;
 	}
 
-	header nav {
-		display: none;
-	}
-
 	.sub-header {
 		height: 25px;
+		& h2 {
+			width: 100%;
+			margin: 5px 0;
+			font-size: 12px;
+			text-align: center;
+			text-shadow: 0 2px 2px rgba( 0, 0, 0, 0.2 );
+		}
 	}
 
-	.sub-header h2 {
-		width: 100%;
-		font-size: 12px;
-		text-align: center;
-		margin: 5px 0;
-		text-shadow: 0 2px 2px rgba( 0, 0, 0, 0.2 );
-	}
+	
 
 	#header-menu {
 		display: none;
@@ -219,18 +221,20 @@ nav a.icons.social.grey:before{
 		font-size: 12px;
 		overflow: hidden;
 		padding-bottom: 3px;
+		& a {
+			color: saturate(lighten($color-box-foreground, 29), 0.85);
+			padding: 3px 10px;
+			margin: 0;
+			width: 33%;
+			font-size: 14px;
+			&:nth-child(3n+1) {
+				text-align: center;
+			}
+		}
 	}
-	#header-menu a {
-		color: saturate(lighten($color-box-foreground, 29), 0.85);
-		padding: 3px 10px;
-		margin: 0;
-		width: 33%;
-		font-size: 14px;
-	}
+	
 
-	#header-menu a:nth-child(3n+1) {
-		text-align: center;
-	}
+	
 
 	.search-bar {
 		display: none;
@@ -238,20 +242,21 @@ nav a.icons.social.grey:before{
 		position: relative;
 		overflow: hidden;
 		border-radius: 10px;
+		& span {
+			border-left: solid 1px saturate(lighten($color-box-foreground, 29), 0.85);
+			font-size: 12px;
+			color: saturate(lighten($color-box-foreground, 29), 0.85);
+			padding: 0 4px;
+			text-transform: uppercase;
+			font-family: "Cabin";
+			position: absolute;
+			top: 5px;
+			right: 0;
+			margin-right: 5%;
+		}
 	}
 
-	.search-bar span {
-		border-left: solid 1px saturate(lighten($color-box-foreground, 29), 0.85);
-		font-size: 12px;
-		color: saturate(lighten($color-box-foreground, 29), 0.85);
-		padding: 0 4px;
-		text-transform: uppercase;
-		font-family: "Cabin";
-		position: absolute;
-		top: 5px;
-		right: 0;
-		margin-right: 5%;
-	}
+	
 
 	.search-box-mobile {
 		margin-top: 0;
