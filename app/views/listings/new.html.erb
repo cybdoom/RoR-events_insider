@@ -10,6 +10,9 @@
     <%= f.input :name %>
     <%= f.input :website %>
     <%= f.input :location %>
-    <%= f.button :submit, class: 'call-to-action-btn' %>
+
+    <%= f.actions do %>
+      <%= f.button :submit, 'Add Event', class: 'call-to-action-btn' %>
+    <% end %>
   <% end %>
 </div>

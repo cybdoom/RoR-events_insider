@@ -83,16 +83,14 @@ $color-listing-header-border: lighten($color-box-foreground, 38%);
 
 
 
-.final-actions {
-  padding: 20px;
-}
+.form-actions {
+  padding-top: 20px;
+  padding-left: 20px;
 
-.final-actions button {
-  float: right;
-}
-
-.final-actions button:first-child {
-  margin-left: 20px;
+  & button,
+  & input[type="submit"] {
+    float: right;
+  }
 }
 
 fieldset.with-help:after, .listing-section h2:after {
@@ -104,8 +102,6 @@ fieldset.with-help:after, .listing-section h2:after {
   width: 17px;
   height: auto;
 }
-
-
 
 .compulsory legend span {
   color : $color-negative-alert-background;
@@ -523,7 +519,7 @@ section.events .icon:last-child {
     width: 32px;
   }
 
-   .final-actions button:first-child {
+   .form-actions button:first-child {
     margin-left: 10px;
   }
 

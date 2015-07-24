@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module EventsInsider
   class Application < Rails::Application
-    require_all "#{Rails.root}/lib/extentions"
+    require_all "#{Rails.root}/lib/core_extensions"
     require_all "#{Rails.root}/lib/carrierwave"
 
     config.active_record.schema_format = :sql

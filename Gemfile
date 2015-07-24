@@ -20,8 +20,6 @@ gem 'indirizzo', github: 'pineapplethief/indirizzo', branch: 'master' # US addre
 gem 'jbuilder', '~> 2.0'
 gem 'kgio'
 gem 'pundit'
-gem 'seed_migration'
-gem 'simple_form'
 gem 'pry-rails'
 gem 'rack-cache'
 gem 'redis', require: ['redis', 'redis/connection/hiredis']
@@ -29,7 +27,9 @@ gem 'redis-store'
 gem 'redis-rails'
 gem 'redis-rack-cache'
 gem 'require_all'
+gem 'seed_migration'
 gem 'simple_enum'
+gem 'simple_form'
 
 # Front-end gems
 gem 'coffee-rails', '~> 4.1.0'
