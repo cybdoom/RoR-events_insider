@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   root 'static_pages#search'
 
-  get '/search', to: 'static_pages#search', as: :search_page
-
   resources :listings, only: [:new] do
   end
+
+  get '/search', to: 'static_pages#search', as: :search_page
+  get 'add_event', to: 'static_pages#add_event'
 
 end

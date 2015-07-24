@@ -1,115 +1,117 @@
 @import 'globals';
 
 .sub-footer {
-  width: 100%;
   float: left;
-  background-color: lighten($color-primary-background, 40%);
+  width: 100%;
   margin-top: 20px;
+  background-color: lighten($color-primary-background, 40%);
+
+  & h4 {
+    float: left;
+    margin: 0px;
+    margin-top: 10px;
+    font-family: $font-footer;
+    font-size: 18px;
+    color: $color-box-foreground;
+    letter-spacing: 1px;
+    clear: both;
+  }
+
+  & section {
+    margin: 20px 0px;
+    border-right: solid 2px saturate(lighten($color-box-foreground, 29), 0.85);
+
+    &:first-child {
+      width: 28%;
+    }
+
+    &:nth-child(2) {
+      float: right;
+      width: 28%;
+      border: none;
+
+      & nav {
+        float: none;
+        width: 105px;
+        margin: 0 auto;
+      }
+    }
+    &:nth-child(3) {
+      width: 44%;
+      & nav {
+        float: left;
+      }
+    }
+
+    &:nth-child(3) nav a,
+    & h3 {
+      margin: 0;
+      font-family: $font-footer;
+      font-size: 18px;
+      line-height: 1.7;
+      letter-spacing: 1px;
+      color: $color-box-foreground;
+    }
+
+    & h3 {
+      margin: 5px 0px 25px 0px;
+      text-align: center;
+    }
+  }
+
+  & .logo {
+    margin-top: 14px;
+  }
+
+  & nav a {
+    float: left;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.sub-footer nav,
+footer nav {
+  width: 50%;
+  margin-top : 0px;
 }
 
 .footer-container {
   margin: 0 40px;
 }
 
-.sub-footer h4 {
-  color: $color-box-foreground;
-  font-size: 18px;
-  font-family: $font-footer;
-  letter-spacing: 1px;
-  margin: 0px;
-  clear: both;
-  margin-top: 10px;
-  float: left;
-}
-
-.sub-footer section {
-  margin: 20px 0px;
-  border-right: solid 2px saturate(lighten($color-box-foreground, 29), 0.85);
-}
-
-.sub-footer section:first-child {
-  width: 28%;
-}
-
-.sub-footer section:nth-child(3) {
-  width: 44%;
-}
-
-.sub-footer section:nth-child(2) {
-  width: 28%;
-  border: none;
-  float: right;
-}
-
-.sub-footer nav, footer nav {
-  margin-top : 0px;
-  width: 50%;
-}
-
-.sub-footer section:nth-child(3) nav {
-    float: left;
-}
-
-.sub-footer section:nth-child(3) nav a,
-.sub-footer section h3 {
-   color: $color-box-foreground;
-   font-family: $font-footer;
-   line-height: 1.7;
-   letter-spacing: 1px;
-   font-size: 18px;
-   margin: 0;
-}
-
-.sub-footer section h3 {
-  margin: 5px 0px 25px 0px;
-  text-align: center;
-}
-
 .footer-nav-container {
   margin: 0 20%;
-}
-
-.sub-footer .logo {
-  margin-top: 14px;
-}
-
-.sub-footer section:nth-child(2) nav {
-  width: 105px;
-  margin: 0 auto;
-  float: none;
-}
-
-.sub-footer nav a {
-  float: left;
-  width: 100%;
-  text-align: left;
-}
-
-footer {
-  width: 100%;
-  float: left;
-  background-color: $color-primary-background;
-  padding: 20px 0px;
-  color: $color-box-foreground;
-  font-family: $font-footer;
-  font-size: 18px;
-  letter-spacing: 1px;
 }
 
 .copyright-text {
   float: left;
 }
 
-footer nav {
-  float: right;
-}
-
-footer nav a {
-  float: right;
-  color: $color-box-foreground;
+footer {
+  float: left;
+  width: 100%;
+  padding: 20px 0px;
   font-family: $font-footer;
   font-size: 18px;
+  letter-spacing: 1px;
+  color: $color-box-foreground;
+  background-color: $color-primary-background;
+
+  & nav {
+    float: right;
+
+    & a {
+      float: right;
+      font-family: $font-footer;
+      font-size: 18px;
+      color: $color-box-foreground;
+    }
+  }
 }
+
+
+
 
 @media screen and (max-width: 1013px) {
   .footer-nav-container {
@@ -128,94 +130,97 @@ footer nav a {
 
 @media screen and (max-width: 767px) {
 
-  .footer-wrapper{
+  .footer-wrapper {
     width: 100%
   }
-
   .footer-container {
     margin: 0;
   }
 
-  .sub-footer section {
-    margin: 15px 0;
+
+  .sub-footer {
+
+    & section {
+      margin: 15px 0;
+
+      &:first-child,
+      &:nth-child(2) {
+        width: 50%;
+      }
+
+      &:first-child {
+        padding-left: 6%;
+      }
+
+      &:nth-child(3) {
+        width: 100%;
+        margin: 0;
+        padding-bottom: 0;
+        border: none;
+        @include linear-gradient(adjust_hue(desaturate(lighten($color-primary-background, 26), 47), -1.1),
+                 adjust_hue(desaturate(lighten($color-primary-background, 30), 31),-3));
+        & nav {
+          float: none;
+          width: 230px;
+          margin: 5px auto;
+
+          &:nth-child(2) {
+            width: 275px;
+          }
+
+          &:nth-child(3) {
+            width: 245px;
+            margin-top: 10px;
+
+            & a {
+              margin: 0;
+              padding: 0 10px;
+              font-size: 12px;
+              text-align: left;
+              color: saturate(lighten($color-box-foreground, 29), 0.85);
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) nav {
+        width: 90px;
+      }
+
+      &:nth-child(3) nav a,
+      & h3 {
+        font-size: 12px;
+      }
+
+      & h3 {
+        margin: 0 0 18px;
+      }
+
+    }
+
+    & h4 {
+      font-size: 13px;
+    }
+
+    & nav,
+    footer nav {
+      width: 100%;
+    }
+
+    & nav a {
+      width: auto;
+      padding: 0 6px;
+    }
+
+    & .logo {
+      margin: 0;
+    }
   }
 
-  .sub-footer section:first-child,
-  .sub-footer section:nth-child(2){
-    width: 50%;
-  }
-
-  .sub-footer section:first-child{
-    padding-left: 6%;
-  }
-
-  .sub-footer section:nth-child(3){
-    width: 100%;
-    border: none;
-    margin: 0;
-    padding-bottom: 0;
-    @include linear-gradient(adjust_hue(desaturate(lighten($color-primary-background, 26), 47), -1.1), adjust_hue(desaturate(lighten($color-primary-background, 30), 31),-3));
-  }
-
-  .sub-footer .logo {
-    margin: 0;
-  }
-
-  .sub-footer section:nth-child(2) nav{
-    width: 90px;
-  }
-
-  nav a.icons.social.grey{
+  nav a.icons.social.grey {
     width: 35px;
     height: 35px;
     background-size: 100%;
-  }
-
-  .sub-footer section:nth-child(3) nav a,
-  .sub-footer section h3{
-    font-size: 12px;
-  }
-
-  .sub-footer section h3{
-    margin: 0 0 18px;
-  }
-
-  .sub-footer h4{
-    font-size: 13px;
-  }
-
-  .sub-footer nav,
-  footer nav {
-    width: 100%;
-  }
-
-  .sub-footer nav a {
-    width: auto;
-    padding: 0 6px;
-  }
-
-  .sub-footer section:nth-child(3) nav {
-    float: left;
-    margin: 5px auto;
-    float: none;
-    width: 230px;
-  }
-
-  .sub-footer section:nth-child(3) nav:nth-child(2) {
-    width: 275px;
-  }
-
-  .sub-footer section:nth-child(3) nav:nth-child(3) {
-    margin-top: 10px;
-    width: 245px;
-  }
-
-  .sub-footer section:nth-child(3) nav:nth-child(3) a {
-    color: saturate(lighten($color-box-foreground, 29), 0.85);
-    font-size: 12px;
-    text-align: left;
-    padding: 0 10px;
-    margin: 0;
   }
 
   .footer-nav-container {
@@ -223,27 +228,26 @@ footer nav a {
   }
 
   footer {
-    font-size: 12px;
     padding: 5px 0;
-  }
+    font-size: 12px;
 
-  footer nav {
-    margin: 0 auto;
-    width: 85%;
-    float: none;
-    overflow: hidden;
-  }
+    & nav {
+      float: none;
+      width: 85%;
+      margin: 0 auto;
+      overflow: hidden;
 
-  footer nav a {
-    font-size: 14px;
-    text-align: left;
-    padding: 0 25px;
-    margin: 0;
+      & a {
+        padding: 0 25px;
+        margin: 0;
+        font-size: 14px;
+        text-align: left;
+      }
+    }
   }
 
   .copyright-text {
     width: 100%;
     text-align: center;
   }
-
 }

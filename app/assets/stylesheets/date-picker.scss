@@ -4,55 +4,60 @@
 .date-picker {
   width: 495px;
   height: 450px;
+
+  &:before {
+    content: "";
+  }
+
+  & h3.mascot-speaks {
+    position: relative;
+    margin-bottom: 0;
+    font-size: 28px;
+
+    &:after {
+      @extend .icon-help:before;
+      position: absolute;
+      top:0px;
+      right: 0px;
+      font-size: 15px !important;
+    }
+  }
+
+  & .popup-control {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  & .calendar-container,
+  & .weather-container {
+    float: left;
+    width: 225px;
+    height: 240px;
+  }
+
+  & .calendar-container {
+    padding: 0 15px 15px 0;
+    border-right: solid 1px $official-grey;
+  }
+
+  & .weather-container {
+    padding: 0 0 15px 20px;
+    text-align: center;
+  }
+
+  & .time-container {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  & input[type='radio'] {
+    margin: 0px;
+  }
+
 }
 
-.date-picker:before {
-  content: "";
-}
-
-.date-picker h3.mascot-speaks {
-  position: relative;
-  font-size: 28px;
-  margin-bottom: 0;
-}
-
-.date-picker h3.mascot-speaks:after {
-  @extend .icon-help:before;
-
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  font-size: 15px !important;
-}
-
-.date-picker .popup-control {
-  width: 100%;
-  margin-top: 25px;
-}
-
-.date-picker .calendar-container, .date-picker .weather-container {
-  float: left;
-  width: 225px;
-  height: 240px;
-}
-
-.date-picker .calendar-container {
-  border-right: solid 1px $official-grey;
-  padding: 0 15px 15px 0;
-}
-
-.date-picker .weather-container {
-  text-align: center;
-  padding: 0 0 15px 20px;
-}
-
-.date-picker .time-container {
-  float: left;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.month-chooser, .d-o-w, .dates {
+.month-chooser, .d-o-w, .dates{
   float: left;
   width: 100%;
   margin-bottom: 7px;
@@ -61,31 +66,31 @@
 .dates span {
   @include box-corners;
   cursor: pointer;
+
+  &.inactive {
+    color: lighten($color-box-foreground, 45%);
+  }
+
+  &.selected {
+    color: $color-primary-foreground;
+    background: $color-popup-title;
+  }
+
+  &:hover {
+    color: lighten($color-box-foreground, 15%);
+    background: lighten($color-popup-title, 20%);
+  }
 }
 
-.dates span.inactive {
-  color: lighten($color-box-foreground, 45%);
-}
-
-
-.dates span.selected {
-  background: $color-popup-title;
-  color: $color-primary-foreground;
-}
-
-.dates span:hover {
-  background: lighten($color-popup-title, 20%);
-  color: lighten($color-box-foreground, 15%);
-}
 
 .month-chooser {
   @include box-corners;
-
   padding: 5px 10px;
   text-align: center;
 }
 
-.month-chooser span, .weather-container .day {
+.month-chooser span,
+.weather-container .day {
   font-family : $font-header;
   font-size: 18px;
   font-weight: bold;
@@ -95,170 +100,174 @@
 
 .month-chooser a {
   text-decoration: none;
+
+  & span:before {
+    font-size: 12px !important;
+  }
+
+  &.previous {
+    float: left;
+  }
+
+  &.next {
+    float: right;
+  }
 }
 
-.month-chooser a span:before {
-  font-size: 12px !important;
+.weather-container {
+  & .date {
+    font-size: 15px;
+    color: lighten($color-box-body-text, 45%);
+  }
+
+  & p {
+    font-size: 15px;
+    color: lighten($color-box-body-text, 15%);
+    text-align: left;
+  }
 }
-
-.month-chooser a.previous {
-  float: left;
-}
-
-.month-chooser a.next {
-  float: right;
-}
-
-
-.weather-container .date {
-  color: lighten($color-box-body-text, 45%);
-  font-size: 15px;
-}
-
-.weather-container p {
-  font-size: 15px;
-  color: lighten($color-box-body-text, 15%);
-  text-align: left;
-}
-
-
 
 .weather-image-container {
   float: left;
   width: 100%;
-  padding: 20px 0;
   height: auto;
+  padding: 20px 0;
   text-align: center;
 }
-
-.weather-image-container img {}
 
 .d-o-w span {
   float: left;
   width: calc( 100% / 7 );
-  text-align: center;
-  font-family: $font-header;
-  color: lighten($color-box-body-text, 45%);
   font-size: 14px;
+  font-family : $font-header;
+  text-align: center;
+  color: lighten($color-box-body-text, 45%);
+
 }
 
 .dates span {
   float: left;
-  margin-right: 3px;
-  margin-bottom: 3px;
   width: 27px;
   height: 27px;
+  margin-right: 3px;
   padding: 4px 5px;
-  text-align: center;
+  margin-bottom: 3px;
   font-family : $font-header;
   font-size: 13px;
-}
+  text-align: center;
 
-.dates span:nth-child(7n) {
-  margin-right: 0;
+  &:nth-child(7n) {
+    margin-right: 0;
+  }
 }
 
 .time + label {
   position: relative;
   padding: 4px 4px 0 0;
-  font-family : $font-header;
-  color : lighten($color-box-foreground, 5%);
-  font-size: 13px;
   margin-right: 30px;
+  font-family : $font-header;
+  font-size: 13px;
+  color : lighten($color-box-foreground, 5%);
   font-weight: 100;
-}
 
-.time + label:nth-child(3n) {
-  margin-right: 60px;
-  margin-left: 0;
+  &:nth-child(3n) {
+    margin-right: 60px;
+    margin-left: 0;
+  }
 }
 
 .time.last + label {
   margin-right: 0;
 }
 
-.date-picker input[type='radio'] {
-  margin: 0px;
-}
-
-
 
 /* Custom Checkbox */
 
 /* Base for label styling */
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
-  position: absolute;
-  left: -9999px;
-}
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
-  position: relative;
-  padding-left: 25px;
-  cursor: pointer;
+
+[type="checkbox"] {
+
+  &:not(:checked),
+  &:checked {
+    position: absolute;
+    left: -9999px;
+  }
+
+  &:not(:checked) + label,
+  &:checked + label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+  }
+
+  /* checkbox aspect */
+  &:not(:checked) + label:before,
+  &:checked + label:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left:0;
+    width: 19px;
+    height: 19px;
+    border: 1px solid #aaa;
+    background: #f8f8f8;
+    @include rounded-button2;
+  }
+
+  /* checked mark aspect */
+  &:not(:checked) + label:after,
+  &:checked + label:after {
+    @extend .icon-tick:before;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    font-size: 14px !important;
+    color: $color-form-select !important;
+    transition: all .2s;
+  }
+
+  /* checked mark aspect changes */
+  &:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* disabled checkbox */
+  &:disabled:not(:checked) + label:before,
+  &:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+  }
+
+  &:disabled {
+    &:checked + label:after {
+        color: #999;
+    }
+
+    & + label {
+      color: #aaa;
+    }
+  }
+
+  /* accessibility */
+  &:checked:focus + label:before,
+  &:not(:checked):focus + label:before {
+    border: 1px dotted blue;
+  }
+
 }
 
-/* checkbox aspect */
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
-  content: '';
-  position: absolute;
-  left:0; top: 2px;
-  width: 19px; height: 19px;
-  border: 1px solid #aaa;
-  background: #f8f8f8;
-  @include rounded-button2;
-}
-
-/* checked mark aspect */
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
-  @extend .icon-tick:before;
-  position: absolute;
-  top: 5px; left: 4px;
-  font-size: 14px !important;
-  color: $color-form-select !important;
-  transition: all .2s;
-}
-
-/* checked mark aspect changes */
-[type="checkbox"]:not(:checked) + label:after {
-  opacity: 0;
-  transform: scale(0);
-}
-
-[type="checkbox"]:checked + label:after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* disabled checkbox */
-[type="checkbox"]:disabled:not(:checked) + label:before,
-[type="checkbox"]:disabled:checked + label:before {
-  box-shadow: none;
-  border-color: #bbb;
-  background-color: #ddd;
-}
-
-[type="checkbox"]:disabled:checked + label:after {
-  color: #999;
-}
-
-[type="checkbox"]:disabled + label {
-  color: #aaa;
-}
-
-/* accessibility */
-[type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {
-  border: 1px dotted blue;
-}
 
 /* hover style just for information */
 label:hover:before {
-  border: 1px solid #4778d9 !important;
+  border: 1px solid #4778d9!important;
 }
-
 
 
 @media screen and (max-width: 767px) {
@@ -269,27 +278,36 @@ label:hover:before {
     height: 435px;
   }
 
-  .date-picker .weather-container {
-    display: none;
-  }
+  .date-picker {
+    & .weather-container {
+      display: none;
+    }
 
-  .date-picker .calendar-container {
-    border: none;
-    padding: 0 15px 5px 0;
-    height: 215px;
-  }
+    &  .calendar-container {
+      height: 215px;
+      padding: 0 15px 5px 0;
+      border: none;
+    }
 
-  .date-picker .time-container {
-    margin-top: 0;
+    & .calendar-container {
+      height: 215px;
+      padding: 0 15px 5px 0;
+      border: none;
+    }
+
+    & .time-container {
+      margin-top: 0;
+    }
   }
 
   .time + label {
     width: 75px;
     margin-right: 20px;
-  }
 
-  .time + label:nth-child(3n) {
-    margin-right: 20px;
+    &:nth-child(3n) {
+      margin-right: 20px;
+    }
+
   }
 
 }

@@ -31,7 +31,7 @@
 
 .popup:before {
 	position: absolute;
-	content: url('img/mascot-top.png');
+	content: image-url('mascot-top.png');
 	top: -92px;
 	z-index:1;
 }
@@ -80,15 +80,8 @@
 
 select option {
 	position: relative;
-	background-image: url('../img/icons/listing/add.png');
+	background-image: image-url('icons/listing/add.png');
 }
-
-/*
-select option.main-page:before{
-	position: absolute;
-	content: url('../img/icons/listing/add.png');
-}
-*/
 
 /* ddslick - slick dropdown */
 
