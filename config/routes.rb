@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#search'
 
-  resources :listings, only: [:new] do
+  resources :listings, only: [:new, :create] do
   end
 
   get '/search', to: 'static_pages#search', as: :search_page

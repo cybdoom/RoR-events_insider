@@ -22,7 +22,7 @@ namespace :admin do
         end
       else
         # create new user otherwise
-        admin = User.new(email: email)
+        admin = User.new(email: email, confirmed_at: Time.current)
         begin
           password = ask('Password:  ') { |q| q.echo = 'x' }
           password_confirmation = ask('Repeat password:  ') { |q| q.echo = 'x' }

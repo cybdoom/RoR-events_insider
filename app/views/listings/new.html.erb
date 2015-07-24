@@ -1,1 +1,15 @@
-New Listing
+<h1>Add a Listing</h1>
+
+<div class="content-block">
+  <h5>I would like to add a...</h5>
+  <%= simple_form_for @listing do |f| %>
+    <%= f.input :type, as: :radio_buttons,
+                       collection: Listing::TYPES,
+                       selected: Listing::TYPES.first,
+                       label: false %>
+    <%= f.input :name %>
+    <%= f.input :website %>
+    <%= f.input :location %>
+    <%= f.button :submit, class: 'call-to-action-btn' %>
+  <% end %>
+</div>

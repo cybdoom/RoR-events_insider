@@ -22,7 +22,8 @@
 #
 
 class Event < ActiveRecord::Base
-
-
+  belongs_to :user
+  belongs_to :venue
+  has_many :images, as: :imageable, dependent: :destroy
 
 end
