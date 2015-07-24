@@ -1,19 +1,20 @@
 @import 'globals';
 @import 'icons';
 
-.date-picker{
+.date-picker {
   width: 495px;
   height: 450px;
 
-  &:before{
+  &:before {
     content: "";
   }
 
-  & h3.mascot-speaks{
+  & h3.mascot-speaks {
     position: relative;
     margin-bottom: 0;
     font-size: 28px;
-    &:after{
+
+    &:after {
       @extend .icon-help:before;
       position: absolute;
       top:0px;
@@ -22,73 +23,74 @@
     }
   }
 
-  & .popup-control{
+  & .popup-control {
     width: 100%;
     margin-top: 25px;
   }
 
   & .calendar-container,
-  & .weather-container{
+  & .weather-container {
     float: left;
     width: 225px;
     height: 240px;
   }
 
-  & .calendar-container{
+  & .calendar-container {
     padding: 0 15px 15px 0;
     border-right: solid 1px $official-grey;
   }
 
-  & .weather-container{
+  & .weather-container {
     padding: 0 0 15px 20px;
     text-align: center;
   }
 
-  & .time-container{
+  & .time-container {
     float: left;
     width: 100%;
     margin-top: 15px;
   }
 
-  & input[type='radio']{
+  & input[type='radio'] {
     margin: 0px;
   }
 
 }
 
-.month-chooser,
-.d-o-w,
-.dates{
+.month-chooser, .d-o-w, .dates{
   float: left;
   width: 100%;
   margin-bottom: 7px;
 }
 
-.dates span{
+.dates span {
   @include box-corners;
   cursor: pointer;
-  &.inactive{
-    color: lighten($color-box-foreground, 45%); 
+
+  &.inactive {
+    color: lighten($color-box-foreground, 45%);
   }
-  &.selected{
+
+  &.selected {
     color: $color-primary-foreground;
     background: $color-popup-title;
   }
-  &:hover{
+
+  &:hover {
     color: lighten($color-box-foreground, 15%);
     background: lighten($color-popup-title, 20%);
   }
 }
 
 
-.month-chooser{
+.month-chooser {
   @include box-corners;
   padding: 5px 10px;
   text-align: center;
 }
 
 .month-chooser span,
-.weather-container .day{
+.weather-container .day {
   font-family : $font-header;
   font-size: 18px;
   font-weight: bold;
@@ -96,32 +98,36 @@
   text-align: center;
 }
 
-.month-chooser a{
+.month-chooser a {
   text-decoration: none;
-  & span:before{
+
+  & span:before {
     font-size: 12px !important;
   }
-  &.previous{
+
+  &.previous {
     float: left;
   }
-  &.next{
+
+  &.next {
     float: right;
   }
 }
 
-.weather-container{
-  & .date{
+.weather-container {
+  & .date {
     font-size: 15px;
     color: lighten($color-box-body-text, 45%);
   }
-  & p{
+
+  & p {
     font-size: 15px;
     color: lighten($color-box-body-text, 15%);
     text-align: left;
   }
 }
 
-.weather-image-container{
+.weather-image-container {
   float: left;
   width: 100%;
   height: auto;
@@ -129,7 +135,7 @@
   text-align: center;
 }
 
-.d-o-w span{
+.d-o-w span {
   float: left;
   width: calc( 100% / 7 );
   font-size: 14px;
@@ -139,7 +145,7 @@
 
 }
 
-.dates span{
+.dates span {
   float: left;
   width: 27px;
   height: 27px;
@@ -149,12 +155,13 @@
   font-family : $font-header;
   font-size: 13px;
   text-align: center;
-  &:nth-child(7n){
+
+  &:nth-child(7n) {
     margin-right: 0;
   }
 }
 
-.time + label{
+.time + label {
   position: relative;
   padding: 4px 4px 0 0;
   margin-right: 30px;
@@ -162,13 +169,14 @@
   font-size: 13px;
   color : lighten($color-box-foreground, 5%);
   font-weight: 100;
-  &:nth-child(3n){
+
+  &:nth-child(3n) {
     margin-right: 60px;
     margin-left: 0;
   }
 }
 
-.time.last + label{
+.time.last + label {
   margin-right: 0;
 }
 
@@ -177,7 +185,7 @@
 
 /* Base for label styling */
 
-[type="checkbox"]{
+[type="checkbox"] {
 
   &:not(:checked),
   &:checked {
@@ -237,10 +245,11 @@
     background-color: #ddd;
   }
 
-  &:disabled{
+  &:disabled {
     &:checked + label:after {
         color: #999;
     }
+
     & + label {
       color: #aaa;
     }
@@ -263,41 +272,42 @@ label:hover:before {
 
 @media screen and (max-width: 767px) {
   /* date picker */
-  
-  .popup.date-picker{
+
+  .popup.date-picker {
     width: 250px;
     height: 435px;
   }
-  
-  .date-picker{
-    & .weather-container{
+
+  .date-picker {
+    & .weather-container {
       display: none;
     }
-    &  .calendar-container{
+
+    &  .calendar-container {
       height: 215px;
       padding: 0 15px 5px 0;
       border: none;
     }
-    & .calendar-container{
+
+    & .calendar-container {
       height: 215px;
       padding: 0 15px 5px 0;
       border: none;
     }
-    & .time-container{
+
+    & .time-container {
       margin-top: 0;
     }
-  } 
-  
-  .time + label{
+  }
+
+  .time + label {
     width: 75px;
     margin-right: 20px;
-    &:nth-child(3n){
+
+    &:nth-child(3n) {
       margin-right: 20px;
     }
 
   }
-  
-  
+
 }
-
-
