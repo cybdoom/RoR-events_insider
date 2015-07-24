@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   get '/search', to: 'static_pages#search', as: :search_page
-  get 'add_event', to: 'static_pages#add_event'
+  get '/add_event', to: 'static_pages#add_event'
+  get '/event', to: 'static_pages#event'
 
 end

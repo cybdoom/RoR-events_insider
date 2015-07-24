@@ -1,0 +1,148 @@
+
+<article>
+	<h1>Add Event</h1>
+	<div class="content-block">
+		<div class="alert-message">
+			Here are the events I have like this. <br class="mobile-only">Don’t see yours? Add it or duplicate an old event!
+		</div>
+		<section class="first">
+			<fieldset class="compulsory">
+		    	<legend>Event Name<span> *</span></legend>
+				<input type="text" name="listing-name">
+			</fieldset>
+			<fieldset class="iconed with-help">
+		    	<legend>Date</legend>
+				<span class="icon-calendar"></span> <input type="text" name="date">
+			</fieldset>
+			<fieldset class="col4 with-help">
+		    	<legend>Size</legend>
+				<select name="size">
+				  <option value="In One Place">In One Place</option>
+				  <option value="In Many Place">In Many Place</option>
+				</select>
+			</fieldset>
+			<fieldset class="col4 with-help">
+		    	<legend>Price</legend>
+				<select name="price">
+				  <option value="Choose a Price">Choose a Price...</option>
+				  <option value="$15">$15</option>
+				</select>
+			</fieldset>
+			<fieldset class="col4 with-help">
+		    	<legend>Estimated Attendance</legend>
+				<select name="attendance">
+				  <option value="Unknown">Unknown</option>
+				  <option value="5-10">5-10</option>
+				</select>
+			</fieldset>
+		    <fieldset>
+		   		 <legend>Description</legend>
+		   		 <textarea rows="4" cols="50"></textarea>
+		   	</fieldset>
+		   	<fieldset class="iconed">
+		    	<legend>Descriptive tags</legend>
+				<span class="icon_tags"></span> <input type="text" name="descriptive-tags">
+			</fieldset> 				
+		</section>
+		<section class="listing-section">
+			<h2>Location</h2>
+			  <fieldset class="autocomplete location">
+		  	 	 <div id="the-basics">
+			  	 	 <input class="typeahead input" type="text" name="location" placeholder="Type the name of a venue or city, or street address">
+			  	 </div>
+		  	  </fieldset>
+		  
+		</section>
+		<section class="listing-section">
+			<h2>Photos</h2>
+			<div class="content">
+				<div class="photo-container">
+					<%= image_tag 'photo-placeholder.png', alt: 'img-placeholder-1', class: 'event photo' %>
+				</div>
+				<div class="photo-container">
+					<%= image_tag 'photo-placeholder.png', alt: 'img-placeholder-2', class: 'event photo' %>
+				</div>
+				<div class="photo-container">
+					<%= image_tag 'photo-placeholder.png', alt: 'img-placeholder-3', class: 'event photo' %>
+				</div>
+			</div>
+			<button type="button" class="default-btn text-left">Add<span>+</span></button>
+		</section>
+		<section class="listing-section">
+			<h2>Organiser</h2>
+			<button type="button" class="default-btn text-left">Add<span>+</span></button>
+		</section>
+		<section class="listing-section links">
+			<h2>Related Websites</h2>
+			<div class="content">
+				<div class="web-links">
+					<a class="main-page" href=''>Main Page on mongoose.org</a>
+					<span class="icon icon-delete"></span>
+					<span class="icon icon-edit"></span>
+				</div>
+				<div class="web-links">
+					<a class="twitter" href=''>@Mongoose</a>
+					<span class="icon icon-delete"></span>
+					<span class="icon icon-edit"></span>
+				</div>
+
+			</div>
+			<button type="button" class="default-btn text-left">Add<span>+</span></button>
+		</section>
+		<section class="listing-section">
+			<h2>Support Issues</h2>
+			<button type="button" class="default-btn text-left">Add<span>+</span></button>
+		</section>
+		<section class="listing-section">
+			<h2>Admin Control</h2>
+			<fieldset class="col4">
+		    	<legend>Display Status</legend>
+				<select name="display-staus">
+				  <option value="Unpublished">Unpublished</option>
+				  <option value="5-10">Published</option>
+				</select>
+			</fieldset>
+		</section>
+		<section class="final-actions">
+			<button type="button" class="call-to-action-btn">Publish</button>
+			<button type="button" class="default-btn save-draft">Save Draft</button>
+			<a class="cancel" href = "javascript:void(0)">Cancel</a>	
+		</section>
+	</div>
+
+</article>
+<aside>
+	<section class="progress recent">
+		<h3 class="mascot-speaks">
+			This Group is 50% complete
+		</h3>
+		<div class="progress-bar-container">
+			<span>50%</span>
+			<progress value="50" max="100"></progress>
+		</div>
+		<p>Appear more in search results and attract more people by filling in more details!</p>
+		<p>Are you a contact for this group?</p>
+		<div class="button-group">
+			<button type="button" class="true-btn">Yes!</button>
+			<button type="button" class="false-btn">No</button>
+		</div>
+		<div class="related-pages title">
+			Recent and Related Pages
+		</div>
+		<div class="related-pages">
+		 	Location and details for 150 main street...
+		</div>
+		<div class="related-pages">
+		 	Your User Dashboard
+		</div>
+	</section>
+
+	<section>
+		<h3> Adding a new group</h3>
+		<div class="image-content">
+			<%= image_tag 'video-placeholder.jpg', alt: 'video-placeholder' %>
+		</div>
+	</section>
+</aside>
+
+

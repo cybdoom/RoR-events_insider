@@ -5,5 +5,7 @@ class StaticPagesController < ApplicationController
 
   def add_event
   end
+  def event
+  end
 
 end
