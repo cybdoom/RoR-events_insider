@@ -1,147 +1,151 @@
 @import 'globals';
-section.first{
-	& h1{
-		padding: 0 20px;
-		margin: 0px;
-		margin-bottom: 10px;
-		font-size: 35px;
-	}
 
-	& h3{
-		padding: 0 20px;
-		margin-top: 0px;
-		font-size: 15px;
-		color: lighten($color-box-body-text, 15.25%);
-	}
-} 
+section.first {
+  & h1 {
+    padding: 0 20px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 35px;
+  }
 
-.edit-mode .content-block section.first{
-	padding-top: 10px;
+  & h3 {
+    padding: 0 20px;
+    margin-top: 0px;
+    font-size: 15px;
+    color: lighten($color-box-body-text, 15.25%);
+  }
 }
 
-.event-img{
-	float: left;
-	width: 100%;
+.edit-mode .content-block section.first {
+  padding-top: 10px;
 }
 
-.event{
-	& .text{
-		float: left;
-		width: 440px;
-		padding-right: 20px;
-	}
-
-	& .info{
-		float: left;
-		width: 200px;
-		height: 200px;
-		padding: 10px;
-		background-color: darken($color-box-main-background, 3%);
-		& h4{
-			margin:  9px 0px 0px 0px;
-			font-family: $font-header;
-			font-size: 15px;
-			letter-spacing: 0.4px;
-		}
-	}
-
-	& h4{
-		color: darken($color-box-foreground, 11.5%);
-	}
-
-	& span{
-		&.col,
-		&.col6{
-			font-family: $font-header;
-			font-size: 15px;
-			color: lighten($color-box-body-text, 24%); 
-		}
-	}
-
-	& address h3{
-		padding: 0px;
-		margin: 0 0 10px 0px;
-		font-size: 17px;
-
-		& a{
-			font-size: 17px;
-			text-decoration: none;
-		}
-	}
+.event-img {
+  float: left;
+  width: 100%;
 }
 
-.name{
-	color : $color-box-important-text;
+.event {
+  & .text {
+    float: left;
+    width: 440px;
+    padding-right: 20px;
+  }
+
+  & .info {
+    float: left;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    background-color: darken($color-box-main-background, 3%);
+    & h4 {
+      margin:  9px 0px 0px 0px;
+      font-family: $font-header;
+      font-size: 15px;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  & h4 {
+    color: darken($color-box-foreground, 11.5%);
+  }
+
+  & span {
+    &.col,
+    &.col6 {
+      font-family: $font-header;
+      font-size: 15px;
+      color: lighten($color-box-body-text, 24%);
+    }
+  }
+
+  & address h3 {
+    padding: 0px;
+    margin: 0 0 10px 0px;
+    font-size: 17px;
+
+    & a {
+      font-size: 17px;
+      text-decoration: none;
+    }
+  }
 }
 
-.share{
-	& h4{
-		float: left;
-		width: 40px;
-	}
-	& .icons-row{
-		float: left;
-		width: 125px;
-		margin-top: 10px;
-		margin-left: 10px;
-	}
-} 
-
-
-.location .distance a{
-	text-decoration: none;
+.name {
+  color : $color-box-important-text;
 }
 
-.venue{
-	@extend .event;
+.share {
+  & h4 {
+    float: left;
+    width: 40px;
+  }
 
-	& .listing-section.location{
-		margin-top: 20px;
-	}
-
-	& .address-map{
-		margin-top: 5px;
-	}
-
+  & .icons-row {
+    float: left;
+    width: 125px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
 }
 
 
+.location .distance a {
+  text-decoration: none;
+}
 
-.location address{
-	& span{
-		font-size: 16px;
-		& a{
-			text-decoration: none;
-		}
-	}	
-	& h4{
-		float: left;
-		margin: 15px 0px 0px 0px;
-		font-size: 15px;
-		color : $color-box-important-text;
-	}
+.venue {
+  @extend .event;
+
+  & .listing-section.location {
+    margin-top: 20px;
+  }
+
+  & .address-map {
+    margin-top: 5px;
+  }
+
+}
+
+
+
+.location address {
+  & span {
+    font-size: 16px;
+
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  & h4 {
+    float: left;
+    margin: 15px 0px 0px 0px;
+    font-size: 15px;
+    color : $color-box-important-text;
+  }
 }
 
 
 @media screen and (max-width: 767px) {
 
-	.event{
+  .event {
 
-		& .text{
-			width: 100%;
-		}
+    & .text {
+      width: 100%;
+    }
 
-		& span.col6{
-			width: 50%;
-		}
+    & span.col6 {
+      width: 50%;
+    }
 
-		&.col6:nth-child(2n){
-			margin-bottom: 0;
-		}
-	}	
+    &.col6:nth-child(2n) {
+      margin-bottom: 0;
+    }
+  }
 
-	.photo-container{
-		width: 100%;
-	}
+  .photo-container {
+    width: 100%;
+  }
 
-}	
+}

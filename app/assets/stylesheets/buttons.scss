@@ -12,7 +12,7 @@ $default-button-color: $official-blue;
 $true-button-color: $official-green;
 $false-button-color: $official-red;
 
-.button{
+.button {
 	color: $official-white;
 	font-family: $font-body-text;
 	font-size: 15px;
@@ -22,79 +22,83 @@ $false-button-color: $official-red;
 	cursor: pointer;
 }
 
-
-.default-btn{
+.default-btn {
 	position:relative;
 	padding: 6px 24px;
 	@extend .button;
 	background: lighten($default-button-color, 10%);
-	&.hover,
-	&:hover{
+
+	&.hover, &:hover {
 		color: $official-white;
 		background: darken($default-button-color, 5%);
 	}
-	&.click,
-	&:focus{
+
+	&.click, &:focus {
 		color: $official-white;
 		outline: none;
 		background: darken($default-button-color, 15%);
 	}
-	&.text-left{
+
+	&.text-left {
 		padding: 6px 15px;
 	}
-	&.text-left span{
+
+	&.text-left span {
 		margin-left: 20px;
 	}
-	&.text-right{
+
+	&.text-right {
 		padding: 6px 15px;
 	}
-	&.text-right span{
+
+	&.text-right span {
 		margin-right: 20px;
 	}
+
 }
 
 
 .save-draft,
-.call-to-action-btn{
+.call-to-action-btn {
 	@extend .button;
 	font-size: 18px;
 	padding: 8px 20px;
 }
 
-.save-draft{
+.save-draft {
 	&.hover,
-	&:hover{
+	&:hover {
 		color: $official-white;
 		background: darken($default-button-color, 5%);
 	}
 }
 
-.call-to-action-btn{
+.call-to-action-btn {
 	padding: $button-vertical-padding $button-horizontal-padding;
  	border-bottom: 2px solid darken($true-button-color, 10);
  	background: $true-button-color;
- 	&.arrow{
+ 	&.arrow {
 		padding: $button-vertical-padding $button-with-arrow-horizontal-padding;
 		width: 150px;
 		// Double border
 		&.hover:before,
-		&:hover:before{
+		&:hover:before {
 			margin: (-$button-vertical-padding) (-$button-with-arrow-horizontal-padding);
 		}
 	}
-	&.arrow span{
+
+	&.arrow span {
 		margin-left: 30px;
 		color:  $color-primary-foreground;
 		font-size: 20px;
 	}
-	&.hover,
-	&:hover{
+
+	&.hover, &:hover {
 		background: darken($true-button-color, 5%);
 	}
 }
 
-
-.choice-btn{
+.choice-btn {
 	@extend .button;
 	width: 48px;
 	padding: 4px 0;
@@ -103,23 +107,22 @@ $false-button-color: $official-red;
 	text-align: center;
 }
 
-
-.true-btn{
+.true-btn {
 	@extend .choice-btn;
 	background: $true-button-color;
 	border-bottom: 2px solid darken($true-button-color, 10);
-	&.hover,
-	&:hover{
+
+	&.hover, &:hover {
 		background: darken($true-button-color, 5%);
 	}
 }
 
-.false-btn{
+.false-btn {
 	@extend .choice-btn;
 	background: adjust_hue(desaturate(lighten($false-button-color, 9.5), 9.5), 22);
 	border-bottom: 2px solid $false-button-color;
-	&.hover,
-	&:hover{
+
+	&.hover, &:hover {
 		background: darken($false-button-color, 5%);
 	}
 }
@@ -128,17 +131,16 @@ $false-button-color: $official-red;
 
 @media screen and (max-width: 767px) {
 
-	.button{
+	.button {
 		font-size: 14px;
 	}
 
-	.save-draft, 
-	.call-to-action-btn{
+	.save-draft {
 		padding: 8px 20px;
 	}
 
-	.call-to-action-btn{
+	.call-to-action-btn {
 		padding: 8px 30px;
 	}
-	
+
 }
