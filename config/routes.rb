@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get '/search', to: 'static_pages#search', as: :search_page
 
-  get '/new_listing', to: 'listings#new', as: :new_listing
+  resources :listings, only: [:new] do
+  end
 
 end

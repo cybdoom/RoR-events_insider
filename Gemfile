@@ -24,7 +24,7 @@ gem 'seed_migration'
 gem 'simple_form'
 gem 'pry-rails'
 gem 'rack-cache'
-gem 'redis', require:  ['redis', 'redis/connection/hiredis']
+gem 'redis', require: ['redis', 'redis/connection/hiredis']
 gem 'redis-store'
 gem 'redis-rails'
 gem 'redis-rack-cache'
