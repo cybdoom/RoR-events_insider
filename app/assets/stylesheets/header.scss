@@ -93,7 +93,6 @@ nav a.icons.social {
 		right: 8px;
 		top: 17px;
 		@include opacity(1);
-		z-index: 1000;
 
 		&:before {
 			@extend .icon-search;

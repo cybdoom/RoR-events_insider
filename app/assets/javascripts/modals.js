@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+	var documentHeight = $(document).height();
+
+	$(".date-picker-container").height(documentHeight);
 	$(document).click(function(event) {
 		var target = $(event.target);
 		var thisElement = event.target.className;
