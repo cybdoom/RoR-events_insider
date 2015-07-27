@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/add_event', to: 'static_pages#add_event'
 
   get '/event', to: 'static_pages#event'
+  
+  get '/add_listing', to: 'static_pages#add_listing'
 
   get '/new_listing', to: 'listings#new', as: :new_listing
 
