@@ -1,3 +1,3 @@
-url = URI.parse(ENV['REDISCLOUD_URL'] || 'redis://localhost:6379/events-insider')
+url = URI.parse(ENV.fetch('REDIS_URL'))
 
 $redis = Redis.new(url: url, driver: :hiredis)

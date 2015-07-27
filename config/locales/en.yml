@@ -22,6 +22,11 @@ en:
       trusted: 'Trusted'
       moderator: 'Official'
       admin: 'Admin'
+  listing:
+    type:
+      event: 'Event'
+      venue: 'Venue'
+      organization: 'Organization'
 
 errors:
   messages:

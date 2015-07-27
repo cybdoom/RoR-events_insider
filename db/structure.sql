@@ -79,12 +79,13 @@ CREATE TABLE events (
     id integer NOT NULL,
     user_id integer,
     venue_id integer,
-    name character varying NOT NULL,
+    name character varying DEFAULT ''::character varying NOT NULL,
     description text,
-    recurring boolean NOT NULL,
+    recurring boolean DEFAULT false NOT NULL,
     starts_at timestamp without time zone,
     ends_at timestamp without time zone,
-    price numeric,
+    price integer DEFAULT 0 NOT NULL,
+    estimated_attendance integer DEFAULT 0 NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );

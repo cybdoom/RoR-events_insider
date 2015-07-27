@@ -5,30 +5,33 @@
   position: relative;
   background: $official-yellow;
   padding: 10px;
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: -20px;
+
   font-family: $font-header;
   font-weight: bold;
   font-size: 16px;
   color: lighten($color-box-foreground, 18.5%);
   text-align: center;
   @include box-corners;
-  margin-top: -15px;
   @include box-shadow;
-}
 
-.alert-message:after {
-  @extend .icon-cross:before;
-  font-size: 8px;
-  color : lighten($color-box-foreground, 18.5%);
-  float: right;
-  margin-top: -5px;
-  margin-right: 0px;
-}
+  &:after {
+    @extend .icon-cross:before;
+    font-size: 10px;
+    color : lighten($color-box-foreground, 18.5%);
+    float: right;
+    margin-top: -2px;
+    margin-right: -2px;
+  }
 
-.alert-message:before {
-  position: absolute;
-  top: 3px;
-  left: -75px;
-  content: image-url('mascot-side-left.png');
+  &:before {
+    position: absolute;
+    top: 3px;
+    left: -75px;
+    content: image-url('mascot-side-left.png');
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -36,17 +39,17 @@
     text-align: left;
     font-size: 14px;
     font-weight: 100;
-  }
 
-  .alert-message:before {
-    position: absolute;
-    top: -52px;
-    right: 20px;
-    text-align: right;
-    content: image-url('mascot-top-yellow.png') !important;
-  }
+    &:before {
+      position: absolute;
+      top: -52px;
+      right: 20px;
+      text-align: right;
+      content: image-url('mascot-top-yellow.png') !important;
+    }
 
-  .alert-message:after {
-    margin-top: -17px;
+    &:after {
+      margin-top: -17px;
+    }
   }
 }

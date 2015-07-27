@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.1.6'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'rails', '4.2.3'
 
 gem 'pg'
@@ -10,6 +12,7 @@ gem 'postgres_ext'
 # Main gems
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'countries'
+gem 'date_validator'
 gem 'devise'
 gem 'fast_blank'
 gem 'fixme', github: 'henrik/fixme'
@@ -19,17 +22,19 @@ gem 'hiredis'
 gem 'indirizzo', github: 'pineapplethief/indirizzo', branch: 'master' # US address parsing
 gem 'jbuilder', '~> 2.0'
 gem 'kgio'
-gem 'pundit'
 gem 'pry-rails'
+gem 'pundit'
 gem 'rack-cache'
 gem 'redis', require: ['redis', 'redis/connection/hiredis']
 gem 'redis-store'
 gem 'redis-rails'
 gem 'redis-rack-cache'
 gem 'require_all'
+gem 'responders'
 gem 'seed_migration'
 gem 'simple_enum'
 gem 'simple_form'
+gem 'virtus'
 
 # Front-end gems
 gem 'coffee-rails', '~> 4.1.0'

@@ -26,7 +26,7 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -34,8 +34,6 @@ Rails.application.configure do
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
-
-  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -80,7 +78,9 @@ Rails.application.configure do
   # Needed to deploy on Heroku with Devise installed
   config.assets.initialize_on_precompile = false
 
-  config.action_mailer.default_url_options = {host: ENV['DOMAIN_URL']}
+  config.routes.default_url_options[:host] = ENV.fetch('DOMAIN_URL')
+
+  config.action_mailer.default_url_options[:host] = ENV.fetch('DOMAIN_URL')
 
   ActionMailer::Base.smtp_settings = {
     address:        'smtp.sendgrid.net',
@@ -92,12 +92,13 @@ Rails.application.configure do
   }
   ActionMailer::Base.delivery_method = :smtp
 
-  redis_url = ENV['REDISCLOUD_URL'] || 'redis://localhost:6379/0/events-insider'
+  redis_url = ENV.fetch('REDIS_URL')
 
   config.action_dispatch.rack_cache = {
     metastore:   redis_url,
     entitystore: 'file:tmp/cache/rack/body'
   }
+
   config.static_cache_control = 'public, max-age=2592000'
 
 end

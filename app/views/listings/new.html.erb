@@ -4,7 +4,7 @@
   <h3>I would like to add a...</h3>
   <%= simple_form_for @listing do |f| %>
     <%= f.input :type, as: :radio_buttons,
-                       collection: Listing::TYPES,
+                       collection: Array(Listing::TYPES.first),
                        selected: Listing::TYPES.first,
                        label: false %>
     <%= f.input :name %>

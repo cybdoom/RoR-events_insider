@@ -1,3 +1,5 @@
+require_dependency 'application_responder'
+
 class ApplicationController < ActionController::Base
   include Pundit
 
@@ -6,6 +8,12 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   before_filter :set_user_location
+
+  respond_to :html
+
+  def self.responder
+    ApplicationResponder
+  end
 
   def guest_user?
     !current_user
