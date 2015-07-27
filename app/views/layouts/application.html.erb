@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
     <title><%= content_for?(:title) ? yield(:title) : 'Events Insider' %></title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
 
@@ -16,7 +17,10 @@
   </head>
 
   <body>
-  <%= render 'modals/date_picker' %>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <%= render 'modals/date_picker' %>
     <%= render 'common/header' %>
     <div class="content-wrapper">
       <%= yield %>

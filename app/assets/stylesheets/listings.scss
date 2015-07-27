@@ -1,5 +1,6 @@
 @import 'globals';
 @import 'icons';
+
 $color-listing-header-border: lighten($color-box-foreground, 38%);
 
 .listing-section {
@@ -88,18 +89,14 @@ $color-listing-header-border: lighten($color-box-foreground, 38%);
   display: none;
 }
 
-.final-actions {
-  padding: 20px;
+.form-actions {
+  padding-top: 20px;
+  padding-left: 20px;
 
-  & button {
+  & button,
+  & input[type="submit"] {
     float: right;
-
-    &:first-child {
-      margin-left: 20px;
-    }
-
   }
-
 }
 
 fieldset.with-help:after,
@@ -540,7 +537,7 @@ section.events .icon:last-child {
     text-align: right;
   }
 
-  .final-actions button:first-child {
+  .form-actions button:first-child {
     margin-left: 10px;
   }
 

@@ -1,18 +1,17 @@
 @import 'globals';
 
 /* main modules */
-body,
-html {
-	padding: 0px;
-	margin: 0;
+body, html {
+  margin: 0;
+  padding: 0;
 }
 
 html {
-	background: image-url('bg.jpg') no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+  background: image-url('bg.jpg') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
@@ -31,7 +30,7 @@ a {
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .clear {
@@ -39,11 +38,11 @@ a {
 }
 
 .desktop-only {
-	display: block;
+  display: block;
 }
 
 .mobile-only {
-	display: none;
+  display: none;
 }
 
 .wrapper {
@@ -54,46 +53,46 @@ a {
 }
 
 .content-wrapper {
-	@extend .wrapper;
-	margin-top: 40px;
+  @extend .wrapper;
+  margin-top: 40px;
 }
 
 .footer-wrapper {
-	@extend .wrapper;
+  @extend .wrapper;
 }
 
 article {
-	float: left;
-	width: 685px;
+  float: left;
+  width: 685px;
 }
 
 section {
-	float: left;
-	width: 100%;
+  float: left;
+  width: 100%;
 }
 
 .col {
-	float: left;
-	width: 100%;
+  float: left;
+  width: 100%;
 }
 
 .col6 {
-	float: left;
-	width: 50%;
+  float: left;
+  width: 50%;
 }
 
 .col6:nth-child(2n) {
-	margin: 0;
+  margin: 0;
 }
 
 .col4 {
-	float: left;
-	width: 33.3%;
+  float: left;
+  width: 33.3%;
 }
 
 .col3 {
-	float: left;
-	width: 25%;
+  float: left;
+  width: 25%;
 }
 
 .content-block {
@@ -130,10 +129,6 @@ section {
 		margin: 0 auto;
 		float: none
 	}
-
-}
-
-@media screen and (max-width:1013px) {
 }
 
 @media screen and (max-width:767px) {
@@ -144,29 +139,29 @@ section {
 		background-size: contain;
 	}
 
-	.wrapper {
-		width: 90%;
-	}
+  .wrapper {
+    width: 90%;
+  }
 
-	article {
-		width: 100%;
-	}
+  article {
+    width: 100%;
+  }
 
-	.mobile-only {
-		display: block;
-	}
+  .mobile-only {
+    display: block;
+  }
 
-	.desktop-only {
-		display: none;
-	}
+  .desktop-only {
+    display: none;
+  }
 
 	.col6,
 	.col4 {
 		width: 100%;
 	}
 
-	.col6:nth-child(2n) {
-		margin-bottom: 20px;
-	}
+  .col6:nth-child(2n) {
+    margin-bottom: 20px;
+  }
 
 }

@@ -1,0 +1,23 @@
+<h1>Add a New Event</h1>
+
+<div class="content-block">
+  <h3>I would like to add a...</h3>
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :name %>
+
+    <%= f.input :starts_at %>
+
+    <%= f.input :price, as: :select %>
+    <%= f.input :estimated_attendance, as: :select %>
+
+    <%= f.input :description %>
+
+    <%= f.fields_for :venue do |venue| %>
+      <%= venue.input :location %>
+    <% end %>
+
+    <%= f.actions do %>
+      <%= f.button :submit, 'Publish', class: 'call-to-action-btn' %>
+    <% end %>
+  <% end %>
+</div>

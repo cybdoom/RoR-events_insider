@@ -46,7 +46,12 @@ Rails.application.configure do
     authentication: :cram_md5
   }
 
-  config.action_mailer.default_url_options = { host: 'eventsinsider.local', port: 80 }
+  url = ENV['DOMAIN_URL'] || 'http://localhost:3000'
+  url = URI.parse(url)
+
+  Rails.application.routes.default_url_options = {host: url.host, port: url.port}
+
+  config.action_mailer.default_url_options = {host: url.host, port: url.port}
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
