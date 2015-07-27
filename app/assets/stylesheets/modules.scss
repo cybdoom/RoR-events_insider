@@ -1,10 +1,9 @@
 @import 'globals';
 
 /* main modules */
-
 body, html {
   margin: 0;
-  padding: 0px;
+  padding: 0;
 }
 
 html {
@@ -15,9 +14,19 @@ html {
   background-size: cover;
 }
 
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.content-wrapper {
+	flex: 1;
+}
+
 a {
-  font-family: $font-header;
-  color : $color-box-important-text;
+	font-family: $font-header;
+	color: $color-box-important-text;
 }
 
 * {
@@ -25,7 +34,7 @@ a {
 }
 
 .clear {
-  clear:both;
+	clear: both;
 }
 
 .desktop-only {
@@ -37,10 +46,10 @@ a {
 }
 
 .wrapper {
-  position: relative;
-  width: 1014px;
-  margin: 0 auto;
-  float: none;
+	position: relative;
+	float: none;
+	width: 1014px;
+	margin: 0 auto;
 }
 
 .content-wrapper {
@@ -76,7 +85,6 @@ section {
   margin: 0;
 }
 
-
 .col4 {
   float: left;
   width: 33.3%;
@@ -87,58 +95,49 @@ section {
   width: 25%;
 }
 
-
-
-
 .content-block {
-  @include box-corners;
-  box-sizing: border-box;
-  width: 100%;
-  float: left;
-  background-color: $color-primary-foreground;
-  padding: 20px;
-}
+	@include box-corners;
+	box-sizing: border-box;
+	width: 100%;
+	float: left;
+	background-color: $color-primary-foreground;
 
-.content-block section.first {
-   padding-top: 25px;
+	& section.first {
+		padding: 0px;
+		padding-top: 25px;
+	}
+
 }
 
 .tags {
-  color : $color-box-important-text;
-  font-weight: 100;
-  font-size: 14px;
-  letter-spacing: 0.2px;
+	font-size: 14px;
+	font-weight: 100;
+	letter-spacing: 0.2px;
+	color: $color-box-important-text;
 }
 
-tags a {
-  /* margin-right: 5px; */
+@media screen and (max-width:1065px) {
+	.wrapper {
+		width: 95%;
+	}
+
+	aside {
+		display: none;
+	}
+
+	article {
+		margin: 0 auto;
+		float: none
+	}
 }
 
-@media screen and (max-width: 1065px) {
-  .wrapper {
-    width: 95%;
-  }
-  aside {
-    display: none;
-  }
-  article {
-    margin: 0 auto;
-    float: none
-  }
-}
-
-@media screen and (max-width: 1013px) {
-
-}
-
-@media screen and (max-width: 767px) {
-
-  html {
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-  }
+@media screen and (max-width:767px) {
+	html {
+		-webkit-background-size: contain;
+		-moz-background-size: contain;
+		-o-background-size: contain;
+		background-size: contain;
+	}
 
   .wrapper {
     width: 90%;
@@ -156,9 +155,10 @@ tags a {
     display: none;
   }
 
-  .col6, .col4 {
-    width: 100%;
-  }
+	.col6,
+	.col4 {
+		width: 100%;
+	}
 
   .col6:nth-child(2n) {
     margin-bottom: 20px;

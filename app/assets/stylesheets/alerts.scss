@@ -17,6 +17,13 @@
   @include box-corners;
   @include box-shadow;
 
+  &:before {
+    position: absolute;
+    top: 3px;
+    left: -75px;
+    content: image-url('mascot-side-left.png');
+  }
+
   &:after {
     @extend .icon-cross:before;
     font-size: 10px;
@@ -25,16 +32,9 @@
     margin-top: -2px;
     margin-right: -2px;
   }
-
-  &:before {
-    position: absolute;
-    top: 3px;
-    left: -75px;
-    content: image-url('mascot-side-left.png');
-  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width:767px) {
   .alert-message {
     text-align: left;
     font-size: 14px;
@@ -52,4 +52,5 @@
       margin-top: -17px;
     }
   }
+
 }

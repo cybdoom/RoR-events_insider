@@ -2,18 +2,21 @@
 @import 'icons';
 
 /* header and sub-header */
-html, body {
+html,
+body {
 	min-height: 100%;
 }
 
 header {
 	width: 100%;
 	height: 108px;
-	background-color : $color-primary-background;
+	background-color: $color-primary-background;
+
 	& nav {
 		float: right;
 		margin-top: 62px;
 	}
+
 }
 
 nav a {
@@ -22,17 +25,19 @@ nav a {
 	font-size: 18px;
 	letter-spacing: 1px;
 	text-decoration: none;
-	&.icons:last-of-type{
-		margin-left : 10px;
+
+	&.icons:last-of-type {
+		margin-left: 10px;
 	}
+
 }
 
 .sub-footer nav a.icons:last-of-type {
-	margin-left : 17px;
+	margin-left: 17px;
 }
 
-.icons.home:before {
-	@extend .icon-home_main:before;
+.icons.home {
+	@extend .icon-home_main;
 	float: left;
 	width: 24px;
 	height: 30px;
@@ -41,7 +46,7 @@ nav a {
 
 nav a.icons.social {
 	&.twitter:before,
-	&.fb:before{
+	&.fb:before {
 		float: left;
 		width: 40px;
 		height: 40px;
@@ -60,6 +65,7 @@ nav a.icons.social {
 			height: 40px;
 			color: darken($color-primary-foreground, 25%);
 		}
+
 	}
 
 }
@@ -67,7 +73,7 @@ nav a.icons.social {
 .icons {
 	&.social {
 		&.fb:before {
-			@extend .icon-facebook:before;
+			@extend .icon-facebook;
 		}
 
 		&.fb.grey {
@@ -75,24 +81,26 @@ nav a.icons.social {
 		}
 
 		&.twitter:before {
-			@extend .icon-twitter:before;
+			@extend .icon-twitter;
 		}
+
 	}
 
 	&.search {
 		position: absolute;
 		width: 20px;
 		height: auto;
-		right: 7px;
-		top: 12px;
+		right: 8px;
+		top: 17px;
 		@include opacity(1);
-		z-index: 1000;
 
 		&:before {
-			@extend .icon-search:before;
-			color : lighten($color-box-foreground, 18.5%);
+			@extend .icon-search;
+			color: lighten($color-box-foreground, 18.5%);
 		}
+
 	}
+
 }
 
 .logo {
@@ -104,6 +112,7 @@ nav a.icons.social {
 	width: 100%;
 	height: 55px;
 	background-color: saturate(adjust_hue(lighten($color-primary-background, 27), -1), 1.4);
+
 	& h2 {
 		float: left;
 		margin-top: 12px;
@@ -113,6 +122,7 @@ nav a.icons.social {
 		font-weight: 500;
 		letter-spacing: 1px;
 	}
+
 }
 
 .tools {
@@ -140,24 +150,26 @@ nav a.icons.social {
 
 .nav-mobile-icon {
 	&:before {
-		top:1px;
+		top: 1px;
 		font-size: 32px;
-		@extend .icon-tags:before;
+		@extend .icon-tags;
 	}
 
 	&.toggle {
 		background-position: -50px 0;
 	}
+
 }
 
 .search-mobile-icon {
 	&:before {
-		@extend .icon-search:before;
+		@extend .icon-search;
 	}
 
 	&.toggle {
 		background-position: -50px -50px;
 	}
+
 }
 
 .header-icons-divider {
@@ -171,8 +183,7 @@ nav a.icons.social {
 	display: block;
 }
 
-
-@media screen and (max-width: 959px) {
+@media screen and (max-width:959px) {
 	nav a {
 		margin-left: 18px;
 		font-size: 16px;
@@ -181,16 +192,17 @@ nav a.icons.social {
 	.sub-header h2 {
 		font-size: 19px;
 	}
+
 }
 
-
-@media screen and (max-width: 767px) {
-
+@media screen and (max-width:767px) {
 	header {
 		height: 60px;
+
 		& nav {
 			display: none;
 		}
+
 	}
 
 	.logo {
@@ -201,13 +213,15 @@ nav a.icons.social {
 
 	.sub-header {
 		height: 25px;
+
 		& h2 {
 			width: 100%;
 			margin: 5px 0;
 			font-size: 12px;
 			text-align: center;
-			text-shadow: 0 2px 2px rgba( 0, 0, 0, 0.2 );
+			text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 		}
+
 	}
 
 	#header-menu {
@@ -228,7 +242,9 @@ nav a.icons.social {
 			&:nth-child(3n+1) {
 				text-align: center;
 			}
+
 		}
+
 	}
 
 	.search-bar {
@@ -250,6 +266,7 @@ nav a.icons.social {
 			color: saturate(lighten($color-box-foreground, 29), 0.85);
 			text-transform: uppercase;
 		}
+
 	}
 
 	.search-box-mobile {
@@ -265,4 +282,5 @@ nav a.icons.social {
 	.search.desktop-only {
 		display: none;
 	}
+
 }
