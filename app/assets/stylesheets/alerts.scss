@@ -25,7 +25,7 @@
   }
 
   &:after {
-    @extend .icon-cross:before;
+    @extend .icon-cross;
     font-size: 10px;
     color : lighten($color-box-foreground, 18.5%);
     float: right;
