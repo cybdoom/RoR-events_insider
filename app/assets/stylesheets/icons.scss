@@ -43,7 +43,7 @@
 	content: "\e62c";
 }
 
-.icon-calendar {
+.icon-calendar:before {
 	@extend .ei-icon;
 	content: "\e62d";
 }
@@ -163,7 +163,7 @@
 	content: "\e607";
 }
 
-.icon_tags {
+.icon_tags:before {
 	@extend .ei-icon;
 	content: "\e606";
 	margin: 0px;
