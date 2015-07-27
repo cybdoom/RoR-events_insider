@@ -24,7 +24,6 @@ aside {
     & h3,
     & p,
     & div,
-    .related-pages,
     aside .progress-bar-container {
       padding: 0px 20px;
     }
@@ -63,11 +62,16 @@ aside {
   margin-bottom: 10px;
 }
 
+.related-pages-group {
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+
 .related-pages {
   float: left;
   width: 100%;
   padding: 7px 20px;
-  border-bottom: solid 1px lighten($color-box-foreground, 57%);
   font-family: $font-body-text;
   font-size: 13px;
   color: $color-box-important-text;
