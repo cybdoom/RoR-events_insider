@@ -13,8 +13,9 @@ module EventsInsider
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
 
-    require_all "#{Rails.root}/lib/core_extensions"
+    require_all "#{Rails.root}/lib/extensions"
     require_all "#{Rails.root}/lib/carrierwave"
+    require_all "#{Rails.root}/lib/virtus"
 
     config.active_record.schema_format = :sql
 

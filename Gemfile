@@ -14,6 +14,8 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'countries'
 gem 'date_validator'
 gem 'devise'
+gem 'faraday', github: 'lostisland/faraday'
+gem 'faraday_middleware', github: 'lostisland/faraday_middleware'
 gem 'fast_blank'
 gem 'fixme', github: 'henrik/fixme'
 gem 'geocoder'
@@ -34,6 +36,7 @@ gem 'responders'
 gem 'seed_migration'
 gem 'simple_enum'
 gem 'simple_form'
+gem 'typhoeus'
 gem 'virtus'
 
 # Front-end gems
@@ -46,10 +49,10 @@ gem 'twitter-typeahead-rails'
 gem 'uglifier', '>= 1.3.0'
 
 group :production do
-  gem 'puma'
-  gem 'rails_12factor'
   gem 'heroku-deflater'
+  gem 'puma'
   gem 'rack-timeout'
+  gem 'rails_12factor'
 end
 
 group :development do
@@ -57,6 +60,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capistrano-rails'
+  gem 'quiet_assets'
 end
 
 group :development, :test do

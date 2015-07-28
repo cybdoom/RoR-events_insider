@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Title of the document</title>
-<link rel="stylesheet" type="text/css" href="../style.css">
-
-</head>
-<body>
-        
-        
     <div class="date-picker-container">
-
         <div class="popup date-picker">
-        
         	<h3 class="mascot-speaks">Pick a date</h3>
 			<p>Click a date to select it.</p>
 			<div class="calendar-container">
@@ -21,7 +8,7 @@
 						<span>January</span>
 					<a class="next" href=""><span class="icon-arrow"></span></a>
 				</div>
-				
+
 				<div class="d-o-w">
 						<span>Mo</span>
 						<span>Tu</span>
@@ -47,13 +34,13 @@
 						<span class="inactive">3</span>
 						<span class="inactive">4</span>
 						<span class="inactive">5</span>
-						
+
 				</div>
 			</div>
 			<div class="weather-container">
 				<span class="day">Friday</span><br><span class="date"> Jan 19</span>
 				<div class="weather-image-container">
-					
+
 					<%= image_tag 'weather.png', alt: 'weather image', class: '' %>
 				</div>
 				<p>Rain is likely in the morning, sunny afternoon highlights in the 60x then snow and meteor strike.</p>
@@ -64,25 +51,13 @@
 				<input type="checkbox" class="time" name="time" value="night"  /><label>Night</label>
 				<input type="checkbox" class="time last" name="time" value="weekends" /><label>Weekends</label>
 			</div>
-			
+
 			<div class="popup-control">
 				<button type="button" class="true-btn save">Save</button>
 				<a class="cancel" href = "javascript:void(0)">Cancel</a>
 			</div>
-			
+
         </div>
 	</div>
-	
-        <div id="fade" class="overlay"></div>
 
-
-<script src="../js/vendors/jquery.js"></script>
-<script src="../js/vendors/typeahead.js"></script>
-<script src="../js/vendors/ddslick.js"></script>
-<script src="../js/script.js"></script>
-<script>
-
-</script>				  
-</body>
-
-</html>
+  <div id="fade" class="overlay"></div>

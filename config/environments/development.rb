@@ -36,6 +36,9 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.action_view.logger = nil
+  config.quiet_assets = false if ENV['LOG_ASSETS']
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     user_name: '39761fffa146761af',
@@ -52,6 +55,9 @@ Rails.application.configure do
   Rails.application.routes.default_url_options = {host: url.host, port: url.port}
 
   config.action_mailer.default_url_options = {host: url.host, port: url.port}
+
+  config.web_console.whitelisted_ips = '192.168.0.0/16'
+  config.web_console.whiny_requests = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
