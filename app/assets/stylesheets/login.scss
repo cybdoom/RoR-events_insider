@@ -1,0 +1,30 @@
+@import 'globals';
+@import 'icons';
+
+.login {
+  display: block;
+
+  & .popup {
+    width: 368px;
+    height: 330px;
+  }
+
+  & label {
+    width: 100%;
+  }
+
+  & input[type="text"],
+  & input[type="password"] {
+    float: left;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+
+  & .forgot {
+    float: left;
+  }
+
+}

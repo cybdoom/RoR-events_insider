@@ -10,6 +10,7 @@
 @font-face {
   font-family: 'Cabin-SemiBold';
   src: font-url('Cabin/Cabin-SemiBold.otf');
+  src: font-url('Cabin/Cabin-SemiBold.ttf') format('truetype'), font-url('Cabin/Cabin-SemiBold.woff') format('woff');
 }
 
 @font-face {

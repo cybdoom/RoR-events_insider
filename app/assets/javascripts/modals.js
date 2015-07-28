@@ -1,6 +1,13 @@
 $(document).ready(function() {
 
   /* Date Picker */
+  var documentHeight = $(document).height();
+
+  $(".popup-container").height(documentHeight);
+  $("#datePicker .close").on("click", function() {
+    $("#datePicker").hide();
+  });
+
   var $datesSpan = $(".dates span");
 
   $datesSpan.on("click", function() {

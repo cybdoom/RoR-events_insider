@@ -7,6 +7,7 @@
 }
 
 input[type="text"],
+input[type="password"],
 select,
 textarea {
   padding-left: 10px;
@@ -16,6 +17,7 @@ fieldset legend,
 fieldset input[type="radio"],
 fieldset span,
 input[type="text"],
+input[type="password"],
 select,
 textarea {
   font-family: $font-header;
@@ -236,7 +238,7 @@ input[type='radio'] {
       &:before {
         position: absolute;
         left: 10px;
-        content: image-url('icons/listing/add.png');
+        content: image-url('add.png');
       }
 
     }
