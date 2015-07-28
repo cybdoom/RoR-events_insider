@@ -1,34 +1,6 @@
 $(document).ready(function() {
 
-  $document = $(document);
-  var documentHeight = $document.height();
-  $datePickerContainer = $('.date-picker-container');
-
-  $datePickerContainer.height(documentHeight);
-  $document.on("click", function(event) {
-    var target = $(event.target);
-    var thisElement = event.target.className;
-
-    if (!$datePickerContainer.is(':visible')) {
-
-      if (thisElement == 'date') {
-        $datePickerContainer.show();
-      }
-
-    } else {
-
-      if (thisElement == 'cancel') {
-        $datePickerContainer.hide();
-      } else if ((thisElement == 'date-picker') || (!target.parents('.date-picker').length)) {
-        $datePickerContainer.hide();
-      }
-
-    }
-
-  });
-
   /* Date Picker */
-
   var $datesSpan = $(".dates span");
 
   $datesSpan.on("click", function() {
