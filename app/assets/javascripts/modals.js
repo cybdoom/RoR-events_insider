@@ -35,5 +35,21 @@ $(document).ready(function() {
     }
   });
 
-
 });
+
+/* */
+
+function checkPassword() {
+  var password = document.getElementById('password');
+  var confirmPassword = document.getElementById('confirm-password');
+  var message = document.getElementById('confirm-message');
+  var goodColor = "#66cc66";
+  var badColor = "#ff6666";
+  if (password.value == confirmPassword.value) {
+    message.style.color = goodColor;
+    message.innerHTML = "Passwords Match!"
+  } else {
+    message.style.color = badColor;
+    message.innerHTML = "Passwords Do Not Match!"
+  }
+}

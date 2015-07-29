@@ -32,7 +32,32 @@
 /* Sign up */
 #signup {
   & .popup {
-    height: 445px;
+    // height: 522px;
+
+    & .confirm-message {
+      float: left;
+      width: 100%;
+      text-align: center;
+    }
+
+    & .popup-control {
+      margin-bottom: 30px;
+    }
+
+    & .already-have {
+      float: left;
+      width: calc(100% + 42px);
+      padding-top: 15px;
+      padding-left: 21px;
+      border-top: solid 1px #aaa;
+      margin-left: -21px;
+
+      & p {
+        margin-bottom: 0;
+      }
+
+    }
+
   }
 
 }

@@ -1,19 +1,23 @@
 <div class="modal fade popup-container login" id="signup" role="dialog" >
   <div class="popup">
-    
-    <h3 class="mascot-speaks">Create an Account</h3>
-    <span class="help"></span>
-    <span class="close"></span>
-    <p>You don't have to log in with Facebook or another 3rd party service. You can create an account right here with an email and password. My password is 'bananas', but I hope you'll choose something stronger with letters, numbers, and symbols.</p>
-    <form>
-      <label>Email</label><input type="text" name="email" value="">
-      <label>Password</label><input type="password" name="password" value="">
-      <label>Confirm Password</label><input type="password" name="password" value="">
-    </form>
-    <div class="popup-control">
-      <button type="button" class="true-btn save">Save</button>
-      <a class="cancel" href = "javascript:void(0)">Cancel</a>
+    <div class="popup-inner">
+      <h3 class="mascot-speaks">Create an Account</h3>
+      <span class="help"></span>
+      <span class="close"></span>
+      <p>You don't have to log in with Facebook or another 3rd party service. You can create an account right here with an email and password. My password is 'bananas', but I hope you'll choose something stronger with letters, numbers, and symbols.</p>
+      <form>
+        <label>Email</label><input id="email" type="text" name="email" value="">
+        <label>Password</label><input id="password" type="password" name="password" value="">
+        <label>Confirm Password</label><input id="confirm-password" type="password" name="confirm-password" value="" onkeyup="checkPassword(); return false;">
+      </form>
+      <div id="confirm-message" class="confirm-message"></div>
+      <div class="popup-control">
+        <button type="button" class="true-btn save">Save</button>
+        <a class="cancel" href = "javascript:void(0)">Cancel</a>
+      </div>
+      <div class="already-have">
+        <p>Already have an account? <a href="">Sign in</a></p>
+      </div>
     </div>
-    
   </div>
 </div>

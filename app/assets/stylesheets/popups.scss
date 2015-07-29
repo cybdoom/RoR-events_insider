@@ -19,17 +19,25 @@
   margin: 0 auto;
   margin-top: 150px;
   width: 450px;
-  height: 300px;
-  padding: 16px;
-  border: 5px solid $color-box-background;
-  background-color: white;
   z-index: 1002;
 
-  &:before {
-    position: absolute;
-    content: image-url('mascot-top.png');
-    top: -92px;
-    z-index: 1;
+  & .popup-inner {
+    float: left;
+    width: 100%;
+    padding: 16px;
+    border: 5px solid #FFFFFF;
+    background-color: white;
+    padding: 16px;
+    border: 5px solid $color-box-background;
+    background-color: white;
+
+    &:before {
+      position: absolute;
+      content: image-url('mascot-top.png');
+      top: -87px;
+      z-index: 1;
+    }
+
   }
 
   & h3 {
