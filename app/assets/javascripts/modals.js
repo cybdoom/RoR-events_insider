@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   /* Pop up */
 
-  $('#signup').modal('show');
+  // $('#datePicker').modal('show');
 
   $(".popup").on("click", '.close, .cancel', function() {
     $(this).closest('.popup-container').hide();
@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 });
 
-/* */
+/* Password vs Confirm-Password Checking */
 
 function checkPassword() {
   var password = document.getElementById('password');
