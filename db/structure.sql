@@ -153,7 +153,7 @@ ALTER SEQUENCE images_id_seq OWNED BY images.id;
 
 CREATE TABLE locations (
     id integer NOT NULL,
-    location character varying NOT NULL,
+    location character varying,
     geocoded_location character varying,
     country_code character varying(2),
     region_code character varying,

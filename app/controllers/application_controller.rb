@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  before_filter :set_user_location
+  before_filter :set_user_location, if: -> { user_signed_in? && !current_user.location_id? }
 
   respond_to :html
 
@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
     !current_user
   end
 
+  def guest_user
+    User.guest
+  end
+
   protected
 
   def local_request?
@@ -29,13 +33,26 @@ class ApplicationController < ActionController::Base
 
   def set_user_location
     if local_request? && ENV['GEOCODE_LOCAL_IPS']
-      ip = Faraday.get('http://www.telize.com/ip').body
-      ip.strip!
-      location = Geocoder.search(ip)
+      begin
+        ip = Faraday.get('http://www.telize.com/ip').body
+        ip.strip!
+        locations = Geocoder.search(ip)
+        location_data = locations.first
+      rescue Faraday::ConnectionFailed
+        location_data = request.location
+      end
     else
-      ip = request.remote_ip
-      location = request.location
+      location_data = request.location
     end
+
+    if location_data.present?
+      location = Location.build_from_geoip(location_data)
+      location.save
+
+      current_user.location = location
+      current_user.save
+    end
+
     Rails.logger.debug "ip = #{ip.inspect}"
     Rails.logger.debug "location = #{location.inspect}"
   end

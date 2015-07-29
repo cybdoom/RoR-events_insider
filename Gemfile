@@ -11,6 +11,7 @@ gem 'postgres_ext'
 
 # Main gems
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'colorize'
 gem 'countries'
 gem 'date_validator'
 gem 'devise'
@@ -68,6 +69,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda'
+  gem 'show_data'
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end

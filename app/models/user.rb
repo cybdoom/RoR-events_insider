@@ -22,13 +22,6 @@
 #  role                   :string           default("guest"), not null
 #  location_id            :integer
 #
-# Indexes
-#
-#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
-#  index_users_on_email                 (email) UNIQUE
-#  index_users_on_location_id           (location_id)
-#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
-#
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
@@ -42,10 +35,12 @@ class User < ActiveRecord::Base
 
   belongs_to :location
 
-  delegate :location, to: :location
-
   before_create do
     self.role = :regular
+  end
+
+  def self.guest
+    guest = User.new
   end
 
   def guest?

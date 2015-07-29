@@ -3,7 +3,7 @@
 # Table name: locations
 #
 #  id                :integer          not null, primary key
-#  location          :string           not null
+#  location          :string
 #  geocoded_location :string
 #  country_code      :string(2)
 #  region_code       :string
@@ -16,10 +16,6 @@
 #  longitude         :float
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#
-# Indexes
-#
-#  index_locations_on_latitude_and_longitude  (latitude,longitude)
 #
 
 require 'rails_helper'

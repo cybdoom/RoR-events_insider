@@ -1,3 +1,4 @@
+require_relative 'to_boolean'
 # Delegator to convert strings to boolean values in ENV hash
 class EnvWrapper < SimpleDelegator
 

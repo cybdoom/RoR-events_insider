@@ -298,6 +298,7 @@ GEM
     shoulda-context (1.2.1)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    show_data (1.0.0)
     simple_enum (2.1.1)
       activesupport (>= 4.0.0)
     simple_form (3.1.0)
@@ -354,6 +355,7 @@ DEPENDENCIES
   capistrano-rails
   carrierwave!
   coffee-rails (~> 4.1.0)
+  colorize
   countries
   date_validator
   devise
@@ -393,6 +395,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   seed_migration
   shoulda
+  show_data
   simple_enum
   simple_form
   spring

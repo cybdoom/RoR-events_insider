@@ -1,8 +1,7 @@
 class CreateLocations < ActiveRecord::Migration
   def change
     create_table :locations do |t|
-      t.string :location, null: false # actual location as typed in by user,
-                                      # usually == geocoded_location
+      t.string :location # actual location as typed in by user, usually equals geocoded_location
       t.string :geocoded_location # as geocoded by geocoder gem
 
       t.string :country_code, limit: 2 # alpha2 ISO country code
