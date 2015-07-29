@@ -1,9 +1,8 @@
 @import 'globals';
 @import 'icons';
 
+/* Common for all logins */
 .login {
-  display: block;
-
   & .popup {
     width: 368px;
     height: 330px;
@@ -26,6 +25,14 @@
       float: left;
     }
 
+  }
+
+}
+
+/* Sign up */
+#signup {
+  & .popup {
+    height: 445px;
   }
 
 }

@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
   /* Pop up */
+
+  $('#signup').modal('show');
+
   $(".popup").on("click", '.close, .cancel', function() {
     $(this).closest('.popup-container').hide();
   });
