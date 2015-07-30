@@ -1,6 +1,29 @@
 @import 'globals';
 @import 'icons';
 
+.date-picker-wrapper {
+  background: white;
+
+  &:before {
+    @include popup-mascot;
+  }
+
+  & .drp_top-bar .default-top {
+    @include popup-title;
+  }
+
+  & .month-name {
+    @include month-weather-style;
+    color: $color-box-foreground;
+    text-transform: capitalize;
+  }
+
+  & .month-wrapper table .week-name {
+    text-transform: capitalize;
+  }
+
+}
+
 .datePicker {
   & .popup {
     float: none;
@@ -73,6 +96,19 @@
 
 }
 
+.time-selector {
+  & input {
+    width: 50px;
+    height: 30px;
+    margin: 0;
+  }
+
+  & .am-pm-spinner-text {
+    border: none;
+  }
+
+}
+
 .month-chooser,
 .d-o-w,
 .dates {
@@ -109,11 +145,7 @@
 
 .month-chooser span,
 .weather-container .day {
-  font-family: $font-header;
-  font-size: 18px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-align: center;
+  @include month-weather-style;
 }
 
 .month-chooser a {

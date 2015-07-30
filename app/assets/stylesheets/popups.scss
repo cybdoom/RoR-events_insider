@@ -32,20 +32,13 @@
     background-color: white;
 
     &:before {
-      position: absolute;
-      content: image-url('mascot-top.png');
-      top: -87px;
-      z-index: 1;
+      @include popup-mascot;
     }
 
   }
 
   & h3 {
-    margin: 4px 0px;
-    font-family: $font-mascot-speaks;
-    font-size: 24px;
-    letter-spacing: 1px;
-    color: $color-popup-title;
+    @include popup-title;
   }
 
   & p {

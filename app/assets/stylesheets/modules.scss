@@ -20,7 +20,7 @@ body {
 }
 
 .content-wrapper {
-  min-height: 100%;  /* equal to footer height */
+  min-height: 100%;
   margin-bottom: -62px;
 }
 
@@ -135,7 +135,7 @@ section {
     display: none;
   }
 
-  article {
+  .main-content {
     margin: 0 auto;
     float: none
   }
@@ -154,7 +154,7 @@ section {
     width: 90%;
   }
 
-  article {
+  .main-content {
     width: 100%;
   }
 
