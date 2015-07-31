@@ -12,12 +12,6 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-# Indexes
-#
-#  index_venues_on_location_id      (location_id)
-#  index_venues_on_organization_id  (organization_id)
-#  index_venues_on_user_id          (user_id)
-#
 
 class Venue < ActiveRecord::Base
   belongs_to :user

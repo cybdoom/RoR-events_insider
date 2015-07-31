@@ -1,8 +1,6 @@
 class Listing
   include Virtus.model
-  extend ActiveModel::Naming
-  extend ActiveModel::Translation
-  include ActiveModel::Conversion
+  include ActiveModel::Model
   include ActiveModel::Validations
   include Links
 

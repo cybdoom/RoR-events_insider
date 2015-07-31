@@ -1,5 +1,7 @@
 //= require jquery
 //= require jquery_ujs
+//= require lodash.min
+//= require gmaps/google
 //= require globalize
 //= require jquery-ui
 //= require bootstrap

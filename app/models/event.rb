@@ -15,12 +15,6 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
-# Indexes
-#
-#  index_events_on_name      (name)
-#  index_events_on_user_id   (user_id)
-#  index_events_on_venue_id  (venue_id)
-#
 
 class Event < ActiveRecord::Base
   belongs_to :user
@@ -34,7 +28,7 @@ class Event < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  delegate :location, to: :venue
+  delegate :address, to: :venue
 
   validates :venue, presence: true
   validates :name, presence: true, length: {minimum: 3}

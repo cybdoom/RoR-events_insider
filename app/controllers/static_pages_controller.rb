@@ -5,8 +5,10 @@ class StaticPagesController < ApplicationController
 
   def add_event
   end
+
   def event
   end
+
   def add_listing
   end
 

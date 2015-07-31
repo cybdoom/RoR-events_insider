@@ -13,10 +13,6 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
-# Indexes
-#
-#  index_images_on_imageable_type_and_imageable_id  (imageable_type,imageable_id)
-#
 
 class Image < ActiveRecord::Base
   belongs_to :imageable, polymorphic: true

@@ -15,12 +15,6 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
-# Indexes
-#
-#  index_events_on_name      (name)
-#  index_events_on_user_id   (user_id)
-#  index_events_on_venue_id  (venue_id)
-#
 
 require 'rails_helper'
 

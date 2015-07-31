@@ -2,24 +2,20 @@
 #
 # Table name: locations
 #
-#  id                :integer          not null, primary key
-#  location          :string           not null
-#  geocoded_location :string
-#  country_code      :string(2)
-#  region_code       :string
-#  subregion_code    :string
-#  city              :string
-#  street            :string
-#  street_number     :string
-#  postcode          :string
-#  latitude          :float
-#  longitude         :float
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#
-# Indexes
-#
-#  index_locations_on_latitude_and_longitude  (latitude,longitude)
+#  id               :integer          not null, primary key
+#  original_address :string
+#  geocoded_address :string
+#  country_code     :string(2)
+#  region_code      :string
+#  subregion_code   :string
+#  city             :string
+#  street           :string
+#  street_number    :string
+#  postcode         :string
+#  latitude         :float
+#  longitude        :float
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 require 'rails_helper'

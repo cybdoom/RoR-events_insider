@@ -1,7 +1,7 @@
 Geocoder.configure(
   timeout:    3,           # geocoding service timeout (secs)
   lookup:     :google,     # name of geocoding service
-  ip_lookup:  :maxmind,    # name of ip lookup service
+  ip_lookup:  :freegeoip,    # name of ip lookup service
   language:   :en,         # ISO-639 language code
   cache:      $redis,
 

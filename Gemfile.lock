@@ -15,6 +15,20 @@ GIT
     fixme (3.1.1)
 
 GIT
+  remote: git://github.com/lostisland/faraday.git
+  revision: 1b106889a020406b6641b3674e18495293176fd0
+  specs:
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
+
+GIT
+  remote: git://github.com/lostisland/faraday_middleware.git
+  revision: 2243d8179937c570d7e6a17f7b8ed010f3b0dee2
+  specs:
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
+
+GIT
   remote: git://github.com/pineapplethief/indirizzo.git
   revision: 1b38aca17b0555c720ca27022eadd5254968fe10
   branch: master
@@ -125,11 +139,15 @@ GEM
       railties (~> 4.0)
     equalizer (0.0.11)
     erubis (2.7.0)
+    ethon (0.7.4)
+      ffi (>= 1.3.0)
     execjs (2.5.2)
     fast_blank (0.0.2)
+    ffi (1.9.10)
     geocoder (1.2.9)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     heroku-deflater (0.5.3)
       rack (>= 1.4.5)
     highline (1.7.2)
@@ -157,6 +175,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
+    multipart-post (2.0.0)
     neat (1.7.2)
       bourbon (>= 4.0)
       sass (>= 3.3)
@@ -181,6 +200,8 @@ GEM
     puma (2.12.2)
     pundit (1.0.1)
       activesupport (>= 3.0.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -280,6 +301,7 @@ GEM
     shoulda-context (1.2.1)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    show_data (1.0.0)
     simple_enum (2.1.1)
       activesupport (>= 4.0.0)
     simple_form (3.1.0)
@@ -304,6 +326,8 @@ GEM
       actionpack (>= 3.1)
       jquery-rails
       railties (>= 3.1)
+    typhoeus (0.7.2)
+      ethon (>= 0.7.4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.1)
@@ -334,13 +358,17 @@ DEPENDENCIES
   capistrano-rails
   carrierwave!
   coffee-rails (~> 4.1.0)
+  colorize
   countries
   date_validator
   devise
   dotenv-rails
+  faraday!
+  faraday_middleware!
   fast_blank
   fixme!
   geocoder
+  gmaps4rails
   heroku-deflater
   highline
   hiredis
@@ -355,6 +383,7 @@ DEPENDENCIES
   pry-rails
   puma
   pundit
+  quiet_assets
   rack-cache
   rack-timeout
   rails (= 4.2.3)
@@ -371,10 +400,12 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   seed_migration
   shoulda
+  show_data
   simple_enum
   simple_form
   spring
   twitter-typeahead-rails
+  typhoeus
   uglifier (>= 1.3.0)
   virtus
   web-console (~> 2.0)
