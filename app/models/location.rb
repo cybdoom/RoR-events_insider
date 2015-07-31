@@ -2,30 +2,37 @@
 #
 # Table name: locations
 #
-#  id                :integer          not null, primary key
-#  location          :string
-#  geocoded_location :string
-#  country_code      :string(2)
-#  region_code       :string
-#  subregion_code    :string
-#  city              :string
-#  street            :string
-#  street_number     :string
-#  postcode          :string
-#  latitude          :float
-#  longitude         :float
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id               :integer          not null, primary key
+#  original_address :string
+#  geocoded_address :string
+#  country_code     :string(2)
+#  region_code      :string
+#  subregion_code   :string
+#  city             :string
+#  street           :string
+#  street_number    :string
+#  postcode         :string
+#  latitude         :float
+#  longitude        :float
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 class Location < ActiveRecord::Base
-  geocoded_by :location
+  geocoded_by :original_address do |location, results|
+    if geo = results.first
+      Rails.logger.debug "geo = #{format_data(geo)}"
+    end
+  end
+
   reverse_geocoded_by :latitude, :longitude
 
   validates :country_code, length: {is: 2}
 
   after_validation :geocode, if: :should_geocode?
-  after_validation :reverse_geocode, if: :coordinates?
+
+  scope :useful, lambda { where('city IS NOT NULL AND LENGTH(city) > 0 OR
+                                 region_code IS NOT NULL AND LENGTH(region_code) > 0') }
 
   def self.build_from_geoip(result)
     data = result.data
@@ -39,32 +46,27 @@ class Location < ActiveRecord::Base
       location.latitude = data['latitude']
       location.longitude = data['longitude']
     end
-    location.location = location.formatted_location
 
     location
-  end
-
-  def self.useful
-    self.where('city IS NOT NULL AND LENGTH(city) > 0 OR
-                region_code IS NOT NULL AND LENGTH(region_code) > 0')
-  end
-
-  def self.search(address)
-    locations = self.useful
-    locations.where('location LIKE %q% OR geocoded_location LIKE %q%', address)
   end
 
   def coordinates?
     latitude? && longitude?
   end
 
-  def formatted_location
-    location? ? location : address
+  def address
+    if original_address?
+      original_address
+    elsif geocoded_address?
+      geocoded_address
+    else
+      address_from_parts
+    end
   end
 
-  def address
-    components = [street_number, street, city, region_name].select(&:present?)
-    address = components.join(', ')
+  def address_from_parts
+    parts = [street_number, street, city, region_name]
+    parts.select(&:present?).join(', ')
   end
 
   def useful?
@@ -100,7 +102,7 @@ class Location < ActiveRecord::Base
   private
 
   def should_geocode?
-    location.present? && location_changed?
+    address.present? && address_changed?
   end
 
 end

@@ -35,12 +35,14 @@ class User < ActiveRecord::Base
 
   belongs_to :location
 
+  delegate :address, to: :location
+
   before_create do
     self.role = :regular
   end
 
   def self.guest
-    guest = User.new
+    User.new
   end
 
   def guest?

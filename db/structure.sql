@@ -153,8 +153,8 @@ ALTER SEQUENCE images_id_seq OWNED BY images.id;
 
 CREATE TABLE locations (
     id integer NOT NULL,
-    location character varying,
-    geocoded_location character varying,
+    original_address character varying,
+    geocoded_address character varying,
     country_code character varying(2),
     region_code character varying,
     subregion_code character varying,
@@ -478,10 +478,31 @@ CREATE INDEX index_images_on_imageable_type_and_imageable_id ON images USING btr
 
 
 --
+-- Name: index_locations_on_city; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_locations_on_city ON locations USING btree (city);
+
+
+--
+-- Name: index_locations_on_geocoded_address; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_locations_on_geocoded_address ON locations USING btree (geocoded_address);
+
+
+--
 -- Name: index_locations_on_latitude_and_longitude; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_locations_on_latitude_and_longitude ON locations USING btree (latitude, longitude);
+
+
+--
+-- Name: index_locations_on_original_address; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_locations_on_original_address ON locations USING btree (original_address);
 
 
 --

@@ -47,14 +47,13 @@ class ApplicationController < ActionController::Base
 
     if location_data.present?
       location = Location.build_from_geoip(location_data)
-      location.save
-
-      current_user.location = location
-      current_user.save
+      if location.save
+        current_user.location = location
+        current_user.save
+      else
+        Rails.logger.debug "errors when saving location: #{location.errors.inspect}"
+      end
     end
-
-    Rails.logger.debug "ip = #{ip.inspect}"
-    Rails.logger.debug "location = #{location.inspect}"
   end
 
   def user_not_authorized(exception)
