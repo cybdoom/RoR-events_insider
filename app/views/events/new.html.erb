@@ -1,23 +1,49 @@
-<h1>Add a New Event</h1>
+<% content_for(:content_title, 'Add a New Event') %>
 
-<div class="content-block">
-  <h3>I would like to add a...</h3>
-  <%= simple_form_for @event do |f| %>
+<%= simple_form_for @event do |f| %>
+  <section class="first">
     <%= f.input :name %>
+    <%= f.input :starts_at, as: :string %>
 
-    <%= f.input :starts_at %>
-
-    <%= f.input :price, as: :select %>
-    <%= f.input :estimated_attendance, as: :select %>
+    <div class="form-group col4 with-help">
+      <%= f.input :price, as: :select,
+                  collection: enum_option_pairs(Event, :price),
+                  include_blank: false %>
+    </div>
+    <div class="form-group col4 with-help">
+      <%= f.input :estimated_attendance,
+                  as: :select,
+                  collection: enum_option_pairs(Event, :estimated_attendance),
+                  include_blank: false %>
+    </div>
 
     <%= f.input :description %>
+  </section>
 
-    <%= f.fields_for :venue do |venue| %>
-      <%= venue.input :location %>
-    <% end %>
+  <section class="listing-section">
+    <h2><%= t(:location) %></h2>
+    <%= text_field_tag 'location', id: 'location-select' %>
+  </section>
 
-    <%= f.actions do %>
-      <%= f.button :submit, 'Publish', class: 'call-to-action-btn' %>
-    <% end %>
+  <section class="listing-section">
+    <h2><%= t(:photos) %></h2>
+  </section>
+
+  <section class="listing-section">
+    <h2><%= t(:organizer) %></h2>
+  </section>
+
+  <section class="listing-section">
+    <h2><%= t(:websites) %></h2>
+  </section>
+
+  <section class="listing-section">
+    <h2><%= t(:admin_controls) %></h2>
+  </section>
+
+  <%= f.actions do %>
+    <%= f.button :submit, 'Publish', class: 'call-to-action-btn' %>
+    <%= f.button :submit, 'Save Draft', class: 'call-to-action-btn default-btn' %>
+    <%= link_to 'Cancel', root_path, class: 'btn' %>
   <% end %>
-</div>
+<% end %>

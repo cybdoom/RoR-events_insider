@@ -43,6 +43,7 @@ gem 'virtus'
 # Front-end gems
 gem 'coffee-rails', '~> 4.1.0'
 gem 'bourbon'
+gem 'gmaps4rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'neat'

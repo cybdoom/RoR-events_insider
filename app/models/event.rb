@@ -28,7 +28,7 @@ class Event < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  delegate :location, to: :venue
+  delegate :address, to: :venue
 
   validates :venue, presence: true
   validates :name, presence: true, length: {minimum: 3}

@@ -147,6 +147,7 @@ GEM
     geocoder (1.2.9)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     heroku-deflater (0.5.3)
       rack (>= 1.4.5)
     highline (1.7.2)
@@ -367,6 +368,7 @@ DEPENDENCIES
   fast_blank
   fixme!
   geocoder
+  gmaps4rails
   heroku-deflater
   highline
   hiredis

@@ -12,6 +12,8 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
 
     <%= javascript_include_tag 'libs' %>
+    <%= javascript_include_tag 'http://maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry' %>
+    <%= javascript_include_tag 'http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' %>
     <%= javascript_include_tag 'application' %>
 
     <%= csrf_meta_tags %>
@@ -27,8 +29,19 @@
     <%= render 'modals/signup' %>
     <%= render 'modals/date_picker' %>
     <%= render 'common/header' %>
+
     <div class="content-wrapper">
-      <%= yield %>
+      <main role="main">
+        <% if content_for?(:content_title) %>
+          <h1><%= yield(:content_title) %></h1>
+        <% end %>
+        <div class="content-block">
+          <%= yield %>
+        </div>
+      </main>
+      <aside>
+        <%= yield(:sidebar) if content_for?(:sidebar) %>
+      </aside>
     </div>
     <%= render 'common/footer' %>
   </body>

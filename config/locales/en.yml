@@ -15,6 +15,12 @@ en:
   search: 'Search'
   annotation: New England's most popular events blog!
 
+  location: 'Location'
+  photos: 'Photos'
+  organizer: 'Organizer'
+  websites: 'Related Websites'
+  admin_controls: 'Admin Controls'
+
   enums:
     role:
       guest: 'Guest'
@@ -22,6 +28,19 @@ en:
       trusted: 'Trusted'
       moderator: 'Official'
       admin: 'Admin'
+    price:
+      unknown: 'Unknown'
+      free: 'Free'
+      lt_10: '$10 or less'
+      lt_25: '$25 or less'
+      lt_75: '$75 or less'
+      gt_75: 'More than $75'
+    estimated_attendance:
+      unknown: 'Unknown'
+      lt_25: 'Less than 25'
+      lt_100: 'Less than 100'
+      lt_500: 'Less than 500'
+      gt_500: 'Greater than 500'
   listing:
     type:
       event: 'Event'
