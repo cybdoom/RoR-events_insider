@@ -1,309 +1,318 @@
 @import 'globals';
 
 @mixin input-shadow {
-	-webkit-box-shadow:  inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
-	   -moz-box-shadow:  inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
-		    box-shadow:  inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
+  -webkit-box-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
+  box-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
 }
 
 input[type="text"],
+input[type="password"],
 select,
-textarea{
-	padding-left: 10px;
+textarea {
+  padding-left: 10px;
 }
 
 fieldset legend,
 fieldset input[type="radio"],
 fieldset span,
 input[type="text"],
+input[type="password"],
 select,
 textarea {
-	font-family: $font-header;
-	font-size: 14px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	color: lighten($color-box-foreground, 18.5%);
+  font-family: $font-header;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: lighten($color-box-foreground, 18.5%);
 }
 
 fieldset {
-	position: relative;
-	float: left;
-	width: 100%;
-	margin: 0 auto;
-	margin-bottom: 20px;
-	padding: 0 20px;
-	border: none;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  border: none;
 
-	& legend {
-		margin-bottom: 8px;
-	}
+  & legend {
+    margin-bottom: 8px;
+  }
 
-	& span {
-		margin-right: 55px;
-		&:last-child {
-			margin: 0px;
-		}
+  & span {
+    margin-right: 55px;
 
-		&.radio-container {
-			position: relative;
+    &:last-child {
+      margin: 0px;
+    }
 
-			& input[type='radio'] {
-				position: absolute;
-				top: -2px;
-				left: 0px;
-			}
+    &.radio-container {
+      position: relative;
 
-			& span {
-				padding-left: 25px;
-			}
-		}
-	}
+      & input[type='radio'] {
+        position: absolute;
+        top: -2px;
+        left: 0px;
+      }
 
-	&.iconed {
-		 & .input-text {
-			margin-left: 10px;
-			width: calc( 100% - 44px);
-		}
+      & span {
+        padding-left: 25px;
+      }
 
-		& input[type="checkbox"] {
-			margin: 10px 0 0 40px;
-		}
+    }
 
-		& img {
-			float: left;
-			height: 28px;
-			width: auto;
-		}
+  }
 
-		& span {
-			margin-right: 5px;
-		}
+  &.iconed {
+    & .input-text {
+      margin-left: 10px;
+      width: calc(100% - 44px);
+    }
 
-		& span,
-		& input[type="text"],
-		& input[type="checkbox"] {
-			float: left;
-		}
+    & input[type="checkbox"] {
+      margin: 10px 0 0 40px;
+    }
 
-		& .icon_tags,
-		& .icon-calendar {
-			position: relative;
-			height: 25px;
-			width: 25px;
-		}
+    & img {
+      float: left;
+      height: 28px;
+      width: auto;
+    }
 
-		& .icon_tags:before,
-		& .icon-calendar:before {
-			position: absolute;
-			top: 3px;
-			left: 0px;
-			font-size: 28px;
-			color : lighten($color-box-foreground, 18.5%);
-		}
-	}
+    & span {
+      margin-right: 5px;
+    }
 
-	& input[type="checkbox"] + span {
-		margin: 8px 0px 0px 5px;
-		font-family: $font-body-text;
-		font-size: 13px;
-		color : lighten($color-box-foreground, 22.5%);
-	}
+    & span,
+    & input[type="text"],
+    & input[type="checkbox"] {
+      float: left;
+    }
 
-	& input[type="text"] {
-		@extend .input-text;
-		border: solid 1px lighten($color-box-foreground, 60%);
-		@include input-shadow;
-	}
+    & .icon_tags,
+    & .icon-calendar {
+      position: relative;
+      height: 25px;
+      width: 25px;
+    }
+
+    & .icon_tags:before,
+    & .icon-calendar:before {
+      position: absolute;
+      top: 3px;
+      left: 0px;
+      font-size: 28px;
+      color: lighten($color-box-foreground, 18.5%);
+    }
+
+  }
+
+  & input[type="checkbox"] + span {
+    margin: 8px 0px 0px 5px;
+    font-family: $font-body-text;
+    font-size: 13px;
+    color: lighten($color-box-foreground, 22.5%);
+  }
+
+  & input[type="text"] {
+    @extend .input-text;
+    border: solid 1px lighten($color-box-foreground, 60%);
+    @include input-shadow;
+  }
+
 }
 
 .input-text {
-	float: left;
-	width: 100%;
-	height: 40px;
-	@include box-corners;
+  float: left;
+  width: 100%;
+  height: 40px;
+  @include box-corners;
 }
 
 .search-box {
-	@extend .input-text;
-	position: relative;
-	float: right;
-	width: 35%;
-	margin-top: 9px;
-	padding: 5px;
-	padding-left: 10px;
-	border: none;
-	font-family: $font-header;
-	font-size: 18px;
-	letter-spacing: 1px;
-	background-color: $color-primary-foreground;
-	@include opacity(0.8);
+  @extend .input-text;
+  position: relative;
+  float: right;
+  width: 35%;
+  margin-top: 9px;
+  padding: 5px;
+  padding-left: 10px;
+  border: none;
+  font-family: $font-header;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background-color: $color-primary-foreground;
+  @include opacity(0.8);
 }
 
 .search-box-mobile {
-	@extend .search-box;
+  @extend .search-box;
 }
 
 textarea {
-	width: 100%;
-	height: 85px;
-	border: solid 1px lighten($color-box-foreground, 60%);
-	@include box-corners;
-	@include input-shadow;
+  width: 100%;
+  height: 85px;
+  border: solid 1px lighten($color-box-foreground, 60%);
+  @include box-corners;
+  @include input-shadow;
 }
 
 select {
-	width: 100%;
-	height: 32px;
-	border: solid 1px lighten($color-box-foreground, 60%);
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	background-color: $color-primary-foreground;
-	background-image: image-url("icons/select-dropdown.png");
-	background-repeat: no-repeat;
-	background-position: right center;
-	@include box-corners;
-	@include input-shadow;
+  width: 100%;
+  height: 32px;
+  border: solid 1px lighten($color-box-foreground, 60%);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: $color-primary-foreground;
+  background-image: image-url("icons/select-dropdown.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  @include box-corners;
+  @include input-shadow;
 }
 
 .special-instruction button {
-	margin: 20px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
 .checkbox-container {
-	text-align: right;
+  text-align: right;
 }
 
 /* radio button and related */
 .radio-fieldset {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 .radio-fieldset .call-to-action-btn {
-	float: right;
-	margin-top: -10px;
+  float: right;
+  margin-top: -10px;
 }
 
 input[type='radio'] {
-	width:16px;
-	height:16px;
-	border:1px solid #aaa;
-	border-radius:50%;
-	outline:none;
-	-webkit-appearance:none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  outline: none;
+  -webkit-appearance: none;
 
-	&:hover {
-		box-shadow:0 0 5px 0px orange inset;
-	}
+  &:hover {
+    box-shadow: 0 0 5px 0px orange inset;
+  }
 
-	&:before {
-		content: '';
-		display: block;
-		width: 8px;
-		height: 8px;
-		margin: 25% auto;
-		margin-top: 3px;
-		margin-right: 3px;
-		border-radius: 50%;
-	}
+  &:before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: 25% auto;
+    margin-top: 3px;
+    margin-right: 3px;
+    border-radius: 50%;
+  }
 
-	&:checked:before {
-		background: $color-form-select;
-	}
+  &:checked:before {
+    background: $color-form-select;
+  }
+
 }
 
 .autocomplete {
-	& span {
-		width: 100%;
-	}
+  & span {
+    width: 100%;
+  }
 
-	&.tt-menu {
-		background: white;
-		width: 100%;
+  &.tt-menu {
+    background: white;
+    width: 100%;
 
-		& span {
-			position: relative;
-			display: block;
-			margin: 3px 0px;
-			padding: 7px 0;
-			padding-left: 35px;
+    & span {
+      position: relative;
+      display: block;
+      margin: 3px 0px;
+      padding: 7px 0;
+      padding-left: 35px;
 
-			&:before {
-				position: absolute;
-				left: 10px;
-				content: image-url('icons/listing/add.png');
-			}
-		}
-	}
+      &:before {
+        position: absolute;
+        left: 10px;
+        content: image-url('add.png');
+      }
 
-	&.tt-suggestion {
-		padding: 4px 0;
-		padding-left: 10px;
-	}
+    }
 
-	& .tt-suggestion:hover,
-	& .tt-menu span:hover {
-		background-color: $color-primary-background;
-		color: $color-primary-foreground;
-		cursor: pointer;
-	}
+  }
+
+  &.tt-suggestion {
+    padding: 4px 0;
+    padding-left: 10px;
+  }
+
+  & .tt-suggestion:hover,
+  & .tt-menu span:hover {
+    background-color: $color-primary-background;
+    color: $color-primary-foreground;
+    cursor: pointer;
+  }
 
 }
 
 /* MOBILE LESS THAN EQUAL TO 767PX */
+@media screen and (max-width:767px) {
+  fieldset {
+    & span {
+      display: block;
+      float: left;
+      width: 100%;
+      margin-bottom: 15px;
+    }
 
-@media screen and (max-width: 767px) {
+    & legend span {
+      display: inline;
+      float: none;
+      width: auto;
+      margin: 0;
+    }
 
-	fieldset {
+    & input[type="checkbox"] + span {
+      display: inline;
+      float: none;
+      font-size: 11px;
+      letter-spacing: 0px;
+    }
 
-		& span {
-				display: block;
-				float: left;
-				width: 100%;
-				margin-bottom: 15px;
-		}
+    &.descriptive-tags input[type="checkbox"] + span {
+      position: relative;
+      float: left;
+      width: auto;
+      margin-top: 10px;
+    }
 
-		& legend span {
-			display: inline;
-			float: none;
-			width: auto;
-			margin: 0;
-		}
+  }
 
-		& input[type="checkbox"] + span {
-			display: inline;
-			float: none;
-			font-size: 11px;
-			letter-spacing: 0px;
-		}
+  .radio-fieldset .call-to-action-btn {
+    float: left;
+    margin-top: 10px;
+  }
 
-		&.descriptive-tags input[type="checkbox"] + span {
-			position: relative;
-			float: left;
-			width: auto;
-			margin-top: 10px;
-		}
-	}
+  .call-to-action-btn.arrow span {
+    display: inline;
+    float: none;
+    width: auto;
+  }
 
-	.radio-fieldset .call-to-action-btn {
-		float: left;
-		margin-top: 10px;
-	}
-
-	.call-to-action-btn.arrow span {
-		display: inline;
-		float: none;
-		width: auto;
-	}
 }
 
 @-moz-document url-prefix() {
+  fieldset legend,
+  fieldset input[type="radio"],
+  fieldset span,
+  input[type="text"],
+  select,
+  textarea {
+    font-weight: 500;
+  }
 
-	fieldset legend,
-	fieldset input[type="radio"],
-	fieldset span,
-	input[type="text"],
-	select,
-	textarea {
-		font-weight: 500;
-	}
 }

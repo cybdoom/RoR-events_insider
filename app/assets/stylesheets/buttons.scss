@@ -1,5 +1,4 @@
 @import 'globals';
-
 $button-vertical-padding: 10px;
 $button-horizontal-padding: 40px;
 $button-with-arrow-horizontal-padding: 13px;
@@ -13,134 +12,142 @@ $true-button-color: $official-green;
 $false-button-color: $official-red;
 
 .button {
-	color: $official-white;
-	font-family: $font-body-text;
-	font-size: 15px;
-	@include rounded-button1;
-	border: none;
-	border-bottom: 2px solid darken($default-button-color, 10);
-	cursor: pointer;
+  color: $official-white;
+  font-family: $font-body-text;
+  font-size: 15px;
+  @include rounded-button1;
+  border: none;
+  border-bottom: 2px solid darken($default-button-color, 10);
+  cursor: pointer;
 }
 
 .default-btn {
-	position:relative;
-	padding: 6px 24px;
-	@extend .button;
-	background: lighten($default-button-color, 10%);
+  position: relative;
+  padding: 6px 24px;
+  @extend .button;
+  background: lighten($default-button-color, 10%);
 
-	&.hover, &:hover {
-		color: $official-white;
-		background: darken($default-button-color, 5%);
-	}
+  &.hover,
+  &:hover {
+    color: $official-white;
+    background: darken($default-button-color, 5%);
+  }
 
-	&.click, &:focus {
-		color: $official-white;
-		outline: none;
-		background: darken($default-button-color, 15%);
-	}
+  &.click,
+  &:focus {
+    color: $official-white;
+    outline: none;
+    background: darken($default-button-color, 15%);
+  }
 
-	&.text-left {
-		padding: 6px 15px;
-	}
+  &.text-left {
+    padding: 6px 15px;
+  }
 
-	&.text-left span {
-		margin-left: 20px;
-	}
+  &.text-left span {
+    margin-left: 20px;
+  }
 
-	&.text-right {
-		padding: 6px 15px;
-	}
+  &.text-right {
+    padding: 6px 15px;
+  }
 
-	&.text-right span {
-		margin-right: 20px;
-	}
+  &.text-right span {
+    margin-right: 20px;
+  }
 
 }
-
 
 .save-draft,
 .call-to-action-btn {
-	@extend .button;
-	font-size: 18px;
-	padding: 8px 20px;
+  @extend .button;
+  font-size: 18px;
+  padding: 8px 20px;
 }
 
 .save-draft {
-	&.hover,
-	&:hover {
-		color: $official-white;
-		background: darken($default-button-color, 5%);
-	}
+  &.hover,
+  &:hover {
+    color: $official-white;
+    background: darken($default-button-color, 5%);
+  }
+
 }
 
 .call-to-action-btn {
-	padding: $button-vertical-padding $button-horizontal-padding;
- 	border-bottom: 2px solid darken($true-button-color, 10);
- 	background: $true-button-color;
- 	&.arrow {
-		padding: $button-vertical-padding $button-with-arrow-horizontal-padding;
-		width: 150px;
-		// Double border
-		&.hover:before,
-		&:hover:before {
-			margin: (-$button-vertical-padding) (-$button-with-arrow-horizontal-padding);
-		}
-	}
+  padding: $button-vertical-padding $button-horizontal-padding;
+  border-bottom: 2px solid darken($true-button-color, 10);
+  background: $true-button-color;
 
-	&.arrow span {
-		margin-left: 30px;
-		color:  $color-primary-foreground;
-		font-size: 20px;
-	}
+  &.arrow {
+    padding: $button-vertical-padding $button-with-arrow-horizontal-padding;
+    width: 150px;
 
-	&.hover, &:hover {
-		background: darken($true-button-color, 5%);
-	}
+    // Double border
+    &.hover:before,
+    &:hover:before {
+      margin: (-$button-vertical-padding) (-$button-with-arrow-horizontal-padding);
+    }
+
+  }
+
+  &.arrow span {
+    margin-left: 30px;
+    color: $color-primary-foreground;
+    font-size: 20px;
+  }
+
+  &.hover,
+  &:hover {
+    background: darken($true-button-color, 5%);
+  }
+
 }
 
 .choice-btn {
-	@extend .button;
-	width: 48px;
-	padding: 4px 0;
-	border: none;
-	border-radius: 3px;
-	text-align: center;
+  @extend .button;
+  width: 48px;
+  padding: 4px 0;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
 }
 
 .true-btn {
-	@extend .choice-btn;
-	background: $true-button-color;
-	border-bottom: 2px solid darken($true-button-color, 10);
+  @extend .choice-btn;
+  background: $true-button-color;
+  border-bottom: 2px solid darken($true-button-color, 10);
 
-	&.hover, &:hover {
-		background: darken($true-button-color, 5%);
-	}
+  &.hover,
+  &:hover {
+    background: darken($true-button-color, 5%);
+  }
+
 }
 
 .false-btn {
-	@extend .choice-btn;
-	background: adjust_hue(desaturate(lighten($false-button-color, 9.5), 9.5), 22);
-	border-bottom: 2px solid $false-button-color;
+  @extend .choice-btn;
+  background: adjust_hue(desaturate(lighten($false-button-color, 9.5), 9.5), 22);
+  border-bottom: 2px solid $false-button-color;
 
-	&.hover, &:hover {
-		background: darken($false-button-color, 5%);
-	}
+  &.hover,
+  &:hover {
+    background: darken($false-button-color, 5%);
+  }
+
 }
 
+@media screen and (max-width:767px) {
+  .button {
+    font-size: 14px;
+  }
 
+  .save-draft {
+    padding: 8px 20px;
+  }
 
-@media screen and (max-width: 767px) {
-
-	.button {
-		font-size: 14px;
-	}
-
-	.save-draft {
-		padding: 8px 20px;
-	}
-
-	.call-to-action-btn {
-		padding: 8px 30px;
-	}
+  .call-to-action-btn {
+    padding: 8px 30px;
+  }
 
 }

@@ -1,104 +1,104 @@
 @import 'globals';
 
-.overlay {
-	display: none;
-	position: absolute;
-	top: 0%;
-	left: 0%;
-	width: 100%;
-	height: 100%;
-	background-color: black;
-	z-index: 1001;
-	-moz-opacity: 0.8;
-	opacity: .80;
-	filter: alpha(opacity=80);
+.popup-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
 }
 
 .popup {
-	@include box-corners;
-	@include box-shadow;
-	position: relative;
-	width: 450px;
-	height: 300px;
-	padding: 16px;
-	margin: 0 auto;
-	margin-top: 200px;
-	border: 5px solid $color-box-background;
-	background-color: white;
-	z-index: 1002;
+  @include box-corners;
+  @include box-shadow;
+  position: relative;
+  float: none;
+  margin: 0 auto;
+  margin-top: 150px;
+  width: 450px;
+  z-index: 1002;
 
-	&:before {
-		position: absolute;
-		content: image-url('mascot-top.png');
-		top: -92px;
-		z-index: 1;
-	}
+  & .popup-inner {
+    float: left;
+    width: 100%;
+    padding: 16px;
+    border: 5px solid #FFFFFF;
+    background-color: white;
+    padding: 16px;
+    border: 5px solid $color-box-background;
+    background-color: white;
 
-	& h3 {
-		margin: 4px 0px;
-		font-family: $font-mascot-speaks;
-		font-size: 24px;
-		letter-spacing: 1px;
-		color: $color-popup-title;
-	}
+    &:before {
+      @include popup-mascot;
+    }
 
-	& p {
-		margin: 0 4px 20px 0px;
-		font-family: $font-header;
-		font-size: 13px;
-		color: lighten($color-box-foreground, 11.5%);
-	}
+  }
 
-	& label {
-		float: left;
-		margin-top: 6px;
-		font-family: $font-header;
-		color: lighten($color-box-body-text, 8%);
-	}
+  & h3 {
+    @include popup-title;
+  }
 
-	& input[type='text'] {
-		float: left;
-		width: 350px;
-		height: 32px;
-		margin: 0px 0px 0px 15px;
-		font-size: 13px;
-	}
+  & p {
+    margin: 0 4px 20px 0px;
+    font-family: $font-header;
+    font-size: 13px;
+    color: lighten($color-box-foreground, 11.5%);
+  }
 
-	& fieldset {
-		padding: 0px;
-		margin-bottom: 25px;
-	}
+  & label {
+    float: left;
+    margin-top: 6px;
+    font-family: $font-header;
+    color: lighten($color-box-body-text, 8%);
+  }
 
-	& select {
-		width: 150px;
-		margin-left: 47px;
-		font-weight: 100;
-		color: $color-box-important-text;
-	}
+  & input[type='text'],
+  & input[type='password'] {
+    float: left;
+    width: 350px;
+    height: 32px;
+    margin: 0px 0px 0px 15px;
+    font-size: 13px;
+  }
+
+  & fieldset {
+    padding: 0px;
+    margin-bottom: 25px;
+  }
+
+  & select {
+    width: 150px;
+    margin-left: 47px;
+    font-weight: 100;
+    color: $color-box-important-text;
+  }
 
 }
 
 select option {
-	position: relative;
-	background-image: image-url('icons/listing/add.png');
+  position: relative;
+  background-image: image-url('add.png');
 }
 
 /* ddslick - slick dropdown */
 .dd-container {
-	float: left;
-	width: 170px;
-	margin-left: 47px;
+  float: left;
+  width: 170px;
+  margin-left: 47px;
 }
 
 .dd-select {
-	@include box-corners;
-	height: 32px;
-	padding: 7px;
+  @include box-corners;
+  height: 32px;
+  padding: 7px;
 }
 
 .dd-option {
-	height: 32px;
-	padding: 7px;
+  height: 32px;
+  padding: 7px;
 }
 
 .dd-option-image,
@@ -107,51 +107,51 @@ select option {
 
 label.dd-option-text,
 label.dd-selected-text {
-	margin: 0px;
-	padding-left: 2px;
-	font-size: 13px;
-	font-weight: 100;
-	color: $color-box-important-text;
+  margin: 0px;
+  padding-left: 2px;
+  font-size: 13px;
+  font-weight: 100;
+  color: $color-box-important-text;
 }
 
 $color-cancel-border: lighten($color-box-foreground, 57%);
 
 a.cancel {
-	float: right;
-	padding-right: 15px;
-	margin-top: 8px;
-	margin-right: 15px;
-	font-size: 14px;
-	text-decoration: underline;
-	color: $color-box-important-text;
-	border-right: solid 1px $color-cancel-border;
+  float: right;
+  padding-right: 15px;
+  margin-top: 8px;
+  margin-right: 15px;
+  font-size: 14px;
+  text-decoration: underline;
+  color: $color-box-important-text;
+  border-right: solid 1px $color-cancel-border;
 }
 
 .save {
-	float: right;
-	width: 80px;
-	height: 30px;
-	padding: 5px 10px;
-	font-size: 14px;
-	font-weight: 100;
+  float: right;
+  width: 80px;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 100;
 }
 
 .popup-control {
-	float: right;
-	width: 50%;
-	margin-top: 25px;
+  float: right;
+  width: 50%;
+  margin-top: 25px;
 }
 
 @media screen and (max-width:767px) {
-	a.cancel {
-		float: right;
-		padding-right: 10px;
-		margin-top: 8px;
-		margin-right: 10px;
-		border-right: solid 1px $color-cancel-border;
-		font-size: 14px;
-		text-decoration: underline;
-		color: $color-box-important-text;
-	}
+  a.cancel {
+    float: right;
+    padding-right: 10px;
+    margin-top: 8px;
+    margin-right: 10px;
+    border-right: solid 1px $color-cancel-border;
+    font-size: 14px;
+    text-decoration: underline;
+    color: $color-box-important-text;
+  }
 
 }
