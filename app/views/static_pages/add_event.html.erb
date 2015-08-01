@@ -1,57 +1,60 @@
+<h1>Add Event</h1>
+
 <div class="main-content">
-	<h1>Add Event</h1>
-	<div class="content-block">
-		<div class="alert-message">
+	<div class="alert-message">
 			Here are the events I have like this. <br class="mobile-only">Don’t see yours? Add it or duplicate an old event!
-		</div>
+	</div>
+	
+	<div class="content-block">
+		
 		<section class="first">
-			<fieldset class="compulsory">
-		    	<legend>Event Name<span> *</span></legend>
+			<div class="form-group col compulsory">
+		    	<label>Event Name<span> *</span></label>
 				<input type="text" name="listing-name">
-			</fieldset>
-			<fieldset class="iconed with-help">
-		    	<legend>Date</legend>
+			</div>
+			<div class="form-group col iconed with-help">
+		    	<label>Date</label>
 				<span class="icon-calendar"></span> <input type="text" name="date" id="date-range" class="date" >
 
-			</fieldset>
+			</div>
 
-			<fieldset class="col4 with-help">
-		    	<legend>Size</legend>
+			<div class="form-group col4 with-help">
+		    	<label>Size</label>
 				<select name="size">
 				  <option value="In One Place">In One Place</option>
 				  <option value="In Many Place">In Many Place</option>
 				</select>
-			</fieldset>
-			<fieldset class="col4 with-help">
-		    	<legend>Price</legend>
+			</div>
+			<div class="form-group col4 with-help">
+		    	<label>Price</label>
 				<select name="price">
 				  <option value="Choose a Price">Choose a Price...</option>
 				  <option value="$15">$15</option>
 				</select>
-			</fieldset>
-			<fieldset class="col4 with-help">
-		    	<legend>Estimated Attendance</legend>
+			</div>
+			<div class="form-group col4 with-help">
+		    	<label>Estimated Attendance</label>
 				<select name="attendance">
 				  <option value="Unknown">Unknown</option>
 				  <option value="5-10">5-10</option>
 				</select>
-			</fieldset>
-		    <fieldset>
-		   		 <legend>Description</legend>
+			</div>
+		    <div class="form-group col">
+		   		 <label>Description</label>
 		   		 <textarea rows="4" cols="50"></textarea>
-		   	</fieldset>
-		   	<fieldset class="iconed">
-		    	<legend>Descriptive tags</legend>
+		   	</div>
+		   	<div class="form-group col iconed">
+		    	<label>Descriptive tags</label>
 				<span class="icon_tags"></span> <input type="text" name="descriptive-tags">
-			</fieldset>
+			</div>
 		</section>
 		<section class="listing-section">
 			<h2>Location</h2>
-			  <fieldset class="autocomplete location">
+			  <div class="form-group col autocomplete location">
 		  	 	 <div id="the-basics">
 			  	 	 <input class="typeahead input" type="text" name="location" placeholder="Type the name of a venue or city, or street address">
 			  	 </div>
-		  	  </fieldset>
+		  	  </div>
 
 		</section>
 		<section class="listing-section">
@@ -96,13 +99,13 @@
 		</section>
 		<section class="listing-section">
 			<h2>Admin Control</h2>
-			<fieldset class="col4">
-		    	<legend>Display Status</legend>
+			<div class="col4">
+		    	<label>Display Status</label>
 				<select name="display-staus">
 				  <option value="Unpublished">Unpublished</option>
 				  <option value="5-10">Published</option>
 				</select>
-			</fieldset>
+			</div>
 		</section>
 		<section class="form-actions">
 			<button type="button" class="call-to-action-btn">Publish</button>
