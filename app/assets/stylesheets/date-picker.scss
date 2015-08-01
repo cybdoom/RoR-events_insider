@@ -4,12 +4,19 @@
 .date-picker-wrapper {
   background: white;
 
-  &:before {
-    @include popup-mascot;
-  }
-
   & .drp_top-bar .default-top {
     @include popup-title;
+  }
+
+  & table .caption {
+    & .next:before {
+      content: image-url('polygon-arrow-right.png');
+    }
+
+    & .prev:before {
+      content: image-url('polygon-arrow-left.png');
+    }
+
   }
 
   & .month-name {
@@ -18,95 +25,104 @@
     text-transform: capitalize;
   }
 
-  & .month-wrapper table .week-name {
-    text-transform: capitalize;
+  & .month-wrapper {
+    border: none;
+
+    & table .week-name {
+      text-transform: capitalize;
+    }
+
+    & th {
+      color: $color-box-important-text;
+      font-family: $font-header;
+    }
+
+  }
+
+  & h3.mascot-speaks {
+    @include popup-title;
+    position: relative;
+    margin-bottom: 0;
+    font-size: 28px;
+
+    & + p {
+      float: left;
+      z-index: 1000000000000;
+      width: 100%;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+  }
+
+  & .popup-control {
+    width: 100%;
+  }
+
+  & .first-date-selected{
+    background: $color-box-important-text !important;
   }
 
 }
 
-.datePicker {
-  & .popup {
-    float: none;
-    margin: 0 auto;
-    margin-top: 150px;
-    width: 495px;
-    height: 450px;
-    z-index: 1001;
-
-    &:before {
-      content: "";
-    }
-
-    & h3.mascot-speaks {
-      position: relative;
-      margin-bottom: 0;
-      font-size: 28px;
-    }
-
-    & .help:after {
-      @extend .icon-help;
-      position: absolute;
-      top: 5px;
-      right: 25px;
-      font-size: 15px !important;
-    }
-
-    & .close:after {
-      @extend .icon-delete;
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      font-size: 15px !important;
-      cursor: pointer;
-    }
-
-    & .popup-control {
-      width: 100%;
-      margin-top: 25px;
-    }
-
-    & .calendar-container,
-    & .weather-container {
-      float: left;
-      width: 225px;
-      height: 240px;
-    }
-
-    & .calendar-container {
-      padding: 0 15px 15px 0;
-      border-right: solid 1px $official-grey;
-    }
-
-    & .weather-container {
-      padding: 0 0 15px 20px;
-      text-align: center;
-    }
-
-    & .time-container {
-      float: left;
-      width: 100%;
-      margin-top: 15px;
-    }
-
-    & input[type='radio'] {
-      margin: 0px;
-    }
-
-  }
-
+.month-wrapper {
+  margin-top: 60px;
 }
 
 .time-selector {
+  float: left;
+  width: 49%;
+
   & input {
     width: 50px;
     height: 30px;
     margin: 0;
+    padding: 7px;
   }
 
   & .am-pm-spinner-text {
     border: none;
+    margin: 0;
   }
 
+  & .am-pm-spinner {
+    margin: 0;
+  }
+
+  & .ui-spinner {
+    margin: 5px;
+
+    & .ui-spinner-up,
+    & .ui-spinner-down {
+      background-size: 100% auto;
+      width: 10px;
+      height: 8px;
+      margin-right: 3px;
+    }
+
+    & .ui-spinner-up {
+      background: url(/assets/polygon-arrow-up.png);
+      margin-top: 3px;
+    }
+
+    & .ui-spinner-down {
+      background: url(/assets/polygon-arrow-down.png);
+      margin-bottom: 3px;
+    }
+
+  }
+
+  & p {
+    margin-bottom: 2px;
+    color: $color-box-important-text;
+    font-family: $font-header;
+  }
+
+}
+
+#end-time:after {
+  content: "";
+  clear: both;
 }
 
 .month-chooser,
