@@ -230,9 +230,15 @@ input[type='radio'] {
     width: 100%;
   }
 
-  &.tt-menu {
-    background: white;
+  & .tt-menu {
     width: 100%;
+    padding-bottom: 10px;
+    border: solid 1px lighten($color-box-foreground, 60%);
+    background: white;
+
+    & .tt-suggestion{
+      padding-left: 10px ;
+    }
 
     & span {
       position: relative;
@@ -322,3 +328,4 @@ input[type='radio'] {
   }
 
 }
+
