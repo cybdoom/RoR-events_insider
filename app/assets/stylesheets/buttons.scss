@@ -1,24 +1,11 @@
 @import 'globals';
 
-$button-vertical-padding: 10px;
-$button-horizontal-padding: 40px;
-$button-with-arrow-horizontal-padding: 13px;
-$mobile-button-vertical-padding: 8px;
-$mobile-button-horizontal-padding: 28px;
-$mobile-button-with-arrow-horizontal-padding: 13px;
-$call-to-action-button-color: $official-green;
-$buy-tickets-button-color: $official-red;
-$default-button-color: $official-blue;
-$true-button-color: $official-green;
-$false-button-color: $official-red;
-
 .button {
-  color: $official-white;
+  color: $color-defaultButton-foreground;
   font-family: $font-body-text;
   font-size: 15px;
   @include rounded-button1;
   border: none;
-  border-bottom: 2px solid darken($default-button-color, 10);
   cursor: pointer;
 }
 
@@ -26,22 +13,9 @@ $false-button-color: $official-red;
   position: relative;
   padding: 6px 24px;
   @extend .button;
-  background: lighten($default-button-color, 10%);
-
-  &.hover,
-  &:hover {
-    color: $official-white;
-    background: darken($default-button-color, 5%);
-  }
-
-  &.click,
-  &:focus {
-    color: $official-white;
-    outline: none;
-    background: darken($default-button-color, 15%);
-  }
-
-  &.text-left {
+  @include btn-background($color-defaultButton-background);
+ 
+  &.text-left,  &.text-right {
     padding: 6px 15px;
   }
 
@@ -49,14 +23,9 @@ $false-button-color: $official-red;
     margin-left: 20px;
   }
 
-  &.text-right {
-    padding: 6px 15px;
-  }
-
   &.text-right span {
     margin-right: 20px;
   }
-
 }
 
 .save-draft,
@@ -67,18 +36,12 @@ $false-button-color: $official-red;
 }
 
 .save-draft {
-  &.hover,
-  &:hover {
-    color: $official-white;
-    background: darken($default-button-color, 5%);
-  }
-
+ @include btn-background($color-defaultButton-background);
 }
 
 .call-to-action-btn {
   padding: $button-vertical-padding $button-horizontal-padding;
-  border-bottom: 2px solid darken($true-button-color, 10);
-  background: $true-button-color;
+  @include btn-background($color-trueButton-background);
 
   &.arrow {
     padding: $button-vertical-padding $button-with-arrow-horizontal-padding;
@@ -89,20 +52,13 @@ $false-button-color: $official-red;
     &:hover:before {
       margin: (-$button-vertical-padding) (-$button-with-arrow-horizontal-padding);
     }
-
   }
 
   &.arrow span {
-    margin-left: 30px;
+    margin-left: 30px !important;
     color: $color-primary-foreground;
     font-size: 20px;
   }
-
-  &.hover,
-  &:hover {
-    background: darken($true-button-color, 5%);
-  }
-
 }
 
 .choice-btn {
@@ -116,26 +72,12 @@ $false-button-color: $official-red;
 
 .true-btn {
   @extend .choice-btn;
-  background: $true-button-color;
-  border-bottom: 2px solid darken($true-button-color, 10);
-
-  &.hover,
-  &:hover {
-    background: darken($true-button-color, 5%);
-  }
-
+  @include btn-background($color-trueButton-background);
 }
 
 .false-btn {
   @extend .choice-btn;
-  background: adjust_hue(desaturate(lighten($false-button-color, 9.5), 9.5), 22);
-  border-bottom: 2px solid $false-button-color;
-
-  &.hover,
-  &:hover {
-    background: darken($false-button-color, 5%);
-  }
-
+  @include btn-background($color-falseButton-background);
 }
 
 @media screen and (max-width:767px) {

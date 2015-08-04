@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require autocomplete-0.3.0.min
 //= require lodash.min
 //= require gmaps/google
 //= require globalize

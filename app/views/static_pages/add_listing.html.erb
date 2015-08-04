@@ -1,31 +1,31 @@
 <article>
-	<h1 class="page-title">Add a Listing</h1>
+	<h1>Add a Listing</h1>
 	<div class="content-block">
 		<div class="alert-message">
 			Here are the events I have like this. <br class="mobile-only">Don’t see yours? Add it or duplicate an old event!
 		</div>
 		<section class="first">
 			<form>
-				<fieldset>
-			    <legend>What type of listing would you like to add?</legend>
+				<div class="form-group col">
+			    <label>What type of listing would you like to add?</label>
 				<span class="radio-container"> <input type="radio" name="listing-type" value="Event"><span>Event</span></span>
 				<span class="radio-container"> <input type="radio" name="listing-type" value="Venue"><span>Venue</span></span>
 				<span class="radio-container"> <input type="radio" name="listing-type" value="Performance Group"><span>Performance Group</span></span>
 				<span class="radio-container"><input type="radio" name="listing-type" value="Other Organisation"><span>Other Organisation</span></span>
-			  </fieldset>
-			  <fieldset>
-			    <legend>Listing Name</legend>
+			  </div>
+			  <div class="form-group col">
+			    <label>Listing Name</label>
 				<input type="text" name="listing-name">
-			  </fieldset>
-			  <fieldset class="col6">
-			    <legend>Website</legend>
+			  </div>
+			  <div class="form-group col6">
+			    <label>Website</label>
 				<input type="text" name="website">
-			  </fieldset>
-			  <fieldset class="col6">
-			    <legend>Location</legend>
+			  </div>
+			  <div class="form-group col6">
+			    <label>Location</label>
 				<input type="text" name="location">
-			  </fieldset>
-			  <fieldset class="radio-fieldset">
+			  </div>
+			  <div class="form-group col radio-div">
 				  <span class="radio-container">
 				  		<input type="radio" name="whose-event" value="my event"><span>This is my event</span>
 				  </span>
@@ -33,7 +33,7 @@
 				  		<input type="radio" name="whose-event" value="not my event"><span>This is not my event</span>
 				  </span>
 				 <button type="button" class="call-to-action-btn arrow">Add Event<span>></span></button>
-			  </fieldset>
+			  </div>
 			</form>
 		</section>
 	</div>

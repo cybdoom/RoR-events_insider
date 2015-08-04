@@ -96,8 +96,31 @@
 }
 @mixin month-weather-style{
   font-family: $font-header;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
 }
+
+/* buttons mixins */
+
+@mixin btn-background($bg-color){
+  background: lighten($bg-color, 10%);
+  border-bottom: 2px solid darken($bg-color, 10);
+  @if $bg-color == $color-trueButton-background  {
+    background: $bg-color;
+  } @else if $bg-color == $color-falseButton-background {
+     background: adjust_hue(desaturate(lighten($bg-color, 9.5), 9.5), 22);
+  }
+
+  &.hover,
+  &:hover {
+    background: darken($bg-color, 5%);
+  }
+  &.click,
+  &:focus {
+    outline: none;
+    background: darken($bg-color, 15%);
+  }
+}
+

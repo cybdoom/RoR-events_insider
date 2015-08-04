@@ -13,9 +13,13 @@ textarea {
   padding-left: 10px;
 }
 
-fieldset legend,
-fieldset input[type="radio"],
-fieldset span,
+div.form-group label{
+  display: block;
+}
+    
+div.form-group label,
+div.form-group input[type="radio"],
+div.form-group span,
 input[type="text"],
 input[type="password"],
 select,
@@ -27,16 +31,14 @@ textarea {
   color: lighten($color-box-foreground, 18.5%);
 }
 
-fieldset {
+div.form-group {
   position: relative;
-  float: left;
-  width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 0 20px;
   border: none;
 
-  & legend {
+  & label {
     margin-bottom: 8px;
   }
 
@@ -123,6 +125,10 @@ fieldset {
 
 }
 
+.listing-section .form-group{
+  padding: 0px;
+}
+
 .input-text {
   float: left;
   width: 100%;
@@ -181,11 +187,11 @@ select {
 }
 
 /* radio button and related */
-.radio-fieldset {
+.radio-div.form-group {
   margin-top: 20px;
 }
 
-.radio-fieldset .call-to-action-btn {
+.radio-div.form-group .call-to-action-btn {
   float: right;
   margin-top: -10px;
 }
@@ -224,9 +230,15 @@ input[type='radio'] {
     width: 100%;
   }
 
-  &.tt-menu {
-    background: white;
+  & .tt-menu {
     width: 100%;
+    padding-bottom: 10px;
+    border: solid 1px lighten($color-box-foreground, 60%);
+    background: white;
+
+    & .tt-suggestion{
+      padding-left: 10px ;
+    }
 
     & span {
       position: relative;
@@ -261,7 +273,7 @@ input[type='radio'] {
 
 /* MOBILE LESS THAN EQUAL TO 767PX */
 @media screen and (max-width:767px) {
-  fieldset {
+  div.form-group {
     & span {
       display: block;
       float: left;
@@ -269,7 +281,7 @@ input[type='radio'] {
       margin-bottom: 15px;
     }
 
-    & legend span {
+    & label span {
       display: inline;
       float: none;
       width: auto;
@@ -292,7 +304,7 @@ input[type='radio'] {
 
   }
 
-  .radio-fieldset .call-to-action-btn {
+  .radio-div.form-group .call-to-action-btn {
     float: left;
     margin-top: 10px;
   }
@@ -306,9 +318,9 @@ input[type='radio'] {
 }
 
 @-moz-document url-prefix() {
-  fieldset legend,
-  fieldset input[type="radio"],
-  fieldset span,
+  div.form-group label,
+  div.form-group input[type="radio"],
+  div.form-group span,
   input[type="text"],
   select,
   textarea {
@@ -316,3 +328,4 @@ input[type='radio'] {
   }
 
 }
+
