@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import 'globals';
 
 .button {
@@ -14,7 +16,7 @@
   padding: 6px 24px;
   @extend .button;
   @include btn-background($color-defaultButton-background);
- 
+
   &.text-left,  &.text-right {
     padding: 6px 15px;
   }

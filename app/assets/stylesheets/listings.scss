@@ -1,5 +1,7 @@
+@charset "UTF-8";
+
 @import 'globals';
-@import 'icons';
+
 $color-listing-header-border: lighten($color-box-foreground, 38%);
 
 .listing-section {
@@ -41,16 +43,16 @@ $color-listing-header-border: lighten($color-box-foreground, 38%);
     float: right;
   }
 
-  .listing-section.with-podcast h2:after {
-    @extend .icon-podcast;
-    font-size: 21px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 17px;
-    height: auto;
+  .listing-section.with-podcast h2 {
+    @include icon(podcast, after) {
+      font-size: 21px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 17px;
+      height: auto;
+    }
   }
-
 }
 
 .events.listing-section {
@@ -109,15 +111,16 @@ $color-listing-header-border: lighten($color-box-foreground, 38%);
 
 }
 
-fieldset.with-help:after,
-.listing-section h2:after {
-  @extend .icon-help;
-  position: absolute;
-  top: 0px;
-  right: 25px;
-  width: 17px;
-  height: auto;
-  font-size: 20px;
+fieldset.with-help,
+.listing-section h2 {
+  @include icon(help, after) {
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    width: 17px;
+    height: auto;
+    font-size: 20px;
+  }
 }
 
 .compulsory legend span {
@@ -281,17 +284,19 @@ img.photo {
 
 }
 
-.listing-section .main-page:before {
-  @extend .icon-home;
-  position: absolute;
-  left: 0px;
-  top: -2px;
+.listing-section .main-page {
+  @include icon(home) {
+    position: absolute;
+    left: 0px;
+    top: -2px;
+  }
 }
 
-.listing-section .twitter:before {
-  @extend .icon-twitter;
-  position: absolute;
-  left: 0px;
+.listing-section .twitter {
+  @include icon(twitter) {
+    position: absolute;
+    left: 0px;
+  }
 }
 
 .content .icon {
@@ -346,17 +351,18 @@ img.photo {
   padding: 12.5px 10px;
 }
 
-.single-listing.sponsored:after {
-  @extend .icon-ticket;
-  display: inline-block;
-  position: relative;
-  margin-top: 0px;
-  margin-left: -40px;
-  font-size: 40px !important;
-  color: $official-red !important;
-  -ms-transform: rotate(45deg); /* IE 9 */
-  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-  transform: rotate(45deg);
+.single-listing.sponsored {
+  @include icon(ticket, after) {
+    display: inline-block;
+    position: relative;
+    margin-top: 0px;
+    margin-left: -40px;
+    font-size: 40px !important;
+    color: $official-red !important;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+  }
 }
 
 .sponsored .listing-wrapper {
@@ -623,12 +629,10 @@ section.events .icon:last-child {
   padding-left: 28px;
   font-size: 13px;
 
-  &:before {
-    @extend .icon-keys;
+  @include icon(keys) {
     position: absolute;
     top: -2px;
     left: 0px;
     font-size: 24px;
   }
-
 }

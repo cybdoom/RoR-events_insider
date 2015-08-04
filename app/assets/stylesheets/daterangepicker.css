@@ -44,7 +44,7 @@
 	color:#666;
 	font-weight:700;
 }
-.date-picker-wrapper a 
+.date-picker-wrapper a
 {
 	color: rgb(107, 180, 214);
 	text-decoration:underline;
@@ -192,14 +192,14 @@
 .date-picker-wrapper .drp_top-bar .apply-btn
 {
 	position:absolute;
-	right: 0px; 
+	right: 0px;
 	top: 6px;
 	padding:3px 5px;
 	margin:0;
 	font-size:12px;
 	border-radius:4px;
 	cursor:pointer;
-	
+
 	color: #d9eef7;
 	border: solid 1px #0076a3;
 	background: #0095cd;
@@ -242,7 +242,7 @@
 	float: left;
 }
 .date-picker-wrapper .time2 {
-	float: right;	
+	float: right;
 }
 .date-picker-wrapper .hour, .minute {
 	text-align: right;
@@ -253,10 +253,10 @@
 
 .date-picker-wrapper .first-date-selected { background-color:#49e !important; color:white !important;  }
 .date-picker-wrapper .last-date-selected { background-color:#49e !important; color:white !important;  }
-.date-picker-wrapper .date-range-length-tip { position:absolute; margin-top:-4px; margin-left:-8px; box-shadow:0 0 3px rgba(0,0,0,.3); display:none;background-color:yellow; padding:0 6px; border-radius:2px; font-size:12px; line-height:16px; 
--webkit-filter: drop-shadow(0 0 3px rgba(0,0,0,.3)); 
-    -moz-filter: drop-shadow(0 0 3px rgba(0,0,0,.3)); 
+.date-picker-wrapper .date-range-length-tip { position:absolute; margin-top:-4px; margin-left:-8px; box-shadow:0 0 3px rgba(0,0,0,.3); display:none;background-color:yellow; padding:0 6px; border-radius:2px; font-size:12px; line-height:16px;
+-webkit-filter: drop-shadow(0 0 3px rgba(0,0,0,.3));
+    -moz-filter: drop-shadow(0 0 3px rgba(0,0,0,.3));
     -ms-filter: drop-shadow(0 0 3px rgba(0,0,0,.3));
-    -o-filter: drop-shadow(0 0 3px rgba(0,0,0,.3)); 
+    -o-filter: drop-shadow(0 0 3px rgba(0,0,0,.3));
     filter: drop-shadow(0 0 3px rgba(0,0,0,.3));  }
 .date-picker-wrapper .date-range-length-tip:after { content:''; position:absolute; border-left:4px solid transparent; border-right:4px solid transparent; border-top:4px solid yellow; left:50%; margin-left:-4px; bottom:-4px; }

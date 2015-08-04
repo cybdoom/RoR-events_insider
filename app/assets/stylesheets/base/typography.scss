@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+@import 'globals';
+
+h1,
+aside h3 {
+  font-family: $font-mascot-speaks;
+}
+
+body,
+h2,
+legend,
+address,
+nav a,
+a.load,
+input[type="text"],
+select,
+.alert-message,
+.sub-footer h3 {
+  font-family: $font-header;
+}
+
+h3,
+p,
+a,
+.sub-header h2,
+aside p {
+  font-family: $font-body-text;
+}
+
+/* Colors */
+nav a {
+  color: $color-primary-foreground;
+}
+
+footer,
+footer nav a,
+.sub-footer nav a,
+.sub-footer h3 {
+  color: $color-box-body-text;
+}
+
+.sub-header h2 {
+  color: lighten($color-box-foreground, 8%);
+}
+
+aside p {
+  color: darken($color-box-foreground, 11.5%);
+}
+
+legend,
+input[type="radio"],
+input[type="text"],
+select,
+.alert-message {
+  color: lighten($color-box-foreground, 18.5%);
+}
+
+h5 {
+  color: lighten($color-box-foreground, 22.5%);
+}
+
+p,
+address {
+  color: lighten($color-box-body-text, 15.25%);
+}
+
+h1,
+h2,
+.side-content a {
+  color: $color-box-important-text;
+}
+
+.single-listing .main-content h3 {
+  color: darken($color-box-important-text, 1.4%);
+}
+
+.single-listing .main-content a {
+  color: darken($color-box-important-text, 1.4%);
+}
+
+aside h3 {
+  color: $color-box-sidebar-title;
+}
+
+/* font-sizes */
+body {
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 38.67px;
+  margin: 10px 0 20px 0;
+  letter-spacing: 3px;
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 30px;
+    margin: 10px 0 20px 0;
+    letter-spacing: 3px;
+  }
+}
+
+h2 {
+  font-size: 20pt;
+  font-weight: 100px;
+}
+
+p {
+  font-size: 14px;
+}
+
+aside p {
+  font-size: 15px;
+}

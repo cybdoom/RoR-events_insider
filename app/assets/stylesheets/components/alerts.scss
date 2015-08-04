@@ -1,5 +1,6 @@
+@charset "UTF-8";
+
 @import 'globals';
-@import 'icons';
 
 .alert-message {
   position: relative;
@@ -21,14 +22,14 @@
   }
 
   &:after {
-    @extend .icon-cross;
-    font-size: 10px;
-    color: lighten($color-box-foreground, 18.5%);
-    float: right;
-    margin-top: -2px;
-    margin-right: -2px;
+    @include icon(cross, after) {
+      font-size: 10px;
+      color: lighten($color-box-foreground, 18.5%);
+      float: right;
+      margin-top: -2px;
+      margin-right: -2px;
+    }
   }
-
 }
 
 @media screen and (max-width:767px) {
@@ -48,7 +49,6 @@
     &:after {
       margin-top: -17px;
     }
-
   }
 
 }

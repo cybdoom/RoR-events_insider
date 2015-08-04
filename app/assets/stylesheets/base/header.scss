@@ -1,25 +1,18 @@
-@import 'globals';
-@import 'icons';
+@charset "UTF-8";
 
-/* header and sub-header */
-html,
-body {
-  min-height: 100%;
-}
+@import 'globals';
 
 header {
   width: 100%;
-  height: 108px;
   background-color: $color-primary-background;
-
-  & nav {
-    float: right;
-    margin-top: 62px;
-  }
-
 }
 
-nav a {
+header nav {
+  float: right;
+  margin-top: 44px;
+}
+
+header nav a {
   float: left;
   margin-left: 45px;
   font-size: 18px;
@@ -30,18 +23,74 @@ nav a {
     margin-left: 10px;
   }
 
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.sub-footer nav a.icons:last-of-type {
-  margin-left: 17px;
-}
+.home-link {
+  @include icon(home_main);
 
-.icons.home {
-  @extend .icon-home_main;
   float: left;
+  color: $color-primary-foreground;
   width: 24px;
   height: 30px;
-  color: $color-primary-foreground;
+}
+
+.logo {
+  float: left;
+  margin-top: 10px;
+}
+
+.sub-header {
+  width: 100%;
+  background-color: saturate(adjust_hue(lighten($color-primary-background, 27), -1), 1.4);
+}
+
+.sub-header h2 {
+  float: left;
+  margin: 0;
+  font-family: "DroidSans";
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 55px;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 959px) {
+  nav a {
+    margin-left: 18px;
+    font-size: 16px;
+  }
+
+  .sub-header h2 {
+    font-size: 19px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    height: 60px;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .logo {
+    height: 45px;
+    width: auto;
+    margin-top: 8px;
+  }
+
+  .sub-header h2 {
+    width: 100%;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  }
 }
 
 nav a.icons.social {
@@ -65,64 +114,7 @@ nav a.icons.social {
       height: 40px;
       color: darken($color-primary-foreground, 25%);
     }
-
   }
-
-}
-
-.icons {
-  &.social {
-    &.fb:before {
-      @extend .icon-facebook;
-    }
-
-    &.fb.grey {
-      margin-left: 0;
-    }
-
-    &.twitter:before {
-      @extend .icon-twitter;
-    }
-
-  }
-
-  &.search {
-    position: absolute;
-    width: 20px;
-    height: auto;
-    right: 8px;
-    top: 17px;
-    @include opacity(1);
-
-    &:before {
-      @extend .icon-search;
-      color: lighten($color-box-foreground, 18.5%);
-    }
-
-  }
-
-}
-
-.logo {
-  float: left;
-  margin-top: 28px;
-}
-
-.sub-header {
-  width: 100%;
-  height: 55px;
-  background-color: saturate(adjust_hue(lighten($color-primary-background, 27), -1), 1.4);
-
-  & h2 {
-    float: left;
-    margin-top: 12px;
-    font-family: "DroidSans";
-    font-size: 24px;
-    font-style: italic;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
-
 }
 
 .tools {
@@ -149,27 +141,22 @@ nav a.icons.social {
 }
 
 .nav-mobile-icon {
-  &:before {
+  @include icon(tags){
     top: 1px;
     font-size: 32px;
-    @extend .icon-tags;
   }
 
   &.toggle {
     background-position: -50px 0;
   }
-
 }
 
 .search-mobile-icon {
-  &:before {
-    @extend .icon-search;
-  }
+  @include icon(search);
 
   &.toggle {
     background-position: -50px -50px;
   }
-
 }
 
 .header-icons-divider {
@@ -179,51 +166,7 @@ nav a.icons.social {
   border-left: solid 1px $color-primary-foreground;
 }
 
-.search.desktop-only {
-  display: block;
-}
-
-@media screen and (max-width:959px) {
-  nav a {
-    margin-left: 18px;
-    font-size: 16px;
-  }
-
-  .sub-header h2 {
-    font-size: 19px;
-  }
-
-}
-
-@media screen and (max-width:767px) {
-  header {
-    height: 60px;
-
-    & nav {
-      display: none;
-    }
-
-  }
-
-  .logo {
-    height: 45px;
-    width: auto;
-    margin-top: 8px;
-  }
-
-  .sub-header {
-    height: 25px;
-
-    & h2 {
-      width: 100%;
-      margin: 5px 0;
-      font-size: 12px;
-      text-align: center;
-      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    }
-
-  }
-
+@media screen and (max-width: 767px) {
   #header-menu {
     display: none;
     padding-bottom: 3px;
@@ -242,9 +185,7 @@ nav a.icons.social {
       &:nth-child(3n+1) {
         text-align: center;
       }
-
     }
-
   }
 
   .search-bar {
@@ -266,7 +207,6 @@ nav a.icons.social {
       color: saturate(lighten($color-box-foreground, 29), 0.85);
       text-transform: uppercase;
     }
-
   }
 
   .search-box-mobile {
@@ -277,10 +217,6 @@ nav a.icons.social {
   input[type="text"].search-box-mobile {
     font-size: 12px;
     height: 24px;
-  }
-
-  .search.desktop-only {
-    display: none;
   }
 
 }

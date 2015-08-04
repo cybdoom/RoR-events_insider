@@ -1,5 +1,6 @@
+@charset "UTF-8";
+
 @import 'globals';
-@import 'icons';
 
 .date-picker-wrapper {
   background: white;
@@ -59,7 +60,7 @@
     width: 100%;
   }
 
-  & .first-date-selected{
+  & .first-date-selected {
     background: $color-box-important-text !important;
   }
 
@@ -259,14 +260,16 @@
     left: -9999px;
   }
 
-  &:not(:checked) + label,&:checked + label {
+  &:not(:checked) + label,
+  &:checked + label {
     position: relative;
     padding-left: 25px;
     cursor: pointer;
   }
 
   /* checkbox aspect */
-  &:not(:checked) + label:before,&:checked + label:before {
+  &:not(:checked) + label:before,
+  &:checked + label:before {
     content: '';
     position: absolute;
     top: 2px;
@@ -279,8 +282,9 @@
   }
 
   /* checked mark aspect */
-  &:not(:checked) + label:after,&:checked + label:after {
-    @extend .icon-tick;
+  &:not(:checked) + label:after,
+  &:checked + label:after {
+    @include icon(tick, after);
     position: absolute;
     top: 5px;
     left: 4px;

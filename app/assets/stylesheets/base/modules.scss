@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import 'globals';
 
 /* main modules */
@@ -6,6 +8,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  min-height: 100%;
 }
 
 html {
@@ -16,7 +19,7 @@ html {
   background-size: cover;
 }
 
-h1.page-title{
+h1.page-title {
   padding-left: 20px;
 }
 
@@ -128,7 +131,7 @@ section {
   color: $color-box-important-text;
 }
 
-@media screen and (max-width:1065px) {
+@media screen and (max-width: 1065px) {
   .wrapper {
     width: 95%;
   }
@@ -145,7 +148,7 @@ section {
 
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   html {
     -webkit-background-size: contain;
     -moz-background-size: contain;
@@ -163,11 +166,11 @@ section {
   }
 
   .mobile-only {
-    display: block;
+    display: block !important;
   }
 
   .desktop-only {
-    display: none;
+    display: none !important;
   }
 
   .col6,

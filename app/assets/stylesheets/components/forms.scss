@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import 'globals';
 
 @mixin input-shadow {
@@ -16,7 +18,7 @@ textarea {
 div.form-group label{
   display: block;
 }
-    
+
 div.form-group label,
 div.form-group input[type="radio"],
 div.form-group span,

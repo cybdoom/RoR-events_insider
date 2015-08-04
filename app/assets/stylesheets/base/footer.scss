@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import 'globals';
 
 .sub-footer {
@@ -36,6 +38,7 @@
         margin: 0 auto;
       }
     }
+
     &:nth-child(3) {
       width: 44%;
       & nav {
@@ -68,6 +71,10 @@
     width: 100%;
     text-align: left;
   }
+}
+
+.sub-footer nav a.icons:last-of-type {
+  margin-left: 17px;
 }
 
 .sub-footer nav,

@@ -7,8 +7,8 @@
       <div class="header-mobile-icons nav-mobile-icon menu-toggle"></div>
     </div>
     <nav>
-      <a href="" class="icons home desktop-only"></a>
-      <a href="" class="mobile-only"><%= t(:home) %></a>
+      <%= link_to '', root_path, class: 'home-link desktop-only' %>
+      <%= link_to t(:home), root_path, class: 'mobile-only' %>
       <!-- <a href=""><%= t(:about) %></a> -->
       <a href=""><%= t(:articles) %></a>
       <% if user_signed_in? %>
@@ -19,8 +19,8 @@
       <% end %>
       <a href=""><%= t(:contact) %></a>
       <a href=""><%= t(:help) %></a>
-      <a href="" class="icons social fb desktop-only"></a>
-      <a href="" class="icons social twitter desktop-only"></a>
+      <a href="" class="icon-facebook desktop-only"></a>
+      <a href="" class="icon-twitter desktop-only"></a>
     </nav>
     <div class="clear"></div>
   </div>

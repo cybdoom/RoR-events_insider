@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@import 'globals';
+
+.icon-facebook {
+  @include icon(facebook);
+}
+
+.icon-facebook.grey {
+  margin-left: 0;
+}
+
+.icon-twitter {
+  @include icon(twitter);
+}
+
+.icon-search {
+  @include opacity(1);
+  @include icon(search) {
+    color: lighten($color-box-foreground, 18.5%);
+  }
+
+  position: absolute;
+  width: 20px;
+  height: auto;
+  right: 8px;
+  top: 17px;
+}

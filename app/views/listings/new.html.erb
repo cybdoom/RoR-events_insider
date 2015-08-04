@@ -1,18 +1,15 @@
-<h1>Add a Listing</h1>
+<%= content_for(:content_title, 'Add a Listing') %>
 
-<div class="content-block">
-  <h3>I would like to add a...</h3>
-  <%= simple_form_for @listing do |f| %>
-    <%= f.input :type, as: :radio_buttons,
-                       collection: Array(Listing::TYPES.first),
-                       selected: Listing::TYPES.first,
-                       label: false %>
-    <%= f.input :name %>
-    <%= f.input :website %>
-    <%= f.input :location %>
+<h3>I would like to add a...</h3>
+<%= simple_form_for @listing do |f| %>
+  <%= f.input :type, as: :radio_buttons,
+                     collection: Array(Listing::TYPES.first),
+                     label: false %>
+  <%= f.input :name %>
+  <%= f.input :website %>
+  <%= f.input :location %>
 
-    <%= f.actions do %>
-      <%= f.button :submit, 'Add Event', class: 'call-to-action-btn' %>
-    <% end %>
+  <%= f.actions do %>
+    <%= f.button :submit, 'Add Event', class: 'call-to-action-btn' %>
   <% end %>
-</div>
+<% end %>

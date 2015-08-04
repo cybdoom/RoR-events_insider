@@ -1,5 +1,6 @@
+@charset "UTF-8";
+
 @import 'globals';
-@import 'icons';
 
 .filters-block {
   padding: 20px 0 0 0;
@@ -23,44 +24,52 @@
     left: 0px;
   }
 
-  &.price:before {
-    @extend .icon-price;
-    font-size: 20px !important;
+  &.price {
+    @include icon(price) {
+      font-size: 20px !important;
+    }
   }
 
-  &.size:before {
-    @extend .icon-size;
-    font-size: 20px !important;
+  &.size {
+    @include icon(size) {
+      font-size: 20px !important;
+    }
   }
 
-  &.type:before {
-    @extend .icon-type;
-    font-size: 20px !important;
+  &.type {
+    @include icon(type) {
+      font-size: 20px !important;
+    }
   }
 
-  &.featured:before {
-    @extend .icon-featured;
-    font-size: 20px !important;
+  &.featured {
+    @include icon(featured) {
+      font-size: 20px !important;
+    }
   }
 
-  &.active:before {
-    @extend .icon-active;
-    font-size: 20px !important;
+  &.active {
+    @include icon(active) {
+      font-size: 20px !important;
+    }
   }
 
-  &.indoor:before {
-    @extend .icon-indoor;
-    font-size: 20px !important;
+  &.indoor {
+    @include icon(indoor) {
+      font-size: 20px !important;
+    }
   }
 
-  &.age:before {
-    @extend .icon-age;
-    font-size: 20px !important;
+  &.age {
+    @include icon(age) {
+      font-size: 20px !important;
+    }
   }
 
-  &.sporty:before {
-    @extend .icon-sporty;
-    font-size: 20px !important;
+  &.sporty {
+    @include icon(sporty) {
+      font-size: 20px !important;
+    }
   }
 
 }
@@ -81,7 +90,6 @@
     &:hover {
       cursor: pointer;
     }
-
   }
 
 }
@@ -129,7 +137,7 @@
     }
 
     &:hover {
-      outline: solid 2px $color-primary-background
+      outline: solid 2px $color-primary-background;
     }
 
     &:nth-child(3n) {

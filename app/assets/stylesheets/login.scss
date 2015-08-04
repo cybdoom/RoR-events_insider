@@ -1,5 +1,6 @@
+@charset "UTF-8";
+
 @import 'globals';
-@import 'icons';
 
 /* Common for all logins */
 .login {
@@ -32,8 +33,6 @@
 /* Sign up */
 #signup {
   & .popup {
-    // height: 522px;
-
     & .confirm-message {
       float: left;
       width: 100%;
@@ -55,9 +54,6 @@
       & p {
         margin-bottom: 0;
       }
-
     }
-
   }
-
 }
