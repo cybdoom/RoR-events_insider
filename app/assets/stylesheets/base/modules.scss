@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 @import 'globals';
 
 /* main modules */
@@ -17,6 +15,13 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  @include mobile {
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+  }
 }
 
 h1.page-title {
@@ -59,11 +64,29 @@ a {
   display: none;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .wrapper {
   position: relative;
-  float: none;
   width: 1014px;
   margin: 0 auto;
+
+  @include tablet {
+    width: 95%;
+  }
+
+  @include mobile {
+    width: 90%;
+  }
 }
 
 .content-wrapper {
@@ -79,6 +102,15 @@ main,
 .main-content {
   float: left;
   width: 685px;
+
+  @include tablet {
+    margin: 0 auto;
+    float: none;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 section {
@@ -94,15 +126,27 @@ section {
 .col6 {
   float: left;
   width: 50%;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .col6:nth-child(2n) {
   margin: 0;
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
 }
 
 .col4 {
   float: left;
   width: 33.3%;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .col3 {
@@ -121,7 +165,6 @@ section {
     padding: 0px;
     padding-top: 25px;
   }
-
 }
 
 .tags {
@@ -131,55 +174,16 @@ section {
   color: $color-box-important-text;
 }
 
-@media screen and (max-width: 1065px) {
-  .wrapper {
-    width: 95%;
-  }
-
-  aside {
-    display: none;
-  }
-
-  main,
-  .main-content {
-    margin: 0 auto;
-    float: none
-  }
-
+.sprite {
+  background: image-url('sprites.png') no-repeat;
 }
 
 @media screen and (max-width: 767px) {
-  html {
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-  }
-
-  .wrapper {
-    width: 90%;
-  }
-
-  main,
-  .main-content {
-    width: 100%;
-  }
-
   .mobile-only {
-    display: block !important;
+    display: block;
   }
 
   .desktop-only {
-    display: none !important;
+    display: none;
   }
-
-  .col6,
-  .col4 {
-    width: 100%;
-  }
-
-  .col6:nth-child(2n) {
-    margin-bottom: 20px;
-  }
-
 }

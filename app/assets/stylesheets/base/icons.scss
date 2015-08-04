@@ -1,8 +1,11 @@
-@charset "UTF-8";
 @import 'globals';
 
 .icon-facebook {
-  @include icon(facebook);
+  width: 40px;
+  height: 40px;
+  @include icon(facebook) {
+    font-size: 40px;
+  }
 }
 
 .icon-facebook.grey {
@@ -10,7 +13,12 @@
 }
 
 .icon-twitter {
-  @include icon(twitter);
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  @include icon(twitter) {
+    font-size: 40px;
+  }
 }
 
 .icon-search {
@@ -20,6 +28,7 @@
   }
 
   position: absolute;
+  font-size: 24px;
   width: 20px;
   height: auto;
   right: 8px;

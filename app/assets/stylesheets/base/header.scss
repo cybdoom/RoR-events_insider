@@ -1,27 +1,33 @@
-@charset "UTF-8";
-
 @import 'globals';
 
 header {
   width: 100%;
   background-color: $color-primary-background;
+  padding-bottom: 5px;
+}
+
+header .wrapper,
+.sub-header .wrapper {
+  @include clearfix;
+}
+
+.logo {
+  float: left;
+  margin-top: 6px;
 }
 
 header nav {
   float: right;
-  margin-top: 44px;
+  margin-top: 38px;
+  line-height: 42px;
 }
 
-header nav a {
+header nav > a {
   float: left;
   margin-left: 45px;
   font-size: 18px;
   letter-spacing: 1px;
   text-decoration: none;
-
-  &.icons:last-of-type {
-    margin-left: 10px;
-  }
 
   &:hover {
     text-decoration: underline;
@@ -30,16 +36,11 @@ header nav a {
 
 .home-link {
   @include icon(home_main);
-
-  float: left;
   color: $color-primary-foreground;
+  font-size: 24px;
   width: 24px;
   height: 30px;
-}
-
-.logo {
-  float: left;
-  margin-top: 10px;
+  margin-left: 0;
 }
 
 .sub-header {
@@ -93,38 +94,12 @@ header nav a {
   }
 }
 
-nav a.icons.social {
-  &.twitter:before,
-  &.fb:before {
-    float: left;
-    width: 40px;
-    height: 40px;
-    margin-top: -8px;
-    font-size: 40px;
-    color: $color-primary-foreground;
-  }
-
-  &.grey {
-    float: left;
-    width: 40px;
-    height: 40px;
-
-    &:before {
-      width: 40px;
-      height: 40px;
-      color: darken($color-primary-foreground, 25%);
-    }
-  }
-}
-
 .tools {
   float: right;
   margin-top: 15px;
 }
 
-.sprite {
-  background: image-url('sprites.png') no-repeat;
-}
+
 
 .header-mobile-icons {
   position: relative;
@@ -132,16 +107,16 @@ nav a.icons.social {
   margin: 0px 10px;
   width: 32px;
   height: 32px;
-}
 
-.header-mobile-icons:before {
-  position: absolute;
-  top: 4px;
-  color: $color-primary-foreground;
+  &:before {
+    position: absolute;
+    top: 4px;
+    color: $color-primary-foreground;
+  }
 }
 
 .nav-mobile-icon {
-  @include icon(tags){
+  @include icon(tags) {
     top: 1px;
     font-size: 32px;
   }
@@ -152,7 +127,10 @@ nav a.icons.social {
 }
 
 .search-mobile-icon {
-  @include icon(search);
+  @include icon(search) {
+    top: 1px;
+    font-size: 32px;
+  }
 
   &.toggle {
     background-position: -50px -50px;

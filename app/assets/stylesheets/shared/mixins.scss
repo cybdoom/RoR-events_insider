@@ -1,12 +1,17 @@
-@charset "UTF-8";
-
 @import 'variables';
+@import 'breakpoints';
 @import 'icon-map';
+
+@import 'addons/clearfix';
 @import 'grid/media';
 
 @mixin icon($icon: false, $position: before, $base_styles: true) {
   @if $position == both {
     $position: 'before, &: after';
+  }
+
+  @if $base_styles {
+    text-decoration: none;
   }
 
   &:#{$position} {
@@ -27,6 +32,12 @@
     }
 
     @content;
+  }
+
+  &:hover {
+    @if $base_styles {
+      text-decoration: none;
+    }
   }
 }
 
