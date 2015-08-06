@@ -3,11 +3,34 @@
 @import 'breakpoints';
 @import 'icon-map';
 
+$em-base: 14px;
+
 // Bourbon
 @import 'settings/prefixer';
 @import 'addons/clearfix';
 @import 'addons/prefixer';
 @import 'css3/appearance';
+
+@import 'grid';
+
+@mixin parent {
+  @each $selector in & {
+    $length: length($selector);
+
+    @if ($length == 1) {
+      @error "Used parent mixin on a top-level selector";
+    } @else {
+      $parent: nth($selector, 1);
+      @for $i from 2 to $length {
+        $parent: append($parent, nth($selector, $i));
+      }
+
+      @at-root #{$parent} {
+        @content;
+      }
+    }
+  }
+}
 
 @mixin icon($icon: false, $position: before, $base_styles: false) {
   @if $position == both {
@@ -15,6 +38,7 @@
   }
 
   @if $base_styles {
+    display: inline-block;
     text-decoration: none;
 
     &:hover {

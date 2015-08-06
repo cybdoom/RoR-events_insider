@@ -47,21 +47,11 @@ main {
 }
 
 .wrapper {
-  width: 1014px;
-  margin: 0 auto;
-  @include clearfix;
-
-  @include tablet {
-    width: 95%;
-  }
-
-  @include mobile {
-    width: 90%;
-  }
+  @extend %wrapper;
 }
 
 .content-wrapper {
-  @extend .wrapper;
+  @extend %wrapper;
   margin-top: 40px;
 }
 

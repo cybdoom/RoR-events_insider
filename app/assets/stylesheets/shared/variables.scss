@@ -1,4 +1,7 @@
+// Way to tell bourbon we are on Rails
 $asset-pipeline: true;
+
+$grid-max-width: 1014px;
 
 /* Custom Palette. Use only these colors. This is the only section in the styling that is
 not semantic, and we expect it to be completely replaced when theming for another system. */
@@ -17,11 +20,9 @@ $official-red: #d00000;
 
 $font-header: 'Cabin';
 $font-main: 'Droid Sans';
-$font-mascot-speaks: 'Dimbo Regular';
+$font-mascot-speaks: 'Dimbo';
 $font-footer: 'Cabin';
 $font-icons: 'ei-icons';
-
-
 
 /* Primary Color Configuration : These are the colors that users will most often want to set. */
 

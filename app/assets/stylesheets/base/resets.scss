@@ -4,8 +4,11 @@ html {
   padding: 0;
 }
 
-* {
+html {
   box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 ul,
@@ -25,4 +28,8 @@ ol {
     margin-bottom: 1em;
     padding-left: 40px;
   }
+}
+
+a:hover {
+  text-decoration: underline;
 }

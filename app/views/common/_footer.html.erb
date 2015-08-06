@@ -1,54 +1,63 @@
 <footer>
   <div class="footer-navigation">
-    <div class="wrapper">
-      <div class="advertise">
-        <%= image_tag 'logo.png', alt: 'logo-footer', class: 'logo' %>
-        <a href=""><%= t(:advertise) %></a>
-      </div>
+    <div class="footer-navigation-wrapper">
+      <div class="footer-navigation-container">
+        <div class="advertise">
+          <%= image_tag 'logo.png', alt: 'logo-footer', class: 'logo' %>
+          <a href=""><%= t(:advertise) %></a>
+        </div>
 
-      <nav class="footer-menu">
-        <ul class="footer-menu-useful">
-          <li>
-            <a href=""><%= t(:home) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:about) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:articles) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:login) %></a>
-          </li>
-        </ul>
-        <ul class="footer-menu-secondary">
-          <li>
-            <a href=""><%= t(:listing_add) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:subscribe) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:contact) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:help) %></a>
-          </li>
-        </ul>
-        <ul class="footer-misc-links mobile-only">
-          <li>
-            <a href=""><%= t(:terms) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:privacy_policy) %></a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="footer-menu">
+          <div class="footer-menu-wrapper">
+            <ul class="footer-menu-useful">
+              <li>
+                <a href=""><%= t(:home) %></a>
+              </li>
+              <li>
+                <a href=""><%= t(:about) %></a>
+              </li>
+              <li>
+                <a href=""><%= t(:articles) %></a>
+              </li>
+              <li>
+                <a href=""><%= t(:login) %></a>
+              </li>
+            </ul>
+            <ul class="footer-menu-secondary">
+              <li>
+                <a href=""><%= t(:listing_add) %></a>
+              </li>
+              <li>
+                <a href=""><%= t(:subscribe) %></a>
+              </li>
+              <li>
+                <a href=""><%= t(:contact) %></a>
+              </li>
+              <li>
+                <a href=""><%= t(:help) %></a>
+              </li>
+            </ul>
+            <ul class="footer-misc-links mobile-only">
+              <li>
+                <a href=""><%= t(:terms) %></a>
+              </li>
+              <li>
+                <a href=""><%= t(:privacy_policy) %></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
-      <div class="footer-social">
-        <h3><%= t(:stay_connected) %></h3>
-        <a href="" class="icon icon-facebook grey"></a>
-        <a href="" class="icon icon-twitter grey"></a>
+        <div class="footer-social">
+          <h3><%= t(:stay_connected) %></h3>
+          <ul class="list-inline">
+            <li>
+              <a href="" class="icon icon-facebook grey"></a>
+            </li>
+            <li>
+              <a href="" class="icon icon-twitter grey"></a>
+            </li>
+        </div>
       </div>
     </div>
   </div>
@@ -60,10 +69,10 @@
       </span>
       <ul class="footer-misc-links desktop-only">
         <li>
-          <a><%= t(:privacy_policy) %></a>
+          <a href=""><%= t(:terms) %></a>
         </li>
         <li>
-          <a><%= t(:terms) %></a>
+          <a href=""><%= t(:privacy_policy) %></a>
         </li>
       </ul>
     </div>

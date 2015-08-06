@@ -1,5 +1,10 @@
 @import 'globals';
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 h1,
 aside h3 {
   font-family: $font-mascot-speaks;

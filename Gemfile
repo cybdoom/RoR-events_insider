@@ -47,7 +47,9 @@ gem 'gmaps4rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'neat'
-gem 'sass-rails', '~> 5.0'
+
+# gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails'
 gem 'twitter-typeahead-rails'
 gem 'uglifier', '>= 1.3.0'
 

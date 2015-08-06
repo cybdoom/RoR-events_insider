@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'breakpoints';
+@import 'addons/clearfix';
+
+%wrapper {
+  width: 1014px;
+  margin-left: auto;
+  margin-right: auto;
+  @include clearfix;
+
+  @include tablet {
+    width: 95%;
+  }
+
+  @include mobile {
+    width: 90%;
+  }
+}
+
+%grid-container {
+  width: 100%;
+  max-width: $grid-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  @include clearfix;
+}
+
+%column {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+@for $i from 1 through 12 {
+  %column-#{$i} {
+    @extend %column;
+    width: ($i / 12) * 100%;
+  }
+}
+
+@mixin negative-margin-hack($height: 500em) {
+  margin-bottom: - $height;
+  padding-bottom: $height;
+}
+
+%same-height-columns {
+  @include negative-margin-hack;
+}

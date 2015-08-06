@@ -1,7 +1,68 @@
 @import 'globals';
 
+$menu-columns-border-color: saturate(lighten($color-box-foreground, 29), 0.85);
+
 footer {
   margin-top: 20px;
+}
+
+.footer-navigation {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: lighten($color-primary-background, 40%);
+}
+
+.footer-navigation-wrapper {
+  @extend %wrapper;
+}
+
+.footer-navigation-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 40px;
+  @include clearfix;
+}
+
+.advertise,
+.footer-social {
+  @extend %column-3;
+  @extend %same-height-columns;
+}
+
+.footer-menu {
+  @extend %column-6;
+  @extend %same-height-columns;
+}
+
+.advertise > a {
+  float: left;
+  margin-top: 10px;
+}
+
+.footer-menu {
+  border-left: solid 2px $menu-columns-border-color;
+  border-right: solid 2px $menu-columns-border-color;
+}
+
+.footer-menu-wrapper {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.footer-menu-useful,
+.footer-menu-secondary {
+  @extend %column-6;
+}
+
+.footer-social {
+  text-align: center;
+  & > h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: $font-footer;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
 }
 
 .copyright {
@@ -9,6 +70,7 @@ footer {
   padding: 20px 0px;
 
   font-family: $font-footer;
+  font-weight: bold;
   font-size: 18px;
   letter-spacing: 1px;
 
@@ -18,12 +80,23 @@ footer {
 
 .footer-misc-links {
   float: right;
+  @extend %list-inline;
 
-  & > li > a {
-    // float: right;
-    // font-family: $font-footer;
-    // font-size: 18px;
-    // color: $color-box-foreground;
+  & > li {
+    margin-left: 45px;
+  }
+}
+
+footer a {
+  font-family: $font-footer;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: $color-box-foreground;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 

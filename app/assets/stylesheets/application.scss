@@ -13,15 +13,16 @@
  *= require components/alerts
  *= require components/buttons
  *= require components/date-picker
+ *= require components/daterangepicker
  *= require components/forms
  *= require components/popups
 
- *= require events
- *= require listings
- *= require login
- *= require search
+ *= require pages/events
+ *= require pages/listings
+ *= require pages/login
+ *= require pages/search
 
  *= require jquery-ui
- *= require daterangepicker
+
  *= require autocomplete-0.3.0.min
  */
