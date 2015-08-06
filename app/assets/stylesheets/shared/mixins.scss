@@ -1,17 +1,25 @@
 @import 'variables';
+@import 'placeholders';
 @import 'breakpoints';
 @import 'icon-map';
 
+// Bourbon
+@import 'settings/prefixer';
 @import 'addons/clearfix';
-@import 'grid/media';
+@import 'addons/prefixer';
+@import 'css3/appearance';
 
-@mixin icon($icon: false, $position: before, $base_styles: true) {
+@mixin icon($icon: false, $position: before, $base_styles: false) {
   @if $position == both {
-    $position: 'before, &: after';
+    $position: 'before, &:after';
   }
 
   @if $base_styles {
     text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   &:#{$position} {
@@ -20,24 +28,10 @@
     }
 
     @if $base_styles {
-      font-family: $font-icons;
-      speak: none;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      @extend %icon;
     }
 
     @content;
-  }
-
-  &:hover {
-    @if $base_styles {
-      text-decoration: none;
-    }
   }
 }
 

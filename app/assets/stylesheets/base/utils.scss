@@ -1,0 +1,43 @@
+@import 'globals';
+
+.clear {
+  clear: both;
+}
+
+@include mobile {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@include desktop {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+// Hide content for visual browsers. Screen-readers will read it aloud.
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tr {
+  display: table-row;
+}
+
+.sprite {
+  background: image-url('sprites.png') no-repeat;
+}

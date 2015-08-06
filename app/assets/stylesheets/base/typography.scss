@@ -21,9 +21,8 @@ select,
 h3,
 p,
 a,
-.sub-header h2,
 aside p {
-  font-family: $font-body-text;
+  font-family: $font-main;
 }
 
 /* Colors */
@@ -36,10 +35,6 @@ footer nav a,
 .sub-footer nav a,
 .sub-footer h3 {
   color: $color-box-body-text;
-}
-
-.sub-header h2 {
-  color: lighten($color-box-foreground, 8%);
 }
 
 aside p {
@@ -90,10 +85,8 @@ h1 {
   font-size: 38.67px;
   margin: 10px 0 20px 0;
   letter-spacing: 3px;
-}
 
-@media screen and (max-width: 767px) {
-  h1 {
+  @include mobile {
     font-size: 30px;
     margin: 10px 0 20px 0;
     letter-spacing: 3px;

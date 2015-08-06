@@ -26,8 +26,14 @@ $desktop-lg-width: 1200px;
   }
 }
 
-@mixin media($size) {
+@mixin media-min($size) {
   @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin media-max($size) {
+  @media (max-width: $size) {
     @content;
   }
 }

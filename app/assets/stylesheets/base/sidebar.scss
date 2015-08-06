@@ -1,13 +1,13 @@
 @import 'globals';
 
 aside {
-  @include tablet {
-    display: none;
-  }
-
   float: left;
   width: 300px;
   margin: 70px 0 0 20px;
+
+  @include tablet {
+    display: none;
+  }
 
   &.banner-margin {
     margin-top: 310px;
@@ -76,7 +76,7 @@ aside {
   float: left;
   width: 100%;
   padding: 7px 20px;
-  font-family: $font-body-text;
+  font-family: $font-main;
   font-size: 13px;
   color: $color-box-important-text;
 
@@ -105,7 +105,8 @@ aside {
     position: absolute;
     top: 2px;
     left: 22px;
-    font-family: $font-body-text;
+    font-family: $font-main;
+
     font-size: 12px;
     color: darken($color-box-foreground, 11.5%);
   }

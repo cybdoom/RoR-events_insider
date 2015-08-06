@@ -1,5 +1,32 @@
 @import 'globals';
 
+footer {
+  margin-top: 20px;
+}
+
+.copyright {
+  width: 100%;
+  padding: 20px 0px;
+
+  font-family: $font-footer;
+  font-size: 18px;
+  letter-spacing: 1px;
+
+  color: $color-box-foreground;
+  background-color: $color-primary-background;
+}
+
+.footer-misc-links {
+  float: right;
+
+  & > li > a {
+    // float: right;
+    // font-family: $font-footer;
+    // font-size: 18px;
+    // color: $color-box-foreground;
+  }
+}
+
 .sub-footer {
   float: left;
   width: 100%;
@@ -88,35 +115,6 @@ footer nav {
 .footer-nav-container {
   margin: 0 20%;
 }
-
-.copyright-text {
-  float: left;
-}
-
-footer {
-  float: left;
-  width: 100%;
-  padding: 20px 0px;
-  font-family: $font-footer;
-  font-size: 18px;
-  letter-spacing: 1px;
-  color: $color-box-foreground;
-  background-color: $color-primary-background;
-
-  & nav {
-    float: right;
-
-    & a {
-      float: right;
-      font-family: $font-footer;
-      font-size: 18px;
-      color: $color-box-foreground;
-    }
-  }
-}
-
-
-
 
 @media screen and (max-width: 1013px) {
   .footer-nav-container {

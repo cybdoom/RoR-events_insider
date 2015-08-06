@@ -392,21 +392,21 @@ img.photo {
     & h3 {
       margin-top: 0px;
       padding: 0px;
-      font-family: $font-body-text;
+      font-family: $font-main;
       font-size: 16px;
       font-weight: 100;
       color: darken($color-box-important-text, 1.4%);
     }
 
     & p {
-      font-family: $font-body-text;
+      font-family: $font-main;
       font-size: 14px;
       font-weight: 100;
       color: lighten($color-box-body-text, 15.25%);
     }
 
     & a {
-      font-family: $font-body-text;
+      font-family: $font-main;
       font-size: 14px;
       font-weight: 100;
       text-decoration: none;
@@ -591,7 +591,7 @@ section.events .icon:last-child {
 
   & div {
     font-size: 15px;
-    font-family: $font-body-text;
+    font-family: $font-main;
     margin-top: 5px;
     letter-spacing: 0.5px;
     color: lighten($color-box-foreground, 22.5%);
@@ -605,7 +605,7 @@ section.events .icon:last-child {
   & h3 {
     display: inline;
     padding: 0px;
-    font-family: $font-body-text;
+    font-family: $font-main;
     font-size: 20px;
     font-weight: 100;
     color: $color-box-body-text;
@@ -614,7 +614,7 @@ section.events .icon:last-child {
   & h4 {
     display: inline;
     padding: 0px;
-    font-family: $font-body-text-bold;
+    font-family: $font-main;
     font-size: 15px;
     font-weight: bold;
     color: $color-box-body-text;

@@ -1,3 +1,5 @@
+$asset-pipeline: true;
+
 /* Custom Palette. Use only these colors. This is the only section in the styling that is
 not semantic, and we expect it to be completely replaced when theming for another system. */
 
@@ -14,10 +16,9 @@ $official-red: #d00000;
 /* Font Configuration */
 
 $font-header: 'Cabin';
-$font-body-text: 'DroidSans';
-$font-body-text-bold: 'DroidSans_Bold';
+$font-main: 'Droid Sans';
 $font-mascot-speaks: 'Dimbo Regular';
-$font-footer: 'Cabin-SemiBold';
+$font-footer: 'Cabin';
 $font-icons: 'ei-icons';
 
 

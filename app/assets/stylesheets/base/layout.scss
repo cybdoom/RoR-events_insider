@@ -1,0 +1,123 @@
+@import 'globals';
+
+html {
+  height: 100%;
+  width: 100%;
+
+  background: image-url('bg.jpg') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  @include mobile {
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+  }
+}
+
+body {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+// Variable height sticky footer via table layout
+// http://stackoverflow.com/questions/9126777/keep-footer-with-variable-height-on-bottom
+// header, main, footer {
+//   display: table-row;
+// }
+
+main {
+  float: left;
+
+  // height: 100%;
+  width: 685px;
+
+  @include tablet {
+    margin: 0 auto;
+    float: none;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.wrapper {
+  width: 1014px;
+  margin: 0 auto;
+  @include clearfix;
+
+  @include tablet {
+    width: 95%;
+  }
+
+  @include mobile {
+    width: 90%;
+  }
+}
+
+.content-wrapper {
+  @extend .wrapper;
+  margin-top: 40px;
+}
+
+.content-block {
+  float: left;
+  width: 100%;
+  padding: 20px;
+  @include box-corners;
+  background-color: $color-primary-foreground;
+}
+
+.content-block > h3 {
+  margin-top: 0;
+}
+
+section {
+  float: left;
+  width: 100%;
+}
+
+.first {
+  padding-top: 25px;
+}
+
+.col {
+  float: left;
+  width: 100%;
+}
+
+.col6 {
+  float: left;
+  width: 50%;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.col6:nth-child(2n) {
+  margin: 0;
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
+}
+
+.col4 {
+  float: left;
+  width: 33.3%;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.col3 {
+  float: left;
+  width: 25%;
+}

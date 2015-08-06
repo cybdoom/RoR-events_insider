@@ -1,53 +1,71 @@
-<div class="sub-footer">
-  <div class="footer-wrapper">
-    <div class="footer-container">
-      <section>
+<footer>
+  <div class="footer-navigation">
+    <div class="wrapper">
+      <div class="advertise">
         <%= image_tag 'logo.png', alt: 'logo-footer', class: 'logo' %>
-        <h4><%= t(:advertise) %></h4>
-      </section>
-      <section>
-        <h3><%= t(:stay_connected) %></h3>
-        <nav>
-           <a href="" class="icon-facebook grey"></a>
-           <a href="" class="icon-twitter grey"></a>
-           <div class="clear"></div>
-        </nav>
-      </section>
+        <a href=""><%= t(:advertise) %></a>
+      </div>
 
-      <section>
-        <div class="footer-nav-container">
-          <nav>
+      <nav class="footer-menu">
+        <ul class="footer-menu-useful">
+          <li>
             <a href=""><%= t(:home) %></a>
+          </li>
+          <li>
             <a href=""><%= t(:about) %></a>
+          </li>
+          <li>
             <a href=""><%= t(:articles) %></a>
+          </li>
+          <li>
             <a href=""><%= t(:login) %></a>
-            <div class="clear"></div>
-          </nav>
-          <nav>
+          </li>
+        </ul>
+        <ul class="footer-menu-secondary">
+          <li>
             <a href=""><%= t(:listing_add) %></a>
+          </li>
+          <li>
             <a href=""><%= t(:subscribe) %></a>
+          </li>
+          <li>
             <a href=""><%= t(:contact) %></a>
+          </li>
+          <li>
             <a href=""><%= t(:help) %></a>
-            <div class="clear"></div>
-          </nav>
-          <nav class="mobile-only">
-            <a><%= t(:terms) %></a>
-            <a><%= t(:privacy_policy) %></a>
-            <div class="clear"></div>
-          </nav>
-          <div class="clear"></div>
-        </div>
-      </section>
-      <div class="clear"></div>
+          </li>
+        </ul>
+        <ul class="footer-misc-links mobile-only">
+          <li>
+            <a href=""><%= t(:terms) %></a>
+          </li>
+          <li>
+            <a href=""><%= t(:privacy_policy) %></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer-social">
+        <h3><%= t(:stay_connected) %></h3>
+        <a href="" class="icon icon-facebook grey"></a>
+        <a href="" class="icon icon-twitter grey"></a>
+      </div>
     </div>
   </div>
-</div>
-<footer>
-  <div class="wrapper">
-    <nav class="desktop-only">
-      <a><%= t(:privacy_policy) %></a>
-      <a><%= t(:terms) %></a>
-    </nav>
-    <div class="copyright-text"><%= t(:copyright_html) %></div>
+
+  <div class="copyright">
+    <div class="wrapper">
+      <span class="copyright-text">
+        <%= t(:copyright_html) %>
+      </span>
+      <ul class="footer-misc-links desktop-only">
+        <li>
+          <a><%= t(:privacy_policy) %></a>
+        </li>
+        <li>
+          <a><%= t(:terms) %></a>
+        </li>
+      </ul>
+    </div>
   </div>
 </footer>

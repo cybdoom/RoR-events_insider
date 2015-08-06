@@ -1,47 +1,37 @@
 <header>
-  <div class="wrapper">
-    <%= image_tag 'logo.png', alt: 'logo-header', class: 'logo' %>
-    <div class="tools mobile-only">
-      <div class="header-mobile-icons search-mobile-icon search-toggle"></div>
-      <div class="header-icons-divider"></div>
-      <div class="header-mobile-icons nav-mobile-icon menu-toggle"></div>
+  <div class="header-navigation">
+    <div class="wrapper">
+      <%= image_tag 'logo.png', alt: 'logo-header', class: 'logo' %>
+      <nav>
+        <%= link_to '', root_path, class: 'home-link desktop-only' %>
+        <%= link_to t(:home), root_path, class: 'mobile-only' %>
+        <a href=""><%= t(:about) %></a>
+        <a href=""><%= t(:articles) %></a>
+        <% if user_signed_in? %>
+          <%= link_to t(:listing_add), new_listing_path %>
+        <% else %>
+          <%= link_to t(:login), new_user_session_path %>
+          <%= link_to t(:signup), new_user_registration_path %>
+        <% end %>
+        <a href=""><%= t(:contact) %></a>
+        <a href=""><%= t(:help) %></a>
+        <span class="social desktop-only">
+          <a href="" class="icon icon-facebook"></a>
+          <a href="" class="icon icon-twitter"></a>
+        </span>
+      </nav>
     </div>
-    <nav>
-      <%= link_to '', root_path, class: 'home-link desktop-only' %>
-      <%= link_to t(:home), root_path, class: 'mobile-only' %>
-      <!-- <a href=""><%= t(:about) %></a> -->
-      <a href=""><%= t(:articles) %></a>
-      <% if user_signed_in? %>
-        <%= link_to t(:listing_add), new_listing_path %>
-      <% else %>
-        <%= link_to t(:login), new_user_session_path %>
-        <%= link_to 'Sign Up', new_user_registration_path %>
-      <% end %>
-      <a href=""><%= t(:contact) %></a>
-      <a href=""><%= t(:help) %></a>
-      <a href="" class="icon-facebook desktop-only"></a>
-      <a href="" class="icon-twitter desktop-only"></a>
-    </nav>
+  </div>
+  <div class="quicksearch">
+    <div class="wrapper">
+      <h2>
+        <%= t(:annotation) %>
+      </h2>
+
+      <div class="search-box-icon-wrapper">
+        <input id="site-search" class="search-box" type="text" name="search" placeholder="Search"/>
+        <i class="icon icon-search desktop-only"></i>
+      </div>
+    </div>
   </div>
 </header>
-<nav id="header-menu" class="mobile-only">
-  <a href=""><%= t(:home) %></a>
-  <a href=""><%= t(:about) %></a>
-  <a href=""><%= t(:articles) %></a>
-  <a href=""><%= t(:login) %></a>
-  <a href=""><%= t(:contact) %></a>
-  <a href=""><%= t(:help) %></a>
-</nav>
-<div id="search-bar" class="search-bar mobile-only">
-  <form>
-    <input class="search-box-mobile" type="text" name="search"/>
-    <span><%= t(:search) %></span>
-  </form>
-</div>
-<div class="sub-header">
-  <div class="wrapper">
-    <h2><%= t(:annotation) %></h2>
-    <input class="search-box desktop-only" type="text" name="search" placeholder="Search"/>
-    <span class="icon-search desktop-only"></span>
-  </div>
-</div>

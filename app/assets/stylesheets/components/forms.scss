@@ -13,6 +13,14 @@ textarea {
   padding-left: 10px;
 }
 
+textarea {
+  resize: vertical;
+}
+
+input[type="search"] {
+  @include appearance(none);
+}
+
 div.form-group label{
   display: block;
 }
@@ -31,7 +39,7 @@ textarea {
   color: lighten($color-box-foreground, 18.5%);
 }
 
-div.form-group {
+.form-group {
   position: relative;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -112,7 +120,7 @@ div.form-group {
 
   & input[type="checkbox"] + span {
     margin: 8px 0px 0px 5px;
-    font-family: $font-body-text;
+    font-family: $font-main;
     font-size: 13px;
     color: lighten($color-box-foreground, 22.5%);
   }
@@ -134,26 +142,6 @@ div.form-group {
   width: 100%;
   height: 40px;
   @include box-corners;
-}
-
-.search-box {
-  @extend .input-text;
-  position: relative;
-  float: right;
-  width: 35%;
-  margin-top: 9px;
-  padding: 5px;
-  padding-left: 10px;
-  border: none;
-  font-family: $font-header;
-  font-size: 18px;
-  letter-spacing: 1px;
-  background-color: $color-primary-foreground;
-  @include opacity(0.8);
-}
-
-.search-box-mobile {
-  @extend .search-box;
 }
 
 textarea {
@@ -271,8 +259,7 @@ input[type='radio'] {
 
 }
 
-/* MOBILE LESS THAN EQUAL TO 767PX */
-@media screen and (max-width:767px) {
+@include mobile {
   div.form-group {
     & span {
       display: block;

@@ -2,7 +2,7 @@
 
 .button {
   color: $color-defaultButton-foreground;
-  font-family: $font-body-text;
+  font-family: $font-main;
   font-size: 15px;
   @include rounded-button1;
   border: none;
