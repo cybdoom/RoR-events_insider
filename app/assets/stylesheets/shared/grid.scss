@@ -2,27 +2,35 @@
 @import 'breakpoints';
 @import 'addons/clearfix';
 
-%wrapper {
-  width: 1014px;
+@mixin grid-container($max-width: $grid-max-width, $container-padding: true, $pad-in-mobile: false) {
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+
+  @if $container-padding {
+    max-width: $grid-max-width + (2 * $grid-container-padding);
+    padding-left: $grid-container-padding;
+    padding-right: $grid-container-padding;
+  } @else {
+    max-width: $grid-max-width;
+  }
+
+  @if not($pad-in-mobile) {
+    @include mobile {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   @include clearfix;
-
-  @include tablet {
-    width: 95%;
-  }
-
-  @include mobile {
-    width: 90%;
-  }
 }
 
 %grid-container {
-  width: 100%;
-  max-width: $grid-max-width;
-  margin-left: auto;
-  margin-right: auto;
-  @include clearfix;
+  @include grid-container($grid-max-width, $grid-container-padding, true);
+}
+
+%wrapper {
+  @extend %grid-container;
 }
 
 %column {

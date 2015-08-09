@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <title>
-      <%= yield(:title) + ' – ' if content_for?(:title) %>
-      Events Insider
-    </title>
+    <title><%= title %></title>
+    <!--   <%= yield(:title) + ' – ' if content_for?(:title) %>
+      Events Insider -->
     <%= stylesheet_link_tag    'application', media: 'all' %>
 
     <%= javascript_include_tag 'libs' %>
@@ -33,8 +32,8 @@
 
     <div class="content-wrapper">
       <main role="main">
-        <% if content_for?(:content_title) %>
-          <h1><%= yield(:content_title) %></h1>
+        <% if content_for?(:heading) %>
+          <h1><%= yield(:heading) %></h1>
         <% end %>
 
         <div class="content-block">

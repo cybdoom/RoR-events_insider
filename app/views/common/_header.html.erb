@@ -1,10 +1,11 @@
 <header>
   <div class="header-navigation">
     <div class="wrapper">
-      <%= image_tag 'logo.png', alt: 'logo-header', class: 'logo' %>
       <nav>
-        <%= link_to '', root_path, class: 'home-link desktop-only' %>
-        <%= link_to t(:home), root_path, class: 'mobile-only' %>
+        <%= link_to root_path, class: 'logo-link' do %>
+          <%= image_tag 'logo.png', alt: 'logo-header', class: 'logo' %>
+        <% end %>
+        <%= link_to t(:home), root_path, class: 'home-link' %>
         <a href=""><%= t(:about) %></a>
         <a href=""><%= t(:articles) %></a>
         <% if user_signed_in? %>
@@ -15,15 +16,18 @@
         <% end %>
         <a href=""><%= t(:contact) %></a>
         <a href=""><%= t(:help) %></a>
-        <span class="social desktop-only">
+        <% if user_signed_in? %>
+          <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
+        <% end %>
+        <!-- <span class="social desktop-only">
           <a href="" class="icon icon-facebook"></a>
           <a href="" class="icon icon-twitter"></a>
-        </span>
+        </span> -->
       </nav>
     </div>
   </div>
   <div class="quicksearch">
-    <div class="wrapper">
+    <div class="quicksearch-wrapper">
       <h2>
         <%= t(:annotation) %>
       </h2>

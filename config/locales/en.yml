@@ -1,8 +1,26 @@
 en:
+  titles:
+    # titles.application defaults to the sigficant portion of
+    # AppName::Application, which would be:
+    application: Events Insider
+    default: "Events Insider - New England's most popular events blog"
+    listings:
+      new: 'Add new listing'
+    events:
+      new: 'Add new event'
+    devise:
+      registrations:
+        new: 'Sign up'
+      sessions:
+        new: 'Log In'
+    static_pages:
+      search: 'Search for events'
+
   home: 'Home'
   about: 'About Us'
   articles: 'Articles'
   login: 'Log In'
+  logout: 'Log Out'
   signup: 'Sign Up'
   listing_add: 'Add a Listing'
   subscribe: 'Subscribe'

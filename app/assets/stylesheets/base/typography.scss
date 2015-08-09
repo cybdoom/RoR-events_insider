@@ -3,6 +3,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: $font-main;
 }
 
 h1,
@@ -14,34 +15,19 @@ body,
 h2,
 legend,
 address,
-nav a,
 a.load,
 input[type="text"],
 select,
-.alert-message,
-.sub-footer h3 {
+.alert-message {
   font-family: $font-header;
 }
 
-h3,
 p,
-a,
 aside p {
   font-family: $font-main;
 }
 
 /* Colors */
-nav a {
-  color: $color-primary-foreground;
-}
-
-footer,
-footer nav a,
-.sub-footer nav a,
-.sub-footer h3 {
-  color: $color-box-body-text;
-}
-
 aside p {
   color: darken($color-box-foreground, 11.5%);
 }
@@ -82,12 +68,8 @@ aside h3 {
 }
 
 /* font-sizes */
-body {
-  font-size: 14px;
-}
-
 h1 {
-  font-size: 38.67px;
+  font-size: 38px;
   margin: 10px 0 20px 0;
   letter-spacing: 3px;
 
@@ -100,11 +82,6 @@ h1 {
 
 h2 {
   font-size: 20pt;
-  font-weight: 100px;
-}
-
-p {
-  font-size: 14px;
 }
 
 aside p {

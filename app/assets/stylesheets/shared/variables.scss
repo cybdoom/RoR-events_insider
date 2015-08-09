@@ -2,12 +2,14 @@
 $asset-pipeline: true;
 
 $grid-max-width: 1014px;
+$grid-container-padding: 20px;
 
 /* Custom Palette. Use only these colors. This is the only section in the styling that is
 not semantic, and we expect it to be completely replaced when theming for another system. */
 
 $official-blue: #28ace6;
 $official-blue-rgba: rgba(6, 173, 225, 1);
+$official-light-blue: #a3ddf5;
 $official-white: #fff;
 $official-green: #51c101;
 $official-orange: #f2630c;
@@ -27,7 +29,8 @@ $font-icons: 'ei-icons';
 /* Primary Color Configuration : These are the colors that users will most often want to set. */
 
 /* Color 1. Used in the primary <body> background. */
-$color-primary-background: $official-blue;
+$color-bg-primary: $official-blue;
+$color-bg-secondary: $official-light-blue;
 
 /* Color 2. Text and icons on the primary background. Contrast to Color 1. */
 $color-primary-foreground: $official-white;
@@ -60,8 +63,8 @@ $color-negative-alert-foreground: $color-box-background;
 
 
 /* Color 11-12. Used for optional buttons and subtle regions in the box */
-$color-box-neutral-background: mix($color-primary-background, $color-box-foreground, 10%);
-$color-box-neutral-foreground: $color-primary-background;
+$color-box-neutral-background: mix($color-bg-primary, $color-box-foreground, 10%);
+$color-box-neutral-foreground: $color-bg-primary;
 
 
 /* Color 13. The text of a box's optional header section. Constrast with Color 7. */

@@ -1,73 +1,84 @@
 @import 'globals';
 
-.logo {
-  float: left;
-  margin-top: 10px;
+header {
+  font-family: $font-header;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: $color-primary-foreground;
+}
 
-  @include mobile {
-    height: 45px;
-    width: auto;
-    margin-top: 8px;
+.logo-link {
+  line-height: 0;
+  & img {
+    @include mobile {
+      height: 45px;
+      width: auto;
+    }
+  }
+}
+
+.home-link {
+  & span {
+    line-height: 32px;
+    vertical-align: middle;
   }
 }
 
 .header-navigation {
   width: 100%;
-  background-color: $color-primary-background;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: $color-bg-primary;
 }
 
 header nav {
-  float: right;
-  margin-top: 38px;
-  line-height: 42px;
+  @include clearfix;
+}
 
+header nav > a,
+header nav > .social {
+  display: block;
+  float: left;
+  line-height: 78px;
   @include mobile {
-    margin-top: 0;
+    line-height: 45px;
   }
 }
 
 header nav > a {
-  float: left;
   padding-left: 20px;
   padding-right: 20px;
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
+  &:first-of-type {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   @include tablet {
-    padding-left: 9px;
-    padding-right: 9px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 16px;
   }
 
   @include mobile {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: 14px;
   }
 }
 
-.home-link {
-  @include icon(home_main, before, true);
-  color: $color-primary-foreground;
-  font-size: 24px;
-}
-
 .social {
-  display: inline-block;
-  padding-left: 25px;
+  margin-bottom: -12px;
 }
 
 .quicksearch {
   width: 100%;
-  background-color: saturate(adjust_hue(lighten($color-primary-background, 27), -1), 1.4);
+  background-color: saturate(adjust_hue(lighten($color-bg-primary, 27), -1), 1.4);
 }
 
-.quicksearch .wrapper {
+.quicksearch-wrapper {
+  @include grid-container($grid-max-width, $grid-container-padding, false);
+
   @include mobile {
     width: 100%;
   }

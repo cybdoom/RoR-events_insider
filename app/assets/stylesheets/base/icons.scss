@@ -13,24 +13,29 @@
   @extend %icon;
 }
 
-.icon-facebook {
-  width: 40px;
-  height: 40px;
-  @include icon(facebook) {
-    font-size: 40px;
+.icon-home {
+  @include icon(home_main) {
+    font-size: 24px;
+    color: $color-primary-foreground;
   }
 }
 
-.icon-facebook.grey {
-  margin-left: 0;
+.icon-facebook {
+  @include icon(facebook) {
+    font-size: 40px;
+    @include tablet {
+      font-size: 22px;
+    }
+  }
 }
 
 .icon-twitter {
-  width: 40px;
-  height: 40px;
   margin-left: 10px;
   @include icon(twitter) {
     font-size: 40px;
+    @include tablet {
+      font-size: 22px;
+    }
   }
 }
 

@@ -135,7 +135,7 @@
     }
 
     &:hover {
-      outline: solid 2px $color-primary-background;
+      outline: solid 2px $color-bg-primary;
     }
 
     &:nth-child(3n) {
@@ -152,8 +152,7 @@
       float: left;
       width: 100%;
       padding: 25px 10px;
-      font-family: $font-main
-;
+      font-family: $font-main;
       font-size: 14px;
       text-align: center;
       color: darken($color-box-important-text, 1.4%);

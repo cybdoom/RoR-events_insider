@@ -16,7 +16,7 @@
   }
 }
 
-// Hide content for visual browsers. Screen-readers will read it aloud.
+// Hide content for browsers. Screen-readers will read it aloud.
 .sr-only {
   position: absolute;
   width: 1px;
@@ -44,8 +44,4 @@
 
 .tr {
   display: table-row;
-}
-
-.sprite {
-  background: image-url('sprites.png') no-repeat;
 }
