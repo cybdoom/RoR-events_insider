@@ -16,12 +16,18 @@ html {
   -o-background-size: cover;
   background-size: cover;
 
-  @include mobile {
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
+  @include tablet {
+    height: auto;
   }
+
+  @include mobile {
+    height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 }
 
 h1.page-title {
@@ -87,6 +93,7 @@ a {
   @include mobile {
     width: 90%;
   }
+
 }
 
 .content-wrapper {
@@ -96,6 +103,11 @@ a {
 
 .footer-wrapper {
   @extend .wrapper;
+
+  @include mobile {
+    width: 100%;
+  }
+
 }
 
 main,
@@ -111,6 +123,7 @@ main,
   @include mobile {
     width: 100%;
   }
+
 }
 
 section {
@@ -130,6 +143,7 @@ section {
   @include mobile {
     width: 100%;
   }
+
 }
 
 .col6:nth-child(2n) {
@@ -138,6 +152,7 @@ section {
   @include mobile {
     margin-bottom: 20px;
   }
+
 }
 
 .col4 {
@@ -147,6 +162,7 @@ section {
   @include mobile {
     width: 100%;
   }
+
 }
 
 .col3 {
@@ -165,6 +181,7 @@ section {
     padding: 0px;
     padding-top: 25px;
   }
+
 }
 
 .tags {
@@ -178,7 +195,7 @@ section {
   background: image-url('sprites.png') no-repeat;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width:767px) {
   .mobile-only {
     display: block;
   }
@@ -186,4 +203,5 @@ section {
   .desktop-only {
     display: none;
   }
+
 }

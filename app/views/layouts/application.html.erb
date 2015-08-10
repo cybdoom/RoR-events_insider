@@ -38,6 +38,7 @@
         <div class="content-block">
           <%= yield %>
         </div>
+        <div class="clear"></div>
       </main>
       <aside>
         <%= yield(:sidebar) if content_for?(:sidebar) %>

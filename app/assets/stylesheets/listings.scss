@@ -1,5 +1,4 @@
 @import 'globals';
-
 $color-listing-header-border: lighten($color-box-foreground, 38%);
 
 .listing-section {
@@ -50,7 +49,9 @@ $color-listing-header-border: lighten($color-box-foreground, 38%);
       width: 17px;
       height: auto;
     }
+
   }
+
 }
 
 .events.listing-section {
@@ -119,6 +120,7 @@ fieldset.with-help,
     height: auto;
     font-size: 20px;
   }
+
 }
 
 .compulsory legend span {
@@ -288,6 +290,7 @@ img.photo {
     left: 0px;
     top: -2px;
   }
+
 }
 
 .listing-section .twitter {
@@ -295,6 +298,7 @@ img.photo {
     position: absolute;
     left: 0px;
   }
+
 }
 
 .content .icon {
@@ -361,6 +365,7 @@ img.photo {
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     transform: rotate(45deg);
   }
+
 }
 
 .sponsored .listing-wrapper {
@@ -559,6 +564,7 @@ section.events .icon:last-child {
 
       &.save-draft {
         margin-top: 0;
+        margin-right: 0;
       }
 
     }
@@ -633,4 +639,5 @@ section.events .icon:last-child {
     left: 0px;
     font-size: 24px;
   }
+
 }
