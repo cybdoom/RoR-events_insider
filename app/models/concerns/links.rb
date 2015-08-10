@@ -1,7 +1,7 @@
 module Links
   def self.included(base)
     delegate :url_helpers, to: 'Rails.application.routes'
-    alias :h :url_helpers
+    alias_method :h, :url_helpers
   end
 
   def url
