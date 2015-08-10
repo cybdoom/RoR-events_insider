@@ -30,19 +30,21 @@
 
     <%= render 'common/header' %>
 
-    <div class="content-wrapper">
-      <main role="main">
-        <% if content_for?(:heading) %>
-          <h1><%= yield(:heading) %></h1>
-        <% end %>
+    <div class="table-row">
+      <div class="content-wrapper">
+        <main role="main">
+          <% if content_for?(:heading) %>
+            <h1><%= yield(:heading) %></h1>
+          <% end %>
 
-        <div class="content-block">
-          <%= yield %>
-        </div>
-      </main>
-      <aside>
-        <%= yield(:sidebar) if content_for?(:sidebar) %>
-      </aside>
+          <div class="content-block">
+            <%= yield %>
+          </div>
+        </main>
+        <aside>
+          <%= yield(:sidebar) if content_for?(:sidebar) %>
+        </aside>
+      </div>
     </div>
 
     <%= render 'common/footer' %>

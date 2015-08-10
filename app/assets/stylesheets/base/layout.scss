@@ -1,9 +1,8 @@
 @import 'globals';
 
 html {
-  height: 100%;
   width: 100%;
-
+  height: 100%;
   background: image-url('bg.jpg') no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -18,22 +17,27 @@ html {
   }
 }
 
+// Variable height sticky footer via table layout
+// http://stackoverflow.com/questions/9126777/keep-footer-with-variable-height-on-bottom
 body {
   width: 100%;
+  height: 100%;
   display: table;
   table-layout: fixed;
 }
 
-// Variable height sticky footer via table layout
-// http://stackoverflow.com/questions/9126777/keep-footer-with-variable-height-on-bottom
-// header, main, footer {
-//   display: table-row;
-// }
+header, footer {
+  display: table-row;
+  height: 1px;
+}
+
+.table-row {
+  display: table-row;
+  height: 100%;
+}
 
 main {
   float: left;
-
-  // height: 100%;
   width: 685px;
 
   @include tablet {
