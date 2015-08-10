@@ -1,1 +1,1 @@
-web: bundle exec puma -C config/puma.rb --no-default-middleware
+web: bundle exec puma -C config/puma.rb
