@@ -25,6 +25,7 @@ gem 'hiredis'
 gem 'indirizzo', github: 'pineapplethief/indirizzo', branch: 'master' # US address parsing
 gem 'jbuilder', '~> 2.0'
 gem 'kgio'
+gem 'mini_magick'
 gem 'pry-rails'
 gem 'pundit'
 gem 'rack-cache'
