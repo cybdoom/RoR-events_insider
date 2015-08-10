@@ -2,11 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-if Rails.env.development? || Rails.env.testing?
+if Rails.env.development? || Rails.env.test?
   Dotenv::Railtie.load
 end
 
