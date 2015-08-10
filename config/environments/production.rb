@@ -75,10 +75,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Needed to deploy on Heroku with Devise installed
-  config.assets.initialize_on_precompile = false
-
-  config.routes.default_url_options[:host] = ENV.fetch('DOMAIN_URL')
+  Rails.application.routes.default_url_options[:host] = ENV.fetch('DOMAIN_URL')
 
   config.action_mailer.default_url_options[:host] = ENV.fetch('DOMAIN_URL')
 

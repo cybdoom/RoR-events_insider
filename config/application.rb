@@ -4,10 +4,6 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
-if Rails.env.development? || Rails.env.test?
-  Dotenv::Railtie.load
-end
-
 require_relative '../lib/extensions/env_wrapper'
 
 module EventsInsider
