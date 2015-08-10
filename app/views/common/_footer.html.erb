@@ -9,7 +9,7 @@
 
         <ul class="footer-menu-all">
           <li>
-            <a href=""><%= t(:home) %></a>
+            <%= link_to t(:home), root_path %>
           </li>
           <li>
             <a href=""><%= t(:about) %></a>
@@ -17,12 +17,18 @@
           <li>
             <a href=""><%= t(:articles) %></a>
           </li>
-          <li>
-            <a href=""><%= t(:login) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:listing_add) %></a>
-          </li>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to t(:listing_add), new_listing_path %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to t(:login), new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to t(:signup), new_user_registration_path %>
+            </li>
+          <% end %>
           <li>
             <a href=""><%= t(:subscribe) %></a>
           </li>

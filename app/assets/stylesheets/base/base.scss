@@ -1,4 +1,4 @@
-@import 'shared/variables';
+@import 'globals';
 
 html {
   -ms-text-size-adjust: 100%;
@@ -20,6 +20,16 @@ body {
 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures;
+
+  @include font-feature-settings("kern" 1);
+
+  // disable CSS3 kerning features on mobile devices to avoid perfomance issues
+  @include media-max(640px) {
+    text-rendering: optimizeSpeed;
+  }
 }
 
 main {
