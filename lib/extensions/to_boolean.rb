@@ -12,19 +12,7 @@ class Symbol
   end
 end
 
-class Fixnum
-  def to_bool
-    self.nonzero?
-  end
-end
-
-class Float
-  def to_bool
-    self.nonzero?
-  end
-end
-
-class BigDecimal
+class Numeric
   def to_bool
     self.nonzero?
   end

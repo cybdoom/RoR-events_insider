@@ -4,8 +4,6 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
-require_relative '../lib/extensions/env_wrapper'
-
 module EventsInsider
   class Application < Rails::Application
     # Use the responders controller from the responders gem

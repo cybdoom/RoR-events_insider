@@ -75,9 +75,12 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  Rails.application.routes.default_url_options[:host] = ENV.fetch('DOMAIN_URL')
+  domain_url = ENV.fetch('DOMAIN_URL')
+  domain_url = URI.parse(domain_url)
 
-  config.action_mailer.default_url_options[:host] = ENV.fetch('DOMAIN_URL')
+  Rails.application.routes.default_url_options[:host] = domain_url.host
+
+  config.action_mailer.default_url_options = {host: domain_url.host}
 
   ActionMailer::Base.smtp_settings = {
     address:        'smtp.sendgrid.net',
