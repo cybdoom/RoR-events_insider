@@ -3,17 +3,11 @@ class BaseUploader < CarrierWave::Uploader::Base
   #include CarrierWave::MagicMimeTypes
   #include CarrierWave::Uploader::MagicMimeWhitelist
 
-  def self.get_storage
-    Rails.env.production? ? :fog : :file
-  end
-
   process :validate_dimensions
   process :set_content_type
   process :store_dimensions
   process :save_content_type_and_size_in_model
   process :strip
-
-  storage get_storage
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"

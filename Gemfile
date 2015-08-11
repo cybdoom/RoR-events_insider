@@ -19,7 +19,7 @@ gem 'faraday', github: 'lostisland/faraday'
 gem 'faraday_middleware', github: 'lostisland/faraday_middleware'
 gem 'fast_blank'
 gem 'fixme', github: 'henrik/fixme'
-gem 'fog-aws'
+gem 'fog-aws', require 'fog/aws'
 gem 'geocoder'
 gem 'highline', require: false
 gem 'hiredis'
