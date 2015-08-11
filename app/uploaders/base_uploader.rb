@@ -51,7 +51,7 @@ class BaseUploader < CarrierWave::Uploader::Base
     return super if !Rails.env.production?
     begin
       super
-    rescue Fog::Storage::S3::NotFound
+    rescue Fog::Storage::AWS::NotFound
     end
   end
 
