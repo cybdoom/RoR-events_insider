@@ -1,12 +1,9 @@
 CarrierWave.configure do |config|
-  storage = Rails.env.production? ? :aws : :file
-  config.storage = storage
-  # config.cache_storage = storage
-
   config.root = Rails.root.join('tmp')
   config.cache_dir = "carrierwave"
 
   if Rails.env.production?
+    config.storage = :aws
     config.aws_authenticated_url_expiration = 60 * 60 * 24 * 7
 
     config.aws_attributes = {

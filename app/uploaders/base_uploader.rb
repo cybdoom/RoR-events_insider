@@ -1,7 +1,7 @@
 class BaseUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  #include CarrierWave::MagicMimeTypes
-  #include CarrierWave::Uploader::MagicMimeWhitelist
+  include CarrierWave::MagicMimeTypes
+  # include CarrierWave::Uploader::MagicMimeWhitelist
 
   process :validate_dimensions
   process :set_content_type
