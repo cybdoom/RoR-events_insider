@@ -1,12 +1,22 @@
 CarrierWave.configure do |config|
+  config.root = Rails.root.join('tmp')
+  config.cache_dir = "carrierwave"
 
-  config.fog_provider = 'fog-aws'
-  config.fog_credentials = {
-    # Configuration for Amazon AWS
-    provider: 'AWS',
-    aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-    aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-  }
-  config.fog_directory = ENV['AWS_BUCKET']
+  if Rails.env.production?
+    config.storage = :aws
+    config.aws_authenticated_url_expiration = 60 * 60 * 24 * 7
+
+    config.aws_attributes = {
+      expires: 1.week.from_now.httpdate,
+      cache_control: 'max-age=604800'
+    }
+
+    config.aws_credentials = {
+      aws_access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      aws_secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY')
+    }
+
+    config.aws_bucket = ENV.fetch('AWS_BUCKET')
+  end
 
 end
