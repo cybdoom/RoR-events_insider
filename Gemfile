@@ -10,7 +10,10 @@ gem 'pg'
 gem 'postgres_ext'
 
 # Main gems
+# gem 'fog', require: 'fog/aws'
+# gem 'fog-aws', require: 'fog/aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave-aws'
 gem 'colorize'
 gem 'countries'
 gem 'date_validator'
@@ -19,7 +22,7 @@ gem 'faraday', github: 'lostisland/faraday'
 gem 'faraday_middleware', github: 'lostisland/faraday_middleware'
 gem 'fast_blank'
 gem 'fixme', github: 'henrik/fixme'
-gem 'fog-aws', require: 'fog/aws'
+
 gem 'geocoder'
 gem 'highline', require: false
 gem 'hiredis'

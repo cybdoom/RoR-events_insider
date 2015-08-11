@@ -12,7 +12,7 @@ module EventsInsider
     # config.eager_load_paths += %W( #{config.root}/app/models/concerns )
 
     require_all "#{Rails.root}/lib/extensions"
-    require_all "#{Rails.root}/lib/logging"
+    require_all "#{Rails.root}/lib/logging" if !Rails.env.production?
     require_all "#{Rails.root}/lib/carrierwave"
     require_all "#{Rails.root}/lib/virtus"
 
