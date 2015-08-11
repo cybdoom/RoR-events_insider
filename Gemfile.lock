@@ -290,7 +290,6 @@ GEM
       rspec-mocks (~> 3.3.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
-    ruby-filemagic (0.7.0)
     sass (3.4.16)
     sassc (1.6.0)
       bundler
@@ -461,7 +460,6 @@ DEPENDENCIES
   responders
   rspec
   rspec-rails (~> 3.0)
-  ruby-filemagic
   sassc-rails
   schema_plus
   sdoc (~> 0.4.0)
