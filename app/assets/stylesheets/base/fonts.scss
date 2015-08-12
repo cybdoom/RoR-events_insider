@@ -1,3 +1,15 @@
+
+
+
+@font-face {
+  font-family: 'Dimbo';
+  font-weight: normal;
+  font-style: normal;
+  src: font-url('dimbo/dimbo-regular.otf');
+  src: font-url('dimbo/dimbo-regular.ttf') format('truetype'),
+       font-url('dimbo/dimbo-regular.woff') format('woff');
+}
+
 @font-face {
   font-family: 'Cabin';
   font-weight: normal;
@@ -14,15 +26,6 @@
   src: font-url('cabin/cabin-semibold.otf');
   src: font-url('cabin/cabin-semibold.ttf') format('truetype'),
        font-url('cabin/cabin-semibold.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Dimbo';
-  font-weight: normal;
-  font-style: normal;
-  src: font-url('dimbo/dimbo-regular.otf');
-  src: font-url('dimbo/dimbo-regular.ttf') format('truetype'),
-       font-url('dimbo/dimbo-regular.woff') format('woff');
 }
 
 @font-face {

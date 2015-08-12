@@ -9,8 +9,6 @@ module EventsInsider
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
 
-    # config.eager_load_paths += %W( #{config.root}/app/models/concerns )
-
     require_all "#{Rails.root}/lib/extensions"
     require_all "#{Rails.root}/lib/logging" if !Rails.env.production?
     require_all "#{Rails.root}/lib/carrierwave"
