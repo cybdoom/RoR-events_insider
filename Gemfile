@@ -44,6 +44,7 @@ gem 'typhoeus'
 gem 'virtus'
 
 # Front-end gems
+gem 'autoprefixer-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'bourbon'
 gem 'gmaps4rails'
