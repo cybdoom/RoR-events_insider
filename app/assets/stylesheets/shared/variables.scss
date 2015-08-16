@@ -1,11 +1,20 @@
-// Way to tell bourbon we are on Rails
+// Way to tell Bourbon we are on Rails
 $asset-pipeline: true;
 
 $grid-max-width: 1014px;
 $grid-container-padding: 20px;
 
-/* Custom Palette. Use only these colors. This is the only section in the styling that is
-not semantic, and we expect it to be completely replaced when theming for another system. */
+$shadow: 0 2px 2px rgba( 0, 0, 0, 0.2 );
+
+// Fonts
+
+$font-main: 'Droid Sans';
+$font-header: 'Cabin';
+$font-footer: 'Cabin';
+$font-mascot-speaks: 'Dimbo';
+$font-icons: 'ei-icons';
+
+// Colors Palette.
 
 $official-blue: #28ace6;
 $official-blue-rgba: rgba(6, 173, 225, 1);
@@ -18,71 +27,66 @@ $official-grey: #ececec;
 $official-black: #3f3f3f;
 $official-red: #d00000;
 
-/* Font Configuration */
+//
+// Primary Color Configuration : These are the colors that users will most often want to set.
+//
 
-$font-header: 'Cabin';
-$font-main: 'Droid Sans';
-$font-mascot-speaks: 'Dimbo';
-$font-footer: 'Cabin';
-$font-icons: 'ei-icons';
-
-/* Primary Color Configuration : These are the colors that users will most often want to set. */
-
-/* Color 1. Used in the primary <body> background. */
+// Color 1. Main page background
 $color-bg-primary: $official-blue;
 $color-bg-secondary: $official-light-blue;
 
-/* Color 2. Text and icons on the primary background. Contrast to Color 1. */
+// Color 2. Text and icons on the primary background. Contrast to Color 1.
 $color-primary-foreground: $official-white;
 
-/* Color 3. Text and icons in boxes, contrast with Color 8. */
+// Color 3. Text and icons in boxes, contrast with Color 8.
 $color-box-foreground: $official-black;
 
-/* Color 4. Important text and icons. Must be prominent & contrast with Color 8 */
+// Color 4. Important text and icons. Must be prominent & contrast with Color 8
 $color-box-important-text: $official-blue;
 
 
-/* Color 5-6. Positive items and alerts. Should contrast with Color 8. */
+// Color 5-6. Positive items and alerts. Should contrast with Color 8.
 $color-positive-alert-background: $official-green;
 $color-negative-alert-background: $official-red;
 
 
-/* Color 7. Background for optional box header. Should contrast with Color 8 */
+// Color 7. Background for optional box header. Should contrast with Color 8
 $color-box-header-background: $official-green;
 
+//
+// Secondary Colors : These colors could be set but usually they are derived.
+//
 
-/* Secondary Colors : These colors could be set but usually they are derived.*/
-
-
-/* Color 8. Boxes on the primary background, so must look good inside Color 1.  */
+// Color 8. Boxes on the primary background, so must look good inside Color 1.
 $color-box-background: $color-primary-foreground;
 
-/* Colors 9-10. Should look good on their respective background. */
+// Colors 9-10. Should look good on their respective background.
 $color-positive-alert-foreground: $color-box-background;
 $color-negative-alert-foreground: $color-box-background;
 
 
-/* Color 11-12. Used for optional buttons and subtle regions in the box */
+// Color 11-12. Used for optional buttons and subtle regions in the box
 $color-box-neutral-background: mix($color-bg-primary, $color-box-foreground, 10%);
 $color-box-neutral-foreground: $color-bg-primary;
 
 
-/* Color 13. The text of a box's optional header section. Constrast with Color 7. */
+// Color 13. The text of a box's optional header section. Constrast with Color 7.
 $color-box-header-foreground: $color-box-background;
 
-
-/* Colors 14 & 15. For alternating list items inside a box. Contrast with Color 3. */
+// Colors 14 & 15. For alternating list items inside a box. Contrast with Color 3.
 $color-box-list-even-background: $color-box-background;
 $color-box-list-odd-background: darken($color-box-list-even-background, 90%);
 
-
-/* Colors 16-18. For HTML forms. I have hardcoded these because really they should be the same no matter what theme we are using. */
+// Colors 16-18. For HTML forms.
+// I have hardcoded these because really they should be the same no matter what theme we are using.
 $color-HTML-form-background: #fff;
 $color-HTML-form-foreground: #333;
 $color-HTML-form-separator: mix($color-HTML-form-foreground, $color-HTML-form-background, 80%);
 
-
-/* Secondary configuration. Do not hard code any colors or fonts below here! The user should not need to change anything here to get a dramatically new theme. */
+//
+// Secondary configuration. Do not hard code any colors or fonts below here!
+// The user should not need to change anything here to get a dramatically new theme.
+//
 
 $rounded-corner-radius: 8px;
 $rounded-corner1-radius: 4px;
@@ -90,7 +94,7 @@ $rounded-button-radius: 30px;
 $rounded-button1-radius: 3px;
 $rounded-button2-radius: 5px;
 
-$shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+$border-radius: $rounded-corner1-radius;
 
 $color-box-main-background: $official-white;
 $color-box-header-background: $official-green;
@@ -101,7 +105,7 @@ $color-popup-title: $color-box-important-text;
 $color-form-select: $official-green;
 
 
-/* button variables */
+// button variables
 
 $button-vertical-padding: 10px;
 $button-horizontal-padding: 40px;

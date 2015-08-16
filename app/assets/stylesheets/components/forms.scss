@@ -141,14 +141,14 @@ textarea {
   float: left;
   width: 100%;
   height: 40px;
-  @include box-corners;
+  border-radius: $border-radius;
 }
 
 textarea {
   width: 100%;
   height: 85px;
   border: solid 1px lighten($color-box-foreground, 60%);
-  @include box-corners;
+  border-radius: $border-radius;
   @include input-shadow;
 }
 
@@ -162,7 +162,7 @@ select {
   background-image: image-url("icons/select-dropdown.png");
   background-repeat: no-repeat;
   background-position: right center;
-  @include box-corners;
+  border-radius: $border-radius;
   @include input-shadow;
 }
 

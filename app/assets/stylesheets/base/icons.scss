@@ -40,7 +40,7 @@
 }
 
 .icon-search {
-  @include opacity(1);
+  opacity: 1;
   @include icon(search) {
     color: lighten($color-box-foreground, 18.5%);
   }

@@ -63,7 +63,7 @@ main {
   float: left;
   width: 100%;
   padding: 20px;
-  @include box-corners;
+  border-radius: $border-radius;
   background-color: $color-primary-foreground;
 }
 

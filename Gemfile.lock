@@ -148,21 +148,40 @@ GEM
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
       railties (~> 4.0)
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     equalizer (0.0.11)
     erubis (2.7.0)
     ethon (0.7.4)
       ffi (>= 1.3.0)
+    eventmachine (1.0.8)
     execjs (2.5.2)
     fast_blank (1.0.0)
     ffi (1.9.10)
+    formatador (0.2.5)
     geocoder (1.2.9)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
+    guard (2.13.0)
+      formatador (>= 0.2.4)
+      listen (>= 2.7, <= 4.0)
+      lumberjack (~> 1.0)
+      nenv (~> 0.1)
+      notiffany (~> 0.0)
+      pry (>= 0.9.12)
+      shellany (~> 0.0)
+      thor (>= 0.18.1)
+    guard-livereload (2.4.0)
+      em-websocket (~> 0.5)
+      guard (~> 2.8)
+      multi_json (~> 1.8)
     heroku-deflater (0.5.3)
       rack (>= 1.4.5)
     highline (1.7.3)
     hiredis (0.6.0)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     i18n_data (0.7.0)
     ice_nine (0.11.1)
@@ -179,8 +198,12 @@ GEM
     json (1.8.3)
     key_struct (0.4.2)
     kgio (2.9.3)
+    listen (3.0.3)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
+    lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
@@ -196,11 +219,15 @@ GEM
     neat (1.7.2)
       bourbon (>= 4.0)
       sass (>= 3.3)
+    nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    notiffany (0.0.7)
+      nenv (~> 0.1)
+      shellany (~> 0.0)
     orm_adapter (0.5.0)
     pg (0.18.2)
     pg_array_parser (0.0.9)
@@ -222,6 +249,8 @@ GEM
     rack (1.6.4)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-livereload (0.3.16)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-timeout (0.2.4)
@@ -255,6 +284,9 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    rb-fsevent (0.9.5)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
     rdoc (4.2.0)
       json (~> 1.4)
     redis (3.2.1)
@@ -368,6 +400,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     seed_migration (1.0.5)
+    shellany (0.0.1)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
@@ -445,6 +478,7 @@ DEPENDENCIES
   fixme!
   geocoder
   gmaps4rails
+  guard-livereload (~> 2.4)
   heroku-deflater
   highline
   hiredis
@@ -462,9 +496,12 @@ DEPENDENCIES
   pundit
   quiet_assets
   rack-cache
+  rack-livereload
   rack-timeout
   rails (= 4.2.3)
   rails_12factor
+  rb-fsevent
+  rb-inotify
   redis
   redis-rack-cache
   redis-rails

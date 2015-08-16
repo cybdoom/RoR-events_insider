@@ -60,12 +60,6 @@ $em-base: 14px;
   }
 }
 
-@mixin box-corners($radius: $rounded-corner1-radius) {
-  -webkit-border-radius : $radius;
-  -moz-border-radius    : $radius;
-  border-radius         : $radius;
-}
-
 @mixin rounded-button {
   -webkit-border-radius : $rounded-button-radius;
   -moz-border-radius    : $rounded-button-radius;
@@ -84,42 +78,6 @@ $em-base: 14px;
   border-radius     : $rounded-button2-radius;
 }
 
-@mixin box-shadow {
-  -webkit-box-shadow    : $shadow;
-  -moz-box-shadow     : $shadow;
-  box-shadow        : $shadow;
-}
-
-@mixin body-box {
-  background-color : $color-box-background;
-  color : $color-box-foreground;
-
-  @include box-shadow;
-  @include box-corners;
-}
-
-@mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie); //IE8
-}
-
-@mixin linear-gradient($fromColor, $toColor) {
-  background: -webkit-gradient(linear, left top, right top, from($fromColor), to($toColor)); /* Saf4+, Chrome */
-  background: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
-  background:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
-  background:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
-  background:         linear-gradient(top, $fromColor, $toColor);
-  background-color: $fromColor; /* Fallback Color */
-}
-
-@mixin box-sizing($sizing) {
-  -webkit-box-sizing: $sizing;
-  -moz-box-sizing: $sizing;
-  box-sizing: $sizing;
-}
-
 @mixin popup-title {
   margin: 4px 0px;
   font-family: $font-mascot-speaks;
@@ -133,12 +91,4 @@ $em-base: 14px;
   content: image-url('mascot-top.png');
   top: -87px;
   z-index: 1;
-}
-
-@mixin month-weather-style {
-  font-family: $font-header;
-  font-size: 17px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-align: center;
 }

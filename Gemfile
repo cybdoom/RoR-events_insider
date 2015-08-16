@@ -67,6 +67,10 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capistrano-rails'
+  gem 'guard-livereload', '~> 2.4', require: false
+  gem 'rack-livereload'
+  gem 'rb-fsevent', group: :darwin, require: false
+  gem 'rb-inotify', group: :linux, require: false
   gem 'quiet_assets'
 end
 

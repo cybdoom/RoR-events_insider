@@ -118,14 +118,15 @@ header nav > a {
 }
 
 .search-box {
+  border-radius: $border-radius;
+
   position: relative;
   float: right;
   width: 35%;
   margin-top: 9px;
   padding: 10px 5px 10px 10px;
   border: none;
-  @include box-corners;
-  @include opacity(0.8);
+  opacity: 0.8;
 
   @include mobile {
     width: 50%;

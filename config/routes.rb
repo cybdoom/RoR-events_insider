@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {registrations: 'auth/registrations',
+                                   confirmations: 'auth/confirmations',
+                                   passwords: 'auth/passwords',
+                                   sessions: 'auth/sessions'}
 
   root 'static_pages#search'
 

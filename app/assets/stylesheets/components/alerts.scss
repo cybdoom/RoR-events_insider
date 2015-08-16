@@ -9,8 +9,8 @@
   font-size: 16px;
   color: lighten($color-box-foreground, 18.5%);
   text-align: center;
-  @include box-corners;
-  @include box-shadow;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
 
   &:before {
     position: absolute;

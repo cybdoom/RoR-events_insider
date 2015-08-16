@@ -19,7 +19,7 @@
   }
 
   & .month-name {
-    @include month-weather-style;
+//    @include month-weather-style;
     color: $color-box-foreground;
     text-transform: capitalize;
   }
@@ -133,7 +133,7 @@
 }
 
 .dates span {
-  @include box-corners;
+  border-radius: $border-radius;
   cursor: pointer;
 
   &.inactive {
@@ -153,14 +153,14 @@
 }
 
 .month-chooser {
-  @include box-corners;
+  border-radius: $border-radius;
   padding: 5px 10px;
   text-align: center;
 }
 
 .month-chooser span,
 .weather-container .day {
-  @include month-weather-style;
+  // @include month-weather-style;
 }
 
 .month-chooser a {

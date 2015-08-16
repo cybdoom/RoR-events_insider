@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for(User.new, as: :user, url: user_registration_path, html: {remote: true}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -14,4 +14,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>

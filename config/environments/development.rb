@@ -1,12 +1,5 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
-
-  # In the development environment your application's code is reloaded on
-  # every request. This slows down response time but is perfect for development
-  # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
-  # Do not eager load code on boot.
   config.eager_load = false
 
   # Show full error reports and disable caching.
@@ -22,9 +15,6 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
-  # Debug mode disables concatenation and preprocessing of assets.
-  # This option may cause significant delays in view rendering with a large
-  # number of complex assets.
   config.assets.debug = true
   # Source maps for SASS
   config.sass.inline_source_maps = true
@@ -60,6 +50,19 @@ Rails.application.configure do
 
   config.web_console.whitelisted_ips = '192.168.0.0/16'
   config.web_console.whiny_requests = false
+
+  # Settings specified here will take precedence over those in config/application.rb.
+  live_reload_options = {
+    min_delay:      500,    # default 1000
+    max_delay:      10_000, # default 60_000
+    source:         :livereload,
+    no_swf:         true
+    #live_reload_port: 56789,  # default 35729
+    #host:             url.host,
+    #ignore:           [ %r{dont/modify\.html$} ]
+  }
+
+  config.middleware.insert_after(ActionDispatch::Static, Rack::LiveReload, live_reload_options)
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
