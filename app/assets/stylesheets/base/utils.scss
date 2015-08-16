@@ -4,7 +4,7 @@
   clear: both;
 }
 
-@include mobile {
+@include tablet {
   .desktop-only {
     display: none !important;
   }
