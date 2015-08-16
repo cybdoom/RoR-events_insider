@@ -12,7 +12,10 @@ module ApplicationHelper
   end
 
   def modal_for(modal_id, modal_title, &block)
-    render partial: 'common/modal', locals: {modal_id: modal_id, modal_title: modal_title, &block}
+    modal_body = capture(&block)
+    render partial: 'common/modal', locals: {modal_id: modal_id,
+                                             modal_title: modal_title,
+                                             modal_body: modal_body}
   end
 
   def devise_mapping

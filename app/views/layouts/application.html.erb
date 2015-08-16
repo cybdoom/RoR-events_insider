@@ -27,15 +27,15 @@
     <div id="modal-container"></div>
 
     <% if !user_signed_in? %>
-      <%= modal_for('login', 'Log In') { } %>
-      <%= modal_for('signup', 'Sign Up') { } %>
+      <%= modal_for('login', 'Log In') { render 'auth/sessions/new' } %>
+      <%= modal_for('signup', 'Sign Up') { render 'auth/registrations/new' } %>
     <% end %>
 
     <%= render 'modals/date_picker' %>
 
     <%= render 'common/header' %>
 
-    <div class="table-row">
+    <div class="content-row">
       <div class="content-wrapper">
         <main role="main">
           <% if content_for?(:heading) %>

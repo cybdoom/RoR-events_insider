@@ -1,19 +1,19 @@
 //= require base/fonts
 //= require base/base
+//= require base/typography
 //= require base/utils
 
-//= require base/layout
-//= require base/footer
-//= require base/header
-//= require base/icons
-//= require base/sidebar
-//= require base/typography
+//= require layout/layout
+//= require layout/footer
+//= require layout/header
 
 //= require components/alerts
 //= require components/buttons
 //= require components/date-picker
 //= require components/daterangepicker
 //= require components/forms
+//= require components/icons
+//= require components/modals
 //= require components/popups
 
 //= require pages/events

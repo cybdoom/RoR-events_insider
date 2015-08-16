@@ -31,7 +31,7 @@ header, footer {
   height: 1px;
 }
 
-.table-row {
+.content-row {
   display: table-row;
   height: 100%;
 }
@@ -67,8 +67,14 @@ main {
   background-color: $color-primary-foreground;
 }
 
-.content-block > h3 {
-  margin-top: 0;
+aside {
+  float: left;
+  width: 300px;
+  margin: 70px 0 0 20px;
+
+  @include tablet {
+    display: none;
+  }
 }
 
 section {
