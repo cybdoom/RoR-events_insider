@@ -23,10 +23,10 @@
             </li>
           <% else %>
             <li>
-              <%= link_to t(:login), new_user_session_path %>
+              <%= link_to t(:login), new_user_session_path, remote: true, class: 'login-link' %>
             </li>
             <li>
-              <%= link_to t(:signup), new_user_registration_path %>
+              <%= link_to t(:signup), new_user_registration_path, remote: true, class: 'signup-link' %>
             </li>
           <% end %>
           <li>

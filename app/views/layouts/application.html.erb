@@ -34,6 +34,7 @@
     <% end %>
 
     <%= render 'modals/date_picker' %>
+    <%#= render 'common/spinner' %>
 
     <%= render 'common/header' %>
 
@@ -41,7 +42,7 @@
       <div class="content-wrapper">
         <main role="main">
           <% if content_for?(:heading) %>
-            <h1><%= yield(:heading) %></h1>
+            <h1 class="main-heading"><%= yield(:heading) %></h1>
           <% end %>
 
           <div class="content-block">

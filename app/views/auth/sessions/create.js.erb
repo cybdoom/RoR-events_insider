@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+  location.reload();
+<% else %>
+  $('#login-modal').find('.modal-body').html("<%= j render 'auth/sessions/new' %>");
+<% end %>

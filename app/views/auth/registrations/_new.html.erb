@@ -1,6 +1,7 @@
 <h2>Sign up</h2>
 
-<%= simple_form_for(User.new, as: :user, url: user_registration_path, html: {remote: true}) do |f| %>
+<%= simple_form_for(User.new, as: :user, url: user_registration_path,
+                                         html: {remote: request.xhr?}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

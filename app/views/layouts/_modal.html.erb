@@ -1,7 +1,8 @@
 <div class="modal fade" id="<%= modal_id %>"
                         role="dialog"
                         tabindex="-1"
-                        aria-labelledby="<%= modal_id %>-title">
+                        aria-labelledby="<%= modal_id %>-title"
+                        data-content-expired="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -12,7 +13,9 @@
           <%= modal_title %>
         </h3>
       </div>
-      <%= yield %>
+      <div class="modal-body">
+        <%= yield %>
+      </div>
     </div>
   </div>
 </div>

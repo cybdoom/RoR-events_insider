@@ -11,7 +11,8 @@ module ApplicationHelper
     self.output_buffer = ActionView::OutputBuffer.new(output)
   end
 
-  def modal_for(modal_id, modal_title, &block)
+  def modal_for(id, modal_title, &block)
+    modal_id = id + '-modal'
     modal_body = capture(&block)
     render partial: 'common/modal', locals: {modal_id: modal_id,
                                              modal_title: modal_title,

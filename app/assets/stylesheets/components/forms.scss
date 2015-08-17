@@ -1,8 +1,6 @@
 @import 'globals';
 
 @mixin input-shadow {
-  -webkit-box-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
-  -moz-box-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
   box-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
 }
 

@@ -1,5 +1,5 @@
 class Auth::RegistrationsController < Devise::RegistrationsController
-  before_filter :update_sanitized_params, only: [:update]
+  before_action :update_sanitized_params, only: [:update]
 
   respond_to :html, :js
 

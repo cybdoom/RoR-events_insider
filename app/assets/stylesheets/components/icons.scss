@@ -55,3 +55,9 @@
 
   font-size: 24px;
 }
+
+.icon-spinner {
+  @include icon(magnifying_glass) {
+    font-size: 40px;
+  }
+}

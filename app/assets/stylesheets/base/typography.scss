@@ -1,7 +1,6 @@
 @import 'globals';
 
-h1,
-aside h3 {
+.main-heading {
   font-family: $font-mascot-speaks;
 }
 
@@ -13,11 +12,6 @@ input[type="text"],
 select,
 .alert-message {
   font-family: $font-header;
-}
-
-p,
-aside p {
-  font-family: $font-main;
 }
 
 /* Colors */
@@ -43,21 +37,8 @@ address {
 }
 
 h1,
-h2,
-.side-content a {
+h2 {
   color: $color-box-important-text;
-}
-
-.single-listing .main-content h3 {
-  color: darken($color-box-important-text, 1.4%);
-}
-
-.single-listing .main-content a {
-  color: darken($color-box-important-text, 1.4%);
-}
-
-aside h3 {
-  color: $color-box-sidebar-title;
 }
 
 /* font-sizes */

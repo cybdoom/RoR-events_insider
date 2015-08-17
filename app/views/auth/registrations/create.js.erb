@@ -1,0 +1,5 @@
+<% if @user.persisted? %>
+  location.reload();
+<% else %>
+  $('#signup-modal').find('.modal-body').html("<%= j render 'auth/registrations/new' %>");
+<% end %>

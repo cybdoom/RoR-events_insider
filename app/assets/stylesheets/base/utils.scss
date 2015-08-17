@@ -1,10 +1,10 @@
 @import 'globals';
 
 .clear {
-  clear: both;
+  @include clearfix;
 }
 
-@include tablet {
+@include mobile {
   .desktop-only {
     display: none !important;
   }

@@ -16,6 +16,7 @@ module EventsInsider
     require_all "#{Rails.root}/lib/logging" if !Rails.env.production?
     require_all "#{Rails.root}/lib/carrierwave"
     require_all "#{Rails.root}/lib/virtus"
+    require_all "#{Rails.root}/lib/devise"
 
     config.active_record.schema_format = :sql
 
