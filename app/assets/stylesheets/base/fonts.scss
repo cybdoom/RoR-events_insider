@@ -1,11 +1,36 @@
-@import 'shared/variables';
-@import 'helpers/font-source-declaration';
-@import 'css3/font-face';
+@font-face {
+  font-family: "Dimbo";
+  font-style: normal;
+  font-weight: normal;
+  src: font-url('dimbo/dimbo-regular.woff') format('woff'),
+       font-url('dimbo/dimbo-regular.ttf') format('truetype'),
+}
 
-@include font-face('Cabin', 'cabin/cabin-regular');
-@include font-face('Cabin', 'cabin/cabin-semibold', bold);
-@include font-face('Dimbo', 'dimbo/dimbo-regular');
-@include font-face('Droid-Sans', 'droid-sans/droid-sans');
-@include font-face('Droid-Sans', 'droid-sans/droid-sans-bold', bold);
-@include font-face('Reklame', 'reklame/reklame-regular');
-@include font-face('ei-icons', 'ei-icons/ei-icons');
+@font-face {
+  font-family: 'Droid-Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: font-url('droid-sans/droid-sans.woff') format('woff'),
+       font-url('droid-sans/droid-sans.ttf') format('truetype'),
+       font-url('droid-sans/droid-sans.svg#Droid-Sans') format('svg');
+}
+
+@font-face {
+  font-family: 'Droid-Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: font-url('droid-sans/droid-sans-bold.eot?#iefix') format('embedded-opentype'),
+       font-url('droid-sans/droid-sans-bold.woff') format('woff'),
+       font-url('droid-sans/droid-sans-bold.ttf') format('truetype'),
+       font-url('droid-sans/droid-sans-bold.svg#Droid-Sans') format('svg');
+}
+
+@font-face {
+  font-family: 'ei-icons';
+  font-style: normal;
+  font-weight: normal;
+  src: font-url('ei-icons/ei-icons.eot?#iefix') format('embedded-opentype'),
+       font-url('ei-icons/ei-icons.woff') format('woff'),
+       font-url('ei-icons/ei-icons.ttf') format('truetype'),
+       font-url('ei-icons/ei-icons.svg#ei-icons') format('svg');
+}

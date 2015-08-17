@@ -8,7 +8,9 @@
     <title><%= title %></title>
     <!--   <%= yield(:title) + ' – ' if content_for?(:title) %>
       Events Insider -->
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Cabin:400,600' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
 
     <%= javascript_include_tag 'libs' %>
     <%= javascript_include_tag 'http://maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry' %>
