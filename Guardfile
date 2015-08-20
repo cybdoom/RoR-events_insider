@@ -15,11 +15,15 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard 'livereload', grace_period: 1 do
+guard :livereload do
   watch(%r{app/views/.+\.(erb|haml|slim)$})
   watch(%r{app/helpers/.+\.rb})
-  watch(%r{public/.+\.(css|js|html)})
+  # watch(%r{public/.+\.(css|js|html)})
   watch(%r{config/locales/.+\.yml})
   # Rails Assets Pipeline
-  watch(%r{(app|vendor)(/assets/\w+/(.+)\.(scss|css|js|html|png|jpg))}) { |m| "/assets/#{m[3]}" }
+  watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js))).*}) { |m| "/assets/#{m[3]}" }
+
+  watch(%r{(app|vendor)(/assets/\w+(.+)\.(scss))}) { |m| "/assets/#{m[3]}.css" }
+
+  watch(%r{(app/assets/stylesheets/shared/)(\w+(.+)\.(scss))}) { |m| "/assets/application.css" }
 end

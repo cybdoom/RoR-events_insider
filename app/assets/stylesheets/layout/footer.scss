@@ -1,6 +1,6 @@
 @import 'globals';
 
-$footer-menu-columns-border: 2px solid saturate(lighten($color-box-foreground, 29), 0.85);
+$footer-menu-columns-border: 2px solid saturate(lighten($color-block-text, 29), 0.85);
 $footer-font-size: 18px;
 $footer-font-size-mobile: 12px;
 
@@ -10,7 +10,7 @@ footer {
   font-size: $footer-font-size;
   font-weight: bold;
   letter-spacing: 1px;
-  color: $color-box-foreground;
+  color: $color-block-text;
 
   @include mobile {
     font-size: $footer-font-size-mobile;

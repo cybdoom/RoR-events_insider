@@ -53,10 +53,11 @@ Rails.application.configure do
 
   # Settings specified here will take precedence over those in config/application.rb.
   live_reload_options = {
-    min_delay:      500,    # default 1000
-    max_delay:      10_000, # default 60_000
-    source:         :livereload,
-    no_swf:         true
+    min_delay:    1000,    # default 1000
+    max_delay:    15_000, # default 60_000
+    no_swf:       true
+    #source:       :livereload
+
     #live_reload_port: 56789,  # default 35729
     #host:             url.host,
     #ignore:           [ %r{dont/modify\.html$} ]

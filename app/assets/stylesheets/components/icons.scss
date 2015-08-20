@@ -16,7 +16,7 @@
 .icon-home {
   @include icon(home_main) {
     font-size: 24px;
-    color: $color-primary-foreground;
+    // color: $color-primary-text;
   }
 }
 
@@ -42,7 +42,7 @@
 .icon-search {
   opacity: 1;
   @include icon(search) {
-    color: lighten($color-box-foreground, 18.5%);
+    color: lighten($color-block-text, 18.5%);
   }
 
   position: absolute;

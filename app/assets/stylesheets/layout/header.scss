@@ -4,7 +4,7 @@ header {
   font-family: $font-header;
   font-size: 18px;
   letter-spacing: 1px;
-  color: $color-primary-foreground;
+  color: $color-text-primary;
 }
 
 .logo-link {
@@ -91,7 +91,7 @@ header nav > a {
 .quicksearch h2 {
   float: left;
   margin: 0;
-  color: $official-black;
+  color: $color-block-text;
   font-family: $font-main;
   font-size: 24px;
   font-style: italic;

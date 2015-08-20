@@ -1,0 +1,15 @@
+@import 'functions';
+
+$z-indexes: (
+  modal: 1040
+);
+
+@function z($layer) {
+  $z-index: map-get($z-indexes, $layer);
+
+  @if $z-index == null {
+    @warn 'There is no item "#{$layer}" in this list; choose one of: #{$z-indexes}';
+  }
+
+  @return $z-index;
+}

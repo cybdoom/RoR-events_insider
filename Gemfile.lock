@@ -15,6 +15,13 @@ GIT
     fixme (3.1.1)
 
 GIT
+  remote: git://github.com/johnbintz/rack-livereload.git
+  revision: 41bdc64bcbbac57528c27224bbfae9e1ca036f2e
+  specs:
+    rack-livereload (0.3.16)
+      rack
+
+GIT
   remote: git://github.com/lostisland/faraday.git
   revision: 1b106889a020406b6641b3674e18495293176fd0
   specs:
@@ -198,6 +205,8 @@ GEM
     json (1.8.3)
     key_struct (0.4.2)
     kgio (2.9.3)
+    libnotify (0.9.1)
+      ffi (>= 1.0.11)
     listen (3.0.3)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -249,8 +258,6 @@ GEM
     rack (1.6.4)
     rack-cache (1.2)
       rack (>= 0.4)
-    rack-livereload (0.3.16)
-      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-timeout (0.2.4)
@@ -487,6 +494,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   kgio
+  libnotify
   mini_magick
   neat
   pg
@@ -496,12 +504,10 @@ DEPENDENCIES
   pundit
   quiet_assets
   rack-cache
-  rack-livereload
+  rack-livereload!
   rack-timeout
   rails (= 4.2.3)
   rails_12factor
-  rb-fsevent
-  rb-inotify
   redis
   redis-rack-cache
   redis-rails

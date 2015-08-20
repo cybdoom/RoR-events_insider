@@ -1,0 +1,37 @@
+@import 'icon-map';
+
+%icon {
+  font-family: $font-icons;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  text-transform: none;
+  speak: none;
+}
+
+@mixin icon($icon: false, $position: before, $base_styles: false) {
+  @if $position == both {
+    $position: 'before, &:after';
+  }
+
+  @if $base_styles {
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:#{$position} {
+    @if $icon {
+      content: "#{map-get($icons, $icon)}";
+    }
+
+    @if $base_styles {
+      @extend %icon;
+    }
+
+    @content;
+  }
+}

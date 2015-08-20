@@ -2,12 +2,12 @@
 
 .alert-message {
   position: relative;
-  background: $official-yellow;
+  background: $yellow;
   padding: 10px;
   font-family: $font-header;
   font-weight: bold;
   font-size: 16px;
-  color: lighten($color-box-foreground, 18.5%);
+  color: lighten($color-block-text, 18.5%);
   text-align: center;
   border-radius: $border-radius;
   box-shadow: $shadow;
@@ -22,7 +22,7 @@
   &:after {
     @include icon(cross, after) {
       font-size: 10px;
-      color: lighten($color-box-foreground, 18.5%);
+      color: lighten($color-block-text, 18.5%);
       float: right;
       margin-top: -2px;
       margin-right: -2px;

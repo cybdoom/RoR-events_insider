@@ -20,7 +20,7 @@
 
   & .month-name {
 //    @include month-weather-style;
-    color: $color-box-foreground;
+    color: $color-block-text;
     text-transform: capitalize;
   }
 
@@ -32,7 +32,7 @@
     }
 
     & th {
-      color: $color-box-important-text;
+      color: $color-block-text-important;
       font-family: $font-header;
     }
 
@@ -59,7 +59,7 @@
   }
 
   & .first-date-selected {
-    background: $color-box-important-text !important;
+    background: $color-block-text-important !important;
   }
 
 }
@@ -113,7 +113,7 @@
 
   & p {
     margin-bottom: 2px;
-    color: $color-box-important-text;
+    color: $color-block-text-important;
     font-family: $font-header;
   }
 
@@ -137,17 +137,17 @@
   cursor: pointer;
 
   &.inactive {
-    color: lighten($color-box-foreground, 45%);
+    color: lighten($color-block-text, 45%);
   }
 
   &.selected {
-    color: $color-primary-foreground;
-    background: $color-popup-title;
+    color: $color-text-primary;
+    background: $color-modal-title;
   }
 
   &:hover {
-    color: lighten($color-box-foreground, 15%);
-    background: lighten($color-popup-title, 20%);
+    color: lighten($color-block-text, 15%);
+    background: lighten($color-modal-title, 20%);
   }
 
 }
@@ -183,12 +183,12 @@
 .weather-container {
   & .date {
     font-size: 15px;
-    color: lighten($color-box-body-text, 45%);
+    color: lighten($color-block-text, 45%);
   }
 
   & p {
     font-size: 15px;
-    color: lighten($color-box-body-text, 15%);
+    color: lighten($color-block-text, 15%);
     text-align: left;
   }
 
@@ -208,7 +208,7 @@
   font-size: 14px;
   font-family: $font-header;
   text-align: center;
-  color: lighten($color-box-body-text, 45%);
+  color: lighten($color-block-text, 45%);
 }
 
 .dates span {
@@ -234,7 +234,7 @@
   margin-right: 30px;
   font-family: $font-header;
   font-size: 13px;
-  color: lighten($color-box-foreground, 5%);
+  color: lighten($color-block-text, 5%);
   font-weight: 100;
 
   &:nth-child(3n) {
@@ -276,7 +276,7 @@
     height: 19px;
     border: 1px solid #aaa;
     background: #f8f8f8;
-    @include rounded-button2;
+    border-radius: $border-radius;
   }
 
   /* checked mark aspect */

@@ -5,7 +5,9 @@ $modal-content-fallback-border-color: #444;
 $modal-content-border-color: #444;
 $border-radius-large: 5px;
 $modal-inner-padding: 10px;
-$modal-backdrop-bg: #333;
+
+$modal-backdrop-bg: $black;
+$modal-backdrop-opacity: .5;
 
 // Kill the scroll on the body
 .modal-open {
@@ -20,12 +22,8 @@ $modal-backdrop-bg: #333;
 .modal {
   display: none;
   overflow: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: $zindex-modal;
+  @include position(fixed, 0 0 0 0);
+  z-index: z(modal);
   -webkit-overflow-scrolling: touch;
 
   // Prevent Chrome on Windows from adding a focus outline. For details, see
@@ -44,15 +42,20 @@ $modal-backdrop-bg: #333;
   position: relative;
   width: auto;
   margin: 10px;
+
+  @include desktop {
+    width: 600px;
+    margin: 30px auto;
+  }
 }
 
 // Actual modal
 .modal-content {
   position: relative;
-  background-color: $modal-content-bg;
-  border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
-  border: 1px solid $modal-content-border-color;
-  border-radius: $border-radius-large;
+  padding: 20px 25px 20px 20px;
+
+  background-color: $color-block-bg;
+  border-radius: $border-radius;
   box-shadow: $shadow;
   background-clip: padding-box;
   // Remove focus outline from opened modal
@@ -63,7 +66,14 @@ $modal-backdrop-bg: #333;
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
   position: relative;
-  padding: $modal-inner-padding;
+}
+
+.modal-header {
+  color: $color-modal-title;
+}
+
+.modal-header .btn-close {
+  float: right;
 }
 
 // Modal background

@@ -1,14 +1,41 @@
+@import 'functions/assign-inputs';
+@import 'addons/buttons';
+@import 'addons/text-inputs';
+// These Bourbon addons make variables for all button-like elements and all text input elements
+// available. Refer Bourbon documentation or source code for details
+
+// $all-buttons
+// $all-buttons-active
+// $all-buttons-focus
+// $all-buttons-hover
+
+// $all-text-inputs
+// $all-text-inputs-active
+// $all-text-inputs-focus
+// $all-text-inputs-hover
+
+
+
 // Way to tell Bourbon we are on Rails
 $asset-pipeline: true;
+
+// Grid
 
 $grid-max-width: 1014px;
 $grid-container-padding: 20px;
 
+// Various extra
+
 $shadow: 0 2px 2px rgba( 0, 0, 0, 0.2 );
 
-$zindex-modal: 1040;
+$rounded-corner-radius: 8px;
+$rounded-button-radius: 30px;
+$rounded-button1-radius: 3px;
+$rounded-button2-radius: 5px;
 
-// Fonts
+$border-radius: 4px;
+
+// Typography
 
 $font-main: 'Droid-Sans';
 $font-header: 'Cabin';
@@ -16,98 +43,78 @@ $font-footer: 'Cabin';
 $font-mascot-speaks: 'Dimbo';
 $font-icons: 'ei-icons';
 
+$font-size-base: 16px;
+$line-height-base: 1.625;
+$headings-line-height: 1.2;
+
 // Colors Palette
 
-$official-blue: #28ace6;
-$official-blue-rgba: rgba(6, 173, 225, 1);
-$official-light-blue: #a3ddf5;
-$official-white: #fff;
-$official-green: #51c101;
-$official-orange: #f2630c;
-$official-yellow: #fff200;
-$official-grey: #ececec;
-$official-black: #3f3f3f;
-$official-red: #d00000;
+$blue: #28ace6;
+$blue-rgba: rgba(6, 173, 225, 1);
+$light-blue: #a3ddf5;
+$white: #fff;
+$green: #51c101;
+$orange: #f2630c;
+$yellow: #fff200;
+$grey: #ececec;
+$black: #3f3f3f;
+$red: #d00000;
 
 //
-// Primary Color Configuration : These are the colors that users will most often want to set.
+// Primary Colors
 //
 
-// Color 1. Main page background
-$color-bg-primary: $official-blue;
-$color-bg-secondary: $official-light-blue;
+// Main page background colors
+$color-bg-primary: $blue;               // Color 1, page background
+$color-bg-secondary: $light-blue;       // Color 1a, background for some blocks in footer and header
+$color-text-primary: $white;            // Color 2. Text and icons on the page background
 
-// Color 2. Text and icons on the primary background. Contrast to Color 1.
-$color-primary-foreground: $official-white;
+$color-sidebar-title: $orange;
 
-// Color 3. Text and icons in boxes, contrast with Color 8.
-$color-box-foreground: $official-black;
+$color-block-text: $black;
+$color-block-text-important: $blue;
+$color-block-bg: $color-text-primary;   // Color 8. Block background, must look good inside Color 1.
 
-// Color 4. Important text and icons. Must be prominent & contrast with Color 8
-$color-box-important-text: $official-blue;
+$color-block-header-bg: $green;
+$color-block-header-text: $blue;
 
+$color-modal-title: $color-block-text-important;
 
 // Color 5-6. Positive items and alerts. Should contrast with Color 8.
-$color-positive-alert-background: $official-green;
-$color-negative-alert-background: $official-red;
-
-
+$color-alert-text: $color-block-bg;
+$color-alert-success-bg: $green;
+$color-alert-error-bg: $red;
 // Color 7. Background for optional box header. Should contrast with Color 8
-$color-box-header-background: $official-green;
+$color-alert-notice-bg: $yellow;
 
 //
 // Secondary Colors : These colors could be set but usually they are derived.
 //
 
-// Color 8. Boxes on the primary background, so must look good inside Color 1.
-$color-box-background: $color-primary-foreground;
-
-// Colors 9-10. Should look good on their respective background.
-$color-positive-alert-foreground: $color-box-background;
-$color-negative-alert-foreground: $color-box-background;
-
-
 // Color 11-12. Used for optional buttons and subtle regions in the box
-$color-box-neutral-background: mix($color-bg-primary, $color-box-foreground, 10%);
-$color-box-neutral-foreground: $color-bg-primary;
-
-
-// Color 13. The text of a box's optional header section. Constrast with Color 7.
-$color-box-header-foreground: $color-box-background;
+$color-block-neutral-bg: mix($color-bg-primary, $color-block-text, 10%);
+$color-block-neutral-text: $color-bg-primary;
 
 // Colors 14 & 15. For alternating list items inside a box. Contrast with Color 3.
-$color-box-list-even-background: $color-box-background;
-$color-box-list-odd-background: darken($color-box-list-even-background, 90%);
-
-// Colors 16-18. For HTML forms.
-// I have hardcoded these because really they should be the same no matter what theme we are using.
-$color-HTML-form-background: #fff;
-$color-HTML-form-foreground: #333;
-$color-HTML-form-separator: mix($color-HTML-form-foreground, $color-HTML-form-background, 80%);
+$color-list-even-bg: $color-block-bg;
+$color-list-odd-bg: darken($color-list-even-bg, 90%);
 
 //
 // Secondary configuration. Do not hard code any colors or fonts below here!
 // The user should not need to change anything here to get a dramatically new theme.
 //
 
-$rounded-corner-radius: 8px;
-$rounded-corner1-radius: 4px;
-$rounded-button-radius: 30px;
-$rounded-button1-radius: 3px;
-$rounded-button2-radius: 5px;
+// Colors 16-18. For HTML forms.
+// Remove that shit to base/forms
+$color-form-bg: $color-block-bg;
+$color-form-text: $color-block-text;
+$color-form-separator: mix($color-form-text, $color-form-bg, 80%);
+$color-form-select: $green;
 
-$border-radius: $rounded-corner1-radius;
-
-$color-box-main-background: $official-white;
-$color-box-header-background: $official-green;
-$color-box-body-text: $official-black;
-$color-box-sidebar-title: $official-orange;
-$color-popup-title: $color-box-important-text;
-
-$color-form-select: $official-green;
-
-
-// button variables
+//
+// Buttons
+//
+// Remove that shit to buttons component
 
 $button-vertical-padding: 10px;
 $button-horizontal-padding: 40px;
@@ -116,10 +123,10 @@ $mobile-button-vertical-padding: 8px;
 $mobile-button-horizontal-padding: 28px;
 $mobile-button-with-arrow-horizontal-padding: 13px;
 
-$color-defaultButton-foreground: $official-white;
+$color-defaultButton-foreground: $white;
 
-$color-callToAction-background: $official-green;
-$color-ticketsButton-background: $official-red;
-$color-defaultButton-background: $official-blue;
-$color-trueButton-background: $official-green;
-$color-falseButton-background: $official-red;
+$color-callToAction-background: $green;
+$color-ticketsButton-background: $red;
+$color-defaultButton-background: $blue;
+$color-trueButton-background: $green;
+$color-falseButton-background: $red;

@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include HtmlHelper
 
   def parent_layout(layout)
     layout = layout.to_s
@@ -11,7 +12,7 @@ module ApplicationHelper
     self.output_buffer = ActionView::OutputBuffer.new(output)
   end
 
-  def modal_for(id, modal_title, &block)
+  def modal_for(id, modal_title = nil, &block)
     modal_id = id + '-modal'
     modal_body = capture(&block)
     render partial: 'common/modal', locals: {modal_id: modal_id,

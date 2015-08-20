@@ -10,7 +10,7 @@
   padding-left: 40px;
   font-family: $font-header;
   font-size: 15px;
-  color: lighten($color-box-body-text, 15.25%);
+  color: lighten($color-block-text, 15.25%);
 
   &:nth-child(n+5) {
     margin-top: 20px;
@@ -83,7 +83,7 @@
     font-size: 15px;
     letter-spacing: 0.3px;
     text-decoration: none;
-    color: darken($color-box-important-text, 1.4%);
+    color: darken($color-block-text-important, 1.4%);
 
     &:hover {
       cursor: pointer;
@@ -155,7 +155,7 @@
       font-family: $font-main;
       font-size: 14px;
       text-align: center;
-      color: darken($color-box-important-text, 1.4%);
+      color: darken($color-block-text-important, 1.4%);
     }
 
   }
@@ -187,7 +187,7 @@
     float: left;
     margin-top: 75px;
     font-size: 30px;
-    color: lighten($color-box-body-text, 15.25%) !important;
+    color: lighten($color-block-text, 15.25%) !important;
   }
 
 }
@@ -198,14 +198,14 @@
   margin-top: 100px;
   margin-right: 5px;
   font-size: 30px;
-  color: lighten($color-box-body-text, 15.25%) !important;
+  color: lighten($color-block-text, 15.25%) !important;
 }
 
 a.more {
   font-size: 15px;
   letter-spacing: 0.3px;
   text-decoration: none;
-  color: $color-box-important-text;
+  color: $color-block-text-important;
 }
 
 .keyword .icon-search {

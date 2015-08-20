@@ -1,12 +1,16 @@
 $(document).ready(function() {
-    
+
   PopUpInitate();
   datePickerModule();
 
+  // $(document.body).on('click', '.btn-close', function(event){
+  //   $(this).parents('.modal').modal('close');
+  // });
+
   // DECLARATIONS
 
-  // 1.0 PopUp Initate 
-  // PopupInitate declaration 
+  // 1.0 PopUp Initate
+  // PopupInitate declaration
   function PopUpInitate() {
     var documentHeight = $(document).height();
     $('.popup-container').height(documentHeight);
@@ -16,7 +20,7 @@ $(document).ready(function() {
     });
   }
 
-  // 2.0 Date Picker 
+  // 2.0 Date Picker
 
   // datePickerModule declaration
   function datePickerModule() {
@@ -87,7 +91,7 @@ $(document).ready(function() {
           return false;
         }
       }
-    }); 
+    });
 
     $( ".minutes-spinner").spinner({
       numberFormat: "d2",
@@ -101,15 +105,15 @@ $(document).ready(function() {
           return false;
         }
       }
-    }); 
-     
+    });
+
     var dlist = ['am','pm'];
-    $( ".am-pm-spinner" ).spinner({ 
+    $( ".am-pm-spinner" ).spinner({
       create: function(){
         $(this).parent().append('<input class="am-pm-spinner-text" value="'+dlist[0]+'">');
       },
 
-      stop: function(event,ui) {    
+      stop: function(event,ui) {
         $(this).siblings('.am-pm-spinner-text').val(dlist[$(this).val()]);
       },
 
@@ -128,7 +132,7 @@ $(document).ready(function() {
 });
 
 // 3.0 Date Picker ( called signup modal )
-// Password vs Confirm-Password Checking 
+// Password vs Confirm-Password Checking
 function checkPassword() {
   var password = document.getElementById('password');
   var confirmPassword = document.getElementById('confirm-password');

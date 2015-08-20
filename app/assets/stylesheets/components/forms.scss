@@ -1,4 +1,5 @@
 @import 'globals';
+@import 'forms/base';
 
 @mixin input-shadow {
   box-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
@@ -9,10 +10,6 @@ input[type="password"],
 select,
 textarea {
   padding-left: 10px;
-}
-
-textarea {
-  resize: vertical;
 }
 
 input[type="search"] {
@@ -34,7 +31,7 @@ textarea {
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 1px;
-  color: lighten($color-box-foreground, 18.5%);
+  color: lighten($color-block-text, 18.5%);
 }
 
 .form-group {
@@ -111,7 +108,7 @@ textarea {
       top: 3px;
       left: 0px;
       font-size: 28px;
-      color: lighten($color-box-foreground, 18.5%);
+      color: lighten($color-block-text, 18.5%);
     }
 
   }
@@ -120,12 +117,12 @@ textarea {
     margin: 8px 0px 0px 5px;
     font-family: $font-main;
     font-size: 13px;
-    color: lighten($color-box-foreground, 22.5%);
+    color: lighten($color-block-text, 22.5%);
   }
 
   & input[type="text"] {
     @extend .input-text;
-    border: solid 1px lighten($color-box-foreground, 60%);
+    border: solid 1px lighten($color-block-text, 60%);
     @include input-shadow;
   }
 
@@ -145,7 +142,7 @@ textarea {
 textarea {
   width: 100%;
   height: 85px;
-  border: solid 1px lighten($color-box-foreground, 60%);
+  border: solid 1px lighten($color-block-text, 60%);
   border-radius: $border-radius;
   @include input-shadow;
 }
@@ -153,10 +150,10 @@ textarea {
 select {
   width: 100%;
   height: 32px;
-  border: solid 1px lighten($color-box-foreground, 60%);
+  border: solid 1px lighten($color-block-text, 60%);
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: $color-primary-foreground;
+  background-color: $color-text-primary;
   background-image: image-url("icons/select-dropdown.png");
   background-repeat: no-repeat;
   background-position: right center;
@@ -219,7 +216,7 @@ input[type='radio'] {
   & .tt-menu {
     width: 100%;
     padding-bottom: 10px;
-    border: solid 1px lighten($color-box-foreground, 60%);
+    border: solid 1px lighten($color-block-text, 60%);
     background: white;
 
     & .tt-suggestion{
@@ -251,7 +248,7 @@ input[type='radio'] {
   & .tt-suggestion:hover,
   & .tt-menu span:hover {
     background-color: $color-bg-primary;
-    color: $color-primary-foreground;
+    color: $color-text-primary;
     cursor: pointer;
   }
 
@@ -313,4 +310,3 @@ input[type='radio'] {
   }
 
 }
-

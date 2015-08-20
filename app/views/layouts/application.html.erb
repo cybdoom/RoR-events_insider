@@ -29,11 +29,11 @@
     <div id="modal-container"></div>
 
     <% if !user_signed_in? %>
-      <%= modal_for('login', 'Log In') { render 'auth/sessions/new' } %>
-      <%= modal_for('signup', 'Sign Up') { render 'auth/registrations/new' } %>
+      <%= modal_for('login') { render 'auth/sessions/new' } %>
+      <%= modal_for('signup') { render 'auth/registrations/new' } %>
     <% end %>
 
-    <%= render 'modals/date_picker' %>
+    <%#= render 'modals/date_picker' %>
     <%#= render 'common/spinner' %>
 
     <%= render 'common/header' %>

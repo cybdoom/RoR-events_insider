@@ -1,5 +1,5 @@
 @import 'globals';
-$color-listing-header-border: lighten($color-box-foreground, 38%);
+$color-listing-header-border: lighten($color-block-text, 38%);
 
 .listing-section {
   padding: 0px 20px;
@@ -22,7 +22,7 @@ $color-listing-header-border: lighten($color-box-foreground, 38%);
     position: relative;
     font-size: 24px;
     font-family: $font-header;
-    color: lighten($color-box-foreground, 8%);
+    color: lighten($color-block-text, 8%);
     border-bottom: solid 1px $color-listing-header-border;
     padding-bottom: 4px;
 
@@ -33,7 +33,7 @@ $color-listing-header-border: lighten($color-box-foreground, 38%);
   }
 
   &.inactive h2 {
-    color: lighten($color-box-foreground, 38%);
+    color: lighten($color-block-text, 38%);
   }
 
   & button {
@@ -89,26 +89,26 @@ $color-listing-header-border: lighten($color-box-foreground, 38%);
   display: none;
 }
 
-.form-actions {
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
+// .form-actions {
+//   padding-top: 20px;
+//   padding-left: 20px;
+//   padding-bottom: 20px;
 
-  & button,
-  & input[type="submit"] {
-    float: right;
-    margin-right: 20px;
-  }
+//   & button,
+//   & input[type="submit"] {
+//     float: right;
+//     margin-right: 20px;
+//   }
 
-  & button.save-draft {
-    margin-top: 2px;
-  }
+//   & button.save-draft {
+//     margin-top: 2px;
+//   }
 
-  a.cancel {
-    margin-top: 15px;
-  }
+//   a.cancel {
+//     margin-top: 15px;
+//   }
 
-}
+// }
 
 fieldset.with-help,
 .listing-section h2 {
@@ -124,7 +124,7 @@ fieldset.with-help,
 }
 
 .compulsory legend span {
-  color: $color-negative-alert-background;
+  color: $color-alert-error-bg;
 }
 
 /* Location */
@@ -255,7 +255,7 @@ img.photo {
 }
 
 .listing-section.links .content {
-  border: solid 1px lighten($color-box-foreground, 57%);
+  border: solid 1px lighten($color-block-text, 57%);
 }
 
 .web-links {
@@ -263,10 +263,10 @@ img.photo {
   width: 100%;
   height: 35px;
   padding: 5px;
-  border-bottom: solid 1px lighten($color-box-foreground, 57%);
+  border-bottom: solid 1px lighten($color-block-text, 57%);
 
   &:nth-child(2n+1) {
-    background-color: darken($color-box-main-background, 4%);
+    background-color: darken($color-block-bg, 4%);
   }
 
   &:last-child {
@@ -316,7 +316,7 @@ img.photo {
   width: 100%;
   padding: 20px;
   text-align: center;
-  border-top: solid 1px lighten($color-box-foreground, 57%);
+  border-top: solid 1px lighten($color-block-text, 57%);
 }
 
 .load-more a {
@@ -345,7 +345,7 @@ img.photo {
   float: left;
   width: 100%;
   padding: 0px;
-  border-bottom: solid 1px lighten($color-box-foreground, 57%);
+  border-bottom: solid 1px lighten($color-block-text, 57%);
 }
 
 .listing-wrapper {
@@ -360,7 +360,7 @@ img.photo {
     margin-top: 0px;
     margin-left: -40px;
     font-size: 40px !important;
-    color: $official-red !important;
+    color: $red !important;
     -ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     transform: rotate(45deg);
@@ -369,7 +369,7 @@ img.photo {
 }
 
 .sponsored .listing-wrapper {
-  border: solid 1px $color-positive-alert-background;
+  border: solid 1px $color-alert-success-bg;
   background-color: lighten($color-bg-primary, 40%);
 }
 
@@ -400,14 +400,14 @@ img.photo {
       font-family: $font-main;
       font-size: 16px;
       font-weight: 100;
-      color: darken($color-box-important-text, 1.4%);
+      color: darken($color-block-text-important, 1.4%);
     }
 
     & p {
       font-family: $font-main;
       font-size: 14px;
       font-weight: 100;
-      color: lighten($color-box-body-text, 15.25%);
+      color: lighten($color-block-text, 15.25%);
     }
 
     & a {
@@ -415,7 +415,7 @@ img.photo {
       font-size: 14px;
       font-weight: 100;
       text-decoration: none;
-      color: darken($color-box-important-text, 1.4%);
+      color: darken($color-block-text-important, 1.4%);
     }
 
   }
@@ -436,7 +436,7 @@ img.photo {
       padding: 1px 0;
       font-size: 12.5px;
       font-weight: bold;
-      color: lighten($color-box-body-text, 15.25%);
+      color: lighten($color-block-text, 15.25%);
     }
 
   }
@@ -448,17 +448,17 @@ img.photo {
   font-size: 18px;
   font-family: Cabin;
   font-weight: 100;
-  color: darken($color-box-important-text, 1.4%);
+  color: darken($color-block-text-important, 1.4%);
 }
 
 .single-listing .side-content span.special-message {
   float: left;
   margin-bottom: 10px;
-  color: darken($color-positive-alert-background, 5%);
+  color: darken($color-alert-success-bg, 5%);
 }
 
 .side-content a {
-  color: $color-box-important-text;
+  color: $color-block-text-important;
 }
 
 .side-content address {
@@ -478,18 +478,18 @@ section.events h2 {
   font-size: 20px;
   font-family: $font-header;
   letter-spacing: 1px;
-  color: $color-box-important-text;
+  color: $color-block-text-important;
 }
 
 section.events h5 {
   margin: 0px 20px;
   margin-top: 2px;
   padding-bottom: 5px;
-  border-bottom: solid 1px darken($color-box-main-background, 10%);
+  border-bottom: solid 1px darken($color-block-bg, 10%);
   font-size: 14px;
   font-family: $font-header;
   font-weight: lighter;
-  color: lighten($color-box-foreground, 22.5%);
+  color: lighten($color-block-text, 22.5%);
 }
 
 .icons-row .icon {
@@ -592,7 +592,7 @@ section.events .icon:last-child {
   padding: 15px;
 
   &:nth-child(2n+1) {
-    background-color: darken($color-box-main-background, 4%);
+    background-color: darken($color-block-bg, 4%);
   }
 
   & div {
@@ -600,7 +600,7 @@ section.events .icon:last-child {
     font-family: $font-main;
     margin-top: 5px;
     letter-spacing: 0.5px;
-    color: lighten($color-box-foreground, 22.5%);
+    color: lighten($color-block-text, 22.5%);
 
     &:first-child {
       margin-top: 0px;
@@ -614,7 +614,7 @@ section.events .icon:last-child {
     font-family: $font-main;
     font-size: 20px;
     font-weight: 100;
-    color: $color-box-body-text;
+    color: $color-block-text;
   }
 
   & h4 {
@@ -623,7 +623,7 @@ section.events .icon:last-child {
     font-family: $font-main;
     font-size: 15px;
     font-weight: bold;
-    color: $color-box-body-text;
+    color: $color-block-text;
   }
 
 }
