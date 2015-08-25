@@ -1,5 +1,5 @@
 @import 'globals';
-@import 'forms/base';
+@import 'forms/forms';
 
 @mixin input-shadow {
   box-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);

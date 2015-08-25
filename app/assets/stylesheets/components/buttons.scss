@@ -1,5 +1,12 @@
 @import 'globals';
 
+$color-btn-text: $color-block-bg;
+$color-btn-primary: $green;
+$color-btn-secondary: $blue;
+$color-btn-buy-tickets: $red;
+$color-btn-positive: $green;
+$color-btn-negative: $red;
+
 #{$all-buttons} {
   display: inline-block;
 
@@ -11,11 +18,16 @@
   user-select: none;
 
   line-height: 1;
-
   vertical-align: middle;
 
+  font-size: $font-size-btn;
+  color: $color-btn-text;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.btn {
+  padding: $spacing-small ($spacing-small * 3);
 }
 
 .btn-close {
@@ -31,5 +43,38 @@
   &:hover, & > span:hover {
     cursor: pointer;
     color: $blue;
+  }
+}
+
+.btn-primary-action,
+input[name="commit"],
+button[type="submit"] {
+  background-color: tint($color-btn-primary, 15%);
+  border-bottom: 2px solid shade($color-btn-primary, 20%);
+
+  &:hover, &:focus {
+    background-color: $color-btn-primary;
+  }
+}
+
+.btn-secondary-action,
+.btn-cancel {
+  background-color: tint($color-btn-secondary, 15%);
+  border-bottom: 2px solid shade($color-btn-secondary, 20%);
+
+  &:hover, &:focus {
+    background-color: $color-btn-secondary;
+  }
+}
+
+.btn-arrow {
+  padding-left: $spacing-small;
+  padding-right: $spacing-small;
+
+  &:after {
+    content: '>';
+    display: inline-block;
+    float: right;
+    margin-left: $spacing-small;
   }
 }

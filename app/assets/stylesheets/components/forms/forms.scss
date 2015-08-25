@@ -1,0 +1,94 @@
+@import 'globals';
+
+$color-form-text: lighten($color-block-text, 18.5%);
+
+textarea {
+  resize: vertical;
+}
+
+.form-inputs {
+  margin-bottom: $spacing-base;
+}
+
+.form-actions {
+  @include clearfix;
+}
+
+.form-actions > #{$all-buttons} {
+  float: right;
+  margin-left: $spacing-small;
+}
+
+//
+// Select
+//
+
+select {
+  font-family: $font-header;
+}
+
+input[type="radio"],
+input[type="text"],
+select,
+
+//
+// Text Inputs
+//
+
+#{$all-text-inputs} {
+  font-family: $font-header;
+  color: $color-form-text;
+}
+
+//
+// Custom Checkbox
+//
+
+.checkbox {
+  position: relative;
+  padding-left: $font-size-base * 1.5;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.checkbox .control-indicator {
+  display: block;
+  position: absolute;
+  top: $font-size-base / 8;
+  left: 0;
+  width: $font-size-base;
+  height: $font-size-base;
+
+  margin-right: $font-size-base * 0.5;
+  text-align: center;
+  border: 1px solid $color-form-separator;
+  border-radius: $border-radius;
+  background: $color-form-bg;
+  color: $color-form-select;
+  user-select: none;
+}
+
+input[type="checkbox"]:checked ~ .control-indicator {
+  @include icon(tick) {
+    vertical-align: 45%;
+    font-size: $font-size-small;
+  }
+}
+
+input[type="checkbox"]:disabled ~ .control-indicator {
+  border-color: #bbb;
+  background-color: #ddd;
+  color: #999;
+}
+
+input[type="checkbox"]:focus ~ .label-text {
+  border: 2px solid $color-bg-primary;
+}

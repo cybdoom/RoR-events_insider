@@ -45,7 +45,17 @@ $font-icons: 'ei-icons';
 
 $font-size-base: 16px;
 $line-height-base: 1.625;
+$spacing-base: $line-height-base * 1em;
+$spacing-small: $spacing-base / 2;
+
+$font-size-small: 12px;
+
+$font-size-heading-primary: 38px;
+$font-size-heading-secondary: 26px;
 $headings-line-height: 1.2;
+$headings-letter-spacing: 3px;
+
+$font-size-btn: 18px;
 
 // Colors Palette
 
