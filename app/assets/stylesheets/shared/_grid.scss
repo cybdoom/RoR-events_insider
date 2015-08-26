@@ -25,12 +25,26 @@
   @include clearfix;
 }
 
+@mixin gutter {
+  margin-left: -$grid-gutter;
+  margin-right: -$grid-gutter;
+}
+
 %grid-container {
   @include grid-container($grid-max-width, $grid-container-padding, true);
 }
 
 %wrapper {
   @extend %grid-container;
+}
+
+%row {
+  display: block;
+  @include clearfix;
+}
+
+%gutter {
+  @include gutter;
 }
 
 %column {

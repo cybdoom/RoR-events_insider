@@ -41,6 +41,7 @@
 
 .icon-search {
   opacity: 1;
+  line-height: 1;
   @include icon(search) {
     color: lighten($color-block-text, 18.5%);
   }
@@ -51,7 +52,7 @@
   height: auto;
 
   right: 8px;
-  top: 10px;
+  top: 18px;
 
   font-size: 24px;
 }

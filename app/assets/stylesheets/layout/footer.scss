@@ -1,8 +1,8 @@
 @import 'globals';
 
 $footer-menu-columns-border: 2px solid saturate(lighten($color-block-text, 29), 0.85);
-$footer-font-size: 18px;
-$footer-font-size-mobile: 12px;
+$footer-font-size: $font-size-larger;
+$footer-font-size-mobile: $font-size-small;
 
 footer {
   margin-top: 20px;
@@ -114,7 +114,6 @@ footer nav a {
   }
 
   & > h3 {
-    font-family: $font-footer;
     margin-bottom: 25px;
 
     @include mobile {

@@ -2,12 +2,16 @@
 
 <h3>I would like to add a...</h3>
 <%= simple_form_for @listing do |f| %>
-  <%= f.input :type, as: :radio_buttons,
-                     collection: Array(Listing::TYPES.first),
-                     label: false %>
-  <%= f.input :name %>
-  <%= f.input :website %>
-  <%= f.input :location %>
+  <%= f.inputs do %>
+    <%= f.input :type, as: :radio_buttons,
+                       collection: Array(Listing::TYPES),
+                       label: false %>
+    <%= f.input :name %>
+    <div class="row gutter">
+      <%= f.input :website, wrapper_html: {class: 'col-6'} %>
+      <%= f.input :location, wrapper_html: {class: 'col-6'} %>
+    </div>
+  <% end %>
 
   <%= f.actions do %>
     <%= f.button :submit, 'Add Event', class: 'call-to-action-btn' %>

@@ -1,13 +1,54 @@
 @import 'globals';
 
-$color-form-text: lighten($color-block-text, 18.5%);
+$color-form-text: $color-block-text;
+$color-form-bg: $color-block-bg;
+$color-form-separator: mix($color-form-text, $color-form-bg, 80%);
+$color-form-select: $green;
 
-textarea {
-  resize: vertical;
-}
+$form-border: 1px solid $color-form-separator;
+$input-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
+$radio-button-color: $color-form-select;
+
+//
+// Styles concerning forms layout
+//
 
 .form-inputs {
   margin-bottom: $spacing-base;
+}
+
+.form-group {
+  @include clearfix;
+  margin-bottom: $spacing-small;
+}
+
+.form-control,
+.control-label,
+select {
+  display: block;
+}
+
+.control-label {
+  @extend %column-3;
+  border-top: 1px solid $color-form-bg;
+  border-bottom: 1px solid $color-form-bg;
+  padding: ($font-size-base / 4) 0;
+}
+
+.aligned-with-input {
+  display: inline-block;
+  padding-right: $spacing-base;
+  text-align: right;
+}
+
+.input-wrapper-horizontal {
+  @extend %column-9;
+}
+
+.form-control {
+  width: 100%;
+  padding: $font-size-base / 4;
+  line-height: $line-height-base;
 }
 
 .form-actions {
@@ -20,31 +61,56 @@ textarea {
 }
 
 //
+// Common styling for form elements
+//
+
+label,
+select,
+input,
+textarea {
+  font-family: $font-header;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: $color-form-text;
+  background-color: $color-form-bg;
+}
+
+#{$all-text-inputs},
+select {
+  border: $form-border;
+  border-radius: $border-radius;
+  box-shadow: $input-shadow;
+}
+
+//
 // Select
 //
 
 select {
-  font-family: $font-header;
+  @include appearance(none);
+  background: $color-form-bg image-url('icons/select-dropdown.png') no-repeat right center;
+  // width: 100%;
 }
-
-input[type="radio"],
-input[type="text"],
-select,
 
 //
 // Text Inputs
 //
 
-#{$all-text-inputs} {
-  font-family: $font-header;
-  color: $color-form-text;
+input[type="search"] {
+  @include appearance(none);
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: $spacing-base * 3;
 }
 
 //
-// Custom Checkbox
+// Custom checkbox & radio button, common styles
 //
 
-.checkbox {
+.checkbox, .radio > label {
   position: relative;
   padding-left: $font-size-base * 1.5;
 
@@ -53,16 +119,10 @@ select,
   }
 }
 
-input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-.checkbox .control-indicator {
+.control-indicator {
   display: block;
   position: absolute;
-  top: $font-size-base / 8;
+  top: $font-size-base / 4;
   left: 0;
   width: $font-size-base;
   height: $font-size-base;
@@ -70,11 +130,37 @@ input[type="checkbox"] {
   margin-right: $font-size-base * 0.5;
   text-align: center;
   border: 1px solid $color-form-separator;
-  border-radius: $border-radius;
-  background: $color-form-bg;
+
+  background-color: $color-form-bg;
   color: $color-form-select;
   user-select: none;
 }
+
+.checkbox .control-indicator {
+  border-radius: $border-radius;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+
+  &:disabled ~ .control-indicator {
+    border-color: #bbb;
+    background-color: #ddd;
+    color: #999;
+  }
+
+  &:focus  ~ .label-text,
+  &:active ~ .label-text {
+    border: 2px solid $color-bg-primary;
+  }
+}
+
+//
+// Checkbox
+//
 
 input[type="checkbox"]:checked ~ .control-indicator {
   @include icon(tick) {
@@ -83,12 +169,28 @@ input[type="checkbox"]:checked ~ .control-indicator {
   }
 }
 
-input[type="checkbox"]:disabled ~ .control-indicator {
-  border-color: #bbb;
-  background-color: #ddd;
-  color: #999;
+//
+// Radio button
+//
+
+.radio + .radio {
+  margin-left: $spacing-small;
 }
 
-input[type="checkbox"]:focus ~ .label-text {
-  border: 2px solid $color-bg-primary;
+input[type="radio"] {
+  & ~ .control-indicator {
+    border-radius: 50%;
+  }
+
+  &:checked ~ .control-indicator:before {
+    content: "\2022";
+    display: block;
+    position: absolute;
+    left: 1px;
+    top: 0;
+    text-align: center;
+    color: $radio-button-color;
+    font-size: $font-size-base * 2.5;
+    line-height: $font-size-base / 2;
+  }
 }

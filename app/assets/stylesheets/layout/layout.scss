@@ -70,6 +70,34 @@ aside {
   }
 }
 
+.row {
+  @extend %row;
+}
+
+.gutter {
+  @extend %gutter;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @extend %column-#{$i};
+  }
+
+  .gutter > .col-#{$i} {
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+  }
+}
+
+.gutter-left {
+  margin-left: $grid-gutter;
+}
+
+.gutter-right {
+  margin-right: $grid-gutter;
+}
+
+// TODO: remove when all old pages gone
 section {
   float: left;
   width: 100%;

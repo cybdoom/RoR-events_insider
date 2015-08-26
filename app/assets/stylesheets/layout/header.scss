@@ -2,7 +2,7 @@
 
 header {
   font-family: $font-header;
-  font-size: 18px;
+  font-size: $font-size-larger;
   letter-spacing: 1px;
   color: $color-text-primary;
 }
@@ -59,13 +59,13 @@ header nav > a {
   @include tablet {
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 16px;
+    font-size: $font-size-base;
   }
 
   @include mobile {
     padding-left: 5px;
     padding-right: 5px;
-    font-size: 14px;
+    font-size: $font-size-base - 2px;
   }
 
 }
@@ -106,35 +106,35 @@ header nav > a {
   @include mobile {
     width: 50%;
     margin-left: 0;
-    font-size: 14px;
+    font-size: $font-size-base - 2px;
     line-height: 28px;
     text-align: center;
   }
 
 }
 
-.search-box-icon-wrapper {
+.header-search-wrapper {
   position: relative;
 }
 
-.search-box {
-  border-radius: $border-radius;
-
+.header-search {
   position: relative;
   float: right;
   width: 35%;
   margin-top: 9px;
   padding: 10px 5px 10px 10px;
-  border: none;
+  border: 0 !important;
   opacity: 0.8;
+
+  font-size: $font-size-smaller;
 
   @include mobile {
     width: 50%;
     margin-top: 0;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: 0;
-    font-size: 12px;
+    border-radius: 0 !important;
+    font-size: $font-size-small;
   }
 }
 

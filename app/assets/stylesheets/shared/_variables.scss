@@ -24,9 +24,11 @@ $asset-pipeline: true;
 $grid-max-width: 1014px;
 $grid-container-padding: 20px;
 
+$grid-gutter: 10px;
+
 // Various extra
 
-$shadow: 0 2px 2px rgba( 0, 0, 0, 0.2 );
+$shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 
 $rounded-corner-radius: 8px;
 $rounded-button-radius: 30px;
@@ -43,19 +45,23 @@ $font-footer: 'Cabin';
 $font-mascot-speaks: 'Dimbo';
 $font-icons: 'ei-icons';
 
+$font-size-heading-primary: 38px;
+$font-size-heading-secondary: 26px;
+$font-size-larger: 18px;
 $font-size-base: 16px;
+$font-size-smaller: 14px;
+$font-size-small: 12px;
+
 $line-height-base: 1.625;
 $spacing-base: $line-height-base * 1em;
 $spacing-small: $spacing-base / 2;
 
-$font-size-small: 12px;
-
-$font-size-heading-primary: 38px;
-$font-size-heading-secondary: 26px;
 $headings-line-height: 1.2;
+$headings-spacing-base: $headings-line-height * 1em;
+$headings-spacing-small: $headings-spacing-base / 2;
 $headings-letter-spacing: 3px;
 
-$font-size-btn: 18px;
+$font-size-btn: $font-size-larger;
 
 // Colors Palette
 
@@ -113,13 +119,6 @@ $color-list-odd-bg: darken($color-list-even-bg, 90%);
 // Secondary configuration. Do not hard code any colors or fonts below here!
 // The user should not need to change anything here to get a dramatically new theme.
 //
-
-// Colors 16-18. For HTML forms.
-// Remove that shit to base/forms
-$color-form-bg: $color-block-bg;
-$color-form-text: $color-block-text;
-$color-form-separator: mix($color-form-text, $color-form-bg, 80%);
-$color-form-select: $green;
 
 //
 // Buttons
