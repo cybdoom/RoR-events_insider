@@ -47,45 +47,6 @@
 
 }
 
-/* radio button and related */
-// .radio-div.form-group {
-//   margin-top: 20px;
-// }
-
-// .radio-div.form-group .call-to-action-btn {
-//   float: right;
-//   margin-top: -10px;
-// }
-
-// input[type='radio'] {
-//   width: 16px;
-//   height: 16px;
-//   border: 1px solid #aaa;
-//   border-radius: 50%;
-//   outline: none;
-//   -webkit-appearance: none;
-
-//   &:hover {
-//     box-shadow: 0 0 5px 0px orange inset;
-//   }
-
-//   &:before {
-//     content: '';
-//     display: block;
-//     width: 8px;
-//     height: 8px;
-//     margin: 25% auto;
-//     margin-top: 3px;
-//     margin-right: 3px;
-//     border-radius: 50%;
-//   }
-
-//   &:checked:before {
-//     background: $color-form-select;
-//   }
-
-// }
-
 .autocomplete {
   & span {
     width: 100%;
@@ -131,48 +92,3 @@
   }
 
 }
-
-// @include mobile {
-//   div.form-group {
-//     & span {
-//       display: block;
-//       float: left;
-//       width: 100%;
-//       margin-bottom: 15px;
-//     }
-
-//     & label span {
-//       display: inline;
-//       float: none;
-//       width: auto;
-//       margin: 0;
-//     }
-
-//     & input[type="checkbox"] + span {
-//       display: inline;
-//       float: none;
-//       font-size: 11px;
-//       letter-spacing: 0px;
-//     }
-
-//     &.descriptive-tags input[type="checkbox"] + span {
-//       position: relative;
-//       float: left;
-//       width: auto;
-//       margin-top: 10px;
-//     }
-
-//   }
-
-//   .radio-div.form-group .call-to-action-btn {
-//     float: left;
-//     margin-top: 10px;
-//   }
-
-//   .call-to-action-btn.arrow span {
-//     display: inline;
-//     float: none;
-//     width: auto;
-//   }
-
-// }

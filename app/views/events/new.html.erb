@@ -7,26 +7,27 @@
       <%= f.input :starts_at, as: :string %>
 
       <div class="row gutter">
-        <div class="form-group col-6 with-help">
-          <%= f.input :price, as: :select,
-                      collection: enum_option_pairs(Event, :price),
-                      include_blank: false %>
-        </div>
-        <div class="form-group col-6 with-help">
-          <%= f.input :estimated_attendance,
-                      as: :select,
-                      collection: enum_option_pairs(Event, :estimated_attendance),
-                      include_blank: false %>
-        </div>
+        <%= f.input :price, as: :select,
+                    collection: enum_option_pairs(Event, :price),
+                    include_blank: false,
+                    wrapper_html: {class: 'col-6'} %>
+        <%= f.input :estimated_attendance,
+                    as: :select,
+                    collection: enum_option_pairs(Event, :estimated_attendance),
+                    include_blank: false,
+                    wrapper_html: {class: 'col-6'} %>
       </div>
-
 
       <%= f.input :description %>
     </section>
 
     <section>
       <h2 class="form-section-title"><%= t(:location) %></h2>
-      <%= text_field_tag 'location', '', id: 'location-select' %>
+      <%= f.fields_for :location do |l| %>
+        <%= l.input :original_address, label: false,
+                                       placeholder: 'Type the name of a venue or city, or street address',
+                                       html_options: {id: 'location-search'} %>
+      <% end %>
     </section>
 
     <section>
@@ -41,9 +42,11 @@
       <h2 class="form-section-title"><%= t(:websites) %></h2>
     </section>
 
-    <section>
-      <h2 class="form-section-title"><%= t(:admin_controls) %></h2>
-    </section>
+    <% if user_signed_in? && current_user.admin? %>
+      <section>
+        <h2 class="form-section-title"><%= t(:admin_controls) %></h2>
+      </section>
+    <% end %>
   <% end %>
 
   <%= f.actions do %>

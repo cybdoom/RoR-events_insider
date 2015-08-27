@@ -19,7 +19,9 @@ $radio-button-color: $color-form-select;
 }
 
 .form-section-title {
-
+  padding-bottom: $headings-spacing-smallest;
+  border-bottom: solid 1px $color-form-separator;
+  color: $color-form-text;
 }
 
 .form-group {
@@ -47,12 +49,12 @@ select {
 }
 
 .input-wrapper-horizontal {
-  @extend %column-9;
+  // @extend %column-9;
 }
 
 .form-control {
   width: 100%;
-  padding: $font-size-base / 4;
+  padding: ($font-size-base / 4) ($font-size-base / 2);
   line-height: $line-height-base;
 }
 

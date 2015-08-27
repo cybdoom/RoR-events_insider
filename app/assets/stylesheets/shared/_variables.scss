@@ -14,8 +14,6 @@
 // $all-text-inputs-focus
 // $all-text-inputs-hover
 
-
-
 // Way to tell Bourbon we are on Rails
 $asset-pipeline: true;
 
@@ -58,7 +56,9 @@ $spacing-small: $spacing-base / 2;
 
 $headings-line-height: 1.2;
 $headings-spacing-base: $headings-line-height * 1em;
-$headings-spacing-small: $headings-spacing-base / 2;
+$headings-spacing-smaller: $headings-spacing-base / 2;
+$headings-spacing-small: $headings-spacing-base / 4;
+$headings-spacing-smallest: $headings-spacing-base / 8;
 $headings-letter-spacing: 3px;
 
 $font-size-btn: $font-size-larger;
