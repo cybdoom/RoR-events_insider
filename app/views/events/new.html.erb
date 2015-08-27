@@ -25,7 +25,6 @@
       <h2 class="form-section-title"><%= t(:location) %></h2>
       <%= f.fields_for :location do |l| %>
         <%= l.input :original_address, label: false,
-                                       placeholder: 'Type the name of a venue or city, or street address',
                                        html_options: {id: 'location-search'} %>
       <% end %>
     </section>
