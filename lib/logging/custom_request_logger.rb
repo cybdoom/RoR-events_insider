@@ -27,7 +27,7 @@ if !Rails.env.production?
         Thread.current[:redirect_to] = nil
 
         message = "Status: #{status} for \"#{path}\" \n"
-        message << "Redirect URL: #{redirect_to}" if redirect_to
+        message << "Redirect URL: #{redirect_to} \n" if redirect_to
         message << "Params: #{format_data(params, indent)} \n" if params.present?
 
         info(message)

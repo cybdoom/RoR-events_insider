@@ -124,6 +124,7 @@ header nav > a {
   margin-top: 9px;
   padding: 10px 5px 10px 10px;
   border: 0 !important;
+  box-shadow: none !important;
   opacity: 0.8;
 
   font-size: $font-size-smaller;
@@ -143,7 +144,7 @@ header nav > a {
     display: none;
   }
 
-  .search-box {
+  .header-search {
     width: 100%;
   }
 }

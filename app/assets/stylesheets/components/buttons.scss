@@ -7,7 +7,8 @@ $color-btn-buy-tickets: $red;
 $color-btn-positive: $green;
 $color-btn-negative: $red;
 
-#{$all-buttons} {
+#{$all-buttons},
+.btn {
   display: inline-block;
 
   border: 0;
@@ -59,11 +60,11 @@ button[type="submit"] {
 
 .btn-secondary-action,
 .btn-cancel {
-  background-color: tint($color-btn-secondary, 15%);
-  border-bottom: 2px solid shade($color-btn-secondary, 20%);
+  background-color: tint($color-btn-secondary, 15%) !important;
+  border-bottom: 2px solid shade($color-btn-secondary, 20%) !important;
 
   &:hover, &:focus {
-    background-color: $color-btn-secondary;
+    background-color: $color-btn-secondary !important;
   }
 }
 

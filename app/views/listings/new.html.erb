@@ -1,11 +1,12 @@
 <%= content_for(:heading, 'Add a Listing') %>
 
-<h3>I would like to add a...</h3>
-<%= simple_form_for @listing do |f| %>
+<%= simple_form_for @listing, html: {method: :post} do |f| %>
   <%= f.inputs do %>
+    <h3>I would like to add a...</h3>
     <%= f.input :type, as: :radio_buttons,
-                       collection: Array(Listing::TYPES),
-                       label: false %>
+                       collection: Array(Listing::TYPES.first).map{ |type| [Listing.translate_type(type), type] },
+                       label: false,
+                       item_label_class: 'radio' %>
     <%= f.input :name %>
     <div class="row gutter">
       <%= f.input :website, wrapper_html: {class: 'col-6'} %>

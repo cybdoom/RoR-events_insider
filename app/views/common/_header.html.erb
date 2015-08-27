@@ -8,7 +8,7 @@
         <%= link_to t(:home), root_path, class: 'home-link' %>
         <a href=""><%= t(:about) %></a>
         <a href=""><%= t(:articles) %></a>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.admin? %>
           <%= link_to t(:listing_add), new_listing_path %>
         <% else %>
           <%= link_to t(:login), new_user_session_path, remote: true, class: 'login-link' %>

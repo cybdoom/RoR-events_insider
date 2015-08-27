@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new, :create]
+
   def new
     @listing = Listing.new(type: :event)
   end
@@ -7,14 +9,10 @@ class ListingsController < ApplicationController
   def create
     listing = Listing.new(listing_params)
 
-    respond_with listing do |format|
-      format.html do
-        if listing.valid?
-          redirect_to listing.path_for_redirect
-        else
-          render 'new'
-        end
-      end
+    if listing.valid?
+      redirect_to listing.path_for_redirect
+    else
+      render 'new'
     end
   end
 
