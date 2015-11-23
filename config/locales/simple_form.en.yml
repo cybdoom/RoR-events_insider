@@ -1,4 +1,10 @@
 en:
+  activerecord:
+    attributes:
+      event:
+        name: 'Event Name'
+        starts_at: 'Date'
+
   simple_form:
     "yes": 'Yes'
     "no": 'No'
@@ -10,7 +16,6 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
-
     placeholders:
       location:
         original_address: 'Type the name of a venue or city, or street address'

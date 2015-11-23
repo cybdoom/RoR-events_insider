@@ -21,7 +21,7 @@
 class Location < ActiveRecord::Base
   geocoded_by :original_address do |location, results|
     if geo = results.first
-      Rails.logger.debug "geo = #{format_data(geo)}"
+      logger.debug "geo = #{format_data(geo)}"
     end
   end
 

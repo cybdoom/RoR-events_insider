@@ -2,7 +2,7 @@ module TitleHelper
 
   def title(additional_context = {}, opts = {})
     if content_for?(:title)
-      content_for(:title)
+      provide(:title)
     else
       context = controller.view_assigns.merge(additional_context).symbolize_keys
       PageTitle.new(controller_path, action_name, context, opts)
@@ -19,11 +19,10 @@ module TitleHelper
       @context = context
       @application_name = opts[:application_name] || humanized_application_name
       @include_application_name = opts[:include_application_name] || true
-      @separator = opts[:separator] || ' - '
+      @separator = opts[:separator] || ' – '
     end
 
     def to_s
-      Rails.logger.debug "controller_i18n_key_lookup_path = #{controller_i18n_key_lookup_path}"
       title = translate_action
       if include_application_name
         title << "#{separator}#{application_name}" if title != application_name

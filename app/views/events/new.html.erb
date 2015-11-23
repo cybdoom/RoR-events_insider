@@ -4,7 +4,11 @@
   <%= f.inputs do %>
     <section>
       <%= f.input :name %>
-      <%= f.input :starts_at, as: :string %>
+      <%= f.input :starts_at, as: :string,
+                              wrapper: :vertical_input_group,
+                              prepend: icon_tag(:calendar),
+                              prepend_html: {class: 'with-icon input-group-btn'},
+                              input_html: { class: 'date-range' } %>
 
       <div class="row gutter">
         <%= f.input :price, as: :select,

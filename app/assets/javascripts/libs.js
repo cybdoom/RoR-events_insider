@@ -9,4 +9,4 @@
 //= require twitter/typeahead
 //= require ddslick
 //= require moment
-//= require jquery.daterangepicker
+//= require daterangepicker

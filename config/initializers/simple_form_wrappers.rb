@@ -13,8 +13,8 @@ SimpleForm.setup do |config|
     b.use :label, class: 'control-label'
 
     b.use :input, class: 'form-control'
-    b.use :error, wrap_with: { tag: 'span', class: 'help-block' }
-    b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+    b.use :error, wrap_with: {tag: 'span', class: 'help-block'}
+    b.use :hint,  wrap_with: {tag: 'p', class: 'help-block'}
   end
 
   config.wrappers :vertical_input_group, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
@@ -22,13 +22,13 @@ SimpleForm.setup do |config|
     b.use :placeholder
     b.use :label, class: 'control-label'
 
-    b.wrapper tag: 'div' do |ba|
-      ba.wrapper tag: 'div', class: 'input-group' do |append|
-        append.use :input, class: 'form-control'
-      end
-      ba.use :error, wrap_with: { tag: 'span', class: 'help-block' }
-      ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+    b.wrapper tag: 'div', class: 'input-group' do |g|
+      g.use :prepend, wrap_with: {tag: 'span', class: 'input-group-addon'}
+      g.use :input, class: 'form-control'
+      g.use :append, wrap_with: {tag: 'span', class: 'input-group-addon'}
     end
+    b.use :error, wrap_with: {tag: 'span', class: 'help-block'}
+    b.use :hint,  wrap_with: {tag: 'p', class: 'help-block'}
   end
 
   config.wrappers :vertical_file_input, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
@@ -86,9 +86,9 @@ SimpleForm.setup do |config|
                                                        error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
-    b.use :label, class: 'control-label'
+    b.use :label, class: 'control-label col-3'
 
-    b.wrapper tag: 'div', class: 'input-wrapper-horizontal' do |ba|
+    b.wrapper tag: 'div', class: 'input-wrapper-horizontal col-9' do |ba|
       ba.wrapper tag: 'div', class: 'input-group' do |append|
         append.use :input, class: 'form-control'
       end

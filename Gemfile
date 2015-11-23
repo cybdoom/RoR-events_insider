@@ -8,6 +8,7 @@ gem 'rails', '4.2.3'
 
 gem 'pg'
 gem 'postgres_ext'
+gem 'schema_plus'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave-aws'
@@ -30,13 +31,10 @@ gem 'pry-rails'
 gem 'pundit'
 gem 'rack-cache'
 gem 'redis', require: ['redis', 'redis/connection/hiredis']
-gem 'redis-store'
 gem 'redis-rails'
-gem 'redis-rack-cache'
 gem 'require_all'
 gem 'responders'
 # gem 'ruby-filemagic'#, path: 'vendor/gems/ruby-filemagic-0.7.0'
-gem 'schema_plus'
 gem 'seed_migration'
 gem 'simple_enum'
 gem 'simple_form'
@@ -46,11 +44,13 @@ gem 'virtus'
 # Front-end gems
 gem 'autoprefixer-rails'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'bootstrap-daterangepicker-rails'
 gem 'bourbon'
 gem 'gmaps4rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'neat'
+gem 'momentjs-rails'
 gem 'sassc-rails'
 gem 'twitter-typeahead-rails'
 gem 'uglifier', '>= 1.3.0'
@@ -70,13 +70,13 @@ group :development do
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'libnotify'
   gem 'rack-livereload', github: 'johnbintz/rack-livereload'
-  #gem 'rb-fsevent', group: :darwin, require: false
-  #gem 'rb-inotify', group: :linux, require: false
+  gem 'rb-fsevent', group: :darwin, require: false
+  gem 'rb-inotify', group: :linux, require: false
   gem 'quiet_assets'
 end
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-byebug'
   gem 'rspec'
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda'

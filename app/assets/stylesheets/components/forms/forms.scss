@@ -6,6 +6,8 @@ $color-form-separator: mix($color-form-text, $color-form-bg, 80%);
 $color-form-select: $green;
 $color-form-required: $red;
 
+$form-padding: ($font-size-base / 4) ($font-size-base / 2);
+
 $form-border: 1px solid $color-form-separator;
 $input-shadow: inset -1px -3px 5px -3px rgba(50, 50, 50, 0.2);
 $radio-button-color: $color-form-select;
@@ -29,9 +31,9 @@ $radio-button-color: $color-form-select;
   margin-bottom: $spacing-small;
 }
 
+select,
 .form-control,
-.control-label,
-select {
+.control-label {
   display: block;
 }
 
@@ -54,13 +56,87 @@ select {
 
 .form-control {
   width: 100%;
-  padding: ($font-size-base / 4) ($font-size-base / 2);
+  padding: $form-padding;
   line-height: $line-height-base;
 }
 
 abbr[title="required"] {
   margin-right: $spacing-small;
   color: $color-form-required;
+}
+
+.input-group {
+  position: relative; // For dropdowns
+  display: table;
+  border-collapse: separate;
+
+  @for $i from 1 through 12 {
+    &.col-#{$i} {
+      float: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  & .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    margin-bottom: 0;
+  }
+}
+
+.input-group-addon,
+.input-group .form-control {
+  display: table-cell;
+
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+}
+
+.input-group-addon {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle; // Match the inputs
+  box-shadow: $input-shadow;
+}
+
+.input-group-addon {
+  padding: $form-padding;
+  font-size: $font-size-base;
+  font-weight: normal;
+  color: $color-form-text;
+  text-align: center;
+  background-color: $color-form-bg;
+  border: $form-border;
+  border-radius: $border-radius;
+
+  &:first-child {
+    border-right: 0;
+  }
+
+  &:last-child {
+    border-left: 0;
+  }
+}
+
+.input-group-addon.with-icon {
+  line-height: 1;
+}
+
+.input-group .form-control:first-child,
+.input-group-addon:first-child {
+  @include border-right-radius(0);
+}
+
+.input-group .form-control:last-child,
+.input-group-addon:last-child {
+  @include border-left-radius(0);
+}
+
+.input-group-btn {
+  cursor: pointer;
 }
 
 .form-actions {
@@ -137,10 +213,7 @@ textarea {
 .checkbox, .radio {
   position: relative;
   padding-left: $font-size-base * 1.5;
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 
 .control-indicator {
@@ -180,6 +253,14 @@ input[type="radio"] {
   &:active ~ .label-text {
     border: 2px solid $color-bg-primary;
   }
+}
+
+.checkbox.inline,
+.radio.inline {
+  display: inline-block;
+  padding-left: $spacing-base;
+  vertical-align: middle;
+  font-weight: normal;
 }
 
 //

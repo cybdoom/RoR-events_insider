@@ -1,5 +1,4 @@
 module ApplicationHelper
-  include HtmlHelper
 
   def parent_layout(layout)
     layout = layout.to_s
@@ -7,7 +6,7 @@ module ApplicationHelper
 
     @view_flow.set(:layout, output_buffer)
 
-    output = render(file: layout)
+    output = render file: layout
 
     self.output_buffer = ActionView::OutputBuffer.new(output)
   end
@@ -22,6 +21,19 @@ module ApplicationHelper
 
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
+  end
+
+  def icon_tag(name)
+    content_tag :i, nil, class: "icon icon-#{name}"
+  end
+
+  def close_button_tag(options)
+    options.reverse_merge!({type: 'button', class: 'btn-close', aria: {label: 'Close'}})
+    content_tag :button, options do
+      content_tag :span, aria: {hidden: 'true'} do
+        '&times;'.html_safe
+      end
+    end
   end
 
 end

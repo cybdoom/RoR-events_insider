@@ -16,6 +16,7 @@ Rails.application.configure do
   config.active_record.migration_error = :page_load
 
   config.assets.debug = true
+
   # Source maps for SASS
   config.sass.inline_source_maps = true
 

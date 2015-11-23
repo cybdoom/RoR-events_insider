@@ -25,7 +25,7 @@ class Auth::SessionsController < Devise::SessionsController
     respond_to do |format|
       format.html { super }
       format.js do
-        sign_in(scope, resource) if warden.user(scope) != user
+        sign_in(scope, resource, options) if warden.user(scope) != user
         redirect_url = stored_location_for(scope)
         Rails.logger.debug "redirect_url = #{redirect_url.inspect}"
         # flash.delete(:notice)
