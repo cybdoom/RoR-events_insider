@@ -40,6 +40,7 @@ gem 'simple_enum'
 gem 'simple_form'
 gem 'typhoeus'
 gem 'virtus'
+gem 'activeadmin', github: 'activeadmin'
 
 # Front-end gems
 gem 'autoprefixer-rails'
