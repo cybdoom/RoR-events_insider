@@ -82,7 +82,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda'
   gem 'show_data'
-  gem 'spring'
+  # gem 'spring'
   gem 'web-console', '~> 2.0'
 end
 
