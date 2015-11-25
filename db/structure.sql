@@ -72,6 +72,38 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: blogs; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE blogs (
+    id integer NOT NULL,
+    title character varying NOT NULL,
+    description text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: blogs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE blogs_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: blogs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE blogs_id_seq OWNED BY blogs.id;
+
+
+--
 -- Name: events; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -348,6 +380,13 @@ ALTER SEQUENCE venues_id_seq OWNED BY venues.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY blogs ALTER COLUMN id SET DEFAULT nextval('blogs_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY events ALTER COLUMN id SET DEFAULT nextval('events_id_seq'::regclass);
 
 
@@ -391,6 +430,14 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 --
 
 ALTER TABLE ONLY venues ALTER COLUMN id SET DEFAULT nextval('venues_id_seq'::regclass);
+
+
+--
+-- Name: blogs_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY blogs
+    ADD CONSTRAINT blogs_pkey PRIMARY KEY (id);
 
 
 --
@@ -548,6 +595,13 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (re
 
 
 --
+-- Name: index_users_on_role; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_users_on_role ON users USING btree (role);
+
+
+--
 -- Name: index_venues_on_location_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -576,67 +630,67 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 
 --
--- Name: fk_rails_0cb5590091; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: fk_events_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY events
-    ADD CONSTRAINT fk_rails_0cb5590091 FOREIGN KEY (user_id) REFERENCES users(id);
+    ADD CONSTRAINT fk_events_user_id FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
--- Name: fk_rails_40271a6430; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: fk_events_venue_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY events
+    ADD CONSTRAINT fk_events_venue_id FOREIGN KEY (venue_id) REFERENCES venues(id);
+
+
+--
+-- Name: fk_organizations_location_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY organizations
-    ADD CONSTRAINT fk_rails_40271a6430 FOREIGN KEY (location_id) REFERENCES locations(id);
+    ADD CONSTRAINT fk_organizations_location_id FOREIGN KEY (location_id) REFERENCES locations(id);
 
 
 --
--- Name: fk_rails_5d96f79c2b; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: fk_organizations_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY organizations
+    ADD CONSTRAINT fk_organizations_user_id FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- Name: fk_users_location_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users
-    ADD CONSTRAINT fk_rails_5d96f79c2b FOREIGN KEY (location_id) REFERENCES locations(id);
+    ADD CONSTRAINT fk_users_location_id FOREIGN KEY (location_id) REFERENCES locations(id);
 
 
 --
--- Name: fk_rails_79fca9d9f4; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY venues
-    ADD CONSTRAINT fk_rails_79fca9d9f4 FOREIGN KEY (organization_id) REFERENCES organizations(id);
-
-
---
--- Name: fk_rails_7b93e0061c; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY organizations
-    ADD CONSTRAINT fk_rails_7b93e0061c FOREIGN KEY (user_id) REFERENCES users(id);
-
-
---
--- Name: fk_rails_94538093f5; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: fk_venues_location_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY venues
-    ADD CONSTRAINT fk_rails_94538093f5 FOREIGN KEY (location_id) REFERENCES locations(id);
+    ADD CONSTRAINT fk_venues_location_id FOREIGN KEY (location_id) REFERENCES locations(id);
 
 
 --
--- Name: fk_rails_ad8f6027f0; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: fk_venues_organization_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY venues
-    ADD CONSTRAINT fk_rails_ad8f6027f0 FOREIGN KEY (user_id) REFERENCES users(id);
+    ADD CONSTRAINT fk_venues_organization_id FOREIGN KEY (organization_id) REFERENCES organizations(id);
 
 
 --
--- Name: fk_rails_f476266cf4; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: fk_venues_user_id; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY events
-    ADD CONSTRAINT fk_rails_f476266cf4 FOREIGN KEY (venue_id) REFERENCES venues(id);
+ALTER TABLE ONLY venues
+    ADD CONSTRAINT fk_venues_user_id FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
@@ -664,4 +718,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150721032547');
 INSERT INTO schema_migrations (version) VALUES ('20150721045606');
 
 INSERT INTO schema_migrations (version) VALUES ('20150722060240');
+
+INSERT INTO schema_migrations (version) VALUES ('20151125151725');
 
