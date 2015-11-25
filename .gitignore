@@ -19,3 +19,4 @@
 /public/assets/*
 /public/system
 .ruby-gemset
+db/structure.sql
