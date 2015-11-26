@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :events, only: [:new, :create]
 
+  resources :blogs
+  resources :articles
+
   get '/search', to: 'static_pages#search', as: :search_page
   get '/add_event', to: 'static_pages#add_event'
   get '/event', to: 'static_pages#event'

@@ -7,7 +7,8 @@
         <% end %>
         <%= link_to t(:home), root_path, class: 'home-link' %>
         <a href=""><%= t(:about) %></a>
-        <a href=""><%= t(:articles) %></a>
+        <%= link_to 'Blogs', blogs_path %>
+        <!-- <a href=""><%= t(:articles) %></a> -->
         <% if user_signed_in? && current_user.admin? %>
           <%= link_to t(:listing_add), new_listing_path %>
         <% else %>
