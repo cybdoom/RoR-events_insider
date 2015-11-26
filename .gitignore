@@ -20,3 +20,4 @@
 /public/system
 .ruby-gemset
 db/structure.sql
+/**/.DS_Store
