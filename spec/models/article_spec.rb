@@ -3,7 +3,7 @@
 # Table name: articles
 #
 #  id         :integer          not null, primary key
-#  blog_id    :integer
+#  blog_id    :integer          not null
 #  title      :string           not null
 #  body       :text
 #  created_at :datetime         not null
