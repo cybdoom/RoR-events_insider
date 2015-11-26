@@ -1,4 +1,5 @@
 <h2><%= @blog.title %></h2>
 <div>
-  <%= render @blog.articles %>
+  <%= render @articles %>
+  <%= paginate @articles %>
 </div>

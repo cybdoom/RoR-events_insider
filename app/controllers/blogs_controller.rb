@@ -7,6 +7,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @articles = @blog.articles.page params[:page]
   end
 
   private
