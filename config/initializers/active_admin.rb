@@ -111,8 +111,7 @@ ActiveAdmin.setup do |config|
   # Set the action to call for the root path. You can set different
   # roots for each namespace.
   #
-  # Default:
-  # config.root_to = 'dashboard#index'
+  config.root_to = 'blogs#index'
 
   # == Admin Comments
   #
@@ -214,11 +213,12 @@ ActiveAdmin.setup do |config|
   #
   # If you wanted to add a static menu item to the default menu provided:
   #
-  #   config.namespace :admin do |admin|
-  #     admin.build_menu :default do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
-  #     end
-  #   end
+  config.namespace :admin do |admin|
+    admin.build_menu :default do |menu|
+      menu.add label: "Blogs", priority: 1
+      menu.add label: "Articles", priority: 0
+    end
+  end
 
   # == Download Links
   #
