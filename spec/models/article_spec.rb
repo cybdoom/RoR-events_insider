@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  blog_id    :integer
+#  title      :string           not null
 #  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
