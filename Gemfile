@@ -41,6 +41,7 @@ gem 'typhoeus'
 gem 'virtus'
 gem 'activeadmin', github: 'activeadmin'
 gem 'kaminari'
+gem 'devise'
 
 # Front-end gems
 gem 'autoprefixer-rails'

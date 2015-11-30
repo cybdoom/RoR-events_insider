@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   ActiveAdmin.routes(self)
-  root 'locations#search'
+  root 'blogs#index'
 
   resources :listings, only: [:new, :create]
 
