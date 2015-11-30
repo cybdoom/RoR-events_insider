@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
-  devise_for :users, controllers: {registrations: 'auth/registrations',
-                                   confirmations: 'auth/confirmations',
-                                   passwords: 'auth/passwords',
-                                   sessions: 'auth/sessions'}
-
-  root 'static_pages#search'
+  root 'locations#search'
 
   resources :listings, only: [:new, :create]
 

@@ -24,12 +24,6 @@
 #
 
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :trackable, :validatable,
-         :confirmable
-
   as_enum :role, [:guest, :regular, :trusted, :moderator, :admin],
           source: :role, map: :string, accessor: :whiny
 

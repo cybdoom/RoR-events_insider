@@ -116,7 +116,6 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
-    bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -165,13 +164,6 @@ GEM
     debug_inspector (0.0.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (3.5.2)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      responders
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
@@ -275,7 +267,6 @@ GEM
     notiffany (0.0.7)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    orm_adapter (0.5.0)
     pg (0.18.2)
     pg_array_parser (0.0.9)
     polyamorous (1.2.0)
@@ -503,8 +494,6 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    warden (1.2.3)
-      rack (>= 1.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -529,7 +518,6 @@ DEPENDENCIES
   colorize
   countries
   date_validator
-  devise
   dotenv-rails
   faraday!
   faraday_middleware!
