@@ -72,7 +72,7 @@ namespace :db do
           key = object.key
           if key.split('.').last == 'txt'
             blog_title = key.split('/').last.split('.').first
-            lines = object.read.split("\n")
+            lines = object.read.split("\r\n").map {|line| "#{line}\r\n" }
             yield blog_title, lines
           end
         end
