@@ -72,7 +72,7 @@ namespace :db do
           key = object.key
           if key.split('.').last == 'txt'
             blog_title = key.split('/').last.split('.').first
-            lines = object.read.split("\r\n")
+            lines = object.read.split("\n")
             yield blog_title, lines
           end
         end
@@ -87,6 +87,11 @@ namespace :db do
         end
       end
       result
+    end
+
+    if ENV['ERASE_OLD']
+      Blog.destroy_all
+      Article.destroy_all
     end
 
     read_files do |blog_title, lines|
