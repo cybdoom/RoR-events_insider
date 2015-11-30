@@ -42,7 +42,6 @@ gem 'typhoeus'
 gem 'virtus'
 gem 'activeadmin', github: 'activeadmin'
 gem 'kaminari'
-gem 'aws-sdk-rails'
 
 # Front-end gems
 gem 'autoprefixer-rails'
