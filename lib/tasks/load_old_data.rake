@@ -2,15 +2,20 @@ require 'pathname'
 
 namespace :db do
   BLOGS_BUCKET = 'eventsinsider-harddatafactory-dev'
+  KEYS_REGEXPS = {
+    title:   /\ATITLE:(.*)/,
+    date:    /\ADATE:(.*)/,
+    body:    /\ABODY:(.*)/
+  }.freeze
 
   def valid_article? article
     article[:date].present? && article[:title].present? && article[:body].present?
   end
 
   def sanitize_from_html article
-    body = Nokogiri::HTML(article[:body])
-    article[:body] = Nokogiri::HTML(article[:body]).inner_text
-    article[:title] = Nokogiri::HTML(article[:title]).inner_text
+    # body = Nokogiri::HTML(article[:body])
+    # article[:body] = Nokogiri::HTML(article[:body]).inner_text
+    # article[:title] = Nokogiri::HTML(article[:title]).inner_text
     begin
       article[:created_at] = article[:updated_at] = DateTime.parse(article[:date])
       article.delete :date
@@ -53,9 +58,7 @@ namespace :db do
         next
       end
 
-      if ['TITLE', 'DATE'].include? key
-        new_article[key.downcase.to_sym] = line.split(':')[1].nil? ? '' : line.split(':')[1].strip
-      end
+      KEYS_REGEXPS.each { |key, regexp|  new_article[key] = $1 if regexp.match(line) }
     end
 
     articles

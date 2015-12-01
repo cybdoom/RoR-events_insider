@@ -1,4 +1,6 @@
-<h2><%= @article.title %></h2>
-<div>
-  <%= @article.body.gsub("\r\n", "<br>").html_safe %>
+<div class="article">
+  <h2><%= @article.title.html_safe %></h2>
+  <div>
+    <%= @article.body.html_safe %>
+  </div>
 </div>
