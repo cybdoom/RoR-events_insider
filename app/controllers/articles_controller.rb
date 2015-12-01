@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show]
 
+  def index
+    @articles = Article.all.page(params[:page]).per 20
+  end
+
   def show
   end
 
