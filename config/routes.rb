@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
-  root 'blogs#index'
+  root 'articles#index'
 
   resources :listings, only: [:new, :create]
 
   resources :events, only: [:new, :create]
 
-  resources :blogs
-  resources :articles
+  # resources :blogs
+  resources :articles, path: :news
 
   get '/search', to: 'static_pages#search', as: :search_page
   get '/add_event', to: 'static_pages#add_event'
