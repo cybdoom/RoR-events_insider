@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   resources :events, only: [:new, :create]
 
-  # resources :blogs
   resources :articles, path: :news
+
+  get '/Boston/:slug', to: 'articles#show'
 
   get '/search', to: 'static_pages#search', as: :search_page
   get '/add_event', to: 'static_pages#add_event'
