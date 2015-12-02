@@ -15,28 +15,28 @@
             <a href=""><%= t(:about) %></a>
           </li>
           <li>
-            <a href=""><%= t(:articles) %></a>
+             <%= link_to t(:news), articles_path %>
           </li>
-          <% if user_signed_in? %>
-            <li>
-              <%= link_to t(:listing_add), new_listing_path %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to t(:login), new_user_session_path, remote: true, class: 'login-link' %>
-            </li>
-            <li>
-              <%= link_to t(:signup), new_user_registration_path, remote: true, class: 'signup-link' %>
-            </li>
-          <% end %>
+          <li>
+            <a href=""><%= t(:events) %></a>
+          </li>
           <li>
             <a href=""><%= t(:subscribe) %></a>
           </li>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to t(:event_add), new_event_path %>
+            </li>
+            <li>
+              <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to t(:signup), new_user_registration_path %>
+            </li>
+          <% end %>
           <li>
             <a href=""><%= t(:contact) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:help) %></a>
           </li>
         </ul>
         <div class="footer-menu-social">
