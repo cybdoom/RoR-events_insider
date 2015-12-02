@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <title><%= title %></title>
+
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Cabin:400,600' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+
+    <%= javascript_include_tag 'libs' %>
+    <%= javascript_include_tag 'http://maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry' %>
+    <%= javascript_include_tag 'http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' %>
+    <%= javascript_include_tag 'application' %>
+
+    <%= csrf_meta_tags %>
+
+    <%= yield(:head) %>
+  </head>
+
+  <body>
+    <%= render 'common/header' %>
+
+    <div class="content-row">
+      <div class="content-wrapper">
+        <main role="main" class="articles-container">
+          <% if content_for?(:heading) %>
+            <h1 class="main-heading"><%= yield(:heading) %></h1>
+          <% end %>
+
+          <div class="content-block">
+            <%= yield %>
+          </div>
+        </main>
+        <aside>
+          <%= yield(:sidebar) if content_for?(:sidebar) %>
+        </aside>
+      </div>
+    </div>
+
+    <%= render 'common/footer' %>
+  </body>
+
+</html>
