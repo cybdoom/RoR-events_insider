@@ -25,7 +25,7 @@
           </li>
           <% if user_signed_in? %>
             <li>
-              <%= link_to t(:event_add), new_event_path %>
+              <%= link_to t(:listing_add), new_listing_path %>
             </li>
             <li>
               <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
