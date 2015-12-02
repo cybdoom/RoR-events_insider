@@ -15,6 +15,8 @@ class Article < ActiveRecord::Base
   belongs_to :blog
   has_many :images, as: :imageable, dependent: :destroy
 
+  default_scope { order('created_at DESC') }
+
   after_save :generate_slug, if: lambda { self.slug.blank? }
 
   def to_param

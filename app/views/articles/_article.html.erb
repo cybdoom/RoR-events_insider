@@ -1,2 +1,2 @@
-<small><%= article.created_at %></small>
+<small><%= article.created_at.strftime("%B %d, %Y") %></small>
 <h3><%= link_to article.title, "Boston/#{article.slug}" %></h3>
