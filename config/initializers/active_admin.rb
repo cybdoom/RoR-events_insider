@@ -9,7 +9,7 @@ ActiveAdmin.setup do |config|
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
-  # config.site_title_link = "/"
+  config.site_title_link = :root
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
@@ -111,7 +111,7 @@ ActiveAdmin.setup do |config|
   # Set the action to call for the root path. You can set different
   # roots for each namespace.
   #
-  config.root_to = 'blogs#index'
+  config.root_to = 'articles#index'
 
   # == Admin Comments
   #
@@ -215,8 +215,7 @@ ActiveAdmin.setup do |config|
   #
   config.namespace :admin do |admin|
     admin.build_menu :default do |menu|
-      menu.add label: "Blogs", priority: 1
-      menu.add label: "Articles", priority: 0
+      menu.add label: "Articles", priority: 1
     end
   end
 

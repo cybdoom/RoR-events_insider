@@ -12,7 +12,6 @@
 #
 
 class Article < ActiveRecord::Base
-  belongs_to :blog
   has_many :images, as: :imageable, dependent: :destroy
 
   default_scope { order('created_at DESC') }

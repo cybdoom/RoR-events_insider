@@ -19,6 +19,9 @@
         <a href=""><%= t(:help) %></a>
         <% if user_signed_in? %>
           <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
+          <% if current_user.admin? %>
+            <%= link_to 'Admin', admin_root_path, class: 'admin-link' %>
+          <% end %>
         <% end %>
       </nav>
     </div>
