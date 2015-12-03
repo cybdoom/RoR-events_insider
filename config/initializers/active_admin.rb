@@ -136,12 +136,10 @@ ActiveAdmin.setup do |config|
   #
   config.batch_actions = true
 
-  # == Controller Filters
-  #
-  # You can add before, after and around filters to all of your
-  # Active Admin resources and pages from here.
-  #
-  # config.before_filter :do_something_awesome
+  config.before_filter do
+    authenticate_user!
+    redirect_to(root_path, alert: 'You have no admin privileges') if user_signed_in? && !current_user.admin?
+  end
 
   # == Localize Date/Time Format
   #
