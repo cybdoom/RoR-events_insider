@@ -22,10 +22,9 @@ class Article < ActiveRecord::Base
     slug
   end
 
-  private
-
   def generate_slug
-    probably_slug = title.split(/\W+/)[0..2].join('-')
+    parsed_title = Nokogiri::HTML(title).inner_text
+    probably_slug = parsed_title.split(/\W+/)[0..2].join('-')
     probably_slug += "-#{self.id}" if Article.where(slug: probably_slug).any?
     probably_slug = URI.encode probably_slug
     self.slug = probably_slug
