@@ -1,0 +1,19 @@
+.flash-container {
+  padding-bottom: 10px;
+
+  .flash {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .flash-alert {
+    background: #F2DEDE;
+    color: #A94442;
+  }
+
+  .flash-notice {
+    background: #DFF0D8;
+    color: #3C763D;
+  }
+}
