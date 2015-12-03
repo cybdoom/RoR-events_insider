@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   before_filter :authenticate_user!
-  before_filter :set_user_location, if: -> { user_signed_in? && !current_user.location_id? }
+  # before_filter :set_user_location, if: -> { user_signed_in? && !current_user.location_id? }
 
   respond_to :html
 
