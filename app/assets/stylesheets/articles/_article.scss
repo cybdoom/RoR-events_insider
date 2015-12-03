@@ -1,0 +1,13 @@
+.article-entry {
+  margin-bottom: 10px;
+
+  .legend {
+    position: relative;
+    top: -10px;
+
+    .author {
+      display: inline;
+      margin-left: 50px;
+    }
+  }
+}

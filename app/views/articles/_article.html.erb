@@ -1,2 +1,7 @@
-<small><%= article.created_at.strftime("%B %d, %Y") %></small>
-<h3><%= link_to article.title, "Boston/#{article.slug}" %></h3>
+<div class="article-entry">
+  <h3><%= link_to article.title, "Boston/#{article.slug}" %></h3>
+  <div class="legend">
+    <small><%= article.created_at.strftime("%B %d, %Y") %></small>
+    <small class="author">by <%= article.author %></small>
+  </div>
+</div>

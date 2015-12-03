@@ -3,8 +3,8 @@
 # Table name: articles
 #
 #  id         :integer          not null, primary key
-#  blog_id    :integer          not null
 #  title      :string           not null
+#  author     :string
 #  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
