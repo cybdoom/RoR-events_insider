@@ -10,9 +10,17 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  def search
+    redirect_to root_path, flash: { warning: I18n.t('flash.warnings.we_moved') }
+  end
+
   private
 
   def set_article
     @article = Article.find_by_slug(params[:slug])
+  end
+
+  def search_params
+    params.permit(:year, :month, :old_title)
   end
 end

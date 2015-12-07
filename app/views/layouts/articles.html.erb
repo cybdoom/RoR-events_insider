@@ -26,6 +26,16 @@
 
     <div class="content-row">
       <div class="content-wrapper">
+        <% if flash.present? %>
+          <div class="flash-container">
+            <% flash.each do |key, value| %>
+              <div class="<%= 'flash flash-' + key %>">
+                <%= value %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
         <main role="main" class="articles-container">
           <% if content_for?(:heading) %>
             <h1 class="main-heading"><%= yield(:heading) %></h1>

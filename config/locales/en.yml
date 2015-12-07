@@ -67,6 +67,10 @@ en:
       venue: 'Venue'
       organization: 'Organization'
 
+  flash:
+    warnings:
+      we_moved: 'The page You are looking is outdated. Enjoy our new site instead'
+
 errors:
   messages:
     carrierwave_processing_error: "Cannot resize image."

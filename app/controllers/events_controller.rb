@@ -9,7 +9,9 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
   end
 
-
+  def search
+    redirect_to root_path, flash: { warning: I18n.t('flash.warnings.we_moved') }
+  end
 
   private
 
@@ -24,6 +26,14 @@ class EventsController < ApplicationController
                   :price,
                   :estimated_attendance,
                   venue_attributes: [:location_id])
+  end
+
+  def search_params
+    result = params.permit(:year, :date, :old_title)
+    result[:date] = DateTime.parse(
+      (result[:date].split('-').reverse << result[:year]).join('-')
+    )
+    result.tap {|result| result.delete :year }
   end
 
 end
