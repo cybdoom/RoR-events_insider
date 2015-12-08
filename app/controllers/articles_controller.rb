@@ -11,7 +11,13 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    redirect_to root_path, flash: { warning: I18n.t('flash.warnings.we_moved') }
+    @article = Article.find_by_old_url search_params
+
+    if @article.present?
+      redirect_to "/Boston/#{@article.slug}"
+    else
+      redirect_to root_path, flash: { warning: I18n.t('flash.warnings.we_moved') }
+    end
   end
 
   private
@@ -21,6 +27,6 @@ class ArticlesController < ApplicationController
   end
 
   def search_params
-    params.permit(:year, :month, :old_title)
+    params.permit(:year, :month, :old_slug)
   end
 end

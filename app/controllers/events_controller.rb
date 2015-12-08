@@ -11,6 +11,7 @@ class EventsController < ApplicationController
   end
 
   def search
+    # TODO: Implement events search by old slug here
     redirect_to root_path, flash: { warning: I18n.t('flash.warnings.we_moved') }
   end
 
@@ -30,7 +31,7 @@ class EventsController < ApplicationController
   end
 
   def search_params
-    result = params.permit(:year, :date, :old_title)
+    result = params.permit(:year, :date, :old_slug)
     result[:date] = DateTime.parse(
       (result[:date].split('-').reverse << result[:year]).join('-')
     )

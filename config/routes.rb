@@ -17,11 +17,11 @@ Rails.application.routes.draw do
   get '/Boston/:slug', to: 'articles#show'
 
   #### REDIRECT OLD ARTICLES REQUESTS TO SEARCH
-  get '/bostonevents/:year/:date/:old_title', to: 'events#search', constraints: {
+  get '/bostonevents/:year/:date/:old_slug', to: 'events#search', constraints: {
     year: /\d{4}/,
     date: /\d{2}-\d{2}/
   }
-  get '/:year/:month/:old_title', to: 'articles#search', constraints: {
+  get '/:year/:month/:old_slug', to: 'articles#search', constraints: {
     year:  /\d{4}/,
     month: /\d{2}/
   }
