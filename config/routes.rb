@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   }
   ##########################
 
+  get '/pages/:title', to: 'pages#show'
+
   get '/search', to: 'static_pages#search', as: :search_page
   get '/add_event', to: 'static_pages#add_event'
   get '/event', to: 'static_pages#event'
