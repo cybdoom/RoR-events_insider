@@ -12,22 +12,33 @@
 #
 
 class Article < ActiveRecord::Base
+  COMMON_WORDS = %w(a an and as at by for from in of on or so that the to with)
+
   has_many :images, as: :imageable, dependent: :destroy
 
   default_scope { order('created_at DESC') }
 
+  before_save :clear_slug, if: lambda { self.slug.present? && self.title_changed? }
   after_save :generate_slug, if: lambda { self.slug.blank? }
 
   def to_param
     slug
   end
 
+  def clear_slug
+    self.slug = nil
+  end
+
   def generate_slug
-    parsed_title = Nokogiri::HTML(title).inner_text
-    probably_slug = parsed_title.gsub(/( \'|\' |\A\'|\'$)/, ' ').strip.split(/\W+/)[0..2].join('-')
-    probably_slug += "-#{self.id}" if Article.where(slug: probably_slug).count > 1
-    probably_slug = URI.encode probably_slug
-    self.slug = probably_slug
+    title_text = Nokogiri::HTML(title).inner_text
+    new_slug = title_text.gsub /[^\s\w]/, ''
+    words = new_slug.split /\W+/
+    excess_words = COMMON_WORDS + ['Boston', 'MA']
+    words.select! {|w| !(excess_words.include?(w.downcase) || /\A\d+\z/ =~ w) }
+    new_slug = words[0..7].join '-'
+    new_slug += "-#{self.id}" if Article.exists?(slug: new_slug)
+    new_slug = URI.encode new_slug
+    self.slug = new_slug
     self.save
   end
 end
