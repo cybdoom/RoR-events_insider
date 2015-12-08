@@ -19,7 +19,7 @@ class Article < ActiveRecord::Base
   default_scope { order('created_at DESC') }
 
   before_save :clear_slug, if: lambda { self.slug.present? && self.title_changed? }
-  after_save :generate_slug, if: lambda { self.slug.blank? }
+  after_save :update_slug, if: lambda { self.slug.blank? }
 
   def to_param
     slug
@@ -29,7 +29,7 @@ class Article < ActiveRecord::Base
     self.slug = nil
   end
 
-  def generate_slug
+  def update_slug
     title_text = Nokogiri::HTML(title).inner_text
     new_slug = title_text.gsub /[^\s\w]/, ''
     words = new_slug.split /\W+/
@@ -38,7 +38,6 @@ class Article < ActiveRecord::Base
     new_slug = words[0..7].join '-'
     new_slug += "-#{self.id}" if Article.exists?(slug: new_slug)
     new_slug = URI.encode new_slug
-    self.slug = new_slug
-    self.save
+    self.update_column :slug, new_slug
   end
 end
