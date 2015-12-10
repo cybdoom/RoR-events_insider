@@ -35,5 +35,6 @@ Rails.application.routes.draw do
 
   get '/add_listing', to: 'static_pages#add_listing'
 
+  post '/tinymce_assets', to: 'pictures#create'
 end
 

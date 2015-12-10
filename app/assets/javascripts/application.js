@@ -3,6 +3,7 @@
 //= require modals
 //= require location
 //= require_self
+//= require tinymce
 //
 
 $(document).ready(function(){

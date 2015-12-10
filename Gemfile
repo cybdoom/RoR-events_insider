@@ -56,6 +56,8 @@ gem 'momentjs-rails'
 gem 'sassc-rails'
 gem 'twitter-typeahead-rails'
 gem 'uglifier', '>= 1.3.0'
+gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 
 group :production do
   gem 'heroku-deflater'

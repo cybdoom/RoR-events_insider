@@ -1,5 +1,5 @@
 CarrierWave.configure do |config|
-  config.root = Rails.root.join('tmp')
+  config.root = Rails.root.join('public')
   config.cache_dir = "carrierwave"
 
   if Rails.env.production?
