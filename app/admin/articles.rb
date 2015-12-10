@@ -3,6 +3,16 @@ ActiveAdmin.register Article do
 
   config.per_page = 3
 
+  form do |f|
+    inputs do
+      f.input :title
+      f.input :author
+      f.input :body, :rows => 40, :cols => 120, class: 'tinymce'
+    end
+    actions
+  end
+
+
   controller do
     before_filter :set_article, only: [:show, :edit, :update, :destroy]
 
