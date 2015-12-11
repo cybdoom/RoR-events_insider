@@ -2,12 +2,25 @@ require_dependency 'application_responder'
 require_dependency 'ipaddr'
 
 class ApplicationController < ActionController::Base
+  SECONDARY_DOMAINS = [
+    'bostoneventinsider.com',
+    'bostoneventinsiders.com',
+    'bostoneventsinsider.com',
+    'bostoneventsinsiders.com',
+    'eventinsiders.com',
+    'eventsinsider.net',
+    'eventsinsider.org',
+    'eventsinsiders.com'
+  ]
+  PRIMARY_DOMAIN = 'eventsinsiders.herokuapp.com'
+
   include Pundit
 
   protect_from_forgery with: :exception
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  before_filter :redirect_to_main_domain
   before_filter :authenticate_user!
   # before_filter :set_user_location, if: -> { user_signed_in? && !current_user.location_id? }
 
@@ -66,6 +79,10 @@ class ApplicationController < ActionController::Base
   def user_not_authorized(exception)
     flash[:error] = 'You are not authorized to perform this action.'
     redirect_to(request.referrer || root_path)
+  end
+
+  def redirect_to_main_domain
+    redirect_to PRIMARY_DOMAIN if SECONDARY_DOMAINS.include? URI(request.original_url).host
   end
 
 end
