@@ -24,6 +24,7 @@ en:
   signup: 'Sign Up'
   listing_add: 'Add a Listing'
   events: 'Events'
+  add_event: 'Add Event'
   subscribe: 'Subscribe'
   contact: 'Contact'
   help: 'Help'
@@ -34,6 +35,7 @@ en:
   stay_connected: 'Stay Connected'
   search: 'Search'
   annotation: New England's most popular events blog!
+  most_popular_blog: "New England's Most Popular Events Blog"
 
   location: 'Location'
   photos: 'Photos'

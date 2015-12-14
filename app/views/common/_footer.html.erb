@@ -4,43 +4,40 @@
       <nav class="footer-menu">
         <div class="footer-menu-advertise desktop-only">
           <%= image_tag 'logo.png', alt: 'logo-footer', class: 'logo' %>
-          <a href=""><%= t(:advertise) %></a>
+          <%= t('most_popular_blog') %>
         </div>
 
         <ul class="footer-menu-all">
           <li>
-            <%= link_to t(:home), root_path %>
+            <%= link_to t(:home), '/news' %>
           </li>
           <li>
-            <a href=""><%= t(:about) %></a>
+            <%= link_to t(:about), '/contact' %>
           </li>
           <li>
-             <%= link_to t(:news), articles_path %>
+            <%= link_to t(:events), '/events' %>
           </li>
           <li>
-            <a href=""><%= t(:events) %></a>
-          </li>
-          <li>
-            <a href=""><%= t(:subscribe) %></a>
+             <%= link_to t(:news), '/news' %>
           </li>
           <% if user_signed_in? %>
             <li>
-              <%= link_to t(:listing_add), new_listing_path %>
+              <%= link_to t(:add_event) %>
             </li>
             <li>
-              <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
+              <%= link_to t(:logout), destroy_user_session_path %>
             </li>
           <% else %>
-            <li>
-              <%= link_to t(:signup), new_user_registration_path %>
-            </li>
+            <%= link_to t(:login), new_user_session_path %>
+            <%= link_to t(:signup), new_user_registration_path %>
           <% end %>
           <li>
-            <a href=""><%= t(:contact) %></a>
+            <%= link_to t(:contact), '/contacs' %>
           </li>
         </ul>
         <div class="footer-menu-social">
-          <h3><%= t(:stay_connected) %></h3>
+          <%= link_to t(:subscribe), '/subscribe' %></h3>
+          <br>
           <ul class="list-inline">
             <li>
               <a href="" class="icon icon-facebook grey"></a>
