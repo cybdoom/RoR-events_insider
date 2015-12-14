@@ -6,21 +6,19 @@
           <%= image_tag 'logo.png', alt: 'logo-header', class: 'logo' %>
         <% end %>
         <%= link_to t(:home), page_path('Home') || root_path, class: 'home-link' %>
-        <%= link_to t(:about), page_path('About Us') %>
+        <%= link_to t(:about), page_path('About') %>
+        <%= link_to t(:subscribe), page_path('Subscribe') %>
+        <%= link_to t(:events), page_path('Events') %>
         <%= link_to t(:news), page_path('News') || articles_path %>
-        <% if user_signed_in? && current_user.admin? %>
-          <%= link_to t(:listing_add), page_path('Add a Listing') || new_listing_path %>
-        <% elsif !user_signed_in?  %>
-          <%= link_to t(:login), page_path('Log In') || new_user_session_path, class: 'login-link' %>
-          <%= link_to t(:signup), page_path('Sign Up') || new_user_registration_path, class: 'signup-link' %>
-        <% end %>
         <%= link_to t(:contact), page_path('Contact') %>
-        <%= link_to t(:help), page_path('Help') %>
         <% if user_signed_in? %>
           <%= link_to t(:logout), page_path('Log Out') || destroy_user_session_path, method: :delete %>
           <% if current_user.admin? %>
             <%= link_to 'Admin', page_path('Admin') || admin_root_path, class: 'admin-link' %>
           <% end %>
+        <% else %>
+          <%= link_to t(:login), page_path('Log In') || new_user_session_path, class: 'login-link' %>
+          <%= link_to t(:signup), page_path('Sign Up') || new_user_registration_path, class: 'signup-link' %>
         <% end %>
         <% Page.custom_pages.each do |page| %>
           <%= link_to page.title, page_path(page.title) %>

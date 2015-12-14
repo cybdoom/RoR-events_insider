@@ -12,15 +12,11 @@
 class Page < ActiveRecord::Base
   DEFAULT_PAGES = [
     'Home',
-    'About Us',
+    'About',
+    'Subscribe',
+    'Events',
     'News',
-    'Add',
-    'Log',
-    'Sign',
-    'Contact',
-    'Help',
-    'Log',
-    'Admin'
+    'Contact'
   ]
 
   validates :title, uniqueness: true
