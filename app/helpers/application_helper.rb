@@ -12,7 +12,8 @@ module ApplicationHelper
   end
 
   def page_path(title)
-    Page.exists?(title: title) ? "/pages/#{title}" : nil
+    page = Page.where(title: title).first
+    page.present? ? "/#{page.slug}" : nil
   end
 
   def modal_for(id, modal_title = nil, &block)

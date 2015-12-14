@@ -21,7 +21,7 @@
           <%= link_to t(:signup), page_path('Sign Up') || new_user_registration_path, class: 'signup-link' %>
         <% end %>
         <% Page.custom_pages.each do |page| %>
-          <%= link_to page.title, page_path(page.title) %>
+          <%= link_to page.title, "/#{ URI.encode(page.title) }" %>
         <% end %>
       </nav>
     </div>

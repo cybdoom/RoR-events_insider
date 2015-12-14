@@ -27,14 +27,9 @@ Rails.application.routes.draw do
   }
   ##########################
 
-  get '/pages/:title', to: 'pages#show'
-
-  get '/search', to: 'static_pages#search', as: :search_page
-  get '/add_event', to: 'static_pages#add_event'
-  get '/event', to: 'static_pages#event'
-
-  get '/add_listing', to: 'static_pages#add_listing'
-
   post '/tinymce_assets', to: 'pictures#create'
+
+  get '/:page_slug', to: 'pages#show'
+  get '/pages/:page_slug', to: 'pages#redirect_to_show'
 end
 
