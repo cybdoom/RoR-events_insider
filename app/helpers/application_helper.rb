@@ -11,11 +11,6 @@ module ApplicationHelper
     self.output_buffer = ActionView::OutputBuffer.new(output)
   end
 
-  def page_path(title)
-    page = Page.where(title: title).first
-    page.present? ? "/#{page.slug}" : nil
-  end
-
   def modal_for(id, modal_title = nil, &block)
     modal_id = id + '-modal'
     modal_body = capture(&block)

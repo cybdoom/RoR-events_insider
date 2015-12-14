@@ -5,23 +5,20 @@
         <%= link_to root_path, class: 'logo-link' do %>
           <%= image_tag 'logo.png', alt: 'logo-header', class: 'logo' %>
         <% end %>
-        <%= link_to t(:home), page_path('Home') || root_path, class: 'home-link' %>
-        <%= link_to t(:about), page_path('About') %>
-        <%= link_to t(:subscribe), page_path('Subscribe') %>
-        <%= link_to t(:events), page_path('Events') %>
-        <%= link_to t(:news), page_path('News') || articles_path %>
-        <%= link_to t(:contact), page_path('Contact') %>
+        <%= link_to t(:home), '/news', class: 'home-link' %>
+        <%= link_to t(:about), '/contact' %>
+        <%= link_to t(:subscribe), '/subscribe' %>
+        <%= link_to t(:events), '/events' %>
+        <%= link_to t(:news), '/news' %>
+        <%= link_to t(:contact), '/contact' %>
         <% if user_signed_in? %>
-          <%= link_to t(:logout), page_path('Log Out') || destroy_user_session_path, method: :delete %>
+          <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
           <% if current_user.admin? %>
-            <%= link_to 'Admin', page_path('Admin') || admin_root_path, class: 'admin-link' %>
+            <%= link_to 'Admin', admin_root_path, class: 'admin-link' %>
           <% end %>
         <% else %>
-          <%= link_to t(:login), page_path('Log In') || new_user_session_path, class: 'login-link' %>
-          <%= link_to t(:signup), page_path('Sign Up') || new_user_registration_path, class: 'signup-link' %>
-        <% end %>
-        <% Page.custom_pages.each do |page| %>
-          <%= link_to page.title, "/#{ URI.encode(page.title) }" %>
+          <%= link_to t(:login), new_user_session_path, class: 'login-link' %>
+          <%= link_to t(:signup), new_user_registration_path, class: 'signup-link' %>
         <% end %>
       </nav>
     </div>

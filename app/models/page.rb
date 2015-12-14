@@ -11,14 +11,14 @@
 #
 
 class Page < ActiveRecord::Base
-  DEFAULT_PAGES = [
-    'Home',
-    'About',
-    'Subscribe',
-    'Events',
-    'News',
-    'Contact'
-  ]
+  # DEFAULT_PAGES = [
+  #   'Home',
+  #   'About',
+  #   'Subscribe',
+  #   'Events',
+  #   'News',
+  #   'Contact'
+  # ]
 
   after_create :generate_slug
 
@@ -28,9 +28,9 @@ class Page < ActiveRecord::Base
 
   validates :title, uniqueness: true
 
-  def self.custom_pages
-    self.where('title NOT IN (?)', DEFAULT_PAGES)
-  end
+  # def self.custom_pages
+  #   self.where('title NOT IN (?)', DEFAULT_PAGES)
+  # end
 
   private
 
