@@ -6,20 +6,19 @@
           <%= image_tag 'logo.png', alt: 'logo-header', class: 'logo' %>
         <% end %>
         <%= link_to t(:home), '/news', class: 'home-link' %>
-        <%= link_to t(:about), '/contact' %>
+        <%= link_to t(:about), '/about-johnny-monsarrat' %>
         <%= link_to t(:subscribe), '/subscribe' %>
         <%= link_to t(:events), '/events' %>
         <%= link_to t(:news), '/news' %>
         <%= link_to t(:contact), '/contact' %>
-        <% if user_signed_in? %>
-          <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
-          <% if current_user.admin? %>
-            <%= link_to 'Admin', admin_root_path, class: 'admin-link' %>
-          <% end %>
-        <% else %>
-          <%= link_to t(:login), new_user_session_path, class: 'login-link' %>
-          <%= link_to t(:signup), new_user_registration_path, class: 'signup-link' %>
-        <% end %>
+        <ul class="list-inline">
+          <li>
+            <a href="" class="icon icon-facebook grey"></a>
+          </li>
+          <li>
+            <a href="" class="icon icon-twitter grey"></a>
+          </li>
+        </ul>
       </nav>
     </div>
   </div>
