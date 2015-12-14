@@ -5,6 +5,10 @@ header {
   font-size: $font-size-larger;
   letter-spacing: 1px;
   color: $color-text-primary;
+
+  .list-inline {
+    padding-top: 15px;
+  }
 }
 
 .logo-link {
