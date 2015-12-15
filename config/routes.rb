@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  root 'articles#index'
+  root 'home#index'
 
   resources :listings, only: [:new, :create]
 
