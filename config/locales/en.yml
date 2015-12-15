@@ -30,8 +30,8 @@ en:
   help: 'Help'
   terms: 'Terms of Service'
   privacy_policy: 'Privacy Policy'
-  copyright_html: 'Copyright 2015&copy; Hard Data Factory'
-  advertise: 'Advertise With Us'
+  copyright_html: 'Copyright &copy; 2016 <a href="http://harddatafactory.com">Hard Data Factory</a>'
+  advertise: 'Advertise'
   stay_connected: 'Stay Connected'
   search: 'Search'
   annotation: New England's most popular events blog!
