@@ -10,9 +10,10 @@ class ApplicationController < ActionController::Base
     'eventinsiders.com',
     'eventsinsider.net',
     'eventsinsider.org',
-    'eventsinsiders.com'
+    'eventsinsiders.com',
+    'eventsinsider.herokuapp.com',
   ]
-  PRIMARY_DOMAIN = 'http://eventsinsider.herokuapp.com'
+  PRIMARY_DOMAIN = 'http://www.eventsinsider.com'
 
   include Pundit
 
