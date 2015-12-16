@@ -29,7 +29,9 @@ Rails.application.routes.draw do
 
   post '/tinymce_assets', to: 'pictures#create'
 
-  get '/:page_slug', to: 'pages#show'
   get '/pages/:page_slug', to: 'pages#redirect_to_show'
+
+  get '/:page_slug', to: 'pages#show'
+
 end
 

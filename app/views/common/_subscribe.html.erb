@@ -1,0 +1,17 @@
+<div class="subscribe">
+  <h3>Subscribe to New England's most popular events blog!</h2>
+  <form method="post" action="http://www.aweber.com/scripts/addlead.pl"  >
+    <%= text_field_tag :name, nil, placeholder: 'Name' %>
+    <%= email_field_tag :email, nil, placeholder: 'Email' %>
+    <input type="hidden" name="meta_web_form_id" value="1292762574" />
+    <input type="hidden" name="meta_split_id" value="" />
+    <input type="hidden" name="listname" value="eventsinsider" />
+    <input type="hidden" name="redirect" value="http://eventsinsider.com/getsubscription.html" />
+    <input type="hidden" name="meta_redirect_onlist" value="http://bostoneventsinsider.com/alreadysub.html" />
+    <input type="hidden" name="meta_adtracking" value="My_Web_Form" />
+    <input type="hidden" name="meta_message" value="1" />
+    <input type="hidden" name="meta_required" value="name,email" />
+    <input type="hidden" name="meta_tooltip" value="" />
+    <%= submit_tag 'Subscribe' %>
+  </form>
+</div>

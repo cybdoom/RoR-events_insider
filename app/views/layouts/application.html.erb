@@ -36,6 +36,8 @@
           </div>
         <% end %>
 
+        <%= render partial: 'common/subscribe' %>
+
         <main role="main">
           <% if content_for?(:heading) %>
             <h1 class="main-heading"><%= yield(:heading) %></h1>

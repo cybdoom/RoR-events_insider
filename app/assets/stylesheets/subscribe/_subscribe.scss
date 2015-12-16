@@ -1,0 +1,19 @@
+.subscribe {
+  background: white;
+  border-radius: 4px;
+  padding: 12px;
+  float: right;
+  width: 300px;
+
+  input:not([type="submit"]) {
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    height: 30px
+  }
+
+  form {
+    margin-top: 20px;
+  }
+}
