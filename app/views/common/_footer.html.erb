@@ -25,7 +25,7 @@
               <%= link_to t(:add_event) %>
             </li>
             <li>
-              <%= link_to t(:logout), destroy_user_session_path %>
+              <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
             </li>
           <% else %>
             <li>
@@ -36,7 +36,7 @@
             </li>
           <% end %>
           <li>
-            <%= link_to t(:contact), '/contacs' %>
+            <%= link_to t(:contact), '/contact' %>
           </li>
         </ul>
         <div class="footer-menu-social">
